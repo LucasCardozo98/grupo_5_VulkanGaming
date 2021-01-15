@@ -11,4 +11,4 @@
 ## Sitios similares que son de interes y usamos como referencia:
 - [www.compragamer.com/](https://compragamer.com/)
 
-## [Link de Trello](https://trello.com/b/tqqZeAy7/equipo-cinco)
+### [Link de Trello](https://trello.com/b/tqqZeAy7/equipo-cinco)
