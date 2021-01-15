@@ -1,6 +1,6 @@
 # grupo_5_VulkanGaming
 
-##Integrantes:
+## Integrantes: 
 -Lucas Cardozo
 -Leandro Ayala
 -Mailen Rodriguez
