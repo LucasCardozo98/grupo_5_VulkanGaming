@@ -1,4 +1,4 @@
-# grupo_5_VulkanGaming
+# Grupo 5: Vulkan Gaming
 
 ## Integrantes: 
 - Lucas Cardozo
