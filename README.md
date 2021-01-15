@@ -6,6 +6,8 @@
 - Mailen Rodriguez
 - Alan Poliszezuk
 
+### [Link de nuestro Trello](https://trello.com/b/tqqZeAy7/equipo-cinco)
+
 ## Buscamos lograr la creación de un E-commerce basado en la venta de componentes y/o accesorios de PC. Apuntamos a captar la atención de toda la sociedad gamer
 
 ## Sitios similares que son de interes y usamos como referencia:
@@ -15,4 +17,4 @@
 - [www.logitechstore.com](https://www.logitechstore.com.ar/)
 - [www.overdrivepc.com](https://www.overdrivepc.com.ar/)
 
-### [Link de nuestro Trello](https://trello.com/b/tqqZeAy7/equipo-cinco)
+
