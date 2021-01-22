@@ -15,6 +15,4 @@
 - [www.fullh4rd.com](https://www.fullh4rd.com.ar/) (De esta página destacamos el header y el apartado de sponsors y contacto encima de la misma.)
 - [www.hyperxgaming.com](https://www.hyperxgaming.com/es) (Destacamos de esta página a la hora de mostrar cada producto)
 - [www.logitechstore.com](https://www.logitechstore.com.ar/) (De esta página nos gustó los colores que presenta y los sliders de los productos y del baner en el Home )
-- [www.overdrivepc.com](https://www.overdrivepc.com.ar/) (De OverdrivePC destacamos el apartado del carrito de compra)
-
-
+- [www.overdrivepc.com](https://www.overdrivepc.com.ar/) (De OverdrivePC destacamos el apartado del carrito de compra) 
