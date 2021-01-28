@@ -1,0 +1,321 @@
+/*configuraciones basicas mas la tipografia elegida*/
+*{
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+/*nav mobile*/
+nav{
+    position: relative;
+    /*overflow hidden para que no se vea el desplegable*/
+    overflow: hidden;
+}
+/*el header contiene todo asi que tiene position sticky para que quede fijo*/
+header{
+    position: sticky;
+    width: 100%;
+    top: 0;
+    margin: 0;
+}
+/*grupo de cosas que no se muestran en mobile y tampoco en tablet*/
+.contacto{
+    display: none;
+}
+/* FUNCION PENDIENTE DE APROBACION
+.cosas{
+    display: none;
+}
+#cosa{
+    display: none;
+    color:white;
+}*/
+.sponsors {
+    display: none;
+}
+.buscadorDesktop{
+    display: none;
+}
+/* FUNCION PENDIENTE DE APROBACION
+.listaCosas{
+    display: none;
+}*/
+/*aca empezamos a darle forma al menu en esta seccion instituacional
+aparecen el logo el nombre y el carrito*/
+.institucional{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: black;
+    padding: 5px;
+    margin-top: 0;
+    border-top: 1px solid rgba(100,100,100,1);
+}
+.institucional img{
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+}
+.institucional a{
+    text-decoration: none;
+    color: rgba(255, 255, 255, .5);
+}
+.institucional h1{
+    color: white;
+}
+.institucional i{
+    font-size: 40px;
+}
+/*en la parte de buscador aparece un pequeño buscador y el boton que da 
+hace bajar el menu desplegable*/
+.buscador{
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: rgba(100,100,100,1);
+    display: flex;
+    align-items: center;
+    padding: 0 .5rem;
+}
+
+.buscador form .buscadorEnSerio input{
+    outline: none;
+    width: 60vw;
+}
+
+
+.buscador form .buscadorEnSerio button{
+    outline: none;
+    color:white;
+    background-color: black;
+    width: 50px;
+    padding: 4px;
+    border-radius: 5px;
+    border: none;
+}
+#boton{
+    padding: 5px;
+    width: 30px;
+}
+.buscador  #boton i{
+    color: aliceblue;
+    font-size: 28px;
+}
+.buscador img{
+    display: none;
+}
+.buscador h1{
+    display: none;
+}
+.buscador .iconoBarras{
+    padding: 0;
+    width: 10px;
+}
+/*navegacion es el menu desplegable que baja al apretar el 
+boton*/
+.navegacion{
+    width: 100%;
+    /*position: absolute;*/
+    position: relative;
+    top: -500px;
+    background-color: black ;
+    transition: 2s all;
+    padding: 0;
+    list-style: none;
+    z-index: -100;
+    height: 0;
+
+}
+.navegacion li{
+    width: 100%;
+    padding: 5px;
+    border-bottom: 1px solid  rgb(100,100,100);
+}
+.navegacion li a{
+    color: white;
+    text-decoration: none;
+}
+/*la clase aparecer se aplica con js sobre el menu desplegable 
+logrando que aparezca*/
+.aparecer{
+    top: 0px;
+    transition: 2s all;
+    z-index: 0;
+    height: 175px;
+   
+   
+    
+}
+
+/*version tablet*/
+@media (min-width: 700px){
+    header{
+        width: 100%;
+    }
+    .institucional{
+        padding: 10px;
+    }
+    .contacto{
+        display: flex;
+        justify-content: space-evenly;
+        width: 300px;
+        font-size: 2em;
+    }
+    .buscador{
+        padding: 5px 20px;
+    }
+    .buscador form .buscadorEnSerio input{
+        width: 40vw;
+    }
+    .buscador form .buscadorEnSerio i{
+        display: block;
+    }
+    .navegacion li{
+        height: 50px;
+        font-size: 1.5em;
+        padding: 10px;
+    }
+    .aparecer{
+        height: 250px;
+    }
+}
+/*version desktop*/
+@media (min-width:1024px){
+    header{
+        position: static;
+        z-index: 100;
+        top: 0;
+    }
+    
+    nav{
+        overflow: visible;
+        position: static;
+       
+    }
+    .sponsors{
+       position: static;
+    }
+    
+    
+    .sponsors{
+        background-color: black;
+        padding: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+    .sponsors img{
+        width: 75px;
+    }
+    
+    .sponsors p{
+        color:white;
+        display: flex;
+        align-items: center;
+        margin: 0;
+    }
+    
+    .buscador{
+        position: static;
+        justify-content: space-between;
+        display: none;
+        top: 0;
+    }
+    .buscador #boton{
+        display: none;
+    }
+    .buscadorDesktop{
+        display: flex;
+        width: 700px;
+        align-items: center;
+        
+    }
+    .buscadorDesktop form .buscadorEnSerioDesktop input{
+        outline: none;
+        width: 20vw;
+    }
+    .buscadorDesktop form .buscadorEnSerioDesktop button{
+        outline: none;
+        color:white;
+        background-color: blue;
+        width: 50px;
+        padding: 4px;
+        border-radius: 5px;
+        border: none;
+        
+    }
+    .buscadorDesktop form .buscadorEnSerioDesktop button i{
+        font-size: 20px;
+    }
+    .contactoDesktop{
+        width: 200px;
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .contactoDesktop i{
+        color: white;
+    }
+    .navegacion{
+        position: static;
+        top:0;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        padding: 0;
+        z-index: 0;
+        background-color: rgba(247, 118, 118, 1);
+        margin: 0;
+        padding-top: 10px;
+        padding-left: 50px;
+        height: auto;
+    }
+    .navegacion li{
+        width: 200px;
+        border-bottom-style:none ;
+        padding: 0;
+        font-size: 1.4em;
+        
+    }
+    /*
+    FUNCIONALIDAD PENDIENTE DE APROBACION
+    .lista{
+        padding: 0;
+        margin: 0;
+    }
+    .cosas{
+        display: block;
+    }
+    #cosa{
+        display: block;
+    }
+    .listaCosas{
+        display: flex;
+        background-color: black;
+        width: 100%;
+        position: relative;
+        right: -10px;
+        top: -1000px;
+        transition: 1s all;
+        z-index: -100;
+        list-style: none;
+        font-size: 2em;
+        color: white;
+        justify-content: space-evenly;
+        padding-left: 0;
+        padding: 10px;
+        height: 0;
+        align-items: center;
+        
+    }
+    .aparecenCosas{
+        height: 60px;
+        right: 0px;
+        top: 0;
+        z-index: 0;
+        transition: .5s all;
+        
+    }*/
+   
+}
