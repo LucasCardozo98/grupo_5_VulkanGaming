@@ -317,5 +317,7 @@ logrando que aparezca*/
         transition: .5s all;
         
     }*/
-   
+    footer div.footerCarousel{
+        display: none;
+    }
 }
