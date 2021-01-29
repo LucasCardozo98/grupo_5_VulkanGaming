@@ -1,11 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+<%- include("partials/header")%>
 <body>
-    <h1>hola esto funca falta poner las rutas</h1>
-</body>
-</html>
+    <div class="container">
+        <section class="principal">
+          <div class="row detalle">
+            <div class="col-12 titulo">
+              <h2>Detalle de producto </h2>
+            </div>
+            <div class="contenido">
+              <div class="contenido text-left">
+                <div class="row p-0">
+                  <div class="col-12 col-lg-8">
+                    <figure class="text-center bg-white">
+                      <img src="https://http2.mlstatic.com/pc-gamer-armada-cpu-intel-core-i7-8700-ddr4-1tb-hdmi-vga-D_Q_NP_799971-MLA31147897175_062019-F.webp" class="img-fluid">
+                    </figure>
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, cum!
+                    </p>
+                  </div>
+                  <div class="col-12 col-lg-4 datos">
+                    <h3 class="my-4">
+                      Combo PC Gamer
+                    </h3>
+                    <h2>
+                        $100.000
+                    </h2>
+                    <p><i class="fas fa-credit-card mr-3 my-2"></i>Pagá en 12 cuotas sin interés</p>
+                    <p><i class="fas fa-store mr-3 my-2"></i>Retiro gratis en locales del vendedor</p>
+                    <button class="btn btn-primary mb-2">Comprar ahora</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+    
+          </div>
+        </section>
+      </div>
+      
+<%- include("partials/footer")%>
