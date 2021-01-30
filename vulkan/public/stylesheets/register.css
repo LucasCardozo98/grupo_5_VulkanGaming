@@ -8,9 +8,7 @@
 
 .input{color:white}
 
-body{font-weight: 300;font: bold;}
-
-img{border-radius: 50%;margin-left: 40%;}
+/* img{border-radius: 50%;margin-left: 40%;} */
 
 .btn i{margin-right: 10px;}
 
@@ -23,7 +21,7 @@ img{border-radius: 50%;margin-left: 40%;}
 .l{margin-right: 0px !important;color: green;}
 
 
-div{align-self: center;}
+.register{align-self: center;}
 
 i{margin: none;padding: none;}
 
@@ -36,7 +34,7 @@ i{margin: none;padding: none;}
 }  */
 
 @media(min-width:426px){
-    body{
+    .register{
         padding-left: 32%;
         padding-right: 32%;
     }                
