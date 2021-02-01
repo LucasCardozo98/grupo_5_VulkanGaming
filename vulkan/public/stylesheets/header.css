@@ -148,6 +148,10 @@ logrando que aparezca*/
    
     
 }
+div img.seagate{
+    width: 75px;
+    height: 47px;
+}
 
 /*version tablet*/
 @media (min-width: 700px){
