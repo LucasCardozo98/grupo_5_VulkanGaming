@@ -13,10 +13,11 @@ nav{
 }
 /*el header contiene todo asi que tiene position sticky para que quede fijo*/
 header{
-    position: sticky;
+    position: fixed;
     width: 100%;
     top: 0;
     margin: 0;
+    z-index: 1000;
 }
 /*grupo de cosas que no se muestran en mobile y tampoco en tablet*/
 .contacto{
@@ -137,6 +138,15 @@ boton*/
     color: white;
     text-decoration: none;
 }
+.sesionResponsive{
+    display: flex;
+    align-items: center;
+}
+.sesionResponsive a{
+    text-decoration: none;
+    color:white;
+
+}
 /*la clase aparecer se aplica con js sobre el menu desplegable 
 logrando que aparezca*/
 .aparecer{
@@ -158,6 +168,12 @@ div img.seagate{
     header{
         width: 100%;
     }
+    .sesionResponsive{
+        display: none;
+    }
+    .sesion{
+        display: none;
+    }
     .institucional{
         padding: 10px;
     }
@@ -166,6 +182,18 @@ div img.seagate{
         justify-content: space-evenly;
         width: 300px;
         font-size: 2em;
+    }
+   
+    .contacto a{
+        display: flex;
+        text-decoration: none;
+        margin: 0;
+        color: white;
+        align-items: center;
+        
+    }
+    .contacto i{
+        font-size: 1.5em;
     }
     .buscador{
         padding: 5px 20px;
@@ -182,7 +210,7 @@ div img.seagate{
         padding: 10px;
     }
     .aparecer{
-        height: 250px;
+        height: 201px;
     }
 }
 /*version desktop*/
@@ -258,22 +286,33 @@ div img.seagate{
         display: flex;
         justify-content: space-evenly;
     }
+    .contactoDesktop a{
+        display: flex;
+        text-decoration: none;
+        margin: 0;
+        color: white;
+        align-items: center;
+        font-size: 1.3em;
+        margin-left: 10px;
+        
+    }
     .contactoDesktop i{
         color: white;
     }
     .navegacion{
+        width: 100%;
         position: static;
         top:0;
         display: flex;
         align-items: center;
-        justify-content: space-evenly;
+        justify-content: center;
         padding: 0;
         z-index: 0;
         background-color: rgba(247, 118, 118, 1);
         margin: 0;
         padding-top: 10px;
-        padding-left: 50px;
         height: auto;
+        padding-left: 200px;
     }
     .navegacion li{
         width: 200px;

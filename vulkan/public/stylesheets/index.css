@@ -73,6 +73,7 @@ h2{
  .card .content .btn button:hover{
    transform: scale(0.9);
  }
+<<<<<<< HEAD
  .card-mobile{background-color: #fff;border-radius: 5%;}
 
 
@@ -80,3 +81,20 @@ h2{
   .card{display: none;}   
   .baner img{height: 200px;}        
 }
+=======
+ .carouselTablet{
+   display: none;
+ }
+ @media (min-width:700px){
+   .carouselMobile{ 
+     display: none;
+   }
+   .carouselTablet{
+     display: block;
+     width: 100%;
+   }
+   .contenedorTarjetas{
+     width: 100%;
+   }
+ }
+>>>>>>> 54679b1ec40414959f77ebe1878de3a2c9ef65dd
