@@ -5,13 +5,18 @@
    box-sizing: border-box;
    font-family: 'Poppins', sans-serif;
  }
+ .baner{margin-top: 139px;}
  .baner img{
   height: 380px;
 }
 h2{
   margin-top: 50px;
-  background-color: #e74c3c;
   block-size: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color:rgb(199, 199, 199) ;
+  margin-bottom: 40px;
 }
  html,body{
    height: 100%;
@@ -73,28 +78,17 @@ h2{
  .card .content .btn button:hover{
    transform: scale(0.9);
  }
-<<<<<<< HEAD
  .card-mobile{background-color: #fff;border-radius: 5%;}
 
 
- @media(max-width:426px){
+@media(max-width:426px){
   .card{display: none;}   
-  .baner img{height: 200px;}        
+  .baner img{max-height: 200px;}
+  .card-mobile img{width: 200px;height:220px ;object-fit:scale-down;}
 }
-=======
- .carouselTablet{
-   display: none;
- }
- @media (min-width:700px){
-   .carouselMobile{ 
-     display: none;
-   }
-   .carouselTablet{
-     display: block;
-     width: 100%;
-   }
-   .contenedorTarjetas{
-     width: 100%;
-   }
- }
->>>>>>> 54679b1ec40414959f77ebe1878de3a2c9ef65dd
+@media(min-width:427px){
+  .card-mobile{display: none;}
+}
+@media(min-width:1024px){
+  .baner{margin-top: 0px;}
+}
