@@ -13,10 +13,11 @@ nav{
 }
 /*el header contiene todo asi que tiene position sticky para que quede fijo*/
 header{
-    position: sticky;
+    position: fixed;
     width: 100%;
     top: 0;
     margin: 0;
+    z-index: 1000;
 }
 /*grupo de cosas que no se muestran en mobile y tampoco en tablet*/
 .contacto{
@@ -141,11 +142,6 @@ boton*/
     display: flex;
     align-items: center;
 }
-.sesionResponsive img{
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-}
 .sesionResponsive a{
     text-decoration: none;
     color:white;
@@ -157,7 +153,7 @@ logrando que aparezca*/
     top: 0px;
     transition: 2s all;
     z-index: 0;
-    height: 200px;
+    height: 175px;
    
    
     
@@ -187,12 +183,7 @@ div img.seagate{
         width: 300px;
         font-size: 2em;
     }
-    .contacto img.avatar{
-        display: block;
-        width: 70px;
-        height: 70px;
-        border-radius: 50%;
-    }
+   
     .contacto a{
         display: flex;
         text-decoration: none;
@@ -200,6 +191,9 @@ div img.seagate{
         color: white;
         align-items: center;
         
+    }
+    .contacto i{
+        font-size: 1.5em;
     }
     .buscador{
         padding: 5px 20px;
@@ -291,12 +285,6 @@ div img.seagate{
         width: 200px;
         display: flex;
         justify-content: space-evenly;
-    }
-    .contactoDesktop img.avatar{
-        display: block;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
     }
     .contactoDesktop a{
         display: flex;
