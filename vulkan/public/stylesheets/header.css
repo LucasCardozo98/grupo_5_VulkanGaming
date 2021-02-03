@@ -148,9 +148,13 @@ logrando que aparezca*/
    
     
 }
+/* Configuro el tamano de img Seagate(Sponsor) */
 div img.seagate{
     width: 75px;
     height: 47px;
+}
+div figure img.detail{
+    width: 600px;
 }
 
 /*version tablet*/
