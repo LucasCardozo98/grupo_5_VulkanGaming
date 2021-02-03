@@ -1,13 +1,18 @@
-.baner img{
-    height: 200px;
- }
- @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
  *{
    margin: 0;
    padding: 0;
    box-sizing: border-box;
    font-family: 'Poppins', sans-serif;
  }
+ .baner img{
+  height: 380px;
+}
+h2{
+  margin-top: 50px;
+  background-color: #e74c3c;
+  block-size: 60px;
+}
  html,body{
    height: 100%;
    place-items: center;
@@ -20,11 +25,11 @@
  }
  .slider .card{
    flex: 1;
-   margin: 0 10px;
+   margin: 100px 40px;
    background: #fff;
  }
  .slider .card .img,.card1{
-   height: 120px;
+   height: 200px;
    width: 100%;
  }
  .slider .card .img img{
@@ -68,3 +73,10 @@
  .card .content .btn button:hover{
    transform: scale(0.9);
  }
+ .card-mobile{background-color: #fff;border-radius: 5%;}
+
+
+ @media(max-width:426px){
+  .card{display: none;}   
+  .baner img{height: 200px;}        
+}
