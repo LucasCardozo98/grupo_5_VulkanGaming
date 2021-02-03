@@ -68,3 +68,18 @@
  .card .content .btn button:hover{
    transform: scale(0.9);
  }
+ .carouselTablet{
+   display: none;
+ }
+ @media (min-width:700px){
+   .carouselMobile{ 
+     display: none;
+   }
+   .carouselTablet{
+     display: block;
+     width: 100%;
+   }
+   .contenedorTarjetas{
+     width: 100%;
+   }
+ }
