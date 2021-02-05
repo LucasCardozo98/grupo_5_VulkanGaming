@@ -1,6 +1,6 @@
 <%- include("partials/header")%>
 <body>
-    <div class="container text-start ">
+    <div class="container text-start form">
         <section class="principal">
           <div class="row detalle">
             <div class="col-12 titulo">
@@ -35,5 +35,67 @@
           </div>
         </section>
       </div>
-      
+      <section>
+        <div>
+          <h2 class="bg-success text-white">Productos Relacionados</h2>
+          <div class="slider owl-carousel">
+            <div class="card">
+              <div class="img">
+              <img src="/images/procesador3.jpg" alt="">
+              </div>
+              <div class="content">
+                <div class="title">Procesador</div>
+                <div class="price">$123</div>
+              <div class="btn">
+                  <button><i class="fas fa-cart-plus"></i>Comprar</button>
+              </div>
+              </div>
+            </div>
+              <div class="card">
+                <div class="img">
+                <img src="/images/mother4.jpg" alt=""></div>
+                  <div class="content">
+                    <div class="title">Mother piola</div>
+                    <div class="price">$2345</div>
+                      <div class="btn">
+                        <button><i class="fas fa-cart-plus"></i>Comprar</button>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+          <script>
+            $(".slider").owlCarousel({
+              loop: true,
+              autoplay: true,
+              autoplayTimeout: 2000, //2000ms = 2s;
+              autoplayHoverPause: true,
+            });
+          </script>
+          <div class="card-mobile mb-3" style="width: 75%;">
+            <img src="../images/ram3.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Nombre del producto</h5>
+              <a href="#" class="btn btn-primary"><i class="fas fa-cart-plus"></i> Comprar</a>
+            </div>
+          </div>
+          <div class="card-mobile mb-3" style="width: 75%;">
+            <img src="../images/procesador3.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <a href="#" class="btn btn-primary"><i class="fas fa-cart-plus"></i> Comprar</a>
+            </div>
+          </div>
+          <div class="card-mobile mb-3" style="width: 75%;">
+            <img src="../images/procesador6.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <a href="#" class="btn btn-primary"><i class="fas fa-cart-plus"></i> Comprar</a>
+            </div>
+          </div>
+        </div>
+      </section>
 <%- include("partials/footer")%>
