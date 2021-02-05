@@ -1,62 +1,57 @@
 <%- include("partials/header")%>
-
-<div class="container">
-    <div class="row">
-        <div class="admin col-12">
-            <form action="">  
-                <div class="mt-5">
-                    <input class="w-100" type="file">
-                </div>
-                <div>
-                    <div class="mb-4 mt-5">
-                        <label for="exampleInputEmail1" class="form-label"></label>
-                        <input type="email" class="input form-control bg-x" placeholder="Nombre" id="exampleInputEmail1" aria-describedby="emailHelp">
-                      </div>
-                      <div class="mb-3">
-                        <select name="" id="Categoria">  
-                            <option value="1">Mother</option>
-                            <option value="2">Procesador</option>
-                            <option value="3">RAM</option>
-                            <option value="4">Placa de Video</option>
-                            <option value="5">Fuente</option>
-                        </select>
-                      </div>
-                      <div class="mb-3">
-                        <select name="" id="Sub-Categoria">  
-                            <option value="1">xd</option>
-                            <option value="2">Gigabyte</option>
-                            <option value="3">Aorus</option>
-                            <option value="4">Intel</option>
-                            <option value="5">Corsair</option>
-                        </select>
-                      </div>
-                      <div class="mb-3">
-                        <select name="" id="marca">  
-                            <option value="1">AMD</option>
-                            <option value="2">Gigabyte</option>
-                            <option value="3">Aorus</option>
-                            <option value="4">Intel</option>
-                            <option value="5">Corsair</option>
-                        </select>
-                      </div>
-                      <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label"></label>
-                        <input type="email" class="input form-control bg-x" placeholder="Precio" id="exampleInputEmail1" aria-describedby="emailHelp">
-                      </div>
-                      <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label"></label>
-                        <input type="email" class="input form-control bg-x" placeholder="Descripcion" id="exampleInputEmail1" aria-describedby="emailHelp">
-                      </div>
-                      <div class="d-flex justify-content-around ">
-                        <div class="botoncito">
-                        <button type="reset" class="btn btn-secondary">Cancelar</button>
-                        <button type="submit" class="btn btn-primary">Guardar</button>
-                      </div>
-                      </div>
-                </div>
-            </form>
+  
+  <div class="form container admin">
+    <div class="row gx-0">
+      <div>
+        <div class="titulo bg-success text-center mb-5">
+          <h2 class="admin-title bg-dark">El admin piola</h2>
         </div>
+        <form action="">
+          <div class="mb-3">
+            <input class="form-control form-control-m" id="formFileSm" type="file">
+          </div>
+          <div>
+            <div class="mb-4 mt-4">
+              <label for="exampleInputEmail1" class="form-label"></label>
+              <input type="email" class="input form-control bg-x" placeholder="Nombre" id="exampleInputEmail1"
+                aria-describedby="emailHelp">
+            </div>
+            <select class="form-select form-select-m mb-4 text-muted" aria-label=".form-select-sm example">
+              <option selected>Categoria</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+            <select class="form-select form-select-m mb-4 text-muted" aria-label=".form-select-sm example">
+              <option selected>Sub-Categoria</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+            <select class="form-select form-select-m text-muted" aria-label=".form-select-sm example">
+              <option selected>Marca</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label"></label>
+              <input type="email" class="input form-control bg-x" placeholder="Precio" id="exampleInputEmail1"
+                aria-describedby="emailHelp">
+            </div>
+            <div>
+              <div class="form-floating mb-4">
+                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+                <label class="text-muted">Descricion</label>
+              </div>
+            </div>
+            <div class="mb-5 d-flex justify-content-around ">
+              <button type="reset" class="btn btn-secondary">Cancelar</button>
+              <button type="submit" class="btn btn-primary">Guardar</button>
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
-</div>
-
-<%- include("partials/footer")%>
+  </div>
+  <%- include("partials/footer")%>
