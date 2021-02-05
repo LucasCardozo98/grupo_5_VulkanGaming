@@ -6,6 +6,11 @@
     font-family: 'Roboto', sans-serif;
 }
 /*nav mobile*/
+.form{
+    margin-top: 200px;
+    margin-bottom: 30px;
+    width: 100%;
+}
 nav{
     position: relative;
     /*overflow hidden para que no se vea el desplegable*/
