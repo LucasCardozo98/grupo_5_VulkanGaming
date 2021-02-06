@@ -1,0 +1,60 @@
+<%- include("partials/header")%>
+
+<div class="container editUser">
+    <div class="row gx-0">
+      <div>
+        <div class="titulo bg-success text-center mb-5">
+          <h2 class="admin-title bg-dark text-white">Tus datos</h2>
+        </div>
+        <form action="">
+          <div class="mb-3">
+            <input class="form-control form-control-m" id="formFileSm" type="file">
+          </div>
+          <div>
+            <div class="mb-1 mt-1">
+              <label for="username" class="form-label"></label>
+              <input type="text" class="input form-control bg-x" placeholder="Username" id="username" name="username"
+                aria-describedby="emailHelp">
+            </div>
+            <div class="mb-1 mt-1">
+                <label for="email" class="form-label"></label>
+                <input type="email" class="input form-control bg-x" placeholder="email" id="email" name="email"
+                  aria-describedby="emailHelp">
+              </div>
+            <div class="mb-1 mt-1">
+                <label for="nombre" class="form-label"></label>
+                <input type="text" class="input form-control bg-x" placeholder="nombre" id="nombre" name="nombre"
+                  aria-describedby="emailHelp">
+            </div>  
+            <div class="mb-1 mt-1">
+                <label for="apellido" class="form-label"></label>
+                <input type="text" class="input form-control bg-x" placeholder="apellido" id="apellido" name="apellido"
+                  aria-describedby="emailHelp">
+            </div> 
+            <div class="mb-1 mt-1">
+                <label for="ciudad" class="form-label"></label>
+                <input type="text" class="input form-control bg-x" placeholder="ciudad" id="ciudad" name="ciudad"
+                  aria-describedby="emailHelp">
+            </div>
+            <div class="mb-1 mt-1">
+                <label for="direccion" class="form-label"></label>
+                <input type="text" class="input form-control bg-x" placeholder="direccion" id="direccion" name="direccion"
+                  aria-describedby="emailHelp">
+            </div>
+            <div class="mb-1 mt-1">
+                <label for="codigo postal" class="form-label"></label>
+                <input type="text" class="input form-control bg-x" placeholder="codigo postal" id="codigo postal" name="codigo postal"
+                  aria-describedby="emailHelp">
+            </div>
+            <div class="mb-5 mt-5 d-flex justify-content-around ">
+              <button type="reset" class="btn btn-secondary">Cancelar</button>
+              <button type="submit" class="btn btn-primary">Guardar</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+<%- include("partials/footer")%>

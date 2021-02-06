@@ -3,6 +3,7 @@ var router = express.Router();
 const usersController = require("../controllers/usersController");
 //recordar poner las rutas finales
 
-router.get('/',usersController.mostrar)
+router.get('/',usersController.mostrar);
+router.get("/edit/:id",usersController.showEditar);
 
 module.exports = router;
