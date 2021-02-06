@@ -4,5 +4,7 @@ const productsController = require("../controllers/productsController");
 
 //recordar poner las rutas finales
 router.get('/',productsController.mostrar)
+router.get("/newProduct",productsController.newProduct);
+router.get("/cart",productsController.cart)
 
 module.exports = router;
