@@ -6,6 +6,6 @@ module.exports = {
         res.render("newProduct",{css:'/stylesheets/admin.css'});
     },
     cart : (req,res) =>{  
-        res.render("carrito",{css:'/stylesheets/cart.css'});
+        res.render("carrito",{css:'/stylesheets/carrito.css'});
     },
 }
