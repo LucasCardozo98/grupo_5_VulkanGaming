@@ -8,4 +8,7 @@ module.exports = {
     cart : (req,res) =>{  
         res.render("carrito",{css:'/stylesheets/carrito.css'});
     },
+    productDetail: (req,res)=>{
+        res.render("detail");
+    }
 }
