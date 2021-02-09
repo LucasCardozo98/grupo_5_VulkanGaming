@@ -85,6 +85,11 @@ hace bajar el menu desplegable*/
     align-items: center;
     padding: 0 .5rem;
 }
+.buscadorEnSerio{
+    display: flex;
+    justify-content: space-between;
+    
+}
 
 .buscador form .buscadorEnSerio input{
     outline: none;
@@ -97,9 +102,18 @@ hace bajar el menu desplegable*/
     color:white;
     background-color: black;
     width: 50px;
-    padding: 4px;
+    padding: 2px;
     border-radius: 5px;
     border: none;
+}
+.buscador .lupaMobile{
+    font-size: 20px;
+}
+.buscador form .buscadorEnSerio .contenedor_lupaMobile{
+    padding: 4px 2px;
+    background-color: grey;
+    display: flex;
+    align-items: center;
 }
 #boton{
     padding: 5px;
@@ -188,9 +202,10 @@ div figure img.detail{
     }
     .contacto{
         display: flex;
-        justify-content: space-evenly;
+        justify-content: center;
         width: 300px;
         font-size: 2em;
+        align-items: center;
     }
    
     .contacto a{
@@ -199,10 +214,11 @@ div figure img.detail{
         margin: 0;
         color: white;
         align-items: center;
+        font-size: .7em;
         
     }
     .contacto i{
-        font-size: 1.5em;
+        font-size: 1em;
     }
     .buscador{
         padding: 5px 20px;
@@ -220,6 +236,9 @@ div figure img.detail{
     }
     .aparecer{
         height: 201px;
+    }
+    #contenedor{
+        height: 50px;
     }
 }
 /*version desktop*/
@@ -280,14 +299,21 @@ div figure img.detail{
         outline: none;
         width: 20vw;
     }
+    .buscadorDesktop form .buscadorEnSerioDesktop{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
     .buscadorDesktop form .buscadorEnSerioDesktop button{
         outline: none;
         color:white;
         background-color: blue;
         width: 50px;
-        padding: 4px;
+        padding: 3px;
         border-radius: 5px;
         border: none;
+        display: flex;
+        align-items: center;
         
     }
     .buscadorDesktop form .buscadorEnSerioDesktop button i{
@@ -297,6 +323,7 @@ div figure img.detail{
         width: 200px;
         display: flex;
         justify-content: space-evenly;
+        align-items: center;
     }
     .contactoDesktop a{
         display: flex;
@@ -310,6 +337,7 @@ div figure img.detail{
     }
     .contactoDesktop i{
         color: white;
+        font-size: 2.5em;
     }
     .navegacion{
         width: 100%;
