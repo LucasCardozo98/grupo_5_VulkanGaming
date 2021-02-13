@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
- *{
+*{
    margin: 0;
    padding: 0;
    box-sizing: border-box;
    font-family: 'Poppins', sans-serif;
- }
+}
  .baner{margin-top: 139px;}
  .baner img{
   height: 380px;
@@ -23,47 +23,47 @@ h2{
    place-items: center;
    text-align: center;
    background: #f2f2f2;
- }
+}
  .slider{
    max-width: 1100px;
    display: flex;
- }
+}
  .slider .card{
    flex: 1;
    margin: 100px 40px;
    background: #fff;
- }
+}
  .slider .card .img,.card1{
    height: 200px;
    width: 100%;
- }
+}
  .slider .card .img img{
    height: 100%;
    width: 100%;
    object-fit: cover;
- }
+}
  .slider .card .content{
    padding: 10px 20px;
- }
+}
  .card .content .title{
    font-size: 15px;
    font-weight: 600;
- }
+}
  .card .content .price{
    font-size: 20px;
    font-weight: 600;
    color: green;
    line-height: 20px;
- }
- .card .content p{
+}
+  .card .content p{
    text-align: justify;
    margin: 10px 0;
- }
+}
  .card .content .btn{
    display: block;
    text-align: left;
    margin: 10px 0;
- }
+}
  .card .content .btn button{
    background: #e74c3c;
    color: #fff;
@@ -74,10 +74,10 @@ h2{
    border-radius: 5px;
    cursor: pointer;
    transition: 0.2s;
- }
+}
  .card .content .btn button:hover{
    transform: scale(0.9);
- }
+}
  .card-mobile{background-color: #fff;border-radius: 5%;}
 
 
