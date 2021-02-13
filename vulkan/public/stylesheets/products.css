@@ -200,6 +200,7 @@ button{
     }
 }
 @media (min-width:1024px){
+    .productosCategoria{margin-bottom: 35px;}
     .contenedorPrincipalSecciones{
         margin-top: 0;
     }
