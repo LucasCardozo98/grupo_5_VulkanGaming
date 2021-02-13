@@ -9,6 +9,6 @@ module.exports = {
         res.render("carrito",{css:'/stylesheets/carrito.css'});
     },
     productDetail: (req,res)=>{
-        res.render("detail");
+        res.render("detail",{css:''});
     }
 }
