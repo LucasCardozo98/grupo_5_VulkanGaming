@@ -109,7 +109,7 @@
     background-color: gray;
     font-size: 1em;
     position: sticky;
-    /*top: 155px;*/
+    bottom: 10px;
     width: 100%;
     margin: 0px;
     padding: 5px;
@@ -251,5 +251,8 @@ button{
     .aparecerMemorias{
         left: 60px;
         top: 40px;
+    }
+    .productosCategoria{
+        top: 0;
     }
 }

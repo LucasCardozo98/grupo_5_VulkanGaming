@@ -29,6 +29,9 @@ header{
 .contacto{
     display: none;
 }
+.navegacionDesktop{
+    display: none;
+}
 /* FUNCION PENDIENTE DE APROBACION
 .cosas{
     display: none;
@@ -341,26 +344,50 @@ div figure img.detail{
         font-size: 2.5em;
     }
     .navegacion{
+        display: none;
+    }
+    .navegacionDesktop{
         width: 100%;
         position: static;
-        top:0;
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: space-evenly;
         padding: 0;
         z-index: 0;
-        background-color:#5cb85c ;
-        margin: 0;
-        padding-top: 10px;
-        height: auto;
-        padding-left: 200px;
-    }
-    .navegacion li{
-        width: 200px;
-        border-bottom-style:none ;
-        padding: 0;
-        font-size: 1.4em;
         
+        /*background-color:#5cb85c ;*/
+        margin: 0;
+        height: auto;
+        /*padding-left: 200px;*/
+    }
+    .navegacionDesktop li{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        border-bottom-style:none ;
+        padding: 10px;
+        font-size: 1.4em;
+        margin: 0;
+        
+    }
+    
+    .navegacion{
+        width: 100%;
+        /*position: absolute;*/
+        position: relative;
+        top: -500px;
+        background-color: black ;
+        transition: 2s all;
+        padding: 0;
+        list-style: none;
+        z-index: -100;
+        height: 0;
+    
+    }
+    
+    .navegacionDesktop li a{
+        color: white;
+        text-decoration: none;
     }
     /*
     FUNCIONALIDAD PENDIENTE DE APROBACION
