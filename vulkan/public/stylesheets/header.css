@@ -18,7 +18,8 @@ nav{
 }
 /*el header contiene todo asi que tiene position sticky para que quede fijo*/
 header{
-    position: fixed;
+    /*position: fixed;*/
+    position: sticky;
     width: 100%;
     top: 0;
     margin: 0;
