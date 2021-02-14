@@ -1,0 +1,70 @@
+<%- include("partials/header")%>
+  
+  <div class="form container admin">
+    <div class="row gx-0">
+      <div>
+        <div class="titulo bg-success text-center mb-5">
+          <h2 class="admin-title bg-dark">El admin piola</h2>
+        </div>
+        <form action="/products/create" method="POST" enctype="multipart/form-data">
+          <input  type="file" name="image">
+          <div class="mb-3">
+            
+          </div>
+         <!--class="form-control form-control-m"  id="formFileSm"--> 
+          <div>
+            <div class="mb-4 mt-4">
+              <label for="exampleInputEmail1" class="form-label"></label>
+              <input type="text" class="input form-control bg-x" placeholder="Nombre" id="exampleInputEmail1"
+                aria-describedby="emailHelp" name="name">
+            </div>
+            <select class="form-select form-select-m mb-4 text-muted" aria-label=".form-select-sm example" name="category">
+              <!--<option selected>Categoria</option>-->
+              <option value="mother">Mother</option>
+              <option value="procesador">Procesador</option>
+              <option value="RAM">RAM</option>
+              <option value="fuente">Fuente</option>
+              <option value="perifericos">Perifericos</option>
+              <option value="PlacaDeVideo">Placa de video</option>
+              <option value="gabinetes">Gabinetes</option>
+            </select>
+            
+            <select class="form-select form-select-m text-muted" aria-label=".form-select-sm example" name="trademark"
+            aria-placeholder="Marca">
+              <!--<option selected>Marca</option>-->
+              <option value="amd">AMD</option>
+              <option value="Intel">Intel</option>
+              <option value="Ryzen">Ryzen</option>
+              <option value="evga">EVGA</option>
+              <option value="redDragon">Red Dragon</option>
+              <option value="logitech">Logitech</option>
+              <option value="gigabyte">Gigabyte</option>
+              <option value="nvidia">Nvidia</option>
+              <option value="zotac">Zotac</option>
+              <option value="hyperx">HyperX</option>
+              <option value="nsi">NSI</option>
+              <option value="razer">Razer</option>
+              <option value="cougar">Cougar</option>
+
+            </select>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label"></label>
+              <input type="number" class="input form-control bg-x" placeholder="Precio" id="exampleInputEmail1"
+                aria-describedby="emailHelp" name="price">
+            </div>
+            <div>
+              <div class="form-floating mb-4">
+                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea" name="description"></textarea>
+                <label class="text-muted">Descripcion</label>
+              </div>
+            </div>
+            <div class="mb-5 d-flex justify-content-around ">
+              <button type="reset" class="btn btn-secondary">Cancelar</button>
+              <button type="submit" class="btn btn-primary">Guardar</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <%- include("partials/footer")%>

@@ -1,11 +1,14 @@
 var express = require('express');
 var router = express.Router();
 const productsController = require("../controllers/productsController");
+const upload = require("../middlewares/multer");
 
 //recordar poner las rutas finales
 router.get('/',productsController.mostrar); 
-router.get("/:id",productsController.productDetail);
-router.get("/newProduct",productsController.newProduct);
+router.get("/detail",productsController.productDetail);
+router.get("/create",productsController.crearProducto);
+//router.post("/create",upload.any(),productsController.storeProduct);
+router.post("/create",upload.any(),productsController.storeProduct)
 router.get("/cart",productsController.cart)
 
 module.exports = router;
