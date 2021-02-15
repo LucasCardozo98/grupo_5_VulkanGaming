@@ -2,7 +2,7 @@ const fs = require("fs");
 const products = JSON.parse(fs.readFileSync("./data/products.json","utf-8"));
 module.exports = {
     mostrar: (req,res) =>{  
-        res.render("products",{css:'/stylesheets/products.css'});
+        res.render("products",{css:'/stylesheets/products.css',products});
     },    
     storeProduct: (req,res)=>{
         console.log(req.body)
@@ -47,5 +47,37 @@ module.exports = {
         });
 
         res.render("productEdit",{css:'/stylesheets/admin.css', product });
+    },
+    edit: (req,res)=>{
+        let id = req.params.id
+        const {name,category,trademark,price,description} = req.body
+        products.forEach(element =>{
+            if(element.id == Number(id)){
+                element.name = name;
+                element.category = category;
+                element.trademark = trademark;
+                element.price = price;
+                element.description = description;
+            }
+        });
+        let nuevijson = JSON.stringify(products);
+         fs.writeFileSync("./data/products.json",nuevijson,"utf-8");
+           console.log(id)
+         res.redirect("/products");
+    },
+    delete: (req,res)=>{
+        let id = req.params.id
+        let indice;
+        products.forEach(element => {
+            if(element.id == Number(id)){
+             indice = products.indexOf(element)
+            }
+        });
+        
+        products.splice(indice,1);
+        let nuevijson = JSON.stringify(products);
+         fs.writeFileSync("./data/products.json",nuevijson,"utf-8");
+           console.log(id)
+         res.redirect("/");
     }
 }
