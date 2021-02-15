@@ -7,11 +7,11 @@
           <h2 class="admin-title bg-dark">El admin piola</h2>
         </div>
         <form action="/products/create" method="POST" enctype="multipart/form-data">
-          <input  type="file" name="image">
+          
           <div class="mb-3">
-            
+            <input class="form-control form-control-m"  id="formFileSm" type="file" name="image">
           </div>
-         <!--class="form-control form-control-m"  id="formFileSm"--> 
+         <!----> 
           <div>
             <div class="mb-4 mt-4">
               <label for="exampleInputEmail1" class="form-label"></label>
@@ -33,8 +33,8 @@
             aria-placeholder="Marca">
               <!--<option selected>Marca</option>-->
               <option value="amd">AMD</option>
-              <option value="Intel">Intel</option>
-              <option value="Ryzen">Ryzen</option>
+              <option value="intel">Intel</option>
+              <option value="ryzen">Ryzen</option>
               <option value="evga">EVGA</option>
               <option value="redDragon">Red Dragon</option>
               <option value="logitech">Logitech</option>
@@ -67,4 +67,5 @@
       </div>
     </div>
   </div>
+  
   <%- include("partials/footer")%>

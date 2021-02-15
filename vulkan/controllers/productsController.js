@@ -6,25 +6,25 @@ module.exports = {
     },    
     storeProduct: (req,res)=>{
         console.log(req.body)
-        const {name,category,trademark,price,} = req.body
-        let id = 0;
+        const {name,category,trademark,price,description} = req.body
+        let lastId = 0;
         products.forEach(element => {
-            if(element.id == id){
-                id = id
+            if(element.id > lastId){
+               lastId = element.id
             }
         });
         const product = {
-            id : id +1,
+            id : lastId +1,
             name,
             category,
             trademark,
             price,
+            description,
             image: req.files[0].filename
         }
          products.push(product);
          let nuevojson = JSON.stringify(products);
          fs.writeFileSync("./data/products.json",nuevojson,"utf-8");
-         console.log(product);
          res.redirect("/products/create");
         
     },
@@ -37,4 +37,15 @@ module.exports = {
     crearProducto : (req,res)=>{
         res.render("productCreate",{css:'/stylesheets/admin.css'});
     },
+    showEdit: (req,res)=>{
+        const id = req.params.id
+        let product;
+        products.forEach(element => {
+            if(element.id == id){
+                product = element
+            }
+        });
+
+        res.render("productEdit",{css:'/stylesheets/admin.css', product });
+    }
 }
