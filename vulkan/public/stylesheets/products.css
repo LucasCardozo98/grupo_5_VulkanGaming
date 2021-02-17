@@ -65,34 +65,42 @@
 .aparecerFuentes{
     left: 0px;
     top: 40px;
+    z-index: 1000;
 }
 .aparecerGabinetes{
     top: 40px;
     left: 0px;
+    z-index: 1000;
 }
 .aparecerMothers{
     top: 40px;
     left: 0px;
+    z-index: 1000;
 }
 .aparecerMouses{
     top: 40px;
     left: 0;
+    z-index: 1000;
 }
 .aparecerPlacas{
     top: 40px;
     left: 0;
+    z-index: 1000;
 }
 .aparecerProcesadores{
     top:40px;
     left: 0;
+    z-index: 1000;
 }
 .aparecerMemorias{
     top: 40px;
     left: 0;
+    z-index: 1000;
 }
 .aparecerTeclados{
     top: 40px;
     left: 0;
+    z-index: 1000;
 }
 /*Estos son los coso de las tarjetas*/
 .productos{
@@ -239,18 +247,22 @@ button{
     .aparecerFuentes{
         left: 60px;
         top: 40px;
+        z-index: 1000;
     }
     .aparecerMouses{
         left: 60px;
         top: 40px;
+        z-index: 1000;
     }
     .aparecerTeclados{
         left: 60px;
         top: 40px;
+        z-index: 1000;
     }
     .aparecerMemorias{
         left: 60px;
         top: 40px;
+        z-index: 1000;
     }
     .productosCategoria{
         top: 0;

@@ -1,51 +1,62 @@
-<%- include("partials/header")%>
-<body>
+<%- include("partials/head")%>
+  <%- include("partials/header")%>
     <section>
-        <div class="container form">
-            <div class="row register">    
-                <div class="px-lg-5 py-lg-4 p-4 w-100 aling-self-center">
-                    <form>
-                        <div class="mb-3 emailinput">
-                          <label for="exampleInputEmail1" class="form-label">Email</label>
-                          <input type="email" class="form-control bg-x  " placeholder="Ingresa tu email" id="exampleInputEmail1" aria-describedby="emailHelp">
-                        </div>
-                        <div class="mb-3">
-                          <label for="exampleInputPassword1" class="form-label">Contraseña</label>
-                          <input type="password" class="form-control bg-x" placeholder="Ingresa tu contraseña" id="exampleInputPassword1">
-                          <a class="text-muted text-decoration-none" href=""><div id="emailHelp" class="form-text">¿Olvidaste tu contraseña?</div></a> 
-                        </div>
-                        <div class="mb-3 form-check">
-                          <input type="checkbox" class="form-check-input bg-x" id="exampleCheck1">
-                          <label class="form-check-label" for="exampleCheck1">Recordarme</label>
-                        </div>
-                        <button type="submit" class="btn btn-dark col-12">Iniciar Sesión</button>
-                        <div id="emailHelp" class="form-text text-center">O inicia sesión con</div>
-                        <div class="d-flex justify-content-around">
-                            <div>
-                               <button type="submit" class="btn btn-outline-primary flex-grow-1 mt-2"> <img class="google" src="/images/google.png" alt=""> G<i class="first-o" >o</i><i class="second-o" >o</i><i class="g" >g</i><i class="l" >l</i><i class="e" >e</i></button></i>
-                            </div>
-                            <div>
-                               <button type="submit" class="btn btn-outline-primary flex-grow-1 mt-2"><i class="fab fa-facebook-f lead"></i>Facebook</button>
-                            </div>
-                        </div>
-                        <div id="emailHelp" class="form-text text-center mt-2">Registrarse</div>
-                        <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Email</label>
-                            <input type="email" class="input form-control bg-x" placeholder="Ingresa tu email" id="exampleInputEmail1" aria-describedby="emailHelp">
-                          </div>
-                          <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Contraseña</label>
-                            <input type="password" class="form-control bg-x" placeholder="Ingresa tu contraseña" id="exampleInputPassword1">
-                            <label for="exampleInputPassword1" class="form-label mt-3">Confirmar contraseña</label>
-                            <input type="password" class="form-control bg-x" placeholder="Confirma tu contraseña" id="exampleInputPassword1"> 
-                          </div>
-                          <button type="submit" class="btn btn-dark col-12">Registrarse</button>
-                      </div>
-                      </form>
+      <div class="container form">
+        <div class="row register">
+          <div class="px-lg-5 py-lg-4 p-4 w-100 aling-self-center">
+            <form>
+              <div class="mb-3 emailinput">
+                <label for="InputEmailLogIn" class="form-label">Email</label>
+                <input type="email" class="form-control bg-x  " placeholder="Ingresa tu email" id="InputEmailLogIn"
+                  aria-describedby="emailHelp">
+              </div>
+              <div class="mb-3">
+                <label for="InputPasswordLogIn" class="form-label">Contraseña</label>
+                <input type="password" class="form-control bg-x" placeholder="Ingresa tu contraseña"
+                  id="InputPasswordLogIn">
+                <a class="text-muted text-decoration-none" href="">
+                  <div id="emailHelp" class="form-text">¿Olvidaste tu contraseña?</div>
+                </a>
+              </div>
+              <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input bg-x" id="remember">
+                <label class="form-check-label" for="remember">Recordarme</label>
+              </div>
+              <button type="submit" class="btn btn-dark col-12">Iniciar Sesión</button>
+              <div id="emailHelp" class="form-text text-center">O inicia sesión con</div>
+              <div class="d-flex justify-content-around">
+                <div>
+                  <button type="submit" class="btn btn-outline-primary flex-grow-1 mt-2"> <img class="google"
+                      src="/images/google.png" alt=""> G<i class="first-o">o</i><i class="second-o">o</i><i
+                      class="g">g</i><i class="l">l</i><i class="e">e</i></button></i>
                 </div>
-            </div>
+                <div>
+                  <button type="submit" class="btn btn-outline-primary flex-grow-1 mt-2"><i
+                      class="fab fa-facebook-f lead"></i>Facebook</button>
+                </div>
+              </div>
+              <div id="emailHelp" class="form-text text-center mt-2">Registrarse</div>
+              <div class="mb-3">
+                <label for="InputEmailRegister" class="form-label">Email</label>
+                <input type="email" class="input form-control bg-x" placeholder="Ingresa tu email"
+                  id="InputEmailRegister" aria-describedby="emailHelp">
+              </div>
+              <div class="mb-3">
+                <label for="InputPasswordRegister" class="form-label">Contraseña</label>
+                <input type="password" class="form-control bg-x" placeholder="Ingresa tu contraseña"
+                  id="InputPasswordRegister">
+                <label for="InputPasswordRegisterConfirm" class="form-label mt-3">Confirmar contraseña</label>
+                <input type="password" class="form-control bg-x" placeholder="Confirma tu contraseña"
+                  id="InputPasswordRegisterConfirm">
+              </div>
+              <button type="submit" class="btn btn-dark col-12">Registrarse</button>
+          </div>
+          </form>
         </div>
+      </div>
+      </div>
     </section>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
-</body>
-<%- include("partials/footer")%>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+      crossorigin="anonymous"></script>
+    <%- include("partials/footer")%>
