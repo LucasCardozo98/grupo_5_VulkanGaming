@@ -2,8 +2,8 @@
     {	
         "id": 1,	
         "image": "fuente1.jpg",	
-        "category": "Fuentes",	
-        "name": "Fuente",	
+        "name": "Fuente",		
+        "category": "Fuentes",
         "brand": "EVGA",	
         "price": "$920.64",	
         "description": "Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem."	
@@ -11,8 +11,8 @@
     {	
         "id": 2,	
         "image": "fuente2.jpg",	
-        "category": "Fuentes",	
-        "name": "Fuente",	
+        "name": "Fuente",		
+        "category": "Fuentes",
         "brand": "Sentey",	
         "price": "$133379.55",	
         "description": "In congue. Etiam justo. Etiam pretium iaculis justo."	
@@ -20,8 +20,8 @@
     {	
         "id": 3,	
         "image": "fuente3.jpg",	
-        "category": "Fuentes",	
-        "name": "Fuente",	
+        "name": "Fuente",		
+        "category": "Fuentes",
         "brand": "Cooler Master",	
         "price": "$36337.67",	
         "description": "Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.\n\nAenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.\n\nCurabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.\n\nPhasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.\n\nProin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem."	
@@ -29,8 +29,8 @@
     {	
         "id": 4,	
         "image": "fuente4.jpg",	
-        "category": "Fuentes",	
-        "name": "Fuente",	
+        "name": "Fuente",		
+        "category": "Fuentes",
         "brand": "Essenses",	
         "price": "$206487.63",	
         "description": "Phasellus in felis. Donec semper sapien a libero. Nam dui.\n\nProin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius."	
@@ -38,8 +38,8 @@
     {	
         "id": 5,	
         "image": "fuente5.jpg",	
+        "name": "Fuente",	
         "category": "Fuentes",	
-        "name": "Segotep",	
         "brand": "Generica",	
         "price": "$278195.58",	
         "description": "Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.\n\nCras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.\n\nQuisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.\n\nPhasellus in felis. Donec semper sapien a libero. Nam dui."	
@@ -47,8 +47,8 @@
     {	
         "id": 6,	
         "image": "gabinete1.jpg",	
-        "category": "Gabinetes",	
         "name": "Gabinete",	
+        "category": "Gabinetes",	
         "brand": "Cougar",	
         "price": "$262773.75",	
         "description": "Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.\n\nQuisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.\n\nPhasellus in felis. Donec semper sapien a libero. Nam dui.\n\nProin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius."	
@@ -56,8 +56,8 @@
     {	
         "id": 7,	
         "image": "gabinete2.jpg",	
-        "category": "Gabinetes",	
         "name": "Gabinete",	
+        "category": "Gabinetes",	
         "brand": "Cougar",	
         "price": "$145239.49",	
         "description": "Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.\n\nQuisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.\n\nPhasellus in felis. Donec semper sapien a libero. Nam dui."	
@@ -65,8 +65,8 @@
     {	
         "id": 8,	
         "image": "gabinete3.jpg",	
-        "category": "Gabinetes",	
         "name": "Gabinete",	
+        "category": "Gabinetes",	
         "brand": "Sentey",	
         "price": "$125046.36",	
         "description": "Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.\n\nSed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.\n\nPellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.\n\nCum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.\n\nEtiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem."	
@@ -74,8 +74,8 @@
     {	
         "id": 9,	
         "image": "gabinete4.jpg",	
-        "category": "Gabinetes",	
         "name": "Gabinete",	
+        "category": "Gabinetes",	
         "brand": "Aureox",	
         "price": "$227100.66",	
         "description": "Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.\n\nIn congue. Etiam justo. Etiam pretium iaculis justo."	
@@ -83,8 +83,8 @@
     {	
         "id": 10,	
         "image": "gabinete5.jpg",	
-        "category": "Gabinetes",	
         "name": "Gabinete",	
+        "category": "Gabinetes",	
         "brand": "MSi",	
         "price": "$292064.07",	
         "description": "Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.\n\nInteger ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.\n\nNam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.\n\nCurabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam."	
@@ -92,8 +92,8 @@
     {	
         "id": 11,	
         "image": "mother1.jpg",	
-        "category": "Motherboard",	
-        "name": "Motherboard",	
+        "name": "Motherboard",
+        "category": "Motherboard",		
         "brand": "ASUS",	
         "price": "$89636.96",	
         "description": "Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.\n\nQuisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.\n\nVestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat."	
@@ -101,8 +101,8 @@
     {	
         "id": 12,	
         "image": "mother2.jpg",	
-        "category": "Motherboard",	
-        "name": "Motherboard",	
+        "name": "Motherboard",
+        "category": "Motherboard",		
         "brand": "Gigabyte",	
         "price": "$16551.75",	
         "description": "Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.\n\nAenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.\n\nCurabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est."	
@@ -110,8 +110,8 @@
     {	
         "id": 13,	
         "image": "mother3.jpg",	
-        "category": "Motherboard",	
-        "name": "Motherboard",	
+        "name": "Motherboard",
+        "category": "Motherboard",		
         "brand": "MSi",	
         "price": "$164964.48",	
         "description": "Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.\n\nCum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.\n\nEtiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.\n\nPraesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.\n\nCras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit."	
@@ -119,8 +119,8 @@
     {	
         "id": 14,	
         "image": "mother4.jpg",	
-        "category": "Motherboard",	
-        "name": "Motherboard",	
+        "name": "Motherboard",
+        "category": "Motherboard",		
         "brand": "MSi",	
         "price": "$161693.20",	
         "description": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.\n\nEtiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.\n\nPraesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.\n\nCras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.\n\nProin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl."	
@@ -128,8 +128,8 @@
     {	
         "id": 15,	
         "image": "mother5.jpg",	
-        "category": "Motherboard",	
-        "name": "Motherboard",	
+        "name": "Motherboard",
+        "category": "Motherboard",		
         "brand": "Gigabyte",	
         "price": "$11345.85",	
         "description": "Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.\n\nQuisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus."	
@@ -137,8 +137,8 @@
     {	
         "id": 16,	
         "image": "mother6.jpg",	
-        "category": "Motherboard",	
-        "name": "Motherboard",	
+        "name": "Motherboard",
+        "category": "Motherboard",		
         "brand": "ASUS",	
         "price": "$127231.59",	
         "description": "Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh."	
@@ -146,8 +146,8 @@
     {	
         "id": 17,	
         "image": "mouse1.jpg",	
-        "category": "Mouse",	
         "name": "Mouse",	
+        "category": "Mouse",	
         "brand": "Havit",	
         "price": "$144538.60",	
         "description": "Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.\n\nMaecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.\n\nNullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris."	
@@ -155,8 +155,8 @@
     {	
         "id": 18,	
         "image": "mouse2.jpg",	
-        "category": "Mouse",	
         "name": "Mouse",	
+        "category": "Mouse",	
         "brand": "ASUS",	
         "price": "$165491.88",	
         "description": "Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.\n\nIn sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.\n\nSuspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst."	
@@ -164,8 +164,8 @@
     {	
         "id": 19,	
         "image": "mouse3.jpg",	
-        "category": "Mouse",	
         "name": "Mouse",	
+        "category": "Mouse",	
         "brand": "Redragon",	
         "price": "$188259.46",	
         "description": "Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.\n\nCurabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.\n\nPhasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.\n\nProin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.\n\nDuis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit."	
@@ -173,8 +173,8 @@
     {	
         "id": 20,	
         "image": "mouse4.jpg",	
-        "category": "Mouse",	
         "name": "Mouse",	
+        "category": "Mouse",	
         "brand": "Redragon",	
         "price": "$89721.25",	
         "description": "Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus."	
@@ -182,8 +182,8 @@
     {	
         "id": 21,	
         "image": "mouse5.jpg",	
-        "category": "Mouse",	
         "name": "Mouse",	
+        "category": "Mouse",	
         "brand": "Razer",	
         "price": "$193331.84",	
         "description": "Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.\n\nProin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.\n\nDuis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.\n\nDonec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.\n\nDuis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus."	
@@ -191,8 +191,8 @@
     {	
         "id": 22,	
         "image": "placa1.jpg",	
-        "category": "Placa de video",	
         "name": "Placa de video",	
+        "category": "Placa de video",	
         "brand": "AMD",	
         "price": "$54355.21",	
         "description": "Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus."	
@@ -200,8 +200,8 @@
     {	
         "id": 23,	
         "image": "placa2.png",	
-        "category": "Placa de video",	
         "name": "Placa de video",	
+        "category": "Placa de video",	
         "brand": "Gigabyte",	
         "price": "$278043.53",	
         "description": "Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.\n\nPhasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.\n\nProin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.\n\nDuis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit."	
@@ -209,8 +209,8 @@
     {	
         "id": 24,	
         "image": "placa3.jpg",	
-        "category": "Placa de video",	
         "name": "Placa de video",	
+        "category": "Placa de video",	
         "brand": "Gigabyte",	
         "price": "$44951.49",	
         "description": "Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus."	
@@ -218,8 +218,8 @@
     {	
         "id": 25,	
         "image": "placa4.jpg",	
-        "category": "Placa de video",	
         "name": "Placa de video",	
+        "category": "Placa de video",	
         "brand": "Gigabyte",	
         "price": "$97759.00",	
         "description": "Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh."	
@@ -227,8 +227,8 @@
     {	
         "id": 26,	
         "image": "placa5.jpg",	
-        "category": "Placa de video",	
         "name": "Placa de video",	
+        "category": "Placa de video",	
         "brand": "Gigabyte",	
         "price": "$183117.18",	
         "description": "Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.\n\nNullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.\n\nMorbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis."	
@@ -236,8 +236,8 @@
     {	
         "id": 27,	
         "image": "placa6.jpg",	
-        "category": "Placa de video",	
         "name": "Placa de video",	
+        "category": "Placa de video",	
         "brand": "Zotac",	
         "price": "$112605.03",	
         "description": "Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.\n\nInteger tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.\n\nPraesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.\n\nMorbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.\n\nFusce consequat. Nulla nisl. Nunc nisl."	
@@ -245,8 +245,8 @@
     {	
         "id": 28,	
         "image": "placa7.jpg",	
-        "category": "Placa de video",	
         "name": "Placa de video",	
+        "category": "Placa de video",	
         "brand": "MSI",	
         "price": "$50517.40",	
         "description": "Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.\n\nPhasellus in felis. Donec semper sapien a libero. Nam dui.\n\nProin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.\n\nInteger ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi."	
@@ -254,8 +254,8 @@
     {	
         "id": 29,	
         "image": "procesador1.jpg",	
-        "category": "Procesadores",	
         "name": "Procesador",	
+        "category": "Procesadores",	
         "brand": "Intel",	
         "price": "$224925.75",	
         "description": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.\n\nEtiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.\n\nPraesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.\n\nCras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.\n\nProin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl."	
@@ -263,8 +263,8 @@
     {	
         "id": 30,	
         "image": "procesador2.jpg",	
-        "category": "Procesadores",	
         "name": "Procesador",	
+        "category": "Procesadores",	
         "brand": "Intel",	
         "price": "$197844.28",	
         "description": "In congue. Etiam justo. Etiam pretium iaculis justo.\n\nIn hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.\n\nNulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi."	
@@ -272,8 +272,8 @@
     {	
         "id": 31,	
         "image": "procesador3.jpg",	
-        "category": "Procesadores",	
         "name": "Procesador",	
+        "category": "Procesadores",	
         "brand": "Intel",	
         "price": "$168775.53",	
         "description": "Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.\n\nVestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.\n\nIn congue. Etiam justo. Etiam pretium iaculis justo."	
@@ -281,8 +281,8 @@
     {	
         "id": 32,	
         "image": "procesador4.jpg",	
-        "category": "Procesadores",	
         "name": "Procesador",	
+        "category": "Procesadores",	
         "brand": "AMD",	
         "price": "$75019.88",	
         "description": "In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.\n\nSuspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.\n\nMaecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat."	
@@ -290,8 +290,8 @@
     {	
         "id": 33,	
         "image": "procesador5.jpg",	
-        "category": "Procesadores",	
         "name": "Procesador",	
+        "category": "Procesadores",	
         "brand": "AMD",	
         "price": "$102543.64",	
         "description": "Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.\n\nFusce consequat. Nulla nisl. Nunc nisl."	
@@ -299,8 +299,8 @@
     {	
         "id": 34,	
         "image": "procesador6.jpg",	
-        "category": "Procesadores",	
         "name": "Procesador",	
+        "category": "Procesadores",	
         "brand": "AMD",	
         "price": "$155304.75",	
         "description": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.\n\nEtiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.\n\nPraesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.\n\nCras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit."	
@@ -308,8 +308,8 @@
     {	
         "id": 35,	
         "image": "procesador7.jpg",	
-        "category": "Procesadores",	
         "name": "Procesador",	
+        "category": "Procesadores",	
         "brand": "Intel",	
         "price": "$165146.15",	
         "description": "Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris."	
@@ -317,8 +317,8 @@
     {	
         "id": 36,	
         "image": "ram1.jpg",	
-        "category": "Memoria RAM",	
         "name": "Memoria RAM",	
+        "category": "Memoria RAM",	
         "brand": "Hyperx",	
         "price": "$190455.07",	
         "description": "Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.\n\nPraesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.\n\nMorbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem."	
@@ -326,8 +326,8 @@
     {	
         "id": 37,	
         "image": "ram2.jpg",	
-        "category": "Memoria RAM",	
         "name": "Memoria RAM",	
+        "category": "Memoria RAM",	
         "brand": "Hyperx",	
         "price": "$266199.46",	
         "description": "Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.\n\nCras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.\n\nQuisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.\n\nPhasellus in felis. Donec semper sapien a libero. Nam dui.\n\nProin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius."	
@@ -335,8 +335,8 @@
     {	
         "id": 38,	
         "image": "ram3.jpg",	
-        "category": "Memoria RAM",	
         "name": "Memoria RAM",	
+        "category": "Memoria RAM",	
         "brand": "Corsair",	
         "price": "$171621.03",	
         "description": "Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.\n\nIn hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo."	
@@ -344,8 +344,8 @@
     {	
         "id": 39,	
         "image": "ram4.jpg",	
-        "category": "Memoria RAM",	
         "name": "Memoria RAM",	
+        "category": "Memoria RAM",	
         "brand": "Corsair",	
         "price": "$49154.19",	
         "description": "Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.\n\nDuis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.\n\nIn sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.\n\nSuspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.\n\nMaecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat."	
@@ -353,8 +353,8 @@
     {	
         "id": 40,	
         "image": "ram5.jpg",	
-        "category": "Memoria RAM",	
-        "name": "Memoria RAM",	
+        "name": "Memoria RAM",
+        "category": "Memoria RAM",		
         "brand": "T-force",	
         "price": "$208815.75",	
         "description": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."	
@@ -397,9 +397,9 @@
     },	
     {	
         "id": 45,	
-        "image": "teclado5.jpg",	
+        "image": "teclado5.jpg",
+        "name": "Teclado",		
         "category": "Teclados",	
-        "name": "Teclado",	
         "brand": "Redragon",	
         "price": "$21991.84",	
         "description": "In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.\n\nSuspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.\n\nMaecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.\n\nCurabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem."	
@@ -407,8 +407,8 @@
     {	
         "id": 46,	
         "image": "cooler1.jpg",	
-        "category": "Coolers",	
         "name": "Cooler",	
+        "category": "Coolers",	
         "brand": "Intel",	
         "price": "$47358.72",	
         "description": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."	
@@ -416,8 +416,8 @@
     {	
         "id": 47,	
         "image": "cooler2.jpg",	
-        "category": "Coolers",	
         "name": "Cooler",	
+        "category": "Coolers",	
         "brand": "Intel",	
         "price": "$243124.93",	
         "description": "Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.\n\nCum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.\n\nEtiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.\n\nPraesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio."	
@@ -425,8 +425,8 @@
     {	
         "id": 48,	
         "image": "cooler3.jpg",	
-        "category": "Coolers",	
         "name": "Cooler",	
+        "category": "Coolers",	
         "brand": "Intel",	
         "price": "$38875.05",	
         "description": "In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo."	
@@ -434,17 +434,17 @@
     {	
         "id": 49,	
         "image": "cooler4.jpg",	
-        "category": "Coolers",	
         "name": "Cooler",	
+        "category": "Coolers",	
         "brand": "ID",	
         "price": "$141537.36",	
         "description": "Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.\n\nProin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.\n\nAenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.\n\nCurabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est."	
     },	
     {	
         "id": 50,	
-        "image": "cooler5.jpg",	
-        "category": "Coolers",	
-        "name": "Cooler",	
+	    "image": "cooler5.jpg",
+        "name": "Cooler",
+        "category": "Coolers",
         "brand": "MasterAir",	
         "price": "$175301.72",	
         "description": "Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.\n\nInteger ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.\n\nNam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.\n\nCurabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam."	
