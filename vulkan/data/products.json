@@ -37,7 +37,7 @@
     },
     {
         "id": 5,
-        "image": "fuente5.jpg",
+        "image": "fuente5.jfif",
         "name": "Fuente",
         "category": "Fuentes",
         "brand": "generica",
@@ -127,7 +127,7 @@
     },
     {
         "id": 15,
-        "image": "mother5.jpg",
+        "image": "mother5.png",
         "name": "Motherboard",
         "category": "Motherboard",
         "brand": "gigabyte",
@@ -163,7 +163,7 @@
     },
     {
         "id": 19,
-        "image": "mouse3.jpg",
+        "image": "mouse3.jpeg",
         "name": "Mouse",
         "category": "Mouse",
         "brand": "redDragon",
@@ -172,7 +172,7 @@
     },
     {
         "id": 20,
-        "image": "mouse4.jpg",
+        "image": "mouse4.gif",
         "name": "Mouse",
         "category": "Mouse",
         "brand": "redDragon",
