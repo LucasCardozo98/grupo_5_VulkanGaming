@@ -108,5 +108,18 @@ module.exports = {
         fs.writeFileSync("./data/products.json", nuevijson, "utf-8");
         console.log(id)
         res.redirect("/");
+    },
+    showEdit: (req, res) => { 
+        const id = req.params.id
+        let product;
+        products.forEach(element => {
+            if(element.id == id){
+                product = element
+            }
+        });
+        res.render("productEdit", { css: '/stylesheets/admin.css' });
+    },
+    cart : (req, res) =>{
+        res.render("carrito", { css: '/stylesheets/carrito.css'});
     }
 }
