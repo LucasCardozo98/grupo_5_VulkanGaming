@@ -1,1012 +1,779 @@
 <%- include("partials/head")%>
-  <%- include("partials/header")%>
+<%- include("partials/header")%>
 
-    <div class="form container admin">
-      <div class="row gx-0">
-        <div>
-          <div class="titulo bg-success text-center mb-5">
-            <h2 class="admin-title bg-dark">El admin piola</h2>
-          </div>
-          <form action="/products/edit/<%=product.id  %> ?_method=PUT" method="POST">
-            <img class="rounded mx-auto d-block " src="/images/<%=product.image  %> " alt="">
-            <div class="mb-3">
-              <input class="form-control form-control-m" id="formFileSm" type="file" name="image">
-            </div>
-            <form action="/products/edit/<%=product.id  %> ?_method=PUT" method="POST">
-              <img class="rounded mx-auto d-block " src="/images/products/<%=product.image  %> " alt="">
-              <div class="mb-3">
-                <input class="form-control form-control-m" id="formFileSm" type="file" name="image">
-              </div>
-              <<<<<<< HEAD <!---->
-                <div>
-                  <div class="mb-4 mt-4">
-                    <label for="exampleInputEmail1" class="form-label"></label>
-                    <input type="text" class="input form-control bg-x" placeholder="Nombre" id="exampleInputEmail1"
-                      aria-describedby="emailHelp" name="name" value="<%=product.name  %> ">
-                  </div>
-                  <select class="form-select form-select-m mb-4 text-muted" aria-label=".form-select-sm example"
-                    name="category">
-                    <% switch (product.category) { case 'mother' : %>
-                      <option selected value="mother">Mother</option>
-                      <option value="procesador">Procesador</option>
-                      <option value="RAM">RAM</option>
-                      <option value="fuente">Fuente</option>
-                      <option value="perifericos">Perifericos</option>
-                      <option value="PlacaDeVideo">Placa de video</option>
-                      <option value="gabinetes">Gabinetes</option>
-                      <% break; case "procesador" : %>
-                        <option value="mother">Mother</option>
-                        <option selected value="procesador">Procesador</option>
-                        <option value="RAM">RAM</option>
-                        <option value="fuente">Fuente</option>
-                        <option value="perifericos">Perifericos</option>
-                        <option value="PlacaDeVideo">Placa de video</option>
-                        <option value="gabinetes">Gabinetes</option>
-                        <%break; case "RAM" :%>
-                          <option value="mother">Mother</option>
-                          <option value="procesador">Procesador</option>
-                          <option selected value="RAM">RAM</option>
-                          <option value="fuente">Fuente</option>
-                          <option value="perifericos">Perifericos</option>
-                          <option value="PlacaDeVideo">Placa de video</option>
-                          <option value="gabinetes">Gabinetes</option>
-                          <%break; case "fuente" :%>
-                            <option value="mother">Mother</option>
-                            <option value="procesador">Procesador</option>
-                            <option value="RAM">RAM</option>
-                            <option selected value="fuente">Fuente</option>
-                            <option value="perifericos">Perifericos</option>
-                            <option value="PlacaDeVideo">Placa de video</option>
-                            <option value="gabinetes">Gabinetes</option>
-                            <%break; case "perifericos" :%>
-                              <option value="mother">Mother</option>
-                              <option value="procesador">Procesador</option>
-                              <option value="RAM">RAM</option>
-                              <option value="fuente">Fuente</option>
-                              <option selected value="perifericos">Perifericos</option>
-                              <option value="PlacaDeVideo">Placa de video</option>
-                              <option value="gabinetes">Gabinetes</option>
-                              <%break; case "placaDeVideo" :%>
-                                <option value="mother">Mother</option>
-                                <option value="procesador">Procesador</option>
-                                <option value="RAM">RAM</option>
-                                <option value="fuente">Fuente</option>
-                                <option value="perifericos">Perifericos</option>
-                                <option selected value="PlacaDeVideo">Placa de video</option>
-                                <option value="gabinetes">Gabinetes</option>
-                                <%break; case "gabinetes" :%>
-                                  <option value="mother">Mother</option>
-                                  <option value="procesador">Procesador</option>
-                                  <option value="RAM">RAM</option>
-                                  <option value="fuente">Fuente</option>
-                                  <option value="perifericos">Perifericos</option>
-                                  <option value="PlacaDeVideo">Placa de video</option>
-                                  <option selected value="gabinetes">Gabinetes</option>
-                                  <%break; } %>
-                  </select>
-
-                  <select class="form-select form-select-m text-muted" aria-label=".form-select-sm example"
-                    name="trademark" aria-placeholder="Marca">
-                    <% switch (product.trademark) { case 'amd' : %>
-                      <option selected value="amd">AMD</option>
-                      <option value="intel">Intel</option>
-                      <option value="ryzen">Ryzen</option>
-                      <option value="evga">EVGA</option>
-                      <option value="redDragon">Red Dragon</option>
-                      <option value="logitech">Logitech</option>
-                      <option value="gigabyte">Gigabyte</option>
-                      <option value="nvidia">Nvidia</option>
-                      <option value="zotac">Zotac</option>
-                      <option value="hyperx">HyperX</option>
-                      <option value="nsi">NSI</option>
-                      <option value="razer">Razer</option>
-                      <option value="cougar">Cougar</option>
-                      <% break; case 'intel' : %>
-                        <option value="amd">AMD</option>
-                        <option selected value="intel">Intel</option>
-                        <option value="ryzen">Ryzen</option>
-                        <option value="evga">EVGA</option>
-                        <option value="redDragon">Red Dragon</option>
-                        <option value="logitech">Logitech</option>
-                        <option value="gigabyte">Gigabyte</option>
-                        <option value="nvidia">Nvidia</option>
-                        <option value="zotac">Zotac</option>
-                        <option value="hyperx">HyperX</option>
-                        <option value="nsi">NSI</option>
-                        <option value="razer">Razer</option>
-                        <option value="cougar">Cougar</option>
-                        <% break; case 'ryzen' : %>
-                          <option value="amd">AMD</option>
-                          <option value="intel">Intel</option>
-                          <option selected value="ryzen">Ryzen</option>
-                          <option value="evga">EVGA</option>
-                          <option value="redDragon">Red Dragon</option>
-                          <option value="logitech">Logitech</option>
-                          <option value="gigabyte">Gigabyte</option>
-                          <option value="nvidia">Nvidia</option>
-                          <option value="zotac">Zotac</option>
-                          <option value="hyperx">HyperX</option>
-                          <option value="nsi">NSI</option>
-                          <option value="razer">Razer</option>
-                          <option value="cougar">Cougar</option>
-                          <% break; case 'evga' : %>
-                            <option value="amd">AMD</option>
-                            <option value="intel">Intel</option>
-                            <option value="ryzen">Ryzen</option>
-                            <option selected value="evga">EVGA</option>
-                            <option value="redDragon">Red Dragon</option>
-                            <option value="logitech">Logitech</option>
-                            <option value="gigabyte">Gigabyte</option>
-                            <option value="nvidia">Nvidia</option>
-                            <option value="zotac">Zotac</option>
-                            <option value="hyperx">HyperX</option>
-                            <option value="nsi">NSI</option>
-                            <option value="razer">Razer</option>
-                            <option value="cougar">Cougar</option>
-                            <% break; case 'redDragon' : %>
-                              <option value="amd">AMD</option>
-                              <option value="intel">Intel</option>
-                              <option value="ryzen">Ryzen</option>
-                              <option value="evga">EVGA</option>
-                              <option selected value="redDragon">Red Dragon</option>
-                              <option value="logitech">Logitech</option>
-                              <option value="gigabyte">Gigabyte</option>
-                              <option value="nvidia">Nvidia</option>
-                              <option value="zotac">Zotac</option>
-                              <option value="hyperx">HyperX</option>
-                              <option value="nsi">NSI</option>
-                              <option value="razer">Razer</option>
-                              <option value="cougar">Cougar</option>
-                              <% break; case 'logitech' : %>
-                                <option value="amd">AMD</option>
-                                <option value="intel">Intel</option>
-                                <option value="ryzen">Ryzen</option>
-                                <option value="evga">EVGA</option>
-                                <option value="redDragon">Red Dragon</option>
-                                <option selected value="logitech">Logitech</option>
-                                <option value="gigabyte">Gigabyte</option>
-                                <option value="nvidia">Nvidia</option>
-                                <option value="zotac">Zotac</option>
-                                <option value="hyperx">HyperX</option>
-                                <option value="nsi">NSI</option>
-                                <option value="razer">Razer</option>
-                                <option value="cougar">Cougar</option>
-                                <% break; case 'gigabyte' : %>
-                                  <option value="amd">AMD</option>
-                                  <option value="intel">Intel</option>
-                                  <option value="ryzen">Ryzen</option>
-                                  <option value="evga">EVGA</option>
-                                  <option value="redDragon">Red Dragon</option>
-                                  <option value="logitech">Logitech</option>
-                                  <option selected value="gigabyte">Gigabyte</option>
-                                  <option value="nvidia">Nvidia</option>
-                                  <option value="zotac">Zotac</option>
-                                  <option value="hyperx">HyperX</option>
-                                  <option value="nsi">NSI</option>
-                                  <option value="razer">Razer</option>
-                                  <option value="cougar">Cougar</option>
-                                  <% break; case 'nvidia' : %>
-                                    <option value="amd">AMD</option>
-                                    <option value="intel">Intel</option>
-                                    <option value="ryzen">Ryzen</option>
-                                    <option value="evga">EVGA</option>
-                                    <option value="redDragon">Red Dragon</option>
-                                    <option value="logitech">Logitech</option>
-                                    <option value="gigabyte">Gigabyte</option>
-                                    <option selected value="nvidia">Nvidia</option>
-                                    <option value="zotac">Zotac</option>
-                                    <option value="hyperx">HyperX</option>
-                                    <option value="nsi">NSI</option>
-                                    <option value="razer">Razer</option>
-                                    <option value="cougar">Cougar</option>
-                                    <% break; case 'zotac' : %>
-                                      <option value="amd">AMD</option>
-                                      <option value="intel">Intel</option>
-                                      <option value="ryzen">Ryzen</option>
-                                      <option value="evga">EVGA</option>
-                                      <option value="redDragon">Red Dragon</option>
-                                      <option value="logitech">Logitech</option>
-                                      <option value="gigabyte">Gigabyte</option>
-                                      <option value="nvidia">Nvidia</option>
-                                      <option selected value="zotac">Zotac</option>
-                                      <option value="hyperx">HyperX</option>
-                                      <option value="nsi">NSI</option>
-                                      <option value="razer">Razer</option>
-                                      <option value="cougar">Cougar</option>
-                                      <% break; case 'hyperx' : %>
-                                        <option value="amd">AMD</option>
-                                        <option value="intel">Intel</option>
-                                        <option value="ryzen">Ryzen</option>
-                                        <option value="evga">EVGA</option>
-                                        <option value="redDragon">Red Dragon</option>
-                                        <option value="logitech">Logitech</option>
-                                        <option value="gigabyte">Gigabyte</option>
-                                        <option value="nvidia">Nvidia</option>
-                                        <option value="zotac">Zotac</option>
-                                        <option selected value="hyperx">HyperX</option>
-                                        <option value="nsi">NSI</option>
-                                        <option value="razer">Razer</option>
-                                        <option value="cougar">Cougar</option>
-                                        <% break; case 'nsi' : %>
-                                          <option value="amd">AMD</option>
-                                          <option value="intel">Intel</option>
-                                          <option value="ryzen">Ryzen</option>
-                                          <option value="evga">EVGA</option>
-                                          <option value="redDragon">Red Dragon</option>
-                                          <option value="logitech">Logitech</option>
-                                          <option value="gigabyte">Gigabyte</option>
-                                          <option value="nvidia">Nvidia</option>
-                                          <option value="zotac">Zotac</option>
-                                          <option value="hyperx">HyperX</option>
-                                          <option selected value="nsi">NSI</option>
-                                          <option value="razer">Razer</option>
-                                          <option value="cougar">Cougar</option>
-                                          <% break; case 'razer' : %>
-                                            <option value="amd">AMD</option>
-                                            <option value="intel">Intel</option>
-                                            <option value="ryzen">Ryzen</option>
-                                            <option value="evga">EVGA</option>
-                                            <option value="redDragon">Red Dragon</option>
-                                            <option value="logitech">Logitech</option>
-                                            <option value="gigabyte">Gigabyte</option>
-                                            <option value="nvidia">Nvidia</option>
-                                            <option value="zotac">Zotac</option>
-                                            <option value="hyperx">HyperX</option>
-                                            <option value="nsi">NSI</option>
-                                            <option selected value="razer">Razer</option>
-                                            <option value="cougar">Cougar</option>
-                                            <% break; case 'cougar' : %>
-                                              <option value="amd">AMD</option>
-                                              <option value="intel">Intel</option>
-                                              <option value="ryzen">Ryzen</option>
-                                              <option value="evga">EVGA</option>
-                                              <option value="redDragon">Red Dragon</option>
-                                              <option value="logitech">Logitech</option>
-                                              <option value="gigabyte">Gigabyte</option>
-                                              <option value="nvidia">Nvidia</option>
-                                              <option value="zotac">Zotac</option>
-                                              <option value="hyperx">HyperX</option>
-                                              <option value="nsi">NSI</option>
-                                              <option value="razer">Razer</option>
-                                              <option selected value="cougar">Cougar</option>
-                                              <% break; } %>
-
-                  </select>
-                  <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label"></label>
-                    <input type="number" class="input form-control bg-x" placeholder="Precio" id="exampleInputEmail1"
-                      aria-describedby="emailHelp" name="price" value="<%= product.price%>">
-                  </div>
-                  <div>
-                    <div class="form-floating mb-4">
-                      <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"
-                        name="description"><%= product.description%></textarea>
-                      <label class="text-muted">Descripcion</label>
-                    </div>
-                  </div>
-                  <div class="mb-5 d-flex justify-content-around ">
-                    <button type="reset" class="btn btn-secondary">Cancelar</button>
-                    <button type="submit" class="btn btn-primary">Guardar</button>
-                    =======
-                    <select class="form-select form-select-m mb-4 text-muted" aria-label=".form-select-sm example"
-                      name="category">
-                      <% switch (product.category) { case 'Motherboard' : %>
-                        <option selected value="Motherboard">Motherboard</option>
-                        <option value="Procesadores">Procesador</option>
-                        <option value="Memoria RAM">Memoria RAM</option>
-                        <option value="Fuentes">Fuentes</option>
-                        <option value="Teclados">Teclados</option>
-                        <option value="Mouse">Mouse</option>
-                        <option value="Placa de video">Placa de video</option>
-                        <option value="Gabinetes">Gabinetes</option>
-                        <option value="Coolers">Coolers</option>
-                        <% break; case "Procesadores" : %>
-                          <option value="Motherboard">Motherboard</option>
-                          <option selected value="Procesadores">Procesador</option>
-                          <option value="Memoria RAM">Memoria RAM</option>
-                          <option value="Fuentes">Fuentes</option>
-                          <option value="Teclados">Teclados</option>
-                          <option value="Mouse">Mouse</option>
-                          <option value="Placa de video">Placa de video</option>
-                          <option value="Gabinetes">Gabinetes</option>
-                          <option value="Coolers">Coolers</option>
-                          <%break; case "Memoria RAM" :%>
-                            <option value="Motherboard">Mother</option>
-                            <option value="Procesadores">Procesador</option>
-                            <option selected value="Memoria RAM">Memoria RAM</option>
-                            <option value="Fuentes">Fuentes</option>
-                            <option value="Teclados">Teclados</option>
-                            <option value="Mouse">Mouse</option>
-                            <option value="Placa de video">Placa de video</option>
-                            <option value="Gabinetes">Gabinetes</option>
-                            <option value="Coolers">Coolers</option>
-                            <%break; case "Fuentes" :%>
-                              <option value="Motherboard">Mother</option>
-                              <option value="Procesadores">Procesador</option>
-                              <option value="Memoria RAM">Memoria RAM</option>
-                              <option selected value="Fuentes">Fuentes</option>
-                              <option value="Teclados">Teclados</option>
-                              <option value="Mouse">Mouse</option>
-                              <option value="Placa de video">Placa de video</option>
-                              <option value="Gabinetes">Gabinetes</option>
-                              <option value="Coolers">Coolers</option>
-                              <%break; case "Teclados" :%>
-                                <option value="Motherboard">Mother</option>
-                                <option value="Procesadores">Procesador</option>
-                                <option value="Memoria RAM">Memoria RAM</option>
-                                <option value="Fuentes">Fuentes</option>
-                                <option selected value="Teclados">Teclados</option>
-                                <option value="Mouse">Mouse</option>
-                                <option value="Placa de video">Placa de video</option>
-                                <option value="Gabinetes">Gabinetes</option>
-                                <option value="Coolers">Coolers</option>
-                                <%break; case "Placa de video" :%>
-                                  <option value="Motherboard">Mother</option>
-                                  <option value="Procesadores">Procesador</option>
-                                  <option value="Memoria RAM">Memoria RAM</option>
-                                  <option value="Fuentes">Fuentes</option>
-                                  <option value="Teclados">Teclados</option>
-                                  <option value="Mouse">Mouse</option>
-                                  <option selected value="Placa de video">Placa de video</option>
-                                  <option value="Gabinetes">Gabinetes</option>
-                                  <option value="Coolers">Coolers</option>
-                                  <%break; case "Gabinetes" :%>
-                                    <option value="Motherboard">Mother</option>
-                                    <option value="Procesadores">Procesador</option>
-                                    <option value="Memoria RAM">Memoria RAM</option>
-                                    <option value="Fuentes">Fuentes</option>
-                                    <option value="Teclados">Teclados</option>
-                                    <option value="Mouse">Mouse</option>
-                                    <option value="Placa de video">Placa de video</option>
-                                    <option selected value="Gabinetes">Gabinetes</option>
-                                    <option value="Coolers">Coolers</option>
-                                    <%break; case "Mouse" :%>
-                                      <option value="Motherboard">Mother</option>
-                                      <option value="Procesadores">Procesador</option>
-                                      <option value="Memoria RAM">Memoria RAM</option>
-                                      <option value="Fuentes">Fuentes</option>
-                                      <option value="Teclados">Teclados</option>
-                                      <option value="Mouse">Mouse</option>
-                                      <option value="Placa de video">Placa de video</option>
-                                      <option selected value="Gabinetes">Gabinetes</option>
-                                      <option value="Coolers">Coolers</option>
-                                      <%break; case "Coolers" :%>
-                                        <option value="Motherboard">Mother</option>
-                                        <option value="Procesadores">Procesador</option>
-                                        <option value="Memoria RAM">Memoria RAM</option>
-                                        <option value="Fuentes">Fuentes</option>
-                                        <option value="Teclados">Teclados</option>
-                                        <option value="Mouse">Mouse</option>
-                                        <option value="Placa de video">Placa de video</option>
-                                        <option value="Gabinetes">Gabinetes</option>
-                                        <option selected value="Coolers">Coolers</option>
-                                        <%break; } %>
-
-
-                    </select>
-
-                    <select class="form-select form-select-m text-muted" aria-label=".form-select-sm example"
-                      name="brand" aria-placeholder="Marca">
-                      <% switch (product.brand) { case 'amd' : %>
-                        <option selected value="amd">AMD</option>
-                        <option value="intel">Intel</option>
-                        <option value="ryzen">Ryzen</option>
-                        <option value="evga">EVGA</option>
-                        <option value="redDragon">Red Dragon</option>
-                        <option value="logitech">Logitech</option>
-                        <option value="gigabyte">Gigabyte</option>
-                        <option value="nvidia">Nvidia</option>
-                        <option value="zotac">Zotac</option>
-                        <option value="hyperx">HyperX</option>
-                        <option value="nsi">NSI</option>
-                        <option value="razer">Razer</option>
-                        <option value="cougar">Cougar</option>
-                        <option value="MasterAir">Master Air</option>
-                        <option value="ID">ID</option>
-                        <option value="Nisuta">Nisuta</option>
-                        <option value="T-force">T-force</option>
-                        <option value="Corsair">Corsair</option>
-                        <option value="ASUS">ASUS</option>
-                        <option value="Havit">Havit</option>
-                        <option value="Aureox">Aureox</option>
-                        <option value="Sentey">Sentey</option>
-                        <option value="Essenses">Essenses</option>
-                        <option value="generica">Generica</option>
-                        <% break; case 'intel' : %>
-                          <option value="amd">AMD</option>
-                          <option selected value="intel">Intel</option>
-                          <option value="ryzen">Ryzen</option>
-                          <option value="evga">EVGA</option>
-                          <option value="redDragon">Red Dragon</option>
-                          <option value="logitech">Logitech</option>
-                          <option value="gigabyte">Gigabyte</option>
-                          <option value="nvidia">Nvidia</option>
-                          <option value="zotac">Zotac</option>
-                          <option value="hyperx">HyperX</option>
-                          <option value="nsi">NSI</option>
-                          <option value="razer">Razer</option>
-                          <option value="cougar">Cougar</option>
-                          <option value="MasterAir">Master Air</option>
-                          <option value="ID">ID</option>
-                          <option value="Nisuta">Nisuta</option>
-                          <option value="T-force">T-force</option>
-                          <option value="Corsair">Corsair</option>
-                          <option value="ASUS">ASUS</option>
-                          <option value="Havit">Havit</option>
-                          <option value="Aureox">Aureox</option>
-                          <option value="Sentey">Sentey</option>
-                          <option value="Essenses">Essenses</option>
-                          <option value="generica">Generica</option>
-                          <% break; case 'ryzen' : %>
-                            <option value="amd">AMD</option>
-                            <option value="intel">Intel</option>
-                            <option selected value="ryzen">Ryzen</option>
-                            <option value="evga">EVGA</option>
-                            <option value="redDragon">Red Dragon</option>
-                            <option value="logitech">Logitech</option>
-                            <option value="gigabyte">Gigabyte</option>
-                            <option value="nvidia">Nvidia</option>
-                            <option value="zotac">Zotac</option>
-                            <option value="hyperx">HyperX</option>
-                            <option value="nsi">NSI</option>
-                            <option value="razer">Razer</option>
-                            <option value="cougar">Cougar</option>
-                            <option value="MasterAir">Master Air</option>
-                            <option value="ID">ID</option>
-                            <option value="Nisuta">Nisuta</option>
-                            <option value="T-force">T-force</option>
-                            <option value="Corsair">Corsair</option>
-                            <option value="ASUS">ASUS</option>
-                            <option value="Havit">Havit</option>
-                            <option value="Aureox">Aureox</option>
-                            <option value="Sentey">Sentey</option>
-                            <option value="Essenses">Essenses</option>
-                            <option value="generica">Generica</option>
-                            <% break; case 'evga' : %>
-                              <option value="amd">AMD</option>
-                              <option value="intel">Intel</option>
-                              <option value="ryzen">Ryzen</option>
-                              <option selected value="evga">EVGA</option>
-                              <option value="redDragon">Red Dragon</option>
-                              <option value="logitech">Logitech</option>
-                              <option value="gigabyte">Gigabyte</option>
-                              <option value="nvidia">Nvidia</option>
-                              <option value="zotac">Zotac</option>
-                              <option value="hyperx">HyperX</option>
-                              <option value="nsi">NSI</option>
-                              <option value="razer">Razer</option>
-                              <option value="cougar">Cougar</option>
-                              <option value="MasterAir">Master Air</option>
-                              <option value="ID">ID</option>
-                              <option value="Nisuta">Nisuta</option>
-                              <option value="T-force">T-force</option>
-                              <option value="Corsair">Corsair</option>
-                              <option value="ASUS">ASUS</option>
-                              <option value="Havit">Havit</option>
-                              <option value="Aureox">Aureox</option>
-                              <option value="Sentey">Sentey</option>
-                              <option value="Essenses">Essenses</option>
-                              <option value="generica">Generica</option>
-                              <% break; case 'redDragon' : %>
-                                <option value="amd">AMD</option>
-                                <option value="intel">Intel</option>
-                                <option value="ryzen">Ryzen</option>
-                                <option value="evga">EVGA</option>
-                                <option selected value="redDragon">Red Dragon</option>
-                                <option value="logitech">Logitech</option>
-                                <option value="gigabyte">Gigabyte</option>
-                                <option value="nvidia">Nvidia</option>
-                                <option value="zotac">Zotac</option>
-                                <option value="hyperx">HyperX</option>
-                                <option value="nsi">NSI</option>
-                                <option value="razer">Razer</option>
-                                <option value="cougar">Cougar</option>
-                                <option value="MasterAir">Master Air</option>
-                                <option value="ID">ID</option>
-                                <option value="Nisuta">Nisuta</option>
-                                <option value="T-force">T-force</option>
-                                <option value="Corsair">Corsair</option>
-                                <option value="ASUS">ASUS</option>
-                                <option value="Havit">Havit</option>
-                                <option value="Aureox">Aureox</option>
-                                <option value="Sentey">Sentey</option>
-                                <option value="Essenses">Essenses</option>
-                                <option value="generica">Generica</option>
-                                <% break; case 'logitech' : %>
-                                  <option value="amd">AMD</option>
-                                  <option value="intel">Intel</option>
-                                  <option value="ryzen">Ryzen</option>
-                                  <option value="evga">EVGA</option>
-                                  <option value="redDragon">Red Dragon</option>
-                                  <option selected value="logitech">Logitech</option>
-                                  <option value="gigabyte">Gigabyte</option>
-                                  <option value="nvidia">Nvidia</option>
-                                  <option value="zotac">Zotac</option>
-                                  <option value="hyperx">HyperX</option>
-                                  <option value="nsi">NSI</option>
-                                  <option value="razer">Razer</option>
-                                  <option value="cougar">Cougar</option>
-                                  <option value="MasterAir">Master Air</option>
-                                  <option value="ID">ID</option>
-                                  <option value="Nisuta">Nisuta</option>
-                                  <option value="T-force">T-force</option>
-                                  <option value="Corsair">Corsair</option>
-                                  <option value="ASUS">ASUS</option>
-                                  <option value="Havit">Havit</option>
-                                  <option value="Aureox">Aureox</option>
-                                  <option value="Sentey">Sentey</option>
-                                  <option value="Essenses">Essenses</option>
-                                  <option value="generica">Generica</option>
-                                  <% break; case 'gigabyte' : %>
-                                    <option value="amd">AMD</option>
-                                    <option value="intel">Intel</option>
-                                    <option value="ryzen">Ryzen</option>
-                                    <option value="evga">EVGA</option>
-                                    <option value="redDragon">Red Dragon</option>
-                                    <option value="logitech">Logitech</option>
-                                    <option selected value="gigabyte">Gigabyte</option>
-                                    <option value="nvidia">Nvidia</option>
-                                    <option value="zotac">Zotac</option>
-                                    <option value="hyperx">HyperX</option>
-                                    <option value="nsi">NSI</option>
-                                    <option value="razer">Razer</option>
-                                    <option value="cougar">Cougar</option>
-                                    <option value="MasterAir">Master Air</option>
-                                    <option value="ID">ID</option>
-                                    <option value="Nisuta">Nisuta</option>
-                                    <option value="T-force">T-force</option>
-                                    <option value="Corsair">Corsair</option>
-                                    <option value="ASUS">ASUS</option>
-                                    <option value="Havit">Havit</option>
-                                    <option value="Aureox">Aureox</option>
-                                    <option value="Sentey">Sentey</option>
-                                    <option value="Essenses">Essenses</option>
-                                    <option value="generica">Generica</option>
-                                    <% break; case 'nvidia' : %>
-                                      <option value="amd">AMD</option>
-                                      <option value="intel">Intel</option>
-                                      <option value="ryzen">Ryzen</option>
-                                      <option value="evga">EVGA</option>
-                                      <option value="redDragon">Red Dragon</option>
-                                      <option value="logitech">Logitech</option>
-                                      <option value="gigabyte">Gigabyte</option>
-                                      <option selected value="nvidia">Nvidia</option>
-                                      <option value="zotac">Zotac</option>
-                                      <option value="hyperx">HyperX</option>
-                                      <option value="nsi">NSI</option>
-                                      <option value="razer">Razer</option>
-                                      <option value="cougar">Cougar</option>
-                                      <option value="MasterAir">Master Air</option>
-                                      <option value="ID">ID</option>
-                                      <option value="Nisuta">Nisuta</option>
-                                      <option value="T-force">T-force</option>
-                                      <option value="Corsair">Corsair</option>
-                                      <option value="ASUS">ASUS</option>
-                                      <option value="Havit">Havit</option>
-                                      <option value="Aureox">Aureox</option>
-                                      <option value="Sentey">Sentey</option>
-                                      <option value="Essenses">Essenses</option>
-                                      <option value="generica">Generica</option>
-                                      <% break; case 'zotac' : %>
-                                        <option value="amd">AMD</option>
-                                        <option value="intel">Intel</option>
-                                        <option value="ryzen">Ryzen</option>
-                                        <option value="evga">EVGA</option>
-                                        <option value="redDragon">Red Dragon</option>
-                                        <option value="logitech">Logitech</option>
-                                        <option value="gigabyte">Gigabyte</option>
-                                        <option value="nvidia">Nvidia</option>
-                                        <option selected value="zotac">Zotac</option>
-                                        <option value="hyperx">HyperX</option>
-                                        <option value="nsi">NSI</option>
-                                        <option value="razer">Razer</option>
-                                        <option value="cougar">Cougar</option>
-                                        <option value="MasterAir">Master Air</option>
-                                        <option value="ID">ID</option>
-                                        <option value="Nisuta">Nisuta</option>
-                                        <option value="T-force">T-force</option>
-                                        <option value="Corsair">Corsair</option>
-                                        <option value="ASUS">ASUS</option>
-                                        <option value="Havit">Havit</option>
-                                        <option value="Aureox">Aureox</option>
-                                        <option value="Sentey">Sentey</option>
-                                        <option value="Essenses">Essenses</option>
-                                        <option value="generica">Generica</option>
-                                        <% break; case 'hyperx' : %>
-                                          <option value="amd">AMD</option>
-                                          <option value="intel">Intel</option>
-                                          <option value="ryzen">Ryzen</option>
-                                          <option value="evga">EVGA</option>
-                                          <option value="redDragon">Red Dragon</option>
-                                          <option value="logitech">Logitech</option>
-                                          <option value="gigabyte">Gigabyte</option>
-                                          <option value="nvidia">Nvidia</option>
-                                          <option value="zotac">Zotac</option>
-                                          <option selected value="hyperx">HyperX</option>
-                                          <option value="nsi">NSI</option>
-                                          <option value="razer">Razer</option>
-                                          <option value="cougar">Cougar</option>
-                                          <option value="MasterAir">Master Air</option>
-                                          <option value="ID">ID</option>
-                                          <option value="Nisuta">Nisuta</option>
-                                          <option value="T-force">T-force</option>
-                                          <option value="Corsair">Corsair</option>
-                                          <option value="ASUS">ASUS</option>
-                                          <option value="Havit">Havit</option>
-                                          <option value="Aureox">Aureox</option>
-                                          <option value="Sentey">Sentey</option>
-                                          <option value="Essenses">Essenses</option>
-                                          <option value="generica">Generica</option>
-                                          <% break; case 'nsi' : %>
-                                            <option value="amd">AMD</option>
-                                            <option value="intel">Intel</option>
-                                            <option value="ryzen">Ryzen</option>
-                                            <option value="evga">EVGA</option>
-                                            <option value="redDragon">Red Dragon</option>
-                                            <option value="logitech">Logitech</option>
-                                            <option value="gigabyte">Gigabyte</option>
-                                            <option value="nvidia">Nvidia</option>
-                                            <option value="zotac">Zotac</option>
-                                            <option value="hyperx">HyperX</option>
-                                            <option selected value="nsi">NSI</option>
-                                            <option value="razer">Razer</option>
-                                            <option value="cougar">Cougar</option>
-                                            <option value="MasterAir">Master Air</option>
-                                            <option value="ID">ID</option>
-                                            <option value="Nisuta">Nisuta</option>
-                                            <option value="T-force">T-force</option>
-                                            <option value="Corsair">Corsair</option>
-                                            <option value="ASUS">ASUS</option>
-                                            <option value="Havit">Havit</option>
-                                            <option value="Aureox">Aureox</option>
-                                            <option value="Sentey">Sentey</option>
-                                            <option value="Essenses">Essenses</option>
-                                            <option value="generica">Generica</option>
-                                            <% break; case 'razer' : %>
-                                              <option value="amd">AMD</option>
-                                              <option value="intel">Intel</option>
-                                              <option value="ryzen">Ryzen</option>
-                                              <option value="evga">EVGA</option>
-                                              <option value="redDragon">Red Dragon</option>
-                                              <option value="logitech">Logitech</option>
-                                              <option value="gigabyte">Gigabyte</option>
-                                              <option value="nvidia">Nvidia</option>
-                                              <option value="zotac">Zotac</option>
-                                              <option value="hyperx">HyperX</option>
-                                              <option value="nsi">NSI</option>
-                                              <option selected value="razer">Razer</option>
-                                              <option value="cougar">Cougar</option>
-                                              <option value="MasterAir">Master Air</option>
-                                              <option value="ID">ID</option>
-                                              <option value="Nisuta">Nisuta</option>
-                                              <option value="T-force">T-force</option>
-                                              <option value="Corsair">Corsair</option>
-                                              <option value="ASUS">ASUS</option>
-                                              <option value="Havit">Havit</option>
-                                              <option value="Aureox">Aureox</option>
-                                              <option value="Sentey">Sentey</option>
-                                              <option value="Essenses">Essenses</option>
-                                              <option value="generica">Generica</option>
-                                              <% break; case 'cougar' : %>
-                                                <option value="amd">AMD</option>
-                                                <option value="intel">Intel</option>
-                                                <option value="ryzen">Ryzen</option>
-                                                <option value="evga">EVGA</option>
-                                                <option value="redDragon">Red Dragon</option>
-                                                <option value="logitech">Logitech</option>
-                                                <option value="gigabyte">Gigabyte</option>
-                                                <option value="nvidia">Nvidia</option>
-                                                <option value="zotac">Zotac</option>
-                                                <option value="hyperx">HyperX</option>
-                                                <option value="nsi">NSI</option>
-                                                <option value="razer">Razer</option>
-                                                <option selected value="cougar">Cougar</option>
-                                                <option value="MasterAir">Master Air</option>
-                                                <option value="ID">ID</option>
-                                                <option value="Nisuta">Nisuta</option>
-                                                <option value="T-force">T-force</option>
-                                                <option value="Corsair">Corsair</option>
-                                                <option value="ASUS">ASUS</option>
-                                                <option value="Havit">Havit</option>
-                                                <option value="Aureox">Aureox</option>
-                                                <option value="Sentey">Sentey</option>
-                                                <option value="Essenses">Essenses</option>
-                                                <option value="generica">Generica</option>
-                                                <% break; case 'MasterAir' : %>
-                                                  <option value="amd">AMD</option>
-                                                  <option value="intel">Intel</option>
-                                                  <option value="ryzen">Ryzen</option>
-                                                  <option value="evga">EVGA</option>
-                                                  <option value="redDragon">Red Dragon</option>
-                                                  <option value="logitech">Logitech</option>
-                                                  <option value="gigabyte">Gigabyte</option>
-                                                  <option value="nvidia">Nvidia</option>
-                                                  <option value="zotac">Zotac</option>
-                                                  <option value="hyperx">HyperX</option>
-                                                  <option value="nsi">NSI</option>
-                                                  <option value="razer">Razer</option>
-                                                  <option value="cougar">Cougar</option>
-                                                  <option selected value="MasterAir">Master Air</option>
-                                                  <option value="ID">ID</option>
-                                                  <option value="Nisuta">Nisuta</option>
-                                                  <option value="T-force">T-force</option>
-                                                  <option value="Corsair">Corsair</option>
-                                                  <option value="ASUS">ASUS</option>
-                                                  <option value="Havit">Havit</option>
-                                                  <option value="Aureox">Aureox</option>
-                                                  <option value="Sentey">Sentey</option>
-                                                  <option value="Essenses">Essenses</option>
-                                                  <option value="generica">Generica</option>
-                                                  <% break; case 'ID' : %>
-                                                    <option value="amd">AMD</option>
-                                                    <option value="intel">Intel</option>
-                                                    <option value="ryzen">Ryzen</option>
-                                                    <option value="evga">EVGA</option>
-                                                    <option value="redDragon">Red Dragon</option>
-                                                    <option value="logitech">Logitech</option>
-                                                    <option value="gigabyte">Gigabyte</option>
-                                                    <option value="nvidia">Nvidia</option>
-                                                    <option value="zotac">Zotac</option>
-                                                    <option value="hyperx">HyperX</option>
-                                                    <option value="nsi">NSI</option>
-                                                    <option value="razer">Razer</option>
-                                                    <option value="cougar">Cougar</option>
-                                                    <option value="MasterAir">Master Air</option>
-                                                    <option selected value="ID">ID</option>
-                                                    <option value="Nisuta">Nisuta</option>
-                                                    <option value="T-force">T-force</option>
-                                                    <option value="Corsair">Corsair</option>
-                                                    <option value="ASUS">ASUS</option>
-                                                    <option value="Havit">Havit</option>
-                                                    <option value="Aureox">Aureox</option>
-                                                    <option value="Sentey">Sentey</option>
-                                                    <option value="Essenses">Essenses</option>
-                                                    <option value="generica">Generica</option>
-                                                    <% break; case 'Nisuta' : %>
-                                                      <option value="amd">AMD</option>
-                                                      <option value="intel">Intel</option>
-                                                      <option value="ryzen">Ryzen</option>
-                                                      <option value="evga">EVGA</option>
-                                                      <option value="redDragon">Red Dragon</option>
-                                                      <option value="logitech">Logitech</option>
-                                                      <option value="gigabyte">Gigabyte</option>
-                                                      <option value="nvidia">Nvidia</option>
-                                                      <option value="zotac">Zotac</option>
-                                                      <option value="hyperx">HyperX</option>
-                                                      <option value="nsi">NSI</option>
-                                                      <option value="razer">Razer</option>
-                                                      <option value="cougar">Cougar</option>
-                                                      <option value="MasterAir">Master Air</option>
-                                                      <option value="ID">ID</option>
-                                                      <option selected value="Nisuta">Nisuta</option>
-                                                      <option value="T-force">T-force</option>
-                                                      <option value="Corsair">Corsair</option>
-                                                      <option value="ASUS">ASUS</option>
-                                                      <option value="Havit">Havit</option>
-                                                      <option value="Aureox">Aureox</option>
-                                                      <option value="Sentey">Sentey</option>
-                                                      <option value="Essenses">Essenses</option>
-                                                      <option value="generica">Generica</option>
-                                                      <% break; case 'T-force' : %>
-                                                        <option value="amd">AMD</option>
-                                                        <option value="intel">Intel</option>
-                                                        <option value="ryzen">Ryzen</option>
-                                                        <option value="evga">EVGA</option>
-                                                        <option value="redDragon">Red Dragon</option>
-                                                        <option value="logitech">Logitech</option>
-                                                        <option value="gigabyte">Gigabyte</option>
-                                                        <option value="nvidia">Nvidia</option>
-                                                        <option value="zotac">Zotac</option>
-                                                        <option value="hyperx">HyperX</option>
-                                                        <option value="nsi">NSI</option>
-                                                        <option value="razer">Razer</option>
-                                                        <option value="cougar">Cougar</option>
-                                                        <option value="MasterAir">Master Air</option>
-                                                        <option value="ID">ID</option>
-                                                        <option value="Nisuta">Nisuta</option>
-                                                        <option selected value="T-force">T-force</option>
-                                                        <option value="Corsair">Corsair</option>
-                                                        <option value="ASUS">ASUS</option>
-                                                        <option value="Havit">Havit</option>
-                                                        <option value="Aureox">Aureox</option>
-                                                        <option value="Sentey">Sentey</option>
-                                                        <option value="Essenses">Essenses</option>
-                                                        <option value="generica">Generica</option>
-                                                        <% break; case 'Corsair' : %>
-                                                          <option value="amd">AMD</option>
-                                                          <option value="intel">Intel</option>
-                                                          <option value="ryzen">Ryzen</option>
-                                                          <option value="evga">EVGA</option>
-                                                          <option value="redDragon">Red Dragon</option>
-                                                          <option value="logitech">Logitech</option>
-                                                          <option value="gigabyte">Gigabyte</option>
-                                                          <option value="nvidia">Nvidia</option>
-                                                          <option value="zotac">Zotac</option>
-                                                          <option value="hyperx">HyperX</option>
-                                                          <option value="nsi">NSI</option>
-                                                          <option value="razer">Razer</option>
-                                                          <option value="cougar">Cougar</option>
-                                                          <option value="MasterAir">Master Air</option>
-                                                          <option value="ID">ID</option>
-                                                          <option value="Nisuta">Nisuta</option>
-                                                          <option value="T-force">T-force</option>
-                                                          <option selected value="Corsair">Corsair</option>
-                                                          <option value="ASUS">ASUS</option>
-                                                          <option value="Havit">Havit</option>
-                                                          <option value="Aureox">Aureox</option>
-                                                          <option value="Sentey">Sentey</option>
-                                                          <option value="Essenses">Essenses</option>
-                                                          <option value="generica">Generica</option>
-                                                          <% break; case 'ASUS' : %>
-                                                            <option value="amd">AMD</option>
-                                                            <option value="intel">Intel</option>
-                                                            <option value="ryzen">Ryzen</option>
-                                                            <option value="evga">EVGA</option>
-                                                            <option value="redDragon">Red Dragon</option>
-                                                            <option value="logitech">Logitech</option>
-                                                            <option value="gigabyte">Gigabyte</option>
-                                                            <option value="nvidia">Nvidia</option>
-                                                            <option value="zotac">Zotac</option>
-                                                            <option value="hyperx">HyperX</option>
-                                                            <option value="nsi">NSI</option>
-                                                            <option value="razer">Razer</option>
-                                                            <option value="cougar">Cougar</option>
-                                                            <option value="MasterAir">Master Air</option>
-                                                            <option value="ID">ID</option>
-                                                            <option value="Nisuta">Nisuta</option>
-                                                            <option value="T-force">T-force</option>
-                                                            <option value="Corsair">Corsair</option>
-                                                            <option selected value="ASUS">ASUS</option>
-                                                            <option value="Havit">Havit</option>
-                                                            <option value="Aureox">Aureox</option>
-                                                            <option value="Sentey">Sentey</option>
-                                                            <option value="Essenses">Essenses</option>
-                                                            <option value="generica">Generica</option>
-                                                            <% break; case 'Havit' : %>
-                                                              <option value="amd">AMD</option>
-                                                              <option value="intel">Intel</option>
-                                                              <option value="ryzen">Ryzen</option>
-                                                              <option value="evga">EVGA</option>
-                                                              <option value="redDragon">Red Dragon</option>
-                                                              <option value="logitech">Logitech</option>
-                                                              <option value="gigabyte">Gigabyte</option>
-                                                              <option value="nvidia">Nvidia</option>
-                                                              <option value="zotac">Zotac</option>
-                                                              <option value="hyperx">HyperX</option>
-                                                              <option value="nsi">NSI</option>
-                                                              <option value="razer">Razer</option>
-                                                              <option value="cougar">Cougar</option>
-                                                              <option value="MasterAir">Master Air</option>
-                                                              <option value="ID">ID</option>
-                                                              <option value="Nisuta">Nisuta</option>
-                                                              <option value="T-force">T-force</option>
-                                                              <option value="Corsair">Corsair</option>
-                                                              <option value="ASUS">ASUS</option>
-                                                              <option selected value="Havit">Havit</option>
-                                                              <option value="Aureox">Aureox</option>
-                                                              <option value="Sentey">Sentey</option>
-                                                              <option value="Essenses">Essenses</option>
-                                                              <option value="generica">Generica</option>
-                                                              <% break; case 'Aureox' : %>
-                                                                <option value="amd">AMD</option>
-                                                                <option value="intel">Intel</option>
-                                                                <option value="ryzen">Ryzen</option>
-                                                                <option value="evga">EVGA</option>
-                                                                <option value="redDragon">Red Dragon</option>
-                                                                <option value="logitech">Logitech</option>
-                                                                <option value="gigabyte">Gigabyte</option>
-                                                                <option value="nvidia">Nvidia</option>
-                                                                <option value="zotac">Zotac</option>
-                                                                <option value="hyperx">HyperX</option>
-                                                                <option value="nsi">NSI</option>
-                                                                <option value="razer">Razer</option>
-                                                                <option value="cougar">Cougar</option>
-                                                                <option value="MasterAir">Master Air</option>
-                                                                <option value="ID">ID</option>
-                                                                <option value="Nisuta">Nisuta</option>
-                                                                <option value="T-force">T-force</option>
-                                                                <option value="Corsair">Corsair</option>
-                                                                <option value="ASUS">ASUS</option>
-                                                                <option value="Havit">Havit</option>
-                                                                <option selected value="Aureox">Aureox</option>
-                                                                <option value="Sentey">Sentey</option>
-                                                                <option value="Essenses">Essenses</option>
-                                                                <option value="generica">Generica</option>
-                                                                <% break; case 'Sentey' : %>
-                                                                  <option value="amd">AMD</option>
-                                                                  <option value="intel">Intel</option>
-                                                                  <option value="ryzen">Ryzen</option>
-                                                                  <option value="evga">EVGA</option>
-                                                                  <option value="redDragon">Red Dragon</option>
-                                                                  <option value="logitech">Logitech</option>
-                                                                  <option value="gigabyte">Gigabyte</option>
-                                                                  <option value="nvidia">Nvidia</option>
-                                                                  <option value="zotac">Zotac</option>
-                                                                  <option value="hyperx">HyperX</option>
-                                                                  <option value="nsi">NSI</option>
-                                                                  <option value="razer">Razer</option>
-                                                                  <option value="cougar">Cougar</option>
-                                                                  <option value="MasterAir">Master Air</option>
-                                                                  <option value="ID">ID</option>
-                                                                  <option value="Nisuta">Nisuta</option>
-                                                                  <option value="T-force">T-force</option>
-                                                                  <option value="Corsair">Corsair</option>
-                                                                  <option value="ASUS">ASUS</option>
-                                                                  <option value="Havit">Havit</option>
-                                                                  <option value="Aureox">Aureox</option>
-                                                                  <option selected value="Sentey">Sentey</option>
-                                                                  <option value="Essenses">Essenses</option>
-                                                                  <option value="generica">Generica</option>
-                                                                  <% break; case 'Essenses' : %>
-                                                                    <option value="amd">AMD</option>
-                                                                    <option value="intel">Intel</option>
-                                                                    <option value="ryzen">Ryzen</option>
-                                                                    <option value="evga">EVGA</option>
-                                                                    <option value="redDragon">Red Dragon</option>
-                                                                    <option value="logitech">Logitech</option>
-                                                                    <option value="gigabyte">Gigabyte</option>
-                                                                    <option value="nvidia">Nvidia</option>
-                                                                    <option value="zotac">Zotac</option>
-                                                                    <option value="hyperx">HyperX</option>
-                                                                    <option value="nsi">NSI</option>
-                                                                    <option value="razer">Razer</option>
-                                                                    <option value="cougar">Cougar</option>
-                                                                    <option value="MasterAir">Master Air</option>
-                                                                    <option value="ID">ID</option>
-                                                                    <option value="Nisuta">Nisuta</option>
-                                                                    <option value="T-force">T-force</option>
-                                                                    <option value="Corsair">Corsair</option>
-                                                                    <option value="ASUS">ASUS</option>
-                                                                    <option value="Havit">Havit</option>
-                                                                    <option value="Aureox">Aureox</option>
-                                                                    <option value="Sentey">Sentey</option>
-                                                                    <option selected value="Essenses">Essenses</option>
-                                                                    <option value="generica">Generica</option>
-                                                                    <% break; case 'generica' : %>
-                                                                      <option value="amd">AMD</option>
-                                                                      <option value="intel">Intel</option>
-                                                                      <option value="ryzen">Ryzen</option>
-                                                                      <option value="evga">EVGA</option>
-                                                                      <option value="redDragon">Red Dragon</option>
-                                                                      <option value="logitech">Logitech</option>
-                                                                      <option value="gigabyte">Gigabyte</option>
-                                                                      <option value="nvidia">Nvidia</option>
-                                                                      <option value="zotac">Zotac</option>
-                                                                      <option value="hyperx">HyperX</option>
-                                                                      <option value="nsi">NSI</option>
-                                                                      <option value="razer">Razer</option>
-                                                                      <option value="cougar">Cougar</option>
-                                                                      <option value="MasterAir">Master Air</option>
-                                                                      <option value="ID">ID</option>
-                                                                      <option value="Nisuta">Nisuta</option>
-                                                                      <option value="T-force">T-force</option>
-                                                                      <option value="Corsair">Corsair</option>
-                                                                      <option value="ASUS">ASUS</option>
-                                                                      <option value="Havit">Havit</option>
-                                                                      <option value="Aureox">Aureox</option>
-                                                                      <option value="Sentey">Sentey</option>
-                                                                      <option value="Essenses">Essenses</option>
-                                                                      <option selected value="generica">Generica
-                                                                      </option>
-                                                                      <% break; } %>
-
-                    </select>
-                    <div class="mb-3">
-                      <label for="exampleInputEmail1" class="form-label"></label>
-                      <input type="text" class="input form-control bg-x" placeholder="Precio" id="exampleInputEmail1"
-                        aria-describedby="emailHelp" name="price" value="<%= product.price%>">
-                    </div>
-                    <div>
-                      <div class="form-floating mb-4">
-                        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"
-                          name="description"><%= product.description%></textarea>
-                        <label class="text-muted">Descripcion</label>
-                        >>>>>>> 8bb615a45a37abd7ca78e71a1f07ac0f65ebe013
-                      </div>
-                    </div>
-            </form>
+<div class="form container admin">
+    <div class="row gx-0">
+      <div>
+        <div class="titulo bg-success text-center mb-5">
+          <h2 class="admin-title bg-dark">El admin piola</h2>
         </div>
+        <form action="/products/edit/<%=product.id  %> ?_method=PUT" method="POST" >
+          <img class="rounded mx-auto d-block "  src="/images/<%=product.image  %> " alt="">
+          <div class="mb-3">
+            <input class="form-control form-control-m"  id="formFileSm" type="file" name="image">
+          </div>
+         <!----> 
+          <div>
+            <div class="mb-4 mt-4">
+              <label for="exampleInputEmail1" class="form-label"></label>
+              <input type="text" class="input form-control bg-x" placeholder="Nombre" id="exampleInputEmail1"
+                aria-describedby="emailHelp" name="name" value="<%=product.name  %> ">
+            </div>
+            <select class="form-select form-select-m mb-4 text-muted" aria-label=".form-select-sm example" name="category">
+                <% switch (product.category) {
+                    case 'Motherboard' : %>
+                    <option selected value="Motherboard">Motherboard</option>
+                    <option value="Procesadores">Procesador</option> 
+                    <option value="Memoria RAM">Memoria RAM</option>
+                    <option value="Fuentes">Fuentes</option>
+                    <option value="Teclados">Teclados</option>
+                    <option value="Mouse">Mouse</option>
+                    <option value="Placa de video">Placa de video</option>
+                    <option value="Gabinetes">Gabinetes</option>
+                    <option value="Coolers">Coolers</option>
+                            <% break;
+                    case "Procesadores": %>
+                    <option value="Motherboard">Motherboard</option>
+                    <option selected value="Procesadores">Procesador</option> 
+                    <option value="Memoria RAM">Memoria RAM</option>
+                    <option value="Fuentes">Fuentes</option>
+                    <option value="Teclados">Teclados</option>
+                    <option value="Mouse">Mouse</option>
+                    <option value="Placa de video">Placa de video</option>
+                    <option value="Gabinetes">Gabinetes</option>
+                    <option value="Coolers">Coolers</option>
+                    <%break;
+                    case "Memoria RAM":%>
+                    <option value="Motherboard">Mother</option>
+                    <option value="Procesadores">Procesador</option> 
+                    <option selected value="Memoria RAM">Memoria RAM</option>
+                    <option value="Fuentes">Fuentes</option>
+                    <option value="Teclados">Teclados</option>
+                    <option value="Mouse">Mouse</option>
+                    <option value="Placa de video">Placa de video</option>
+                    <option value="Gabinetes">Gabinetes</option>
+                    <option value="Coolers">Coolers</option>
+                    <%break;
+                    case "Fuentes":%>
+                    <option value="Motherboard">Mother</option>
+                    <option value="Procesadores">Procesador</option> 
+                    <option value="Memoria RAM">Memoria RAM</option>
+                    <option selected value="Fuentes">Fuentes</option>
+                    <option value="Teclados">Teclados</option>
+                    <option value="Mouse">Mouse</option>
+                    <option value="Placa de video">Placa de video</option>
+                    <option value="Gabinetes">Gabinetes</option>
+                    <option value="Coolers">Coolers</option>
+                    <%break;
+                    case "Teclados":%>
+                    <option value="Motherboard">Mother</option>
+                    <option value="Procesadores">Procesador</option> 
+                    <option value="Memoria RAM">Memoria RAM</option>
+                    <option value="Fuentes">Fuentes</option>
+                    <option selected value="Teclados">Teclados</option>
+                    <option value="Mouse">Mouse</option>
+                    <option value="Placa de video">Placa de video</option>
+                    <option value="Gabinetes">Gabinetes</option>
+                    <option value="Coolers">Coolers</option>
+                    <%break;
+                    case "Placa de video":%>
+                    <option value="Motherboard">Mother</option>
+                    <option value="Procesadores">Procesador</option> 
+                    <option value="Memoria RAM">Memoria RAM</option>
+                    <option value="Fuentes">Fuentes</option>
+                    <option value="Teclados">Teclados</option>
+                    <option value="Mouse">Mouse</option>
+                    <option selected value="Placa de video">Placa de video</option>
+                    <option value="Gabinetes">Gabinetes</option>
+                    <option value="Coolers">Coolers</option>
+                    <%break;
+                    case "Gabinetes":%>
+                    <option value="Motherboard">Mother</option>
+                    <option value="Procesadores">Procesador</option> 
+                    <option value="Memoria RAM">Memoria RAM</option>
+                    <option value="Fuentes">Fuentes</option>
+                    <option value="Teclados">Teclados</option>
+                    <option value="Mouse">Mouse</option>
+                    <option value="Placa de video">Placa de video</option>
+                    <option selected value="Gabinetes">Gabinetes</option>                   
+                    <option value="Coolers">Coolers</option>
+                    <%break;
+                    case "Mouse":%>
+                    <option value="Motherboard">Mother</option>
+                    <option value="Procesadores">Procesador</option> 
+                    <option value="Memoria RAM">Memoria RAM</option>
+                    <option value="Fuentes">Fuentes</option>
+                    <option value="Teclados">Teclados</option>
+                    <option value="Mouse">Mouse</option>
+                    <option value="Placa de video">Placa de video</option>
+                    <option selected value="Gabinetes">Gabinetes</option>                    
+                    <option value="Coolers">Coolers</option>
+                    <%break;
+                    case "Coolers":%>
+                    <option value="Motherboard">Mother</option>
+                    <option value="Procesadores">Procesador</option> 
+                    <option value="Memoria RAM">Memoria RAM</option>
+                    <option value="Fuentes">Fuentes</option>
+                    <option value="Teclados">Teclados</option>
+                    <option value="Mouse">Mouse</option>
+                    <option value="Placa de video">Placa de video</option>
+                    <option value="Gabinetes">Gabinetes</option>
+                    <option selected value="Coolers">Coolers</option>
+                    <%break;
+                    } %>
+              
+              
+            </select>
+            
+            <select class="form-select form-select-m text-muted" aria-label=".form-select-sm example" name="brand"
+            aria-placeholder="Marca">
+                    <% switch (product.brand) {
+                case 'amd' : %>
+                <option selected value="amd">AMD</option>
+              <option value="intel">Intel</option>
+              <option value="ryzen">Ryzen</option>
+              <option value="evga">EVGA</option>
+              <option value="redDragon">Red Dragon</option>
+              <option value="logitech">Logitech</option>
+              <option value="gigabyte">Gigabyte</option>
+              <option value="nvidia">Nvidia</option>
+              <option value="zotac">Zotac</option>
+              <option value="hyperx">HyperX</option>
+              <option value="nsi">NSI</option>
+              <option value="razer">Razer</option>
+              <option value="cougar">Cougar</option>
+              <option value="MasterAir">Master Air</option>
+              <option value="ID">ID</option>
+              <option value="Nisuta">Nisuta</option>
+              <option value="T-force">T-force</option>
+              <option value="Corsair">Corsair</option>
+              <option value="ASUS">ASUS</option>
+              <option value="Havit">Havit</option>
+              <option value="Aureox">Aureox</option>
+              <option value="Sentey">Sentey</option>             
+              <option value="Essenses">Essenses</option>
+              <option value="generica">Generica</option>
+                <% break;
+                case 'intel' : %>
+                <option value="amd">AMD</option>
+              <option selected value="intel">Intel</option>
+              <option value="ryzen">Ryzen</option>
+              <option value="evga">EVGA</option>
+              <option value="redDragon">Red Dragon</option>
+              <option value="logitech">Logitech</option>
+              <option value="gigabyte">Gigabyte</option>
+              <option value="nvidia">Nvidia</option>
+              <option value="zotac">Zotac</option>
+              <option value="hyperx">HyperX</option>
+              <option value="nsi">NSI</option>
+              <option value="razer">Razer</option>
+              <option value="cougar">Cougar</option>
+              <option value="MasterAir">Master Air</option>
+              <option value="ID">ID</option>
+              <option value="Nisuta">Nisuta</option>
+              <option value="T-force">T-force</option>
+              <option value="Corsair">Corsair</option>
+              <option value="ASUS">ASUS</option>
+              <option value="Havit">Havit</option>
+              <option value="Aureox">Aureox</option>
+              <option value="Sentey">Sentey</option>
+              <option value="Essenses">Essenses</option>
+              <option value="generica">Generica</option>
+                <% break;
+                case 'ryzen' : %>
+                <option value="amd">AMD</option>
+              <option value="intel">Intel</option>
+              <option selected value="ryzen">Ryzen</option>
+              <option value="evga">EVGA</option>
+              <option value="redDragon">Red Dragon</option>
+              <option value="logitech">Logitech</option>
+              <option value="gigabyte">Gigabyte</option>
+              <option value="nvidia">Nvidia</option>
+              <option value="zotac">Zotac</option>
+              <option value="hyperx">HyperX</option>
+              <option value="nsi">NSI</option>
+              <option value="razer">Razer</option>
+              <option value="cougar">Cougar</option>
+              <option value="MasterAir">Master Air</option>
+              <option value="ID">ID</option>
+              <option value="Nisuta">Nisuta</option>
+              <option value="T-force">T-force</option>
+              <option value="Corsair">Corsair</option>
+              <option value="ASUS">ASUS</option>
+              <option value="Havit">Havit</option>
+              <option value="Aureox">Aureox</option>
+              <option value="Sentey">Sentey</option>
+              <option value="Essenses">Essenses</option>
+              <option value="generica">Generica</option>
+                <% break;
+                case 'evga' : %>
+                <option value="amd">AMD</option>
+              <option value="intel">Intel</option>
+              <option  value="ryzen">Ryzen</option>
+              <option selected value="evga">EVGA</option>
+              <option value="redDragon">Red Dragon</option>
+              <option value="logitech">Logitech</option>
+              <option value="gigabyte">Gigabyte</option>
+              <option value="nvidia">Nvidia</option>
+              <option value="zotac">Zotac</option>
+              <option value="hyperx">HyperX</option>
+              <option value="nsi">NSI</option>
+              <option value="razer">Razer</option>
+              <option value="cougar">Cougar</option>
+              <option value="MasterAir">Master Air</option>
+              <option value="ID">ID</option>
+              <option value="Nisuta">Nisuta</option>
+              <option value="T-force">T-force</option>
+              <option value="Corsair">Corsair</option>
+              <option value="ASUS">ASUS</option>
+              <option value="Havit">Havit</option>
+              <option value="Aureox">Aureox</option>
+              <option value="Sentey">Sentey</option>
+              <option value="Essenses">Essenses</option>
+              <option value="generica">Generica</option>
+                <% break;
+                case 'redDragon' : %>
+                <option value="amd">AMD</option>
+              <option value="intel">Intel</option>
+              <option value="ryzen">Ryzen</option>
+              <option value="evga">EVGA</option>
+              <option selected value="redDragon">Red Dragon</option>
+              <option value="logitech">Logitech</option>
+              <option value="gigabyte">Gigabyte</option>
+              <option value="nvidia">Nvidia</option>
+              <option value="zotac">Zotac</option>
+              <option value="hyperx">HyperX</option>
+              <option value="nsi">NSI</option>
+              <option value="razer">Razer</option>
+              <option value="cougar">Cougar</option>
+              <option value="MasterAir">Master Air</option>
+              <option value="ID">ID</option>
+              <option value="Nisuta">Nisuta</option>
+              <option value="T-force">T-force</option>
+              <option value="Corsair">Corsair</option>
+              <option value="ASUS">ASUS</option>
+              <option value="Havit">Havit</option>
+              <option value="Aureox">Aureox</option>
+              <option value="Sentey">Sentey</option>
+              <option value="Essenses">Essenses</option>
+              <option value="generica">Generica</option>
+                <% break;
+                case 'logitech' : %>
+                <option value="amd">AMD</option>
+              <option value="intel">Intel</option>
+              <option value="ryzen">Ryzen</option>
+              <option value="evga">EVGA</option>
+              <option value="redDragon">Red Dragon</option>
+              <option selected value="logitech">Logitech</option>
+              <option value="gigabyte">Gigabyte</option>
+              <option value="nvidia">Nvidia</option>
+              <option value="zotac">Zotac</option>
+              <option value="hyperx">HyperX</option>
+              <option value="nsi">NSI</option>
+              <option value="razer">Razer</option>
+              <option value="cougar">Cougar</option>
+              <option value="MasterAir">Master Air</option>
+              <option value="ID">ID</option>
+              <option value="Nisuta">Nisuta</option>
+              <option value="T-force">T-force</option>
+              <option value="Corsair">Corsair</option>
+              <option value="ASUS">ASUS</option>
+              <option value="Havit">Havit</option>
+              <option value="Aureox">Aureox</option>
+              <option value="Sentey">Sentey</option>
+              <option value="Essenses">Essenses</option>
+              <option value="generica">Generica</option>
+                <% break;
+                case 'gigabyte' : %>
+                <option value="amd">AMD</option>
+              <option value="intel">Intel</option>
+              <option value="ryzen">Ryzen</option>
+              <option value="evga">EVGA</option>
+              <option value="redDragon">Red Dragon</option>
+              <option value="logitech">Logitech</option>
+              <option selected value="gigabyte">Gigabyte</option>
+              <option value="nvidia">Nvidia</option>
+              <option value="zotac">Zotac</option>
+              <option value="hyperx">HyperX</option>
+              <option value="nsi">NSI</option>
+              <option value="razer">Razer</option>
+              <option value="cougar">Cougar</option>
+              <option value="MasterAir">Master Air</option>
+              <option value="ID">ID</option>
+              <option value="Nisuta">Nisuta</option>
+              <option value="T-force">T-force</option>
+              <option value="Corsair">Corsair</option>
+              <option value="ASUS">ASUS</option>
+              <option value="Havit">Havit</option>
+              <option value="Aureox">Aureox</option>
+              <option value="Sentey">Sentey</option>
+              <option value="Essenses">Essenses</option>
+              <option value="generica">Generica</option>
+                <% break;
+                case 'nvidia' : %>
+                <option value="amd">AMD</option>
+              <option value="intel">Intel</option>
+              <option value="ryzen">Ryzen</option>
+              <option value="evga">EVGA</option>
+              <option value="redDragon">Red Dragon</option>
+              <option value="logitech">Logitech</option>
+              <option value="gigabyte">Gigabyte</option>
+              <option selected value="nvidia">Nvidia</option>
+              <option value="zotac">Zotac</option>
+              <option value="hyperx">HyperX</option>
+              <option value="nsi">NSI</option>
+              <option value="razer">Razer</option>
+              <option value="cougar">Cougar</option>
+              <option value="MasterAir">Master Air</option>
+              <option value="ID">ID</option>
+              <option value="Nisuta">Nisuta</option>
+              <option value="T-force">T-force</option>
+              <option value="Corsair">Corsair</option>
+              <option value="ASUS">ASUS</option>
+              <option value="Havit">Havit</option>
+              <option value="Aureox">Aureox</option>
+              <option value="Sentey">Sentey</option>
+              <option value="Essenses">Essenses</option>
+              <option value="generica">Generica</option>
+                <% break;
+                case 'zotac' : %>
+                <option value="amd">AMD</option>
+              <option value="intel">Intel</option>
+              <option value="ryzen">Ryzen</option>
+              <option value="evga">EVGA</option>
+              <option value="redDragon">Red Dragon</option>
+              <option value="logitech">Logitech</option>
+              <option value="gigabyte">Gigabyte</option>
+              <option value="nvidia">Nvidia</option>
+              <option selected value="zotac">Zotac</option>
+              <option value="hyperx">HyperX</option>
+              <option value="nsi">NSI</option>
+              <option value="razer">Razer</option>
+              <option value="cougar">Cougar</option>
+              <option value="MasterAir">Master Air</option>
+              <option value="ID">ID</option>
+              <option value="Nisuta">Nisuta</option>
+              <option value="T-force">T-force</option>
+              <option value="Corsair">Corsair</option>
+              <option value="ASUS">ASUS</option>
+              <option value="Havit">Havit</option>
+              <option value="Aureox">Aureox</option>
+              <option value="Sentey">Sentey</option>
+              <option value="Essenses">Essenses</option>
+              <option value="generica">Generica</option>
+                <% break;
+                case 'hyperx' : %>
+                <option value="amd">AMD</option>
+              <option value="intel">Intel</option>
+              <option value="ryzen">Ryzen</option>
+              <option value="evga">EVGA</option>
+              <option value="redDragon">Red Dragon</option>
+              <option value="logitech">Logitech</option>
+              <option value="gigabyte">Gigabyte</option>
+              <option value="nvidia">Nvidia</option>
+              <option value="zotac">Zotac</option>
+              <option selected value="hyperx">HyperX</option>
+              <option value="nsi">NSI</option>
+              <option value="razer">Razer</option>
+              <option value="cougar">Cougar</option>
+              <option value="MasterAir">Master Air</option>
+              <option value="ID">ID</option>
+              <option value="Nisuta">Nisuta</option>
+              <option value="T-force">T-force</option>
+              <option value="Corsair">Corsair</option>
+              <option value="ASUS">ASUS</option>
+              <option value="Havit">Havit</option>
+              <option value="Aureox">Aureox</option>
+              <option value="Sentey">Sentey</option>
+              <option value="Essenses">Essenses</option>
+              <option value="generica">Generica</option>
+                <% break;
+                case 'nsi' : %>
+                <option value="amd">AMD</option>
+              <option value="intel">Intel</option>
+              <option value="ryzen">Ryzen</option>
+              <option value="evga">EVGA</option>
+              <option value="redDragon">Red Dragon</option>
+              <option value="logitech">Logitech</option>
+              <option value="gigabyte">Gigabyte</option>
+              <option value="nvidia">Nvidia</option>
+              <option value="zotac">Zotac</option>
+              <option value="hyperx">HyperX</option>
+              <option selected value="nsi">NSI</option>
+              <option value="razer">Razer</option>
+              <option value="cougar">Cougar</option>
+              <option value="MasterAir">Master Air</option>
+              <option value="ID">ID</option>
+              <option value="Nisuta">Nisuta</option>
+              <option value="T-force">T-force</option>
+              <option value="Corsair">Corsair</option>
+              <option value="ASUS">ASUS</option>
+              <option value="Havit">Havit</option>
+              <option value="Aureox">Aureox</option>
+              <option value="Sentey">Sentey</option>
+              <option value="Essenses">Essenses</option>
+              <option value="generica">Generica</option>
+                <% break;
+                case 'razer' : %>
+                <option value="amd">AMD</option>
+              <option value="intel">Intel</option>
+              <option value="ryzen">Ryzen</option>
+              <option value="evga">EVGA</option>
+              <option value="redDragon">Red Dragon</option>
+              <option value="logitech">Logitech</option>
+              <option value="gigabyte">Gigabyte</option>
+              <option value="nvidia">Nvidia</option>
+              <option value="zotac">Zotac</option>
+              <option value="hyperx">HyperX</option>
+              <option value="nsi">NSI</option>
+              <option selected value="razer">Razer</option>
+              <option value="cougar">Cougar</option>
+              <option value="MasterAir">Master Air</option>
+              <option value="ID">ID</option>
+              <option value="Nisuta">Nisuta</option>
+              <option value="T-force">T-force</option>
+              <option value="Corsair">Corsair</option>
+              <option value="ASUS">ASUS</option>
+              <option value="Havit">Havit</option>
+              <option value="Aureox">Aureox</option>
+              <option value="Sentey">Sentey</option>
+              <option value="Essenses">Essenses</option>
+              <option value="generica">Generica</option>
+                <% break;
+                case 'cougar' : %>
+                <option value="amd">AMD</option>
+              <option value="intel">Intel</option>
+              <option value="ryzen">Ryzen</option>
+              <option value="evga">EVGA</option>
+              <option value="redDragon">Red Dragon</option>
+              <option value="logitech">Logitech</option>
+              <option value="gigabyte">Gigabyte</option>
+              <option value="nvidia">Nvidia</option>
+              <option value="zotac">Zotac</option>
+              <option value="hyperx">HyperX</option>
+              <option value="nsi">NSI</option>
+              <option value="razer">Razer</option>
+              <option selected value="cougar">Cougar</option>
+              <option value="MasterAir">Master Air</option>
+              <option value="ID">ID</option>
+              <option value="Nisuta">Nisuta</option>
+              <option value="T-force">T-force</option>
+              <option value="Corsair">Corsair</option>
+              <option value="ASUS">ASUS</option>
+              <option value="Havit">Havit</option>
+              <option value="Aureox">Aureox</option>
+              <option value="Sentey">Sentey</option>
+              <option value="Essenses">Essenses</option>
+              <option value="generica">Generica</option>
+                <% break;
+                case 'MasterAir' : %>
+                <option value="amd">AMD</option>
+              <option value="intel">Intel</option>
+              <option value="ryzen">Ryzen</option>
+              <option value="evga">EVGA</option>
+              <option value="redDragon">Red Dragon</option>
+              <option value="logitech">Logitech</option>
+              <option value="gigabyte">Gigabyte</option>
+              <option value="nvidia">Nvidia</option>
+              <option value="zotac">Zotac</option>
+              <option value="hyperx">HyperX</option>
+              <option value="nsi">NSI</option>
+              <option value="razer">Razer</option>
+              <option value="cougar">Cougar</option>
+              <option selected value="MasterAir">Master Air</option>
+              <option value="ID">ID</option>
+              <option value="Nisuta">Nisuta</option>
+              <option value="T-force">T-force</option>
+              <option value="Corsair">Corsair</option>
+              <option value="ASUS">ASUS</option>
+              <option value="Havit">Havit</option>
+              <option value="Aureox">Aureox</option>
+              <option value="Sentey">Sentey</option>
+              <option value="Essenses">Essenses</option>
+              <option value="generica">Generica</option>
+                <% break;
+                case 'ID' : %>
+                <option value="amd">AMD</option>
+              <option value="intel">Intel</option>
+              <option value="ryzen">Ryzen</option>
+              <option value="evga">EVGA</option>
+              <option value="redDragon">Red Dragon</option>
+              <option value="logitech">Logitech</option>
+              <option value="gigabyte">Gigabyte</option>
+              <option value="nvidia">Nvidia</option>
+              <option value="zotac">Zotac</option>
+              <option value="hyperx">HyperX</option>
+              <option value="nsi">NSI</option>
+              <option value="razer">Razer</option>
+              <option value="cougar">Cougar</option>
+              <option value="MasterAir">Master Air</option>
+              <option selected value="ID">ID</option>
+              <option value="Nisuta">Nisuta</option>
+              <option value="T-force">T-force</option>
+              <option value="Corsair">Corsair</option>
+              <option value="ASUS">ASUS</option>
+              <option value="Havit">Havit</option>
+              <option value="Aureox">Aureox</option>
+              <option value="Sentey">Sentey</option>
+              <option value="Essenses">Essenses</option>
+              <option value="generica">Generica</option>
+                <% break;
+                case 'Nisuta' : %>
+                <option value="amd">AMD</option>
+              <option value="intel">Intel</option>
+              <option value="ryzen">Ryzen</option>
+              <option value="evga">EVGA</option>
+              <option value="redDragon">Red Dragon</option>
+              <option value="logitech">Logitech</option>
+              <option value="gigabyte">Gigabyte</option>
+              <option value="nvidia">Nvidia</option>
+              <option value="zotac">Zotac</option>
+              <option value="hyperx">HyperX</option>
+              <option value="nsi">NSI</option>
+              <option value="razer">Razer</option>
+              <option value="cougar">Cougar</option>
+              <option value="MasterAir">Master Air</option>
+              <option value="ID">ID</option>
+              <option selected value="Nisuta">Nisuta</option>
+              <option value="T-force">T-force</option>
+              <option value="Corsair">Corsair</option>
+              <option value="ASUS">ASUS</option>
+              <option value="Havit">Havit</option>
+              <option value="Aureox">Aureox</option>
+              <option value="Sentey">Sentey</option>
+              <option value="Essenses">Essenses</option>
+              <option value="generica">Generica</option>
+                <% break;
+                case 'T-force' : %>
+                <option value="amd">AMD</option>
+              <option value="intel">Intel</option>
+              <option value="ryzen">Ryzen</option>
+              <option value="evga">EVGA</option>
+              <option value="redDragon">Red Dragon</option>
+              <option value="logitech">Logitech</option>
+              <option value="gigabyte">Gigabyte</option>
+              <option value="nvidia">Nvidia</option>
+              <option value="zotac">Zotac</option>
+              <option value="hyperx">HyperX</option>
+              <option value="nsi">NSI</option>
+              <option value="razer">Razer</option>
+              <option value="cougar">Cougar</option>
+              <option value="MasterAir">Master Air</option>
+              <option value="ID">ID</option>
+              <option value="Nisuta">Nisuta</option>
+              <option selected value="T-force">T-force</option>
+              <option value="Corsair">Corsair</option>
+              <option value="ASUS">ASUS</option>
+              <option value="Havit">Havit</option>
+              <option value="Aureox">Aureox</option>
+              <option value="Sentey">Sentey</option>
+              <option value="Essenses">Essenses</option>
+              <option value="generica">Generica</option>
+                <% break;
+                case 'Corsair' : %>
+                <option value="amd">AMD</option>
+              <option value="intel">Intel</option>
+              <option value="ryzen">Ryzen</option>
+              <option value="evga">EVGA</option>
+              <option value="redDragon">Red Dragon</option>
+              <option value="logitech">Logitech</option>
+              <option value="gigabyte">Gigabyte</option>
+              <option value="nvidia">Nvidia</option>
+              <option value="zotac">Zotac</option>
+              <option value="hyperx">HyperX</option>
+              <option value="nsi">NSI</option>
+              <option value="razer">Razer</option>
+              <option value="cougar">Cougar</option>
+              <option value="MasterAir">Master Air</option>
+              <option value="ID">ID</option>
+              <option value="Nisuta">Nisuta</option>
+              <option value="T-force">T-force</option>
+              <option selected value="Corsair">Corsair</option>
+              <option value="ASUS">ASUS</option>
+              <option value="Havit">Havit</option>
+              <option value="Aureox">Aureox</option>
+              <option value="Sentey">Sentey</option>
+              <option value="Essenses">Essenses</option>
+              <option value="generica">Generica</option>
+                <% break;
+                case 'ASUS' : %>
+                <option value="amd">AMD</option>
+              <option value="intel">Intel</option>
+              <option value="ryzen">Ryzen</option>
+              <option value="evga">EVGA</option>
+              <option value="redDragon">Red Dragon</option>
+              <option value="logitech">Logitech</option>
+              <option value="gigabyte">Gigabyte</option>
+              <option value="nvidia">Nvidia</option>
+              <option value="zotac">Zotac</option>
+              <option value="hyperx">HyperX</option>
+              <option value="nsi">NSI</option>
+              <option value="razer">Razer</option>
+              <option value="cougar">Cougar</option>
+              <option value="MasterAir">Master Air</option>
+              <option value="ID">ID</option>
+              <option value="Nisuta">Nisuta</option>
+              <option value="T-force">T-force</option>
+              <option value="Corsair">Corsair</option>
+              <option selected value="ASUS">ASUS</option>
+              <option value="Havit">Havit</option>
+              <option value="Aureox">Aureox</option>
+              <option value="Sentey">Sentey</option>
+              <option value="Essenses">Essenses</option>
+              <option value="generica">Generica</option>
+                <% break;
+                case 'Havit' : %>
+                <option value="amd">AMD</option>
+              <option value="intel">Intel</option>
+              <option value="ryzen">Ryzen</option>
+              <option value="evga">EVGA</option>
+              <option value="redDragon">Red Dragon</option>
+              <option value="logitech">Logitech</option>
+              <option value="gigabyte">Gigabyte</option>
+              <option value="nvidia">Nvidia</option>
+              <option value="zotac">Zotac</option>
+              <option value="hyperx">HyperX</option>
+              <option value="nsi">NSI</option>
+              <option value="razer">Razer</option>
+              <option value="cougar">Cougar</option>
+              <option value="MasterAir">Master Air</option>
+              <option value="ID">ID</option>
+              <option value="Nisuta">Nisuta</option>
+              <option value="T-force">T-force</option>
+              <option value="Corsair">Corsair</option>
+              <option value="ASUS">ASUS</option>
+              <option selected value="Havit">Havit</option>
+              <option value="Aureox">Aureox</option>
+              <option value="Sentey">Sentey</option>
+              <option value="Essenses">Essenses</option>
+              <option value="generica">Generica</option>
+                <% break;
+                case 'Aureox' : %>
+                <option value="amd">AMD</option>
+              <option value="intel">Intel</option>
+              <option value="ryzen">Ryzen</option>
+              <option value="evga">EVGA</option>
+              <option value="redDragon">Red Dragon</option>
+              <option value="logitech">Logitech</option>
+              <option value="gigabyte">Gigabyte</option>
+              <option value="nvidia">Nvidia</option>
+              <option value="zotac">Zotac</option>
+              <option value="hyperx">HyperX</option>
+              <option value="nsi">NSI</option>
+              <option value="razer">Razer</option>
+              <option value="cougar">Cougar</option>
+              <option value="MasterAir">Master Air</option>
+              <option value="ID">ID</option>
+              <option value="Nisuta">Nisuta</option>
+              <option value="T-force">T-force</option>
+              <option value="Corsair">Corsair</option>
+              <option value="ASUS">ASUS</option>
+              <option value="Havit">Havit</option>
+              <option selected value="Aureox">Aureox</option>
+              <option value="Sentey">Sentey</option>
+              <option value="Essenses">Essenses</option>
+              <option value="generica">Generica</option>
+                <% break;
+                case 'Sentey' : %>
+                <option value="amd">AMD</option>
+              <option value="intel">Intel</option>
+              <option value="ryzen">Ryzen</option>
+              <option value="evga">EVGA</option>
+              <option value="redDragon">Red Dragon</option>
+              <option value="logitech">Logitech</option>
+              <option value="gigabyte">Gigabyte</option>
+              <option value="nvidia">Nvidia</option>
+              <option value="zotac">Zotac</option>
+              <option value="hyperx">HyperX</option>
+              <option value="nsi">NSI</option>
+              <option value="razer">Razer</option>
+              <option value="cougar">Cougar</option>
+              <option value="MasterAir">Master Air</option>
+              <option value="ID">ID</option>
+              <option value="Nisuta">Nisuta</option>
+              <option value="T-force">T-force</option>
+              <option value="Corsair">Corsair</option>
+              <option value="ASUS">ASUS</option>
+              <option value="Havit">Havit</option>
+              <option value="Aureox">Aureox</option>
+              <option selected value="Sentey">Sentey</option>
+              <option value="Essenses">Essenses</option>
+              <option value="generica">Generica</option>
+                <% break;
+                case 'Essenses' : %>
+                <option value="amd">AMD</option>
+              <option value="intel">Intel</option>
+              <option value="ryzen">Ryzen</option>
+              <option value="evga">EVGA</option>
+              <option value="redDragon">Red Dragon</option>
+              <option value="logitech">Logitech</option>
+              <option value="gigabyte">Gigabyte</option>
+              <option value="nvidia">Nvidia</option>
+              <option value="zotac">Zotac</option>
+              <option value="hyperx">HyperX</option>
+              <option value="nsi">NSI</option>
+              <option value="razer">Razer</option>
+              <option value="cougar">Cougar</option>
+              <option value="MasterAir">Master Air</option>
+              <option value="ID">ID</option>
+              <option value="Nisuta">Nisuta</option>
+              <option value="T-force">T-force</option>
+              <option value="Corsair">Corsair</option>
+              <option value="ASUS">ASUS</option>
+              <option value="Havit">Havit</option>
+              <option value="Aureox">Aureox</option>
+              <option value="Sentey">Sentey</option>
+              <option selected value="Essenses">Essenses</option>
+              <option value="generica">Generica</option>
+                <% break;
+                case 'generica' : %>
+                <option value="amd">AMD</option>
+              <option value="intel">Intel</option>
+              <option value="ryzen">Ryzen</option>
+              <option value="evga">EVGA</option>
+              <option value="redDragon">Red Dragon</option>
+              <option value="logitech">Logitech</option>
+              <option value="gigabyte">Gigabyte</option>
+              <option value="nvidia">Nvidia</option>
+              <option value="zotac">Zotac</option>
+              <option value="hyperx">HyperX</option>
+              <option value="nsi">NSI</option>
+              <option value="razer">Razer</option>
+              <option value="cougar">Cougar</option>
+              <option value="MasterAir">Master Air</option>
+              <option value="ID">ID</option>
+              <option value="Nisuta">Nisuta</option>
+              <option value="T-force">T-force</option>
+              <option value="Corsair">Corsair</option>
+              <option value="ASUS">ASUS</option>
+              <option value="Havit">Havit</option>
+              <option value="Aureox">Aureox</option>
+              <option value="Sentey">Sentey</option>
+              <option value="Essenses">Essenses</option>
+              <option selected value="generica">Generica</option>
+                <% break;
+                } %>
+
+            </select>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label"></label>
+              <input type="text" class="input form-control bg-x" placeholder="Precio" id="exampleInputEmail1"
+                aria-describedby="emailHelp" name="price" value="<%= product.price%>">
+            </div>
+            <div>
+              <div class="form-floating mb-4">
+                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea" name="description" ><%= product.description%></textarea>
+                <label class="text-muted">Descripcion</label>
+              </div>
+            </div>
+            <div class="mb-5 d-flex justify-content-around ">
+              <button type="reset" class="btn btn-secondary">Cancelar</button>
+              <button type="submit" class="btn btn-primary">Guardar</button>
+            </div>
+          </div>
+        </form>
       </div>
     </div>
+  </div>
 
-    <%- include("partials/footer")%>
+<%- include("partials/footer")%>
