@@ -1,400 +1,47 @@
 <%- include("partials/head")%>
   <%- include("partials/header")%>
-    <main class="contenedorPrincipalSecciones">
-      <div class="contenedorSeccion">
-        <h2 id="fuentes" class="productosCategoria">Fuentes</h2>
-        <div id="espacioFuentes" class="espacio"></div>
-        <section id="contenidoFuentes" class="contenedorProductos">
 
-          <div id="productos" class="productos">
-            <article class="producto">
-              <div class="contenedorImagen"><img src="images/fuente1.jpg" alt="" class="productoImagen"></div>
-              <h3 class="productoNombre">Fuente x</h3>
-              <p class="productoPrecio">$1200</p>
-              <button>Agregar al carrito</button>
-              <form action="/products/delete/2?_method=DELETE" method="POST">
-                <button type="submit">eliminar</button>
-              </form>
+    <main class="container mt-2 mb-2">
 
-              <div class="corazon"><i class="fas fa-heart"></i></div>
-            </article>
-            <article class="producto">
-              <div class="contenedorImagen"><img src="images/fuente2.jpg" alt="" class="productoImagen"></div>
-              <h3 class="productoNombre">Fuente x</h3>
-              <p class="productoPrecio">$1200</p>
-              <button>Agregar al carrito</button>
-              <div class="corazon"><i class="fas fa-heart"></i></div>
-            </article>
-            <article class="producto">
-              <div class="contenedorImagen"><img src="images/fuente3.jpg" alt="" class="productoImagen"></div>
-              <h3 class="productoNombre">Fuente x</h3>
-              <p class="productoPrecio">$1200</p>
-              <button>Agregar al carrito</button>
-              <div class="corazon"><i class="fas fa-heart"></i></div>
-            </article>
-          </div>
-        </section>
-      </div>
-      <div class="contenedorSeccion">
-        <h2 id="gabinetes" class="productosCategoria">Gabinetes</h2>
-        <div id="espacioGabinetes" class="espacio"></div>
-        <section id="contenidoGabinetes" class="contenedorProductos">
-          <div class="productos">
-            <article class="producto">
-              <div class="contenedorImagen"><img src="images/gabinete1.jpg" alt="" class="productoImagen"></div>
-              <h3 class="productoNombre">Gabinete x</h3>
-              <p class="productoPrecio">$2500</p>
-              <button>Agregar al carrito</button>
-              <div class="corazon"><i class="fas fa-heart"></i></div>
-            </article>
-            <article class="producto">
-              <div class="contenedorImagen"><img src="images/gabinete2.jpg" alt="" class="productoImagen"></div>
-              <h3 class="productoNombre">Gabinete x</h3>
-              <p class="productoPrecio">$2500</p>
-              <button>Agregar al carrito</button>
-              <div class="corazon"><i class="fas fa-heart"></i></div>
-            </article>
-            <article class="producto">
-              <div class="contenedorImagen"><img src="images/gabinete3.jpg" alt="" class="productoImagen"></div>
-              <h3 class="productoNombre">Gabinete x</h3>
-              <p class="productoPrecio">$2500</p>
-              <button>Agregar al carrito</button>
-              <div class="corazon"><i class="fas fa-heart"></i></div>
-            </article>
-            <article class="producto">
-              <div class="contenedorImagen"><img src="images/gabinete4.jpg" alt="" class="productoImagen"></div>
-              <h3 class="productoNombre">Gabinete x</h3>
-              <p class="productoPrecio">$2500</p>
-              <button>Agregar al carrito</button>
-              <div class="corazon"><i class="fas fa-heart"></i></div>
-            </article>
-            <article class="producto">
-              <div class="contenedorImagen"><img src="images/gabinete5.jpg" alt="" class="productoImagen"></div>
-              <h3 class="productoNombre">Gabinete x</h3>
-              <p class="productoPrecio">$2500</p>
-              <button>Agregar al carrito</button>
-              <div class="corazon"><i class="fas fa-heart"></i></div>
-            </article>
-          </div>
-        </section>
-      </div>
+      <section class="contenedora">
 
-      <div class="contenedorSeccion">
-        <h2 id="mothers" class="productosCategoria">Mothers</h2>
-        <div id="espacioMothers" class="espacio"></div>
-        <section id="contenidoMothers" class="contenedorProductos">
+        <div class="tarjeta">
+          <img src="/images/fuente1.jpg" alt="" class="imagenTarjeta">
+          <h5 class="tituloTarjeta"> <a href="/products/fuentes">Fuentes</a></h5>
+        </div>
 
-          <div class="productos">
-            <article class="producto">
-              <div class="contenedorImagen"><img src="images/mother2.jpg" alt="" class="productoImagen"></div>
-              <h3 class="productoNombre">Mother x</h3>
-              <p class="productoPrecio">$1200</p>
-              <button>Agregar al carrito</button>
-              <div class="corazon"><i class="fas fa-heart"></i></div>
-            </article>
-            <article class="producto">
-              <div class="contenedorImagen"><img src="images/mother3.jpg" alt="" class="productoImagen"></div>
-              <h3 class="productoNombre">Mother x</h3>
-              <p class="productoPrecio">$1200</p>
-              <button>Agregar al carrito</button>
-              <div class="corazon"><i class="fas fa-heart"></i></div>
-            </article>
-            <article class="producto">
-              <div class="contenedorImagen"> <img src="images/mother4.jpg" alt="" class="productoImagen"></div>
-              <h3 class="productoNombre">Mother x</h3>
-              <p class="productoPrecio">$1200</p>
-              <button>Agregar al carrito</button>
-              <div class="corazon"><i class="fas fa-heart"></i></div>
-            </article>
-            <article class="producto">
-              <div class="contenedorImagen"> <img src="images/mother5.png" alt="" class="productoImagen"></div>
-              <h3 class="productoNombre">Mother x</h3>
-              <p class="productoPrecio">$1200</p>
-              <button>Agregar al carrito</button>
-              <div class="corazon"><i class="fas fa-heart"></i></div>
-            </article>
-            <article class="producto">
-              <div class="contenedorImagen"> <img src="images/mother6.jpg" alt="" class="productoImagen"></div>
-              <h3 class="productoNombre">Mother x</h3>
-              <p class="productoPrecio">$1200</p>
-              <button>Agregar al carrito</button>
-              <div class="corazon"><i class="fas fa-heart"></i></div>
-            </article>
-          </div>
-        </section>
-      </div>
-      <div class="contenedorSeccion">
-        <h2 id="mouses" class="productosCategoria">Mouses</h2>
-        <div id="espacioMouses" class="espacio"></div>
-        <section id="contenidoMouses" class="contenedorProductos">
-
-          <div class="productos">
-            <article class="producto">
-              <div class="contenedorImagen"> <img src="images/mouse1.jpg" alt="" class="productoImagen"></div>
-              <h3 class="productoNombre">Mouse X</h3>
-              <p class="productoPrecio">$1500</p>
-              <button>Agregar al carrito</button>
-              <div class="corazon"><i class="fas fa-heart"></i></div>
-            </article>
-            <article class="producto">
-              <div class="contenedorImagen"> <img src="images/mouse3.jpeg" alt="" class="productoImagen"></div>
-              <h3 class="productoNombre">Mouse X</h3>
-              <p class="productoPrecio">$1500</p>
-              <button>Agregar al carrito</button>
-              <div class="corazon"><i class="fas fa-heart"></i></div>
-            </article>
-            <article class="producto">
-              <div class="contenedorImagen"> <img src="images/mouse4.gif" alt="" class="productoImagen"></div>
-              <h3 class="productoNombre">Mouse X</h3>
-              <p class="productoPrecio">$1500</p>
-              <button>Agregar al carrito</button>
-              <div class="corazon"><i class="fas fa-heart"></i></div>
-            </article>
-            <article class="producto">
-              <div class="contenedorImagen"> <img src="images/mouse5.jpg" alt="" class="productoImagen"></div>
-              <h3 class="productoNombre">Mouse X</h3>
-              <p class="productoPrecio">$1500</p>
-              <button>Agregar al carrito</button>
-              <div class="corazon"><i class="fas fa-heart"></i></div>
-            </article>
-          </div>
-        </section>
-      </div>
-      <div class="contenedorSeccion">
-        <h2 id="placas" class="productosCategoria">Placas</h2>
-        <div id="espacioPlacas" class="espacio"></div>
-        <section id="contenidoPlacas" class="contenedorProductos">
-
-          <div class="productos">
-            <article class="producto">
-              <div class="contenedorImagen"> <img src="images/placa1.jpg" alt="" class="productoImagen"></div>
-              <h3 class="productoNombre">Placa x</h3>
-              <p class="productoPrecio">$2300</p>
-              <button>Agregar al carrito</button>
-              <div class="corazon"><i class="fas fa-heart"></i></div>
-            </article>
-            <article class="producto">
-              <div class="contenedorImagen"> <img src="images/placa2.png" alt="" class="productoImagen"></div>
-              <h3 class="productoNombre">Placa x</h3>
-              <p class="productoPrecio">$2300</p>
-              <button>Agregar al carrito</button>
-              <div class="corazon"><i class="fas fa-heart"></i></div>
-            </article>
-            <article class="producto">
-              <div class="contenedorImagen"> <img src="images/placa3.jpg" alt="" class="productoImagen"></div>
-              <h3 class="productoNombre">Placa x</h3>
-              <p class="productoPrecio">$2300</p>
-              <button>Agregar al carrito</button>
-              <div class="corazon"><i class="fas fa-heart"></i></div>
-            </article>
-            <article class="producto">
-              <div class="contenedorImagen"> <img src="images/placa4.jpg" alt="" class="productoImagen"></div>
-              <h3 class="productoNombre">Placa x</h3>
-              <p class="productoPrecio">$2300</p>
-              <button>Agregar al carrito</button>
-              <div class="corazon"><i class="fas fa-heart"></i></div>
-            </article>
-            <article class="producto">
-              <div class="contenedorImagen"> <img src="images/placa5.jpg" alt="" class="productoImagen"></div>
-              <h3 class="productoNombre">Placa x</h3>
-              <p class="productoPrecio">$2300</p>
-              <button>Agregar al carrito</button>
-              <div class="corazon"><i class="fas fa-heart"></i></div>
-            </article>
-            <article class="producto">
-              <div class="contenedorImagen"> <img src="images/placa6.jpg" alt="" class="productoImagen"></div>
-              <h3 class="productoNombre">Placa x</h3>
-              <p class="productoPrecio">$2300</p>
-              <button>Agregar al carrito</button>
-              <div class="corazon"><i class="fas fa-heart"></i></div>
-            </article>
-          </div>
-        </section>
-      </div>
-      <div class="contenedorSeccion">
-        <h2 id="procesadores" class="productosCategoria">Procesadores</h2>
-        <div id="espacioProcesadores" class="espacio"></div>
-        <section id="contenidoProcesadores" class="contenedorProductos">
-
-          <div class="productos">
-            <article class="producto">
-              <div class="contenedorImagen"> <img src="images/procesador1.jpg" alt="" class="productoImagen"></div>
-              <h3 class="productoNombre">Procesador X</h3>
-              <p class="productoPrecio">$4200</p>
-              <button>Agregar al carrito</button>
-              <div class="corazon"><i class="fas fa-heart"></i></div>
-            </article>
-            <article class="producto">
-              <div class="contenedorImagen"> <img src="images/procesador2.jpg" alt="" class="productoImagen"></div>
-              <h3 class="productoNombre">Procesador X</h3>
-              <p class="productoPrecio">$4200</p>
-              <button>Agregar al carrito</button>
-              <div class="corazon"><i class="fas fa-heart"></i></div>
-            </article>
-            <article class="producto">
-              <div class="contenedorImagen"> <img src="images/procesador3.jpg" alt="" class="productoImagen"></div>
-              <h3 class="productoNombre">Procesador X</h3>
-              <p class="productoPrecio">$4200</p>
-              <button>Agregar al carrito</button>
-              <div class="corazon"><i class="fas fa-heart"></i></div>
-            </article>
-            <article class="producto">
-              <div class="contenedorImagen"> <img src="images/procesador4.jpg" alt="" class="productoImagen"></div>
-              <h3 class="productoNombre">Procesador X</h3>
-              <p class="productoPrecio">$4200</p>
-              <button>Agregar al carrito</button>
-              <div class="corazon"><i class="fas fa-heart"></i></div>
-            </article>
-            <article class="producto">
-              <div class="contenedorImagen"> <img src="images/procesador5.jpg" alt="" class="productoImagen"></div>
-              <h3 class="productoNombre">Procesador X</h3>
-              <p class="productoPrecio">$4200</p>
-              <button>Agregar al carrito</button>
-              <div class="corazon"><i class="fas fa-heart"></i></div>
-            </article>
-            <article class="producto">
-              <div class="contenedorImagen"> <img src="images/procesador6.jpg" alt="" class="productoImagen"></div>
-              <h3 class="productoNombre">Procesador X</h3>
-              <p class="productoPrecio">$4200</p>
-              <button>Agregar al carrito</button>
-              <div class="corazon"><i class="fas fa-heart"></i></div>
-            </article>
-          </div>
-        </section>
-      </div>
-      <div class="contenedorSeccion">
-        <h2 id="memorias" class="productosCategoria">Memorias Ram</h2>
-        <div id="espacioMemorias" class="espacio"></div>
-        <section id="contenidoMemorias" class="contenedorProductos">
-
-          <div class="productos">
-            <article class="producto">
-              <div class="contenedorImagen"> <img src="images/ram1.jpg" alt="" class="productoImagen"></div>
-              <h3 class="productoNombre">Memoria Ram X</h3>
-              <p class="productoPrecio">$2500</p>
-              <button>Agregar al carrito</button>
-              <div class="corazon"><i class="fas fa-heart"></i></div>
-            </article>
-            <article class="producto">
-              <div class="contenedorImagen"> <img src="images/ram2.jpg" alt="" class="productoImagen"></div>
-              <h3 class="productoNombre">Memoria Ram X</h3>
-              <p class="productoPrecio">$2500</p>
-              <button>Agregar al carrito</button>
-              <div class="corazon"><i class="fas fa-heart"></i></div>
-            </article>
-            <article class="producto">
-              <div class="contenedorImagen"> <img src="images/ram3.jpg" alt="" class="productoImagen"></div>
-              <h3 class="productoNombre">Memoria Ram X</h3>
-              <p class="productoPrecio">$2500</p>
-              <button>Agregar al carrito</button>
-              <div class="corazon"><i class="fas fa-heart"></i></div>
-            </article>
-            <article class="producto">
-              <div class="contenedorImagen"> <img src="images/ram4.jpg" alt="" class="productoImagen"></div>
-              <h3 class="productoNombre">Memoria Ram X</h3>
-              <p class="productoPrecio">$2500</p>
-              <button>Agregar al carrito</button>
-              <div class="corazon"><i class="fas fa-heart"></i></div>
-            </article>
-          </div>
-        </section>
-      </div>
-      <div class="contenedorSeccion">
-        <h2 id="teclados" class="productosCategoria">Teclados</h2>
-        <div id="espacioTeclados" class="espacio"></div>
-        <section id="contenidoTeclados" class="contenedorProductos">
-
-          <div class="productos">
-            <article class="producto">
-              <div class="contenedorImagen"> <img src="images/teclado1.jpg" alt="" class="productoImagen"></div>
-              <h3 class="productoNombre">Teclado Z</h3>
-              <p class="productoPrecio">$1200</p>
-              <button>Agregar al carrito</button>
-              <div class="corazon"><i class="fas fa-heart"></i></div>
-            </article>
-            <article class="producto">
-              <div class="contenedorImagen"> <img src="images/teclado3.jpg" alt="" class="productoImagen"></div>
-              <h3 class="productoNombre">Teclado Z</h3>
-              <p class="productoPrecio">$1200</p>
-              <button>Agregar al carrito</button>
-              <div class="corazon"><i class="fas fa-heart"></i></div>
-            </article>
-            <article class="producto">
-              <div class="contenedorImagen"> <img src="images/teclado4.jpg" alt="" class="productoImagen"></div>
-              <h3 class="productoNombre">Teclado Z</h3>
-              <p class="productoPrecio">$1200</p>
-              <button>Agregar al carrito</button>
-              <div class="corazon"><i class="fas fa-heart"></i></div>
-            </article>
-          </div>
-        </section>
-      </div>
+        <div class="tarjeta">
+          <img src="/images/gabinete1.jpg" alt="" class="imagenTarjeta">
+          <h5 class="tituloTarjeta"><a href="/products/gabinetes">Gabinetes</a></h5>
+        </div>
+        <div class="tarjeta">
+          <img src="/images/mother1.jpg" alt="" class="imagenTarjeta">
+          <h5 class="tituloTarjeta"><a href="/products/motherboards">MotherBords</a></h5>
+        </div>
+        <div class="tarjeta">
+          <img src="/images/mouse1.jpg" alt="" class="imagenTarjeta">
+          <h5 class="tituloTarjeta"><a href="/products/mouses">Mouses</a></h5>
+        </div>
+        <div class="tarjeta">
+          <img src="/images/placa1.jpg" alt="" class="imagenTarjeta">
+          <h5 class="tituloTarjeta"><a href="/products/placas">Placas de video</a></h5>
+        </div>
+        <div class="tarjeta">
+          <img src="/images/procesador1.jpg" alt="" class="imagenTarjeta">
+          <h5 class="tituloTarjeta"><a href="/products/procesadores">Procesadores</a></h5>
+        </div>
+        <div class="tarjeta">
+          <img src="/images/ram1.jpg" alt="" class="imagenTarjeta">
+          <h5 class="tituloTarjeta"><a href="/products/memorias">Memorias RAM</a></h5>
+        </div>
+        <div class="tarjeta">
+          <img src="/images/teclado1.jpg" alt="" class="imagenTarjeta">
+          <h5 class="tituloTarjeta"><a href="/products/teclados">Teclados</a></h5>
+        </div>
+        <div class="tarjeta">
+          <img src="/images/cooler1.jpg" alt="" class="imagenTarjeta">
+          <h5 class="tituloTarjeta"> <a href="/products/coolers">Coolers</a></h5>
+        </div>
+      </section>
     </main>
-
-    <script>
-      const teclados = document.getElementById("teclados");
-      const espacioTeclados = document.getElementById("espacioTeclados");
-      const contenidoTeclados = document.getElementById("contenidoTeclados");
-      const memorias = document.getElementById("memorias");
-      const espacioMemorias = document.getElementById("espacioMemorias");
-      const contenidoMemorias = document.getElementById("contenidoMemorias");
-      const procesadores = document.getElementById("procesadores");
-      const espacioProcesadores = document.getElementById("espacioProcesadores");
-      const contenidoProcesadores = document.getElementById("contenidoProcesadores");
-      const placas = document.getElementById("placas");
-      const espacioPlacas = document.getElementById("espacioPlacas");
-      const contenidoPlacas = document.getElementById("contenidoPlacas");
-      const mouses = document.getElementById("mouses");
-      const espacioMouses = document.getElementById("espacioMouses");
-      const contenidoMouses = document.getElementById("contenidoMouses");
-      const espacioMothers = document.getElementById("espacioMothers");
-      const mothers = document.getElementById("mothers");
-      const contenidoMothers = document.getElementById("contenidoMothers");
-      const espacioGabinetes = document.getElementById("espacioGabinetes");
-      const espacioFuentes = document.getElementById("espacioFuentes");
-      const fuentes = document.getElementById("fuentes");
-      const gabinetes = document.getElementById("gabinetes");
-      const contenidoFuentes = document.getElementById("contenidoFuentes");
-      const contenidoGabinetes = document.getElementById("contenidoGabinetes");
-      mouses.addEventListener("click", aparecerMouses);
-      fuentes.addEventListener("click", aparecerFuentes);
-      gabinetes.addEventListener("click", aparecerGabinetes);
-      mothers.addEventListener("click", aparecerMothers);
-      placas.addEventListener("click", aparecerPlacas);
-      procesadores.addEventListener("click", aparecerProcesadores);
-      memorias.addEventListener("click", aparecerMemorias);
-      teclados.addEventListener("click", aparecerTeclados);
-      function aparecerFuentes() {
-        contenidoFuentes.classList.toggle("aparecerFuentes");
-        espacioFuentes.classList.toggle("crecerFuentes");
-      }
-      function aparecerGabinetes() {
-        contenidoGabinetes.classList.toggle("aparecerGabinetes");
-        espacioGabinetes.classList.toggle("crecerGabinetes");
-      }
-      function aparecerMothers() {
-        contenidoMothers.classList.toggle("aparecerMothers");
-        espacioMothers.classList.toggle("crecerMothers");
-      }
-      function aparecerMouses() {
-        contenidoMouses.classList.toggle("aparecerMouses");
-        espacioMouses.classList.toggle("crecerMouses");
-      }
-      function aparecerPlacas() {
-        contenidoPlacas.classList.toggle("aparecerPlacas");
-        espacioPlacas.classList.toggle("crecerPlacas");
-      }
-      function aparecerProcesadores() {
-        contenidoProcesadores.classList.toggle("aparecerProcesadores");
-        espacioProcesadores.classList.toggle("crecerProcesadores");
-      }
-      function aparecerMemorias() {
-        contenidoMemorias.classList.toggle("aparecerMemorias");
-        espacioMemorias.classList.toggle("crecerMemorias");
-      }
-      function aparecerTeclados() {
-        contenidoTeclados.classList.toggle("aparecerTeclados");
-        espacioTeclados.classList.toggle("crecerTeclados");
-      }
-    </script>
     <%- include("partials/footer")%>

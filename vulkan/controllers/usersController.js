@@ -8,5 +8,5 @@ module.exports = {
     showEditar: (req, res) => {
         res.render("userEdit", { css: '/stylesheets/userEdit.css' });
     }
-    
+
 }
