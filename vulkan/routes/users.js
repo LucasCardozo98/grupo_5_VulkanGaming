@@ -4,7 +4,7 @@ const usersController = require("../controllers/usersController");
 const upload = require("../middlewares/multer");
 //recordar poner las rutas finales
 
-router.get('/',usersController.mostrar);
-router.get("/edit/:id",usersController.showEditar);
+router.get('/', usersController.mostrar);
+router.get("/edit/:id", usersController.showEditar);
 
 module.exports = router;

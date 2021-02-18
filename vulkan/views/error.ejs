@@ -1,13 +1,14 @@
-
 <body style="background-color: rgb(172, 162, 162);">
-    
 
-<div style="display: flex; align-items: center; justify-content: center; flex-direction: column;">
-<h2><%= error.status %></h2>
 
-    <img src="/images/logo.png" alt=""  style="width: 25vw; height: 25vh; ">
-    <h1>El contenido no está disponible</h1>
+    <div style="display: flex; align-items: center; justify-content: center; flex-direction: column;">
+        <h2>
+            <%= error.status %>
+        </h2>
 
-<pre><%= error.stack %></pre>
-</div>
+        <img src="/images/logo.png" alt="" style="width: 25vw; height: 25vh; ">
+        <h1>El contenido no está disponible</h1>
+
+        <pre><%= error.stack %></pre>
+    </div>
 </body>

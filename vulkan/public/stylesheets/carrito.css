@@ -1,11 +1,22 @@
-.boton{position: absolute; top:0; right:0; display: flex; justify-content: center;}
-.contenedorboton{position: relative; padding-left: 0;}
+.boton{
+  position: absolute; top:0; right:0; display: flex; justify-content: center;
+}
+.contenedorboton{
+  position: relative; padding-left: 0;
+}
 
-.card-top{width: 262; height: 262;}
-.container .card-body img{width: 320px; height: 320px;}
+.card-top{
+  width: 262; height: 262;
+}
+
+.container .card-body img{
+  width: 320px; height: 320px;
+}
+
 .container{
   margin-top: 150px;
 }
+
 .cruz{font-size: 40px;}
 h4{color: green; font-weight: bold;}
 
@@ -16,52 +27,63 @@ h4{color: green; font-weight: bold;}
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
+
 html,body{
   height: 100%;
   place-items: center;
   text-align: center;
   background: #f2f2f2;
 }
+
 .slider{
   max-width: 1100px;
   display: flex;
 }
+
 .slider .card{
   flex: 1;
   margin: 0 10px;
   background: #fff;
 }
+
 .slider .card .img{
   height: 120px;
   width: 100%;
 }
+
 .slider .card .img img{
   height: 100%;
   width: 100%;
   object-fit: cover;
 }
+
 .slider .card .content{
   padding: 10px 20px;
 }
+
 .card .content .title{
   font-size: 15px;
   font-weight: 600;
 }
+
 .card .content .price{
   font-size: 20px;
   font-weight: 600;
   color: green;
   line-height: 20px;
 }
+
 .card .content p{
   text-align: justify;
   margin: 10px 0;
 }
+
 .card .content .btn{
   display: block;
   text-align: left;
   margin: 10px 0;
 }
+
 .card .content .btn button{
   background: #e74c3c;
   color: #fff;
@@ -73,9 +95,11 @@ html,body{
   cursor: pointer;
   transition: 0.2s;
 }
+
 .card .content .btn button:hover{
   transform: scale(0.9);
 }
+
 @media(max-width: 427px){
     .sliderpc{display: none;} 
 }
@@ -83,14 +107,17 @@ html,body{
 @media(min-width: 426px){
     .producto{display: none;}
 }   
+
 .card-top{
   width: 100%;
 }
+
 @media(min-width:700px){
   .container{
     margin-top: 230px;
   }
 }
+
 @media(min-width: 1024px){
   .container{
     margin-top: 30px;

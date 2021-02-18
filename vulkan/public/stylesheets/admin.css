@@ -1,4 +1,10 @@
-.admin-title{height: 50px;display: flex; align-items: center; justify-content: center;color: white;}
+.admin-title{
+    height: 50px;
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    color: white;
+}
 
 @media(min-width:426px){
     .admin{
