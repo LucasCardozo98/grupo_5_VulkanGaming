@@ -3,12 +3,9 @@
 
 <main class="container mt-2">
   <section class="mt-2">
-    <h2 class="bg-success">Fuentes</h2>
+    <h2 class="bg-success"><%= category  %> </h2>
     <div class="contenedora">
-    <% products.forEach(element => { %>
-        <% if (element.category == "Fuentes") { %>
-         
-      
+    <% productsCategory.forEach(element => { %>                      
           <div class=" tarjeta " >
             <a href="/products/detail/<%= element.id %> "><img src="/images/<%=element.image  %> "  alt="..."></a>
             <div class="card-body">
@@ -22,7 +19,6 @@
               </div>
             </div>
           </div>
-          <% } %>
     <% }) %>
     </div>
   </section>

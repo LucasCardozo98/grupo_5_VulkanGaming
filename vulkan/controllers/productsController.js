@@ -5,34 +5,11 @@ module.exports =  {
     //aca empieza la muestra de productos de diferentes categorias
     mostrar: (req,res) =>{  
         res.render("products",{css:'/stylesheets/products.css',products});
-    },   
-    showCategoryFuentes: (req,res)=>{
-        res.render("fuentes",{css:"/stylesheets/productsCategory.css",products});
     },
-    showCategoryGabinetes: (req,res)=>{
-        
-        res.render("gabinetes",{css:"/stylesheets/productsCategory.css",products});
-    },
-    showCategoryMotherboards: (req,res)=>{
-        res.render("motherboard",{css:"/stylesheets/productsCategory.css",products});
-    },
-    showCategoryMouses: (req,res)=>{
-        res.render("mouse",{css:"/stylesheets/productsCategory.css",products});
-    },
-    showCategoryPlacas: (req,res)=>{
-        res.render("placa",{css:"/stylesheets/productsCategory.css",products});
-    },
-    showCategoryProcesadores: (req,res)=>{
-        res.render("procesador",{css:"/stylesheets/productsCategory.css",products});
-    },
-    showCategoryMemorias: (req,res)=>{
-        res.render("memorias",{css:"/stylesheets/productsCategory.css",products});
-    },
-    showCategoryTeclados: (req,res)=>{
-        res.render("teclados",{css:"/stylesheets/productsCategory.css",products});
-    },
-    showCategoryCoolers: (req,res)=>{
-        res.render("coolers",{css:"/stylesheets/productsCategory.css",products});
+    showCategory: (req,res)=>{
+        const category = req.params.categoria;
+        const productsCategory = products.filter(product => product.category == category)
+        res.render("category",{css:"/stylesheets/productsCategory.css",productsCategory, category});
     },
     storeProduct: (req,res)=>{
         console.log(req.body)
@@ -95,6 +72,13 @@ module.exports =  {
                 element.brand = brand;
                 element.price = price;
                 element.description = description;
+                if(req.files[0]){
+                    if(fs.existsSync(path.join('public','images',element.image))){
+                        fs.unlinkSync(path.join('public','images',element.image))
+                        element.image = req.files[0].filename
+                    }
+
+                }
             }
         });
         let nuevijson = JSON.stringify(products);
