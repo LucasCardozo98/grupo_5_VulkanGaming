@@ -30,13 +30,17 @@ a:hover{
     border-top-left-radius: 5px ;
     border-top-right-radius: 5px;
     width: 100%;
-    height: 90%;
+    height: 80%;
 }
 .tarjeta h5{
-    height: 10%;
+    height: 20%;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.tituloTarjeta a{
+    color: rgb(31, 31, 31)
 }
 
 @media(min-width:1024px){
