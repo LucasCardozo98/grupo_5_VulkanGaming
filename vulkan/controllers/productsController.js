@@ -118,6 +118,6 @@ module.exports =  {
         let nuevijson = JSON.stringify(products);
          fs.writeFileSync("./data/products.json",nuevijson,"utf-8");
            console.log(id)
-         res.redirect("/");
+         res.redirect("/products");
     }
 }
