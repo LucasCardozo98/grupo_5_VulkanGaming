@@ -24,6 +24,8 @@
               <button type="submit" id="iniciar-secion" class="btn btn-dark col-12">Iniciar Sesión</button>
               <div id="emailHelp" class="form-text text-center">O inicia sesión con</div>
               <div class="d-flex justify-content-around">
+            </form>
+            <form action="/users/register" method="POST" >    
                 <div>
                   <button type="submit" class="btn btn-outline-primary flex-grow-1 mt-2"> <img class="google"
                       src="/images/google.png" alt=""> G<i class="first-o">o</i><i class="second-o">o</i><i
@@ -51,6 +53,13 @@
               <button type="submit" class="btn btn-dark col-12">Registrarse</button>
           </div>
           </form>
+          <% if (typeof errors != 'undefined') { %>
+            <ul>
+           <% errors.forEach(element => { %>
+            <li><%=element.msg  %> </li>
+           <% }) %>
+          </ul>
+          <% } %>
         </div>
       </div>
       </div>

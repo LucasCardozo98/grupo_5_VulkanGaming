@@ -30,7 +30,7 @@ module.exports =  {
             image: req.files[0].filename
         }
          products.push(product);
-         let nuevojson = JSON.stringify(products);
+         let nuevojson = JSON.stringify(products, null, 2);
          fs.writeFileSync("./data/products.json",nuevojson,"utf-8");
          res.redirect("/products/create");
         
