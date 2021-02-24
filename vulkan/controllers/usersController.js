@@ -1,8 +1,8 @@
 const fs = require("fs");
 const users = JSON.parse(fs.readFileSync("./data/users.json", "utf-8"));
-const bcrypt = require('bcrypt')
+const bcrypt = require('bcrypt');
 const {validationResult} = require('express-validator');
-
+const path = require("path");
 module.exports = {
     mostrar: (req, res) => {
         res.render("register", { css: '/stylesheets/register.css' });
@@ -59,12 +59,20 @@ module.exports = {
                 element.city = city
                 element.address = address
                 if (req.files[0]) {
-                    element.avatar = req.files[0].filename
+                    
+                    if(fs.existsSync(path.join('public','images','users',element.avatar))){
+                            fs.unlinkSync(path.join('public','images','users',element.avatar))
+                            element.avatar = req.files[0].filename
+                    }
+                    else{
+                        element.avatar = req.files[0].filename
+                    }
+
                 }
             }
         });  
          let nuevojson = JSON.stringify(users, null, 2);
          fs.writeFileSync("./data/users.json",nuevojson,"utf-8");
-         res.redirect(`</users/edit/${id}`);  
+         res.redirect(`/users/edit/${id}`);  
     }
 }

@@ -7,6 +7,9 @@
           <div class="titulo bg-success text-center mb-5">
             <h2 class="admin-title bg-dark text-white">Tus datos</h2>
           </div>
+          <div >
+            <img class="image-fluid" src="/images/users/<%=user.avatar%>" alt="">
+          </div>
           <form action="/users/edit/<%=user.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
             <div class="mb-3">
               <input class="form-control form-control-m" id="formFileSm" type="file" name="avatar">
