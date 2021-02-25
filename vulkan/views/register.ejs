@@ -10,9 +10,27 @@
                 <input type="email" class="form-control bg-x" name="email" placeholder="Ingresa tu email" id="email"
                   aria-describedby="emailHelp">
               </div>
+              <% if (typeof errores != 'undefined') { %>
+                <ul>
+               <% errores.forEach(element => { %>
+                <% if (element.param == 'email') { %>
+                  <li class="alert alert-warning" role="alert"><%=element.msg  %> </li>
+                <% } %>
+               <% }) %>
+              </ul>
+              <% } %>
               <div class="mb-3">
                 <label for="InputPasswordLogIn" class="form-label">Contraseña</label>
-                <input type="password" class="form-control bg-x" name="password" placeholder="Ingresa tu contraseña" id="password">
+                <input type="password" class="form-control bg-x mb-3" name="password" placeholder="Ingresa tu contraseña" id="password">
+                <% if (typeof errores != 'undefined') { %>
+                  <ul>
+                 <% errores.forEach(element => { %>
+                  <% if (element.param == 'password') { %>
+                    <li class="alert alert-warning" role="alert"><%=element.msg  %> </li>
+                  <% } %>
+                 <% }) %>
+                </ul>
+                <% } %>
                 <a class="text-muted text-decoration-none" href="">
                   <div id="emailHelp" class="form-text">¿Olvidaste tu contraseña?</div>
                 </a>
@@ -25,13 +43,6 @@
               <div id="emailHelp" class="form-text text-center">O inicia sesión con</div>
               <div class="d-flex justify-content-around">
             </form>
-            <% if (typeof errores != 'undefined') { %>
-              <ul>
-             <% errores.forEach(element => { %>
-              <li><%=element.msg  %> </li>
-             <% }) %>
-            </ul>
-            <% } %>
             <form action="/users/register" method="POST" >    
                 <div>
                   <button type="submit" class="btn btn-outline-primary flex-grow-1 mt-2"> <img class="google"
@@ -48,25 +59,45 @@
                 <label for="InputEmailRegister" class="form-label">Email</label>
                 <input type="email" class="input form-control bg-x" name="email" placeholder="Ingresa tu email"
                   id="InputEmailRegister" aria-describedby="emailHelp">
+                  <% if (typeof errors != 'undefined') { %>
+                    <ul>
+                   <% errors.forEach(element => { %>
+                    <% if (element.param == 'email') { %>
+                      <li class="alert alert-warning" role="alert"><%=element.msg  %> </li>
+                    <% } %>
+                   <% }) %>
+                  </ul>
+                  <% } %>
               </div>
               <div class="mb-3">
                 <label for="InputPasswordRegister" class="form-label">Contraseña</label>
                 <input type="password" class="form-control bg-x" name="adress" placeholder="Ingresa tu contraseña"
                   id="InputPasswordRegister">
+                  <% if (typeof errors != 'undefined') { %>
+                    <ul>
+                   <% errors.forEach(element => { %>
+                    <% if (element.param == 'password') { %>
+                      <li class="alert alert-warning" role="alert"><%=element.msg  %> </li>
+                    <% } %>
+                   <% }) %>
+                  </ul>
+                  <% } %>
                 <label for="InputPasswordRegisterConfirm" class="form-label mt-3">Confirmar contraseña</label>
                 <input type="password" class="form-control bg-x" name="adress2" placeholder="Confirma tu contraseña"
                   id="InputPasswordRegisterConfirm">
+                  <% if (typeof errors != 'undefined') { %>
+                    <ul>
+                   <% errors.forEach(element => { %>
+                    <% if (element.param == 'password') { %>
+                      <li class="alert alert-warning" role="alert"><%=element.msg  %> </li>
+                    <% } %>
+                   <% }) %>
+                  </ul>
+                  <% } %>
               </div>
               <button type="submit" class="btn btn-dark col-12">Registrarse</button>
           </div>
           </form>
-          <% if (typeof errors != 'undefined') { %>
-            <ul>
-           <% errors.forEach(element => { %>
-            <li><%=element.msg  %> </li>
-           <% }) %>
-          </ul>
-          <% } %>
         </div>
       </div>
       </div>

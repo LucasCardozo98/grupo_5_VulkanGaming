@@ -95,11 +95,12 @@ module.exports = {
     processLogin: (req, res) => {
         /* res.send(req.body) Comprobamos que los datos viajan*/
         
-        let errores = validationResult(req);
+        let errores = validationResult(req);      
 
         if(!errores.isEmpty()){
             return res.render('register',{
-                errores : errores.errors
+                errores : errores.errors, 
+                css: '/stylesheets/register.css'
             })
         }else{
             const {email, password, recordame} = req.body;
@@ -120,7 +121,7 @@ module.exports = {
 
                     if(recordame){
                         res.cookie('userVulkan',req.session.user,{
-                            maxAge : 1000 * 60
+                            maxAge : 1000 * 60 * 60 * 24
                         })
                     }
 

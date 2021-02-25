@@ -1158,5 +1158,30 @@
     "city": " ",
     "addres": " ",
     "rol": " "
+  },
+  {
+    "id": 103,
+    "email": "ishida393@gmail.com",
+    "password": "$2b$10$sgPT.71FXS6NCbZiDmVXiueg5oWffyRlzFXgFi3.LPOwJLOIMFDV.",
+    "avatar": "avatar-1614290957308.jpg",
+    "username": "   Bouzer",
+    "first_name": "   ",
+    "last_name": "   ",
+    "city": "   ",
+    "addres": " ",
+    "rol": " ",
+    "address": "  "
+  },
+  {
+    "id": 104,
+    "email": "pepedonjose@outlook.com",
+    "password": "$2b$10$pulyxvTWfF2r9SzxXcku0eyWeUFl9Y7MgALZ2xT1zYtPCO/T5by5K",
+    "avatar": " ",
+    "username": " ",
+    "first_name": " ",
+    "last_name": " ",
+    "city": " ",
+    "addres": " ",
+    "rol": "admin"
   }
 ]

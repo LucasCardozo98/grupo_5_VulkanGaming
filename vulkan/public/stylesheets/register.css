@@ -4,6 +4,10 @@
     --light: #ffffff;
 }
 
+li{list-style: none;}
+
+ul{padding-left: 0;}
+
 .google{width: 19px;height: 21px;border-left: 0;margin: 0;padding-bottom: 3px;}
 
 .input{color:white}
