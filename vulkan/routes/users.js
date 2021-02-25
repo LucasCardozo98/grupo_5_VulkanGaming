@@ -3,13 +3,14 @@ const multer = require('multer');
 var router = express.Router();
 const usersController = require("../controllers/usersController");
 const upload = require("../middlewares/multerUsers");
-const registerValidator = require('../middlewares/registerValidator')
-const loginValidator = require('../middlewares/loginValidator')
+const registerValidator = require('../middlewares/registerValidator');
+const loginValidator = require('../middlewares/loginValidator');
+const loginCheck = require("../middlewares/logincheck");
 //recordar poner las rutas finales
 
 router.get('/', usersController.mostrar);
-router.get("/edit/:id", usersController.showEditar);
-router.put("/edit/:id", upload.any(), usersController.editar);
+router.get("/edit/:id", loginCheck,usersController.showEditar);
+router.put("/edit/:id",upload.any(), loginCheck,usersController.editar);
 router.get('/register', usersController.showRegister);
 router.post('/register', registerValidator, usersController.guardarUsuario);
 router.get('/login', usersController.login);

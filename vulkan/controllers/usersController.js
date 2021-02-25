@@ -10,12 +10,19 @@ module.exports = {
     showEditar: (req, res) => {
         const id = req.params.id
         let user;
-        users.forEach(element => {
-            if (element.id == id) {
-                user = element
-            }
-        });
-        res.render("userEdit", { css: '/stylesheets/userEdit.css', user });
+        if(id != req.session.user.id){
+            res.redirect("/")
+        }
+        else{
+            users.forEach(element => {
+                if (element.id == id) {
+                    user = element
+                }
+            });
+            res.render("userEdit", { css: '/stylesheets/userEdit.css', user });
+        }
+      
+        
     },
     showRegister: (req,res) => {
         res.render('register', {css: '/stylesheets/register.css'})
@@ -35,7 +42,14 @@ module.exports = {
             const user = {
                 id : lastId + 1,
                 email,
-                password: adressCrypt             
+                password : adressCrypt, 
+                avatar : " ",
+                username : " ",
+                first_name : " ",
+                last_name : " ",
+                city : " ",
+                addres: " ",
+                rol: " "            
             }
             users.push(user)
          let nuevojson = JSON.stringify(users, null, 2);
@@ -100,7 +114,8 @@ module.exports = {
                         username : result.username,
                         email: result.email,
                         first_name: result.first_name,
-                        avatar : result.avatar
+                        avatar : result.avatar,
+                        rol: result.rol
                     }
 
                     if(recordame){

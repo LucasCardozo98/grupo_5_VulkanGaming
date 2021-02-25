@@ -103,5 +103,8 @@ module.exports =  {
          fs.writeFileSync("./data/products.json",nuevijson,"utf-8");
            console.log(id)
          res.redirect("/products");
+    },
+    adminList: (req,res)=>{
+        res.render("productsAll", {css:"/stylesheets/productsCategory.css",products})
     }
 }

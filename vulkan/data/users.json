@@ -1135,13 +1135,28 @@
     "address": "4514 Sage Court"
   },
   {
-    "email": "ishida393@gmail.com",
-    "password": "$2b$10$B7VpSUCEsjN1FwFjubCEieqEbgqQwkUEB2nTAQEetpbPytq0wW7Qe",
-    "id": 101
+    "id": 101,
+    "email": "lean4339@gmail.com",
+    "password": "$2b$10$Mm/jJhTxc0TQ7r/S5wDhD.JRIiqNIk72poDHn9/41XdV8okLN.y3W",
+    "avatar": " ",
+    "username": "  leitus",
+    "first_name": "  ",
+    "last_name": "  ",
+    "city": "  ",
+    "addres": " ",
+    "rol": "admin",
+    "address": " "
   },
   {
     "id": 102,
-    "email": "Lean@hotmail.com",
-    "password": "$2b$10$B2moWX83HJJt50E9Ag3Ze.TUjjZ8MOcjTj.tJda.0EUBTUqFAcN2u"
+    "email": "lean43@gmail.com",
+    "password": "$2b$10$F/DAByDNFjKzeZi9t.SKrOrBCoilAlnarg/UmVsUrpSfC9Y9NvM6q",
+    "avatar": " ",
+    "username": " ",
+    "first_name": " ",
+    "last_name": " ",
+    "city": " ",
+    "addres": " ",
+    "rol": " "
   }
 ]
