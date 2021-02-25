@@ -4,7 +4,7 @@
       <div class="container form">
         <div class="row register">
           <div class="px-lg-5 py-lg-4 p-4 w-100 aling-self-center">
-            <form>
+            <form action="/users/login" method="POST">
               <div class="mb-3 emailinput">
                 <label for="InputEmailLogIn" class="form-label">Email</label>
                 <input type="email" class="form-control bg-x" name="email" placeholder="Ingresa tu email" id="email"
@@ -12,19 +12,26 @@
               </div>
               <div class="mb-3">
                 <label for="InputPasswordLogIn" class="form-label">Contraseña</label>
-                <input type="password" class="form-control bg-x" name="adress" placeholder="Ingresa tu contraseña" id="password">
+                <input type="password" class="form-control bg-x" name="password" placeholder="Ingresa tu contraseña" id="password">
                 <a class="text-muted text-decoration-none" href="">
                   <div id="emailHelp" class="form-text">¿Olvidaste tu contraseña?</div>
                 </a>
               </div>
               <div class="mb-3 form-check">
-                <input type="checkbox" class="form-check-input bg-x" id="remember">
+                <input type="checkbox" class="form-check-input bg-x" id="remember" name="recordame">
                 <label class="form-check-label" for="remember">Recordarme</label>
               </div>
               <button type="submit" id="iniciar-secion" class="btn btn-dark col-12">Iniciar Sesión</button>
               <div id="emailHelp" class="form-text text-center">O inicia sesión con</div>
               <div class="d-flex justify-content-around">
             </form>
+            <% if (typeof errores != 'undefined') { %>
+              <ul>
+             <% errores.forEach(element => { %>
+              <li><%=element.msg  %> </li>
+             <% }) %>
+            </ul>
+            <% } %>
             <form action="/users/register" method="POST" >    
                 <div>
                   <button type="submit" class="btn btn-outline-primary flex-grow-1 mt-2"> <img class="google"

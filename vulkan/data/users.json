@@ -1138,5 +1138,10 @@
     "email": "ishida393@gmail.com",
     "password": "$2b$10$B7VpSUCEsjN1FwFjubCEieqEbgqQwkUEB2nTAQEetpbPytq0wW7Qe",
     "id": 101
+  },
+  {
+    "id": 102,
+    "email": "Lean@hotmail.com",
+    "password": "$2b$10$B2moWX83HJJt50E9Ag3Ze.TUjjZ8MOcjTj.tJda.0EUBTUqFAcN2u"
   }
 ]

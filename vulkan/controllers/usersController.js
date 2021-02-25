@@ -74,5 +74,52 @@ module.exports = {
          let nuevojson = JSON.stringify(users, null, 2);
          fs.writeFileSync("./data/users.json",nuevojson,"utf-8");
          res.redirect(`/users/edit/${id}`);  
+    },
+    login : (req, res) =>{
+        res.render('register', {css: '/stylesheets/register.css'})
+    }, 
+    processLogin: (req, res) => {
+        /* res.send(req.body) Comprobamos que los datos viajan*/
+        
+        let errores = validationResult(req);
+
+        if(!errores.isEmpty()){
+            return res.render('register',{
+                errores : errores.errors
+            })
+        }else{
+            const {email, password, recordame} = req.body;
+
+            let result = users.find(user => user.email === email);
+
+            if(result){
+                if(bcrypt.compareSync(password.trim(),result.password)){
+
+                    req.session.user = {
+                        id : result.id,
+                        username : result.username,
+                        email: result.email,
+                        first_name: result.first_name,
+                        avatar : result.avatar
+                    }
+
+                    if(recordame){
+                        res.cookie('userVulkan',req.session.user,{
+                            maxAge : 1000 * 60
+                        })
+                    }
+
+                    return res.redirect(`/users/edit/${result.id}`)
+                }
+            }
+            return res.render('register',{ 
+                css: '/stylesheets/register.css',
+                errores : [
+                    {
+                        msg : "credenciales inválidas"
+                    }
+                ]
+            })
+        }
     }
 }
