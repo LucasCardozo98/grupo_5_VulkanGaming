@@ -20,15 +20,28 @@ module.exports =  {
                lastId = element.id
             }
         });
-        const product = {
-            id : lastId +1,
-            name,
-            category,
-            brand,
-            price,
-            description,
-            image: req.files[0].filename
+        if(req.files[0]){
+            const product = {
+                id : lastId +1,
+                name,
+                category,
+                brand,
+                price,
+                description,
+                image: req.files[0].filename
+            }
+        }else{
+            const product = {
+                id : lastId +1,
+                name,
+                category,
+                brand,
+                price,
+                description,
+                image: " "
+            }
         }
+        
          products.push(product);
          let nuevojson = JSON.stringify(products, null, 2);
          fs.writeFileSync("./data/products.json",nuevojson,"utf-8");
@@ -75,6 +88,9 @@ module.exports =  {
                 if(req.files[0]){
                     if(fs.existsSync(path.join('public','images',element.image))){
                         fs.unlinkSync(path.join('public','images',element.image))
+                        element.image = req.files[0].filename
+                    }
+                    else{
                         element.image = req.files[0].filename
                     }
 
