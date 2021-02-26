@@ -4,6 +4,7 @@ const productsController = require("../controllers/productsController");
 const upload = require("../middlewares/multerProducts");
 const loginCheck = require('../middlewares/logincheck');
 const adminCheck = require("../middlewares/adminCheck");
+const formProductsValidation = require("../middlewares/formsProductValidation");
 
 //recordar poner las rutas finales
 router.get('/',productsController.mostrar); 
@@ -12,9 +13,9 @@ router.get("/category/:categoria",productsController.showCategory)
 router.get("/detail/:id",productsController.productDetail);
 router.get("/create",adminCheck,productsController.crearProducto);
 //router.post("/create",upload.any(),productsController.storeProduct);
-router.post("/create",upload.any(),productsController.storeProduct);
+router.post("/create",upload.any(),formProductsValidation,productsController.storeProduct);
 router.get("/edit/:id",adminCheck,productsController.showEdit);
-router.put("/edit/:id",upload.any(),productsController.edit);
+router.put("/edit/:id",upload.any(),formProductsValidation,productsController.edit);
 router.delete("/delete/:id",productsController.delete);
 router.get("/cart",loginCheck,productsController.cart)
 
