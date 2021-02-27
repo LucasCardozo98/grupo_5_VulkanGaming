@@ -24,10 +24,10 @@
           </div>
         </form>
         <% if ( user != undefined) { %>
-          <div class="contactoDesktop text-white">
-            <img src="/images/users/<%= user.avatar %> " alt="">
-            <p class="text-white"><%= user.username %> </p>
-          </div>
+          <form action="/users/closeSesion" method="POST">
+            <input type="checkbox" name="check" id="check">
+            <button type="submit"><label for="check">Cerrar sesión</label></button>
+          </form>
          
           <% } else { %>
            

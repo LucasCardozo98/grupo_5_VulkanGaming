@@ -12,6 +12,9 @@
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 }
+#check{
+    display: none;
+}
 /*nav mobile*/
 .form{
     margin-top: 150px;

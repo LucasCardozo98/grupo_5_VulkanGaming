@@ -14,6 +14,7 @@ router.put("/edit/:id",upload.any(),usersController.editar);
 router.get('/register', usersController.showRegister);
 router.post('/register', registerValidator, usersController.guardarUsuario);
 router.get('/login', usersController.login);
-router.post('/login', loginValidator, usersController.processLogin)
+router.post('/login', loginValidator, usersController.processLogin);
+router.post("/closeSesion",usersController.cerrarSesion);
 
 module.exports = router;
