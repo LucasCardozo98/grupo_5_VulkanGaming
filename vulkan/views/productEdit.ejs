@@ -19,6 +19,15 @@
               <input type="text" class="input form-control bg-x" placeholder="Nombre" id="exampleInputEmail1"
                 aria-describedby="emailHelp" name="name" value="<%=product.name  %> ">
             </div>
+            <% if (typeof errors != 'undefined') { %>
+              <ul>
+             <% errors.forEach(element => { %>
+              <% if (element.param == 'name') { %>
+                <li class="alert alert-warning" role="alert"><%=element.msg  %> </li>
+              <% } %>
+             <% }) %>
+            </ul>
+            <% } %>
             <select class="form-select form-select-m mb-4 text-muted" aria-label=".form-select-sm example" name="category">
                 <% switch (product.category) {
                     case 'Motherboard' : %>
@@ -124,7 +133,15 @@
               
               
             </select>
-            
+            <% if (typeof errors != 'undefined') { %>
+                <ul>
+               <% errors.forEach(element => { %>
+                <% if (element.param == 'category') { %>
+                  <li class="alert alert-warning" role="alert"><%=element.msg  %> </li>
+                <% } %>
+               <% }) %>
+              </ul>
+              <% } %>
             <select class="form-select form-select-m text-muted" aria-label=".form-select-sm example" name="brand"
             aria-placeholder="Marca">
                     <% switch (product.brand) {
@@ -755,17 +772,36 @@
                 } %>
 
             </select>
+            <% if (typeof errors != 'undefined') { %>
+                <ul>
+               <% errors.forEach(element => { %>
+                <% if (element.param == 'brand') { %>
+                  <li class="alert alert-warning" role="alert"><%=element.msg  %> </li>
+                <% } %>
+               <% }) %>
+              </ul>
+              <% } %>
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label"></label>
               <input type="text" class="input form-control bg-x" placeholder="Precio" id="exampleInputEmail1"
                 aria-describedby="emailHelp" name="price" value="<%= product.price%>">
             </div>
+            <% if (typeof errors != 'undefined') { %>
+                <ul>
+               <% errors.forEach(element => { %>
+                <% if (element.param == 'price') { %>
+                  <li class="alert alert-warning" role="alert"><%=element.msg  %> </li>
+                <% } %>
+               <% }) %>
+              </ul>
+              <% } %>
             <div>
               <div class="form-floating mb-4">
                 <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea" name="description" ><%= product.description%></textarea>
                 <label class="text-muted">Descripcion</label>
               </div>
             </div>
+           
             <div class="mb-5 d-flex justify-content-around ">
               <button type="reset" class="btn btn-secondary">Cancelar</button>
               <button type="submit" class="btn btn-primary">Guardar</button>

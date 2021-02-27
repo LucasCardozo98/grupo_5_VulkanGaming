@@ -10,7 +10,7 @@ const loginCheck = require("../middlewares/logincheck");
 
 router.get('/', usersController.mostrar);
 router.get("/edit/:id", loginCheck,usersController.showEditar);
-router.put("/edit/:id",upload.any(), loginCheck,usersController.editar);
+router.put("/edit/:id",upload.any(),usersController.editar);
 router.get('/register', usersController.showRegister);
 router.post('/register', registerValidator, usersController.guardarUsuario);
 router.get('/login', usersController.login);

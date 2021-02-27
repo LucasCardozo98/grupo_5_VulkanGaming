@@ -1,14 +1,15 @@
 :root{
-    --dark: #16192c;
-    --darkx: #1e2126;
-    --light: #ffffff;
+    --primary: #212121;
+    --secondary: #323232;
+    --tertiary: #0d7377;
+    --quaternary: #14ffec;
 }
 
 li{list-style: none;}
 
 ul{padding-left: 0;}
 
-.google{width: 19px;height: 21px;border-left: 0;margin: 0;padding-bottom: 3px;}
+.google{width: 20px;height: 22px;border-left: 0;margin: 0;padding-bottom: 3px;}
 
 .input{color:white}
 
@@ -16,7 +17,9 @@ ul{padding-left: 0;}
 
 .btn i{margin-right: 10px;}
 
-.g{margin-right: 0px !important;color: rgb(11, 97, 255);}
+.first-g{margin-right: 0px !important;color: rgb(11, 97, 255); margin-left: 15px;}
+
+.second-g{margin-right: 0px !important;color: rgb(11, 97, 255);}
 
 .first-o,.e{margin-right: 0px !important;color:red}
 

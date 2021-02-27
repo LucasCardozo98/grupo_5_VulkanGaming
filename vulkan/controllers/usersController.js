@@ -10,17 +10,15 @@ module.exports = {
     showEditar: (req, res) => {
         const id = req.params.id
         let user;
-        if(id != req.session.user.id){
-            res.redirect("/")
-        }
-        else{
+        
+        
             users.forEach(element => {
                 if (element.id == id) {
                     user = element
                 }
             });
             res.render("userEdit", { css: '/stylesheets/userEdit.css', user });
-        }
+        
       
         
     },
@@ -93,7 +91,6 @@ module.exports = {
         res.render('register', {css: '/stylesheets/register.css'})
     }, 
     processLogin: (req, res) => {
-        /* res.send(req.body) Comprobamos que los datos viajan*/
         
         let errores = validationResult(req);      
 
