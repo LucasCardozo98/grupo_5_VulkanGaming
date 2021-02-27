@@ -1196,5 +1196,29 @@
     "addres": " ",
     "rol": " ",
     "address": " "
+  },
+  {
+    "id": 106,
+    "email": "alfredito@hmail.com",
+    "password": "$2b$10$yvsrBJAqwpN8MEEd6.bYouZmgEIRRrX/vMCddfUTfIM7OvNse1GUy",
+    "avatar": " ",
+    "username": " ",
+    "first_name": " ",
+    "last_name": " ",
+    "city": " ",
+    "addres": " ",
+    "rol": " "
+  },
+  {
+    "id": 107,
+    "email": "alfredito1@hmail.com",
+    "password": "$2b$10$ZsLQuyb/YzaP5M3N4H9JNuMFofPGo16Y/SFdJvJKm0Fsks1fW0YDq",
+    "avatar": " ",
+    "username": " ",
+    "first_name": " ",
+    "last_name": " ",
+    "city": " ",
+    "addres": " ",
+    "rol": " "
   }
 ]

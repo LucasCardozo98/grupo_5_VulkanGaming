@@ -52,7 +52,7 @@ module.exports = {
             users.push(user)
          let nuevojson = JSON.stringify(users, null, 2);
          fs.writeFileSync("./data/users.json",nuevojson,"utf-8");
-         res.redirect("/");
+         res.redirect("/users");
         } else {
             res.render('register', {css: '/stylesheets/register.css', errors: errors.errors })
             
