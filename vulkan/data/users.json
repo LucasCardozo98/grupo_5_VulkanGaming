@@ -1183,5 +1183,18 @@
     "city": " ",
     "addres": " ",
     "rol": "admin"
+  },
+  {
+    "id": 105,
+    "email": "holanda@gmail.com",
+    "password": "$2b$10$lkc204XgkYSu2e8wOPG8U..U.4sHCAXPh5LoHB2c3tb6ihLoDC2xW",
+    "avatar": " ",
+    "username": "  me llamo hola",
+    "first_name": "  ",
+    "last_name": "  ",
+    "city": "  ",
+    "addres": " ",
+    "rol": " ",
+    "address": " "
   }
 ]
