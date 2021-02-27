@@ -6,6 +6,8 @@
     
 }
 
+h2, div .card-body{text-align: center;}
+p .card-text{color: green;}
 .tarjeta{
     width: 300px;
     height: 450px;
