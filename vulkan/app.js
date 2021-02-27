@@ -12,7 +12,7 @@ var productsRouter = require("./routes/products");
 
 //requerir los middlewares
 var locals = require("./middlewares/locals");
-
+var cookieCheck = require("./middlewares/cookieCheck");
 
 var app = express();
 
@@ -28,6 +28,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride("_method"));
 app.use(session({secret:'Vulkan'}));
 app.use(locals);
+app.use(cookieCheck);
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
