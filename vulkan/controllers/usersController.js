@@ -41,7 +41,7 @@ module.exports = {
                 id : lastId + 1,
                 email,
                 password : adressCrypt, 
-                avatar : " ",
+                avatar : "avatar.png",
                 username : " ",
                 first_name : " ",
                 last_name : " ",
@@ -62,7 +62,7 @@ module.exports = {
         const {username, email, first_name, last_name, city, address} = req.body
         const id = req.params.id
         let user;
-        users.forEach(element => {
+        users.forEach(element => {            
             if (element.id == id) {
                 element.first_name = first_name
                 element.username = username
