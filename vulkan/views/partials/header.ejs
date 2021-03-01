@@ -27,6 +27,9 @@
         <% if ( user != undefined) { %>
          
          <a id="perfil" class="text-white" href="/users/edit/<%= user.id %> ">Mi perfil</a>
+         <% if (user.rol == "admin") { %>
+               <a href="/users/admin">Administrador</a>
+         <% } %>
           <% } else { %>
            
        
