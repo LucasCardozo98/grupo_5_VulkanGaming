@@ -23,12 +23,10 @@
             <button class="contenedor__lupaDesktop" type="submit"><i class="lupaDesktop fas fa-search"></i></button>
           </div>
         </form>
+        
         <% if ( user != undefined) { %>
-          <div class="contactoDesktop text-white">
-            <img src="/images/users/<%= user.avatar %> " alt="">
-            <p class="text-white"><%= user.username %> </p>
-          </div>
          
+         <a id="perfil" class="text-white" href="/users/edit/<%= user.id %> ">Mi perfil</a>
           <% } else { %>
            
        
@@ -52,18 +50,7 @@
         </div>
       </form>
       
-        <% if (user != undefined) { %>
-         <div class="contacto">
-           <img src="/images/users/<%= user.avatar %>" alt="" style="width: 100px;">
-           <p class="text-white"><%= user.username %> </p>
-         </div>
-      
-        <% } else { %>
-      <div class="contacto">
-        <i class="fas fa-user"></i>
-        <a href="">Iniciar Sesión</a>
-      </div>
-      <% } %> 
+       
       <!--este boton aparece solo en mobile y tablet-->
       <div onclick="cambiar()" id="boton" class="iconoBarras">
         <i class="fas fa-bars"></i>
@@ -79,18 +66,22 @@
         <li><a href="">Soporte</a></li>
           <% if (user != undefined) { %>
             <li class="ultimoLi">
-           <div class="sessionResponsive">
-             <img src="images/users/<%=user.avatar%> " alt="">
-             <p class="text-white"><%=user.username%> </p>
-           </div>
+           <a href="/users/edit/<%= user.id %> ">Mi perfil</a>
+          </li>
+           <li>
+           <form action="/users/closeSesion" method="POST">
+            <input type="checkbox" name="check" id="check">
+            <button class="bg-success" id="cierreSesion" type="submit"><label class="text-white" for="check">Cerrar sesión</label></button>
+          </form>
           </li>
           <% } else { %>
+            <li class="ultimoLi">
+              <div class="sesionResponsive"><i class="fas fa-user"></i>
+                <a href="/users">Iniciar Sesión</a>
+              </div>
+            </li>
            <% } %>  
-           <li class="ultimoLi">
-          <div class="sesionResponsive"><i class="fas fa-user"></i>
-            <a href="">Iniciar Sesión</a>
-          </div>
-        </li>
+          
         <!-- <li onclick="aparecen()"id="cosa" class="cosas">cosas</li>-->
       </ul>
       <ul class="navegacionDesktop bg-success">
@@ -98,6 +89,16 @@
         <li><a href="">Armá tu pc</a></li>
         <li><a href="">Encontrá tu equipo</a></li>
         <li><a href="">Soporte</a></li>
+        <% if (user != undefined) { %>
+          <li><a href="/users/edit/<%= user.id %> ">Mi perfil</a></li>
+        <li>
+          <form  action="/users/closeSesion" method="POST">
+            <input type="checkbox" name="check" id="check">
+            <button class="bg-success" id="cierreSesion" type="submit"><label class="text-white" for="check">Cerrar sesión</label></button>
+          </form>
+
+        </li>
+        <% } %>
         <!-- <li onclick="aparecen()"id="cosa" class="cosas">cosas</li>-->
       </ul>
     </nav>

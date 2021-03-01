@@ -12,9 +12,25 @@
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 }
+#check{
+    display: none;
+}
+#cierreSesion{
+    border-style: none;
+    outline: none;
+
+}
+#cierreSecion:active{
+    outline: none;
+    border-style: none;
+}
+#perfil{
+    font-size: 1em;
+}
+
 /*nav mobile*/
 .form{
-    margin-top: 150px;
+    margin-top: 0px;
     margin-bottom: 30px;
     width: 100%;
 }
@@ -189,7 +205,7 @@ logrando que aparezca*/
     top: 0px;
     transition: 2s all;
     z-index: 0;
-    height: 175px;
+    height: 100%;
    
    
     
@@ -252,10 +268,13 @@ div figure img.detail{
         padding: 10px;
     }
     .aparecer{
-        height: 201px;
+        height: 100%;
     }
     #contenedor{
         height: 50px;
+    }
+    .ultimoLi{
+        display: none;
     }
 }
 /*version desktop*/
@@ -446,4 +465,8 @@ div figure img.detail{
         display: none;
     }
     .form{margin-top: 10px;}
+   
+    #perfil{
+        font-size: 1.5em;
+    }
 }

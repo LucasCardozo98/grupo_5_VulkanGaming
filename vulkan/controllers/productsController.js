@@ -115,7 +115,7 @@ module.exports =  {
              res.redirect("/products");
         }else{
             products.forEach(producto=>{
-                if(producto.id = id){
+                if(producto.id == id){
                     product  = producto
                 }
             })
