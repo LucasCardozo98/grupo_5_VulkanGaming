@@ -134,5 +134,8 @@ module.exports = {
                 ]
             })
         }
+    },
+    admin : (req,res) => {
+        res.render('admins', {css: ''})
     }
 }

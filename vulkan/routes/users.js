@@ -15,5 +15,6 @@ router.get('/register', usersController.showRegister);
 router.post('/register', registerValidator, usersController.guardarUsuario);
 router.get('/login', usersController.login);
 router.post('/login', loginValidator, usersController.processLogin)
+router.get('/admin', usersController.admin)
 
 module.exports = router;
