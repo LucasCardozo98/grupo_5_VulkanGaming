@@ -439,5 +439,14 @@
     "price": "",
     "description": "dasdasdas",
     "image": "image-1613676314895.png"
+  },
+  {
+    "id": 52,
+    "name": "Leandro Ayala",
+    "category": "Motherboard",
+    "brand": "amd",
+    "price": "22222",
+    "description": "jhgjhghghjgj",
+    "image": "image-1614727833567.jpeg"
   }
 ]

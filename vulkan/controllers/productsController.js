@@ -16,6 +16,7 @@ module.exports =  {
         const {name,category,brand,price,description} = req.body
         let lastId = 0;
         let errors = validationResult(req);
+        let product;
         if(errors.isEmpty()){
             products.forEach(element => {
                 if(element.id > lastId){
@@ -23,7 +24,7 @@ module.exports =  {
                 }
             });
             if(req.files[0]){
-                const product = {
+                product = {
                     id : lastId +1,
                     name,
                     category,
@@ -33,7 +34,7 @@ module.exports =  {
                     image: req.files[0].filename
                 }
             }else{
-                const product = {
+                product = {
                     id : lastId +1,
                     name,
                     category,
