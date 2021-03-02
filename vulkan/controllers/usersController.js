@@ -140,7 +140,7 @@ module.exports = {
     },
     cerrarSesion: (req,res)=>{
         const check = req.body.check
-        if(check){
+        
            req.session.destroy()
            if(req.cookie != undefined){
                res.cookie("userVulkan"," ",{
@@ -148,10 +148,8 @@ module.exports = {
                });
            }
            res.redirect("/");
-        }
+        
 
-        else{
-            res.send("error")
-        }
+       
     }
 }
