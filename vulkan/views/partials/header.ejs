@@ -26,8 +26,14 @@
         </form>
         
         <% if ( user != undefined) { %>
-         
-         <a id="perfil" class="text-white" href="/users/edit/<%= user.id %> ">Mi perfil</a>
+          <form action="/users/closeSesion" method="POST">
+            <input type="checkbox" name="check" id="check">
+            <button  id="cierreSesiona" type="submit"><label class="text-white" for="check">Cerrar sesión</label></button>
+          </form>
+       
+         <% if (user.rol == "admin") { %>
+               <a href="/users/admin">Administrador</a>
+         <% } %>
           <% } else { %>
            
        
@@ -50,13 +56,14 @@
           <button class="contenedor_lupaMobile" type="submit"><i class="fas fa-search lupaMobile"></i></button>
         </div>
       </form>
+     
       
        
       <!--este boton aparece solo en mobile y tablet-->
       <div onclick="cambiar()" id="boton" class="iconoBarras">
         <i class="fas fa-bars"></i>
       </div>
-
+      
     </div>
     <!--lista que funciona desplegable en mobile y tablet y figura normal en desktop-->
     <nav id="nav" class="lista">
@@ -70,11 +77,13 @@
            <a href="/users/edit/<%= user.id %> ">Mi perfil</a>
           </li>
            <li>
-           <form action="/users/closeSesion" method="POST">
-            <input type="checkbox" name="check" id="check">
+           <form action="/users/closeSesion" method="POST">            
             <button class="bg-success" id="cierreSesion" type="submit"><label class="text-white" for="check">Cerrar sesión</label></button>
           </form>
           </li>
+          <% if (user.rol == "admin") { %>
+            <li><a href="/users/admin">Administrador</a></li>
+            <% } %>
           <% } else { %>
             <li class="ultimoLi">
               <div class="sesionResponsive"><i class="fas fa-user"></i>
@@ -91,14 +100,10 @@
         <li><a href="">Encontrá tu equipo</a></li>
         <li><a href="">Soporte</a></li>
         <% if (user != undefined) { %>
+          
+        
           <li><a href="/users/edit/<%= user.id %> ">Mi perfil</a></li>
-        <li>
-          <form  action="/users/closeSesion" method="POST">
-            <input type="checkbox" name="check" id="check">
-            <button class="bg-success" id="cierreSesion" type="submit"><label class="text-white" for="check">Cerrar sesión</label></button>
-          </form>
-
-        </li>
+      
         <% } %>
         <!-- <li onclick="aparecen()"id="cosa" class="cosas">cosas</li>-->
       </ul>

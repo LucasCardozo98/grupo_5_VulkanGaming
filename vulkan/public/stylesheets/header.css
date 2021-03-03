@@ -15,9 +15,10 @@
 #check{
     display: none;
 }
-#cierreSesion{
+#cierreSesiona{
     border-style: none;
     outline: none;
+    background-color:rgb(41, 43, 44)  ;
 
 }
 #cierreSecion:active{
