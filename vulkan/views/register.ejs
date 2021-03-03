@@ -58,7 +58,7 @@
               <div id="emailHelp" class="form-text text-center mt-2">Registrarse</div>
               <div class="mb-3">
                 <label for="InputEmailRegister" class="form-label">Email</label>
-                <input type="email" class="input form-control bg-x" name="email" placeholder="Ingresa tu email"
+                <input type="email" class="form-control bg-x" name="email" placeholder="Ingresa tu email"
                   id="InputEmailRegister" aria-describedby="emailHelp">
                   <% if (typeof errors != 'undefined') { %>
                     <ul>
@@ -77,7 +77,7 @@
                   <% if (typeof errors != 'undefined') { %>
                     <ul>
                    <% errors.forEach(element => { %>
-                    <% if (element.param == 'password') { %>
+                    <% if (element.param == 'adress') { %>
                       <li class="alert alert-warning" role="alert"><%=element.msg  %> </li>
                     <% } %>
                    <% }) %>
@@ -89,7 +89,7 @@
                   <% if (typeof errors != 'undefined') { %>
                     <ul>
                    <% errors.forEach(element => { %>
-                    <% if (element.param == 'password') { %>
+                    <% if (element.param == 'adress2') { %>
                       <li class="alert alert-warning" role="alert"><%=element.msg  %> </li>
                     <% } %>
                    <% }) %>

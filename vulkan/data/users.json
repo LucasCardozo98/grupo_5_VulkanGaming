@@ -1196,5 +1196,17 @@
     "addres": " ",
     "rol": " ",
     "address": "  "
+  },
+  {
+    "id": 106,
+    "email": "pepe@gmail.com",
+    "password": "$2b$10$GKiM0uTHOaE4PrniA.93uO5O3.yVEQJPeSLfNOl/Sy2NCIf3zBhdq",
+    "avatar": "avatar.png",
+    "username": " ",
+    "first_name": " ",
+    "last_name": " ",
+    "city": " ",
+    "addres": " ",
+    "rol": " "
   }
 ]

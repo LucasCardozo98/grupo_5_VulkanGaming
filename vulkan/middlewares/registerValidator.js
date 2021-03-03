@@ -8,6 +8,8 @@ module.exports = [
     check('email').isEmail().withMessage('debe ser un email valido'),
 
     body('email').custom(value=>{
+        //BUSCA EL MAIL EN LA BASE DE DATOS Y SI DA UN RESULTADO
+        // NO SE PASA LA VALIDACION
         let result = users_db.find(user => user.email === value);
 
         if (result) {
@@ -22,7 +24,7 @@ module.exports = [
         max : 12
     }).withMessage('La constrasenia tiene que tener 6 caracteres como minimo y 12 como maximo. ATT Vulkan Gaming'),
 
-    check('adress2').custom((value, {req}) => {
+    body('adress2').custom((value, {req}) => {
         if (value !== req.body.adress) {
             return false
         } else {
