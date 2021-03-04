@@ -1143,9 +1143,8 @@
     "first_name": "Leandro    ",
     "last_name": "Ayala    ",
     "city": "Monte Grande    ",
-    "addres": " ",
-    "rol": "admin",
-    "address": "Dorrego 3446    "
+    "address": "Dorrego 3446",
+    "rol": "admin"
   },
   {
     "id": 102,
@@ -1156,7 +1155,7 @@
     "first_name": " ",
     "last_name": " ",
     "city": " ",
-    "addres": " ",
+    "address": " ",
     "rol": " "
   },
   {
@@ -1168,9 +1167,8 @@
     "first_name": "   ",
     "last_name": "   ",
     "city": "   ",
-    "addres": " ",
-    "rol": " ",
-    "address": "  "
+    "address": " ",
+    "rol": " "
   },
   {
     "id": 104,
@@ -1181,7 +1179,7 @@
     "first_name": " ",
     "last_name": " ",
     "city": " ",
-    "addres": " ",
+    "address": " ",
     "rol": "admin"
   },
   {
@@ -1190,12 +1188,11 @@
     "password": "$2b$10$lkc204XgkYSu2e8wOPG8U..U.4sHCAXPh5LoHB2c3tb6ihLoDC2xW",
     "avatar": "avatar.png",
     "username": "",
-    "first_name": "   ",
-    "last_name": "   ",
-    "city": "   ",
-    "addres": " ",
-    "rol": " ",
-    "address": "  "
+    "first_name": " ",
+    "last_name": " ",
+    "city": " ",
+    "address": " ",
+    "rol": " "
   },
   {
     "id": 106,
@@ -1206,7 +1203,19 @@
     "first_name": " ",
     "last_name": " ",
     "city": " ",
-    "addres": " ",
+    "address": " ",
     "rol": " "
+  },
+  {
+    "id": 107,
+    "email": "mailen@gmail.com",
+    "password": "$2b$10$is2W1e3KyNPd2RH9pYurJOfJ72gdx9PHmQQcJHtr4nKMV7sFXdaLm",
+    "avatar": "avatar.png",
+    "username": "",
+    "first_name": "",
+    "last_name": "",
+    "city": "",
+    "address": "",
+    "rol": ""
   }
 ]

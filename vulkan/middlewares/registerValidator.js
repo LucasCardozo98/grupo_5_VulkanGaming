@@ -22,7 +22,7 @@ module.exports = [
     check('adress').isLength({
         min : 6,
         max : 12
-    }).withMessage('La constrasenia tiene que tener 6 caracteres como minimo y 12 como maximo. ATT Vulkan Gaming'),
+    }).withMessage('La constraseña tiene que tener 6 caracteres como minimo y 12 como maximo. ATT Vulkan Gaming'),
 
     body('adress2').custom((value, {req}) => {
         if (value !== req.body.adress) {
@@ -30,6 +30,6 @@ module.exports = [
         } else {
             return true
         }
-    }).withMessage('las contrasenias no coinciden')
+    }).withMessage('las contraseñas no coinciden')
     
 ]
