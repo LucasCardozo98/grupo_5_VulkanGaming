@@ -48,12 +48,12 @@ module.exports = {
                 email,
                 password : adressCrypt, 
                 avatar : "avatar.png",
-                username : " ",
-                first_name : " ",
-                last_name : " ",
-                city : " ",
-                addres: " ",
-                rol: " "            
+                username : "",
+                first_name : "",
+                last_name : "",
+                city : "",
+                address: "",
+                rol: ""            
             }
             res.redirect("/users");
             // SE GUARDA TODO EN EL JSON 
