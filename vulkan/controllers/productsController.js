@@ -45,10 +45,11 @@ module.exports =  {
                 }
             }
             
+            res.redirect("/products/list");
              products.push(product);
              let nuevojson = JSON.stringify(products, null, 2);
              fs.writeFileSync("./data/products.json",nuevojson,"utf-8");
-             res.redirect("/products/create");
+             console.log("producto creado");
         }
         else{
             res.render("productCreate",{css:'/stylesheets/admin.css', errors :errors.errors });
@@ -110,10 +111,11 @@ module.exports =  {
                     }
                 }
             });
+            res.redirect("/products");
             let nuevijson = JSON.stringify(products,null,2);
              fs.writeFileSync("./data/products.json",nuevijson,"utf-8");
                console.log(id)
-             res.redirect("/products");
+             
         }else{
             products.forEach(producto=>{
                 if(producto.id == id){
@@ -135,12 +137,12 @@ module.exports =  {
             }
             }
         });
-        
+        res.redirect("/products");
         products.splice(indice,1);
         let nuevijson = JSON.stringify(products);
          fs.writeFileSync("./data/products.json",nuevijson,"utf-8");
            console.log(id)
-         res.redirect("/products");
+        
     },
     adminList: (req,res)=>{
         res.render("productsAll", {css:"/stylesheets/productsCategory.css",products})

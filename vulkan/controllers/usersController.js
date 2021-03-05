@@ -48,18 +48,19 @@ module.exports = {
                 email,
                 password : adressCrypt, 
                 avatar : "avatar.png",
-                username : " ",
-                first_name : " ",
-                last_name : " ",
-                city : " ",
-                addres: " ",
-                rol: " "            
+                username : "",
+                first_name : "",
+                last_name : "",
+                city : "",
+                address: "",
+                rol: ""            
             }
+            res.redirect("/users");
             // SE GUARDA TODO EN EL JSON 
             users.push(user)
-         let nuevojson = JSON.stringify(users, null, 2);
+         let nuevojson = JSON.stringify(users,null,2);
          fs.writeFileSync("./data/users.json",nuevojson,"utf-8");
-         res.redirect("/users");
+         
         } 
          else {
              // SI POR EL CONTRARIO HAY ERRORES SE ENVIAN A LA VISTA
@@ -96,11 +97,13 @@ module.exports = {
 
                 }
             }
+            res.redirect("/")
         });  
         // SE GUARDAN LOS DATOS EN EL JSON
          let nuevojson = JSON.stringify(users, null, 2);
          fs.writeFileSync("./data/users.json",nuevojson,"utf-8");
-         res.redirect(`/users/edit/${id}`);  
+         //res.redirect(`/users/edit/${id}`);  
+         //res.redirect("/")
     },
     // RENDERIZA LA PARTE DE LOGIN Y SU CSS
     login : (req, res) =>{
