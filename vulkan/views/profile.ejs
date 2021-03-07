@@ -1,0 +1,42 @@
+<%- include("partials/head")  %> 
+<%- include("partials/header")  %> 
+
+<h1>Bienvenido <%= user.firstName %></h1>
+<img class="img-fluid" src="/images/users/<%= user.avatar %>" alt="">
+<h2>tus compras</h2>
+<ul>
+    <% user.carrito.forEach(element => { %>
+        <li><%= element.name  %> </li>
+    <% }) %>
+</ul>
+<form action="/users/closeSesion" method="POST">            
+    <button class="bg-success" id="cierreSesion" type="submit"><label class="text-white" for="check">Cerrar sesión</label></button>
+  </form>
+<form action="/users/delete/<%= user.id %>?_method=DELETE" method="POST">
+    <button class="btn btn-primary" type="submit">eliminar usuario</button>
+    </form>
+
+    <a href="/users/edit/<%=user.id %>">editar perfil</a>
+
+<% if (mensajes != undefined && mensajes != null) { %>
+    <ul>       
+    <% mensajes.forEach(element => { %>
+             <li><%= element.message  %>  del usuario <%=element.mensajes.username%> </li>
+            <% }) %>
+    </ul>
+<% } %>
+<form action="/users/crearMensaje/<%= user.id %>/" method="POST">
+    <textarea name="mensaje" id="" cols="30" rows="10"></textarea>
+    <select name="idOtherUser" id="">
+        <% users.forEach(element=> { %>
+         <option value="<%=element.id%>"><%=element.username%> </option>
+        <% }) %>
+    </select>
+    <button type="submit">enviar mensaje</button>
+</form>
+
+
+
+
+
+<%- include("partials/footer")  %> 

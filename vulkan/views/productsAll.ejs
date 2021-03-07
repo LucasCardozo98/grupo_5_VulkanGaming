@@ -1,5 +1,21 @@
 <%- include("partials/head")%>
 <%- include("partials/header")%>
+<form action="/products/filtrado" method="GET">
+  <select name="categoria" id="">
+    <option selected value="no filtrar">No filtrar por este parametro</option> 
+    <%categorys.forEach(element => { %>
+      <option value="<%=element.id%>"><%=element.name%> </option>
+     <% }) %>
+  </select><br>
+  <select name="marca" id="">
+    <option selected value="no filtrar">No filtrar por este parametro</option> 
+    <%brands.forEach(element => { %>
+      <option value="<%=element.id%>"><%=element.name%> </option>
+     <% }) %>
+  </select><br>
+  <button type="submit">Filtrar</button>
+</form>
+
 <div class="contenedora">
     <% products.forEach(element => { %>                      
           <div class=" tarjeta " >

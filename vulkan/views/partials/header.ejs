@@ -18,9 +18,9 @@
       <!--esto no aparece en el responsive, solo en desktop-->
       <div class="buscadorDesktop">
 
-        <form action="" method="GET">
+        <form action="/products/buscador" method="GET">
           <div class="buscadorEnSerioDesktop">
-            <input type="text">
+            <input type="text" name="busqueda">
             <button class="contenedor__lupaDesktop" type="submit"><i class="lupaDesktop fas fa-search"></i></button>
           </div>
         </form>
@@ -31,8 +31,8 @@
             <button  id="cierreSesiona" type="submit"><label class="text-white" for="check">Cerrar sesión</label></button>
           </form>
        
-         <% if (user.rol == "admin") { %>
-               <a href="/users/admin">Administrador</a>
+         <% if (user != undefined && user.rol == "admin") { %>
+               <a href="/users/admin/<%=user.id%> ">Administrador</a>
          <% } %>
           <% } else { %>
            
@@ -45,7 +45,11 @@
        <% } %> 
       </div>
       <!--estas cosas aparecen en responsive-->
-      <div><a href="/products/cart"><i class="fas fa-shopping-cart"></i></a></div>
+      <div><% if (user != undefined) { %>
+        <a href="/products/cart/<%=user.id%> "><i class="fas fa-shopping-cart"></i></a></div>
+      <% } else {%>
+      <a href="/users"><i class="fas fa-shopping-cart"></i></a></div>
+      <% } %> 
     </div>
 
     <div id="contenedor" class="buscador">
@@ -74,7 +78,7 @@
         <li><a href="">Soporte</a></li>
           <% if (user != undefined) { %>
             <li class="ultimoLi">
-           <a href="/users/edit/<%= user.id %> ">Mi perfil</a>
+           <a href="/users/profile/<%= user.id %>">Mi perfil</a>
           </li>
            <li>
            <form action="/users/closeSesion" method="POST">            
@@ -102,7 +106,7 @@
         <% if (user != undefined) { %>
           
         
-          <li><a href="/users/edit/<%= user.id %> ">Mi perfil</a></li>
+          <li><a href="/users/profile/<%= user.id %>">Mi perfil</a></li>
       
         <% } %>
         <!-- <li onclick="aparecen()"id="cosa" class="cosas">cosas</li>-->

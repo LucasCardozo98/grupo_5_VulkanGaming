@@ -20,6 +20,10 @@ router.post("/create",upload.any(),formProductsValidation,productsController.sto
 router.get("/edit/:id",adminCheck,productsController.showEdit);
 router.put("/edit/:id",upload.any(),formProductsValidation,productsController.edit);
 router.delete("/delete/:id",productsController.delete);
-router.get("/cart",loginCheck,productsController.cart)
+router.get("/cart/:id",loginCheck,productsController.cart)
+router.post("/cart/:idProduct/:idUser",productsController.crearCarrito);
+router.delete("/cart/delete/:idProduct/:idUser",productsController.eliminarProductoCarrito);
+router.get("/buscador",productsController.buscador);
+router.get("/filtrado",productsController.filtrado);
 
 module.exports = router;

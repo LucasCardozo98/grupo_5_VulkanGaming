@@ -29,7 +29,10 @@
             </ul>
             <% } %>
             <select class="form-select form-select-m mb-4 text-muted" aria-label=".form-select-sm example" name="category">
-              <!--<option selected>Categoria</option>-->
+              <%categorias.forEach(element => { %>
+               <option value="<%=element.id%>"><%=element.name%> </option>
+              <% }) %>
+              <!--<option selected>Categoria</option>
               <option value="Motherboard">Mother</option>
               <option value="Procesadores">Procesador</option>
               <option value="Memoria RAM">Memoria RAM</option>
@@ -37,7 +40,7 @@
               <option value="Teclados">Teclados</option>
               <option value="Mouse">Mouse</option>
               <option value="Placa de video">Placa de video</option>
-              <option value="Gabinetes">Gabinetes</option>
+              <option value="Gabinetes">Gabinetes</option>-->
             </select>
             <% if (typeof errors != 'undefined') { %>
               <ul>
@@ -50,7 +53,10 @@
             <% } %>
             <select class="form-select form-select-m text-muted" aria-label=".form-select-sm example" name="brand"
             aria-placeholder="Marca">
-              <!--<option selected>Marca</option>-->
+            <% marcas.forEach(element => { %>
+             <option value="<%= element.id%> "><%=element.name %> </option>
+            <% }) %>
+              <!--<option selected>Marca</option>
               <option value="amd">AMD</option>
               <option value="intel">Intel</option>
               <option value="ryzen">Ryzen</option>
@@ -74,7 +80,7 @@
               <option value="Aureox">Aureox</option>
               <option value="Sentey">Sentey</option>
               <option value="Essenses">Essenses</option>
-              <option value="generica">Generica</option>
+              <option value="generica">Generica</option>-->
 
             </select>
             <% if (typeof errors != 'undefined') { %>
@@ -105,6 +111,15 @@
                 <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea" name="description"></textarea>
                 <label class="text-muted">Descripcion</label>
               </div>
+              <% if (typeof errors != 'undefined') { %>
+                <ul>
+               <% errors.forEach(element => { %>
+                <% if (element.param == 'description') { %>
+                  <li class="alert alert-warning" role="alert"><%=element.msg  %> </li>
+                <% } %>
+               <% }) %>
+              </ul>
+              <% } %>
             </div>
             <div class="mb-5 d-flex justify-content-around ">
               <button type="reset" class="btn btn-secondary">Cancelar</button>
