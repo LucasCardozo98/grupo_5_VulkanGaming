@@ -1135,30 +1135,6 @@
     "address": "4514 Sage Court"
   },
   {
-    "id": 101,
-    "email": "lean4339@gmail.com",
-    "password": "$2b$10$Mm/jJhTxc0TQ7r/S5wDhD.JRIiqNIk72poDHn9/41XdV8okLN.y3W",
-    "avatar": "avatar-1614825992432.jpg",
-    "username": "  leitus ",
-    "first_name": "Leandro    ",
-    "last_name": "Ayala    ",
-    "city": "Monte Grande    ",
-    "address": "Dorrego 3446",
-    "rol": "admin"
-  },
-  {
-    "id": 102,
-    "email": "lean43@gmail.com",
-    "password": "$2b$10$F/DAByDNFjKzeZi9t.SKrOrBCoilAlnarg/UmVsUrpSfC9Y9NvM6q",
-    "avatar": "avatar.png",
-    "username": " ",
-    "first_name": " ",
-    "last_name": " ",
-    "city": " ",
-    "address": " ",
-    "rol": " "
-  },
-  {
     "id": 103,
     "email": "ishida393@gmail.com",
     "password": "$2b$10$sgPT.71FXS6NCbZiDmVXiueg5oWffyRlzFXgFi3.LPOwJLOIMFDV.",

@@ -9,7 +9,7 @@ module.exports = (sequelize, dataTypes)=>{
             allowNull : false
 
         },
-        firsName : {
+        firstName : {
             type : dataTypes.STRING(100),
             allowNull : true
         },
@@ -47,7 +47,7 @@ module.exports = (sequelize, dataTypes)=>{
 
     const config = {
         tableName: "users",
-        underscored :false,
+        underscored :false, 
         timestamps : false,
     }
 
@@ -61,6 +61,11 @@ module.exports = (sequelize, dataTypes)=>{
             through : "carts", //tabla pibot o intermedia
             foreignKey : "idUser",
             otherKey : "idProduct",
+            timestamps: false
+        })
+        User.hasMany(models.Message,{
+            as: "mensajes",
+            foreignKey: "idUserMessage",
             timestamps: false
         })
     }

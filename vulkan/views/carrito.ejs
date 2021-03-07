@@ -42,7 +42,21 @@
               </div>
             </div>
           </div>
-
+            <div>
+              <% user.carrito.forEach(element => { %>
+                <div class="card contenedorboton mt-3" style="width: 18rem;">
+                  <img src="/images/<%= element.image  %> " class="card-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title"><%= element.name  %> </h5>
+                    <h4>$$$$$</h4>
+                    <form action="/products/cart/delete/<%=element.id%>/<%=user.id%> ?_method=DELETE" method="POST">
+                      <button class="btn boton" type="submit"><i class="cruz far fa-times-circle"></i></button>
+                    </form>
+                   
+                  </div>
+                </div>
+              <% }) %>
+            </div>
           <section class="sliderpc">
             <div>
               <div class="slider owl-carousel">

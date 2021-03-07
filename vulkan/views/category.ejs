@@ -3,16 +3,20 @@
 
 <main class="container mt-2">
   <section class="mt-2">
-    <h2 class="bg-success"><%= category  %> </h2>
+    <h2 class="bg-success"> <%= category.name  %>  </h2>
     <div class="contenedora">
-    <% productsCategory.forEach(element => { %>                      
+    <% products.forEach(element => { %>                      
           <div class=" tarjeta " >
             <a href="/products/detail/<%= element.id %> "><img src="/images/<%=element.image  %> "  alt="..."></a>
             <div class="card-body">
               <h5 class="card-title"><%= element.brand  %> </h5>
               <p class="card-text"> <%= element.price  %> </p>
-              <a href="#" class="btn btn-primary w-100">Agregar al carrito</a>
-              
+             
+              <% if (typeof user != "undefined") { %>
+                <form action="/products/cart/<%= element.id %>/<%= user.id %>" method="POST">
+                    <button class="btn btn-primary w-100" type="submit">agregar al carrito</button>
+                  </form>
+            <% } %> 
             </div>
           </div>
     <% }) %>
