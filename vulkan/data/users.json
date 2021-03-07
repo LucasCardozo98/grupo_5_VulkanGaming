@@ -1184,26 +1184,14 @@
   },
   {
     "id": 107,
-<<<<<<< HEAD
-    "email": "pepeelmejor@gmail.com",
-    "password": "$2b$10$HyGwHAC2kITp1IScpNx.QOIPKbnlH/xG6qhDMVXuztm9Wzedej4xG",
+    "email": "mailen@gmail.com",
+    "password": "$2b$10$is2W1e3KyNPd2RH9pYurJOfJ72gdx9PHmQQcJHtr4nKMV7sFXdaLm",
     "avatar": "avatar.png",
     "username": " ",
     "first_name": " ",
     "last_name": " ",
     "city": " ",
-    "addres": " ",
+    "address": " ",
     "rol": " "
-=======
-    "email": "mailen@gmail.com",
-    "password": "$2b$10$is2W1e3KyNPd2RH9pYurJOfJ72gdx9PHmQQcJHtr4nKMV7sFXdaLm",
-    "avatar": "avatar.png",
-    "username": "",
-    "first_name": "",
-    "last_name": "",
-    "city": "",
-    "address": "",
-    "rol": ""
->>>>>>> 3efa0ac1ebd6e71a301618191bb6ab1d21586232
   }
 ]
