@@ -23,6 +23,22 @@ module.exports = (sequelize,dataTypes)=>{
 
     const Category = sequelize.define(alias,cols,config)
 
+    Category.associate = function(models){
+        Category.hasMany(models.Product,{
+            as : "categorias",
+            foreignKey : "idBrand"
+        })
+        
+        Category.belongsToMany(models.Brand,{
+            as : "MarcasCategorias",
+            through : "relationsbrandcategory", //tabla pibot o intermedia
+            foreignKey : "idCategorysFromBrand",
+            otherKey : "idBrandsFromCategory",
+            timestamps: false
+        })
+        
+    }
+
     return Category
 
 }

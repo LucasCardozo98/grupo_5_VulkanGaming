@@ -27,6 +27,10 @@ module.exports = (sequelize,dataTypes)=>{
         idBrand : {
             type: dataTypes.INTEGER(11),
             allowNull: true
+        },
+        image : {
+            type : dataTypes.STRING(200),
+            allowNull : true
         }
     }
 

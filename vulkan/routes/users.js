@@ -23,6 +23,10 @@ router.post('/register', registerValidator, usersController.guardarUsuario);
 router.get('/login', usersController.login);
 router.post('/login', loginValidator, usersController.processLogin);
 router.post("/closeSesion",usersController.cerrarSesion);
-router.get('/admin',adminCheck,usersController.admin);
+router.get('/admin/:id',adminCheck,usersController.admin);
+router.delete("/delete/:id",loginCheck,usersController.eliminar);
+router.get("/profile/:id",loginCheck,usersController.showProfile);
+router.post("/crearMensaje/:id/",usersController.crearMensaje);
+router.post("/admin/relacionMarcaCategoria",usersController.relacion);
 
 module.exports = router;

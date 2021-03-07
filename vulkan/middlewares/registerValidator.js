@@ -1,6 +1,7 @@
 const fs = require('fs');
 const {check, body} = require('express-validator');
-const users_db = JSON.parse(fs.readFileSync('./data/users.json','utf-8'));
+const db = require("../database/models");
+const Op = require("sequelize");
 
 module.exports = [
     check('email').notEmpty().withMessage('el email es requerido'),
@@ -10,13 +11,28 @@ module.exports = [
     body('email').custom(value=>{
         //BUSCA EL MAIL EN LA BASE DE DATOS Y SI DA UN RESULTADO
         // NO SE PASA LA VALIDACION
-        let result = users_db.find(user => user.email === value);
+        console.log(`ESTO ES VALUE JAJAJAJ ${value}`)
+        let centinela;
+       db.User.findAll({
+           where: {
+               email : value
+           }
+       })
+       .then(users=>{
+           users.forEach(element => {
+               if(element.email == value){
+                   centinela = true;
+               }
+               
+           });
+       })
+       if(centinela){
+        return false
+       }
+       else{
+           return true
+       }
 
-        if (result) {
-            return false
-        } else {
-            return true
-        }
     }).withMessage('El email ya esta registrado'),
 
     check('adress').isLength({
