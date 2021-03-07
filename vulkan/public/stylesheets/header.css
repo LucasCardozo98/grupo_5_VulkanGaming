@@ -313,7 +313,17 @@ div figure img.detail{
         align-items: center;
         margin: 0;
     }
-    
+    div.sponsors i.telefonito{
+        transform:rotate(90deg)
+    }
+    div.sponsors p{
+        margin: 0 18px;
+    }
+    div.sponsors p a{
+        margin: 0 5px;
+        text-decoration: none;
+        color: white;
+    }
     .buscador{
         position: static;
         justify-content: space-between;
