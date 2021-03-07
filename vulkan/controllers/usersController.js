@@ -184,7 +184,7 @@ module.exports = {
         })
     },
     showProfile: (req,res)=>{
-        const id = req.params.id
+        let id = req.params.id
         let users = db.User.findAll()
         let user = db.User.findByPk(id,
             {
