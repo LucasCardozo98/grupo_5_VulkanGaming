@@ -3,6 +3,8 @@ const path = require("path");
 const {validationResult} = require("express-validator");
 const db = require("../database/models");
 const Op = require("sequelize");
+const mercadopago = require("mercadopago");
+const { brotliDecompress } = require("zlib");
 module.exports =  {
     //aca empieza la muestra de productos de diferentes categorias
     mostrar: (req,res) =>{  
@@ -257,7 +259,7 @@ module.exports =  {
         })
     },
     buscador: (req,res)=>{
-        const busqueda = req.query.busqueda
+        let busqueda = req.query.busqueda
         let products=  db.Product.findAll(
             {
                 include: [{association: "marcas"},{association: "categorias"}],
@@ -375,5 +377,43 @@ module.exports =  {
                     res.send(error + "3");
                 })
         }
+    },
+    mercadoPago : (req,res)=>{
+        let id = req.params.id
+        let productos = []
+        mercadopago.configure({
+            access_token: 'TEST-4012676185241188-030723-fa1ad01a11e65236862b4f2e58e27d9f-146686887'
+        });
+        db.User.findByPk(id,{
+            include: [{association: "carrito"}]
+        })
+        .then(products =>{
+            products.carrito.forEach(element => {
+                let producto = {
+                    title: element.name,
+                    unit_price : element.price,
+                    quantity: 1
+                }
+                console.log( "esto es producto  " +producto[0] );
+                productos.push(producto);
+            });
+            let preference = {
+                items : productos
+            }
+            mercadopago.preferences.create(preference)
+            .then((respuesta)=>{
+                res.redirect(respuesta.body.init_point);
+                console.log(respuesta)
+            })
+            .catch(error=>{
+                console.log(error +"  MERCADO PAGO");
+            })
+        })
+        .catch(error=>{
+            res.send(error + "2");
+        })
+        
+
+        
     }
 }

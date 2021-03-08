@@ -56,6 +56,12 @@
                   </div>
                 </div>
               <% }) %>
+              <% if (user != undefined) { %>
+              </form>
+              <form action="/products/api/vl/mercadopago/<%=user.id%> " method="POST">
+                <button class="btn btn-primary" type="submit">pagar</button>
+              </form>
+              <% } %> 
             </div>
           <section class="sliderpc">
             <div>
