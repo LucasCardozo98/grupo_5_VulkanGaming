@@ -25,5 +25,6 @@ router.post("/cart/:idProduct/:idUser",productsController.crearCarrito);
 router.delete("/cart/delete/:idProduct/:idUser",productsController.eliminarProductoCarrito);
 router.get("/buscador",productsController.buscador);
 router.get("/filtrado",productsController.filtrado);
+router.post("/api/vl/mercadopago/:id",productsController.mercadoPago)
 
 module.exports = router;
