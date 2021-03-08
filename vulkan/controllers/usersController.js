@@ -184,7 +184,7 @@ module.exports = {
         })
     },
     showProfile: (req,res)=>{
-        const id = req.params.id
+        let id = req.params.id
         let users = db.User.findAll()
         let user = db.User.findByPk(id,
             {
@@ -205,11 +205,11 @@ module.exports = {
         })
     },
     crearMensaje: (req,res)=>{
-        const id = req.params.id
-        const idOtherUser = req.body.idOtherUser
+        let id = req.params.id
+        let idOtherUser = req.body.idOtherUser
         db.Message.create({
             idUserMessage: id,
-            idOtherUser : idOtherUser,
+            idOtherUSer : idOtherUser,
             message : req.body.mensaje
         })
         .then(()=>{

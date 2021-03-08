@@ -22,9 +22,8 @@
           <div class="buscadorEnSerioDesktop">
             <input type="text" name="busqueda">
             <button class="contenedor__lupaDesktop" type="submit"><i class="lupaDesktop fas fa-search"></i></button>
-          </div>
-        </form>
-        
+          </div>  
+        </form>     
         <% if ( user != undefined) { %>
           <form action="/users/closeSesion" method="POST">
             <input type="checkbox" name="check" id="check">
@@ -34,11 +33,8 @@
          <% if (user != undefined && user.rol == "admin") { %>
                <a href="/users/admin/<%=user.id%> ">Administrador</a>
          <% } %>
-          <% } else { %>
-           
-       
-         
-        <div class="contactoDesktop">
+          <% } else { %>                  
+            <div class="contactoDesktop">
           <i class="fas fa-user"></i>
           <a href="/users">Iniciar Sesión</a>
         </div>
