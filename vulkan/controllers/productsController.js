@@ -8,7 +8,7 @@ const { brotliDecompress } = require("zlib");
 module.exports =  {
     //aca empieza la muestra de productos de diferentes categorias
     mostrar: (req,res) =>{  
-        res.render("products",{css:'/stylesheets/products.css',products});
+        res.render("products",{css:'/stylesheets/products.css'});
     },
     showCategory: (req,res)=>{
         const categoria = req.params.categoria;

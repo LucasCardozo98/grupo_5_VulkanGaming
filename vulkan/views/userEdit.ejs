@@ -8,7 +8,7 @@
             <h2 class="admin-title bg-dark text-white">Tus datos</h2>
           </div>
           <div class="position-relative" >
-            <img class="img-fluid img-thumbnail d-grid gap-2 mx-auto mb-4" width="316px" src="/images/users/<%=user.avatar%>" alt="">
+            <img class="img-fluid  d-grid gap-2 mx-auto mb-4" width="316px" src="/images/users/<%=user.avatar%>" alt="">
             <button type="button"  class="editor btn btn-outline-dark position-absolute bottom-0 end-0" onclick="document.getElementById('formFileSm').click()"><i class="fas fa-edit"></i></button>
           </div>
           <form  action="/users/edit/<%=user.id%>?_method=PUT" method="POST" enctype="multipart/form-data">

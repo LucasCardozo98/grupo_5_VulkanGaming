@@ -1,54 +1,13 @@
 <%- include("partials/head")%>
   <%- include("partials/header")%>
     <section>
-      <div class="container">
-        <div class="row d-flex justify-content-center justify-content-md-around">
-          <div class="card contenedorboton mt-3" style="width: 18rem;">
-            <img src="/images/fuente1.jpg" class="card-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <h4>$$$$$</h4>
-              <a href="#" class="btn boton"><i class="cruz far fa-times-circle"></i></a>
-            </div>
-          </div>
-          <div class="card contenedorboton mt-3" style="width: 18rem;">
-            <img src="/images/gabinete3.jpg" class="card-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <h4>$$$$$</h4>
-              <a href="#" class="btn boton"><i class="cruz far fa-times-circle"></i></a>
-            </div>
-          </div>
-          <h4 class="p-3 mt-3">TOTAL: $$$$</h4>
-          <div class="d-flex justify-content-around"> <a href="#" class="btn btn-secondary pad-2">Seguir comprando</a><a
-              href="#" class="btn btn-primary"><i class="fas fa-cart-plus"></i> Comprar </a></div>
-          <h2></h2> <!-- corregir -->
-          <h2 class="bg-success text-white">Productos Destacados</h2>
-          <div class="producto">
-            <div class="row d-flex justify-content-center justify-content-md-around product">
-              <div class="card-body" style="width: 18rem;">
-                <img src="/images/mother2.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Nombre del producto</h5>
-                  <a href="#" class="btn btn-primary"> Ver más</a>
-                </div>
-              </div>
-              <div class="card-body" style="width: 18rem;">
-                <img src="/images/placa1.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Nombre del producto</h5>
-                  <a href="#" class="btn btn-primary"> Ver más</a>
-                </div>
-              </div>
-            </div>
-          </div>
             <div>
               <% user.carrito.forEach(element => { %>
-                <div class="card contenedorboton mt-3" style="width: 18rem;">
-                  <img src="/images/<%= element.image  %> " class="card-top" alt="...">
-                  <div class="card-body">
+                <div class="card contenedorboton mt-3 bg-success">
+                  <img src="/images/<%= element.image  %> " class="card-top img-thumbnail img-fluid " alt="...">
+                  <div class="card-body mb-3">
                     <h5 class="card-title"><%= element.name  %> </h5>
-                    <h4>$$$$$</h4>
+                    <h4 class="mt-2">$<%= element.price  %></h4>
                     <form action="/products/cart/delete/<%=element.id%>/<%=user.id%> ?_method=DELETE" method="POST">
                       <button class="btn boton" type="submit"><i class="cruz far fa-times-circle"></i></button>
                     </form>
@@ -59,7 +18,7 @@
               <% if (user != undefined) { %>
               </form>
               <form action="/products/api/vl/mercadopago/<%=user.id%> " method="POST">
-                <button class="btn btn-primary" type="submit">Comprar</button>
+                <button class="btn btn-primary mt-3 mb-5" type="submit"><i class="fas fa-hand-holding-usd"></i> Comprar</button>
               </form>
               <% } %> 
             </div>
