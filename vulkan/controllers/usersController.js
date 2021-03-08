@@ -1,5 +1,4 @@
 const fs = require("fs");
-const users = JSON.parse(fs.readFileSync("./data/users.json", "utf-8"));
 const bcrypt = require('bcrypt');
 const {validationResult} = require('express-validator');
 const path = require("path");

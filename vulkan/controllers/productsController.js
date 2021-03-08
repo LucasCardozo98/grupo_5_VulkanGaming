@@ -1,5 +1,4 @@
 const fs = require("fs");
-const products = JSON.parse(fs.readFileSync("./data/products.json","utf-8"));
 const path = require("path");
 const {validationResult} = require("express-validator");
 const db = require("../database/models");
