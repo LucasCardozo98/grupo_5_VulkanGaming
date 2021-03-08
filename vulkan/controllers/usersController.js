@@ -198,7 +198,7 @@ module.exports = {
         })
         Promise.all([users,user,mensajes])
         .then(([users,user,mensajes])=>{
-            res.render("profile",{users,user,mensajes,css: " "})
+            res.render("profile",{users,user,mensajes,css: "/stylesheets/userProfile.css"})
         })
         .catch(error=>{
             res.send(error)
