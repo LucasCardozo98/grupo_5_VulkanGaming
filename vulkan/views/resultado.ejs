@@ -2,8 +2,8 @@
 <%- include("partials/header")%> 
 <% if ( typeof products != "undefined" && typeof products != "null") { %>
         <% products.forEach(element => { %>
-            <div class=" tarjeta " >
-                <a href="/products/detail/<%= element.id %> "><img src="/images/<%=element.image  %> "  alt="..."></a>
+            <div class="card contenedorboton mt-3 bg-success" >
+                <a href="/products/detail/<%= element.id %> "><img class="card-top img-thumbnail img-fluid" src="/images/<%=element.image  %> "  alt="..."></a>
                 <div class="card-body">
                   <h5 class="card-title"><%= element.name  %> </h5>
                   <p class="card-text"> <%= element.price  %> </p>
@@ -22,15 +22,15 @@
  
 <% if ( typeof brand != "undefined" && typeof products != "null") { %>
     <% brand.marcas.forEach(element => { %>
-        <div class=" tarjeta " >
-            <a href="/products/detail/<%= element.id %> "><img src="/images/<%=element.image  %> "  alt="..."></a>
+        <div class="card contenedorboton mt-3 bg-success" >
+            <a href="/products/detail/<%= element.id %> "><img class="card-top img-thumbnail img-fluid" src="/images/<%=element.image  %> "  alt="..."></a>
             <div class="card-body">
               <h5 class="card-title"><%= element.name  %> </h5>
               <p class="card-text"> <%= element.price  %> </p>
              
             <% if (typeof user != "undefined") { %>
                 <form action="/products/cart/<%= element.id %>/<%= user.id %>" method="POST">
-                    <button class="btn btn-primary w-100" type="submit">agregar al carrito</button>
+                    <button class="btn btn-primary" type="submit">agregar al carrito</button>
                   </form>
             <% } %> 
             </div>

@@ -295,16 +295,16 @@ module.exports =  {
         .then(([products,brand,category])=>{
             console.log(products,brand,category)
             if(products!= null && products.length > 0){
-                res.render("resultado",{css: " ", products})
+                res.render("resultado",{css: "/stylesheets/carrito.css", products})
             }
             else if (brand != null){
-                res.render("resultado",{css: " ", brand})
+                res.render("resultado",{css: "/stylesheets/carrito.css", brand})
             }
             else if (category != null){
-                res.render("resultado",{css: " ", category})
+                res.render("resultado",{css: "/stylesheets/carrito.css", category})
             }
             else if (category == null && brand == null && products[0]== null){
-                res.render("sinResultados",{css: " "})
+                res.render("sinResultados",{css: "/stylesheets/carrito.css"})
             }
             
         })
@@ -327,10 +327,10 @@ module.exports =  {
                 })
                 .then(products=>{
                     if(products != null && products.length > 0){
-                        res.render("resultado",{products, css: " "})
+                        res.render("resultado",{products, css: "/stylesheets/carrito.css"})
                   
                     }else{
-                        res.render("sinResultados",{css: " "})
+                        res.render("sinResultados",{css: "/stylesheets/carrito.css"})
                     }
                 })
                 .catch(error=>{
@@ -346,10 +346,10 @@ module.exports =  {
                 })
                 .then(products=>{
                     if(products != null && products.length > 0){
-                        res.render("resultado",{products, css: " "})
+                        res.render("resultado",{products, css: "/stylesheets/carrito.css"})
                   
                     }else{
-                        res.render("sinResultados",{css: " "})
+                        res.render("sinResultados",{css: "/stylesheets/carrito.css"})
                     }
                 })
                 .catch(error=>{
@@ -366,10 +366,10 @@ module.exports =  {
                 })
                 .then(products=>{
                     if(products != null && products.length > 0){
-                        res.render("resultado",{products, css: " "})
+                        res.render("resultado",{products, css: "/stylesheets/carrito.css"})
                   
                     }else{
-                        res.render("sinResultados",{css: " "})
+                        res.render("sinResultados",{css: "/stylesheets/carrito.css"})
                     }
                     console.log(typeof products + "    ESTOS ES EL CONSOLE LOGO A VER QUE DAAA AH RE")
                 })
