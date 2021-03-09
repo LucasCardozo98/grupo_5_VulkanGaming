@@ -147,7 +147,7 @@ module.exports = {
         let users = db.User.findAll()
         Promise.all([brands,categorys,mensajes,users])
         .then(([brands,categorys,mensajes,users])=>{
-            res.render('admins', {css: '',brands,categorys,mensajes,users});
+            res.render('admins', {css: '/stylesheets/admin.css',brands,categorys,mensajes,users});
         })
         .catch(error=>{
             res.send(error +"1");

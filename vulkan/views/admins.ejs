@@ -12,7 +12,7 @@
                                         <option value="<%=element.id%>"><%=element.name%> </option>
                                        <% }) %>
                         </select>
-                        <select class="form-select" name="marca" id=""><br>
+                        <select class="form-select w-100" name="marca" id=""><br>
                                 <%brands.forEach(element => { %>
                                         <option value="<%=element.id%>"><%=element.name%> </option>
                                        <% }) %>
@@ -21,21 +21,24 @@
                 </form>
         </div>
            
-<% if (mensajes != undefined && mensajes != null) { %>
-        <ul>       
-        <% mensajes.forEach(element => { %>
-                 <li><%= element.message  %>  del usuario <%=element.mensajes.username%> </li>
-                <% }) %>
-        </ul>
-    <% } %>
+        <% if (mensajes != undefined && mensajes != null) { %>
+                <ul>       
+                <% mensajes.forEach(element => { %>
+                         <li><%= element.message  %>. Del usuario: <%=element.mensajes.username%> </li>
+                        <% }) %>
+                </ul>
+            <% } %>
     <form action="/users/crearMensaje/<%= user.id %>/" method="POST">
         <textarea class="col-12" name="mensaje" id="" rows="10"></textarea>
-        <select name="idOtherUser" id="">
-            <% users.forEach(element=> { %>
-             <option value="<%=element.id%>"><%=element.username%> </option>
-            <% }) %>
-        </select>
-        <button type="submit">enviar mensaje</button>
+        <div class="row justify-content-around d-flex">
+            <select class="usuarios form-select form-select-m mb-4 text-muted flex-grow-1 w-50" name="idOtherUser" id="">
+                <% users.forEach(element=> { %>
+                <option value="<%=element.id%>"><%=element.username%> </option>
+                <% }) %>
+            </select>
+        <button class="enviar-mensaje btn btn-dark flex-grow-1" type="submit"><i class="far fa-envelope"></i></button>
+        </div>
     </form>
+    
 </div>
 <%- include("partials/footer")%>
