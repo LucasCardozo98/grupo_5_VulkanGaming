@@ -1,13 +1,14 @@
 const fs = require("fs");
-const products = JSON.parse(fs.readFileSync("./data/products.json","utf-8"));
 const path = require("path");
 const {validationResult} = require("express-validator");
 const db = require("../database/models");
 const Op = require("sequelize");
+const mercadopago = require("mercadopago");
+const { brotliDecompress } = require("zlib");
 module.exports =  {
     //aca empieza la muestra de productos de diferentes categorias
     mostrar: (req,res) =>{  
-        res.render("products",{css:'/stylesheets/products.css',products});
+        res.render("products",{css:'/stylesheets/products.css'});
     },
     showCategory: (req,res)=>{
         const categoria = req.params.categoria;
@@ -258,7 +259,7 @@ module.exports =  {
         })
     },
     buscador: (req,res)=>{
-        const busqueda = req.query.busqueda
+        let busqueda = req.query.busqueda
         let products=  db.Product.findAll(
             {
                 include: [{association: "marcas"},{association: "categorias"}],
@@ -294,16 +295,16 @@ module.exports =  {
         .then(([products,brand,category])=>{
             console.log(products,brand,category)
             if(products!= null && products.length > 0){
-                res.render("resultado",{css: " ", products})
+                res.render("resultado",{css: "/stylesheets/buscador.css", products})
             }
             else if (brand != null){
-                res.render("resultado",{css: " ", brand})
+                res.render("resultado",{css: "/stylesheets/buscador.css", brand})
             }
             else if (category != null){
-                res.render("resultado",{css: " ", category})
+                res.render("resultado",{css: "/stylesheets/buscador.css", category})
             }
             else if (category == null && brand == null && products[0]== null){
-                res.render("sinResultados",{css: " "})
+                res.render("sinResultados",{css: "/stylesheets/buscador.css"})
             }
             
         })
@@ -326,10 +327,10 @@ module.exports =  {
                 })
                 .then(products=>{
                     if(products != null && products.length > 0){
-                        res.render("resultado",{products, css: " "})
+                        res.render("resultado",{products, css: "/stylesheets/buscador.css"})
                   
                     }else{
-                        res.render("sinResultados",{css: " "})
+                        res.render("sinResultados",{css: "/stylesheets/buscador.css"})
                     }
                 })
                 .catch(error=>{
@@ -345,10 +346,10 @@ module.exports =  {
                 })
                 .then(products=>{
                     if(products != null && products.length > 0){
-                        res.render("resultado",{products, css: " "})
+                        res.render("resultado",{products, css: "/stylesheets/buscador.css"})
                   
                     }else{
-                        res.render("sinResultados",{css: " "})
+                        res.render("sinResultados",{css: "/stylesheets/buscador.css"})
                     }
                 })
                 .catch(error=>{
@@ -365,10 +366,10 @@ module.exports =  {
                 })
                 .then(products=>{
                     if(products != null && products.length > 0){
-                        res.render("resultado",{products, css: " "})
+                        res.render("resultado",{products, css: "/stylesheets/buscador.css"})
                   
                     }else{
-                        res.render("sinResultados",{css: " "})
+                        res.render("sinResultados",{css: "/stylesheets/buscador.css"})
                     }
                     console.log(typeof products + "    ESTOS ES EL CONSOLE LOGO A VER QUE DAAA AH RE")
                 })
@@ -376,5 +377,43 @@ module.exports =  {
                     res.send(error + "3");
                 })
         }
+    },
+    mercadoPago : (req,res)=>{
+        let id = req.params.id
+        let productos = []
+        mercadopago.configure({
+            access_token: 'TEST-4012676185241188-030723-fa1ad01a11e65236862b4f2e58e27d9f-146686887'
+        });
+        db.User.findByPk(id,{
+            include: [{association: "carrito"}]
+        })
+        .then(products =>{
+            products.carrito.forEach(element => {
+                let producto = {
+                    title: element.name,
+                    unit_price : element.price,
+                    quantity: 1
+                }
+                console.log( "esto es producto  " +producto[0] );
+                productos.push(producto);
+            });
+            let preference = {
+                items : productos
+            }
+            mercadopago.preferences.create(preference)
+            .then((respuesta)=>{
+                res.redirect(respuesta.body.init_point);
+                console.log(respuesta)
+            })
+            .catch(error=>{
+                console.log(error +"  MERCADO PAGO");
+            })
+        })
+        .catch(error=>{
+            res.send(error + "2");
+        })
+        
+
+        
     }
 }

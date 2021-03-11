@@ -26,7 +26,7 @@ router.post("/closeSesion",usersController.cerrarSesion);
 router.get('/admin/:id',adminCheck,usersController.admin);
 router.delete("/delete/:id",loginCheck,usersController.eliminar);
 router.get("/profile/:id",loginCheck,usersController.showProfile);
-router.post("/crearMensaje/:id/",usersController.crearMensaje);
+router.post("/crearMensaje/:id",usersController.crearMensaje);
 router.post("/admin/relacionMarcaCategoria",usersController.relacion);
 
 module.exports = router;

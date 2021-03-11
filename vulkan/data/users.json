@@ -1187,11 +1187,11 @@
     "email": "mailen@gmail.com",
     "password": "$2b$10$is2W1e3KyNPd2RH9pYurJOfJ72gdx9PHmQQcJHtr4nKMV7sFXdaLm",
     "avatar": "avatar.png",
-    "username": "",
-    "first_name": "",
-    "last_name": "",
-    "city": "",
-    "address": "",
-    "rol": ""
+    "username": " ",
+    "first_name": " ",
+    "last_name": " ",
+    "city": " ",
+    "address": " ",
+    "rol": " "
   }
 ]

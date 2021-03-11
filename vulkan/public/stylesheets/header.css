@@ -145,7 +145,7 @@ hace bajar el menu desplegable*/
 
 .buscador form .buscadorEnSerio .contenedor_lupaMobile{
     padding: 4px 2px;
-    background-color: grey;
+    background-color: rgb(65, 138, 89);
     display: flex;
     align-items: center;
 }

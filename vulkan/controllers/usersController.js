@@ -1,5 +1,4 @@
 const fs = require("fs");
-const users = JSON.parse(fs.readFileSync("./data/users.json", "utf-8"));
 const bcrypt = require('bcrypt');
 const {validationResult} = require('express-validator');
 const path = require("path");
@@ -148,7 +147,7 @@ module.exports = {
         let users = db.User.findAll()
         Promise.all([brands,categorys,mensajes,users])
         .then(([brands,categorys,mensajes,users])=>{
-            res.render('admins', {css: '',brands,categorys,mensajes,users});
+            res.render('admins', {css: '/stylesheets/admin.css',brands,categorys,mensajes,users});
         })
         .catch(error=>{
             res.send(error +"1");
@@ -184,7 +183,7 @@ module.exports = {
         })
     },
     showProfile: (req,res)=>{
-        const id = req.params.id
+        let id = req.params.id
         let users = db.User.findAll()
         let user = db.User.findByPk(id,
             {
@@ -198,18 +197,18 @@ module.exports = {
         })
         Promise.all([users,user,mensajes])
         .then(([users,user,mensajes])=>{
-            res.render("profile",{users,user,mensajes,css: " "})
+            res.render("profile",{users,user,mensajes,css: "/stylesheets/userProfile.css"})
         })
         .catch(error=>{
             res.send(error)
         })
     },
     crearMensaje: (req,res)=>{
-        const id = req.params.id
-        const idOtherUser = req.body.idOtherUser
+        let id = req.params.id
+        let idOtherUser = req.body.idOtherUser
         db.Message.create({
             idUserMessage: id,
-            idOtherUser : idOtherUser,
+            idOtherUSer : idOtherUser,
             message : req.body.mensaje
         })
         .then(()=>{

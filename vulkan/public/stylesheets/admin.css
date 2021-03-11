@@ -6,6 +6,11 @@
     color: white;
 }
 
+.enviar-mensaje{
+    width: 1% ;
+    height: 50%;
+}
+
 @media(min-width:426px){
     .admin{
         padding-left: 20%;
