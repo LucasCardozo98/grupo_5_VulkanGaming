@@ -30,12 +30,12 @@
     <% } %>
     <form action="/users/crearMensaje/<%= user.id %>/" method="POST">
         <textarea class="col-12" name="mensaje" id="" rows="10"></textarea>
-        <select name="idOtherUser" id="">
+        <select class="btn btn-dark d-grid gap-2 col-5 mx-auto mt-5 mb-4" name="idOtherUser" id="">
             <% users.forEach(element=> { %>
              <option value="<%=element.id%>"><%=element.username%> </option>
             <% }) %>
         </select>
-        <button type="submit">enviar mensaje</button>
+        <button class="btn btn-dark d-grid gap-2 col-4 mx-auto mt-5 mb-4" type="submit">Enviar mensaje</button>
     </form>
 </div>
 <%- include("partials/footer")%>

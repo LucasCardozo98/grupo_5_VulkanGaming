@@ -37,9 +37,9 @@ h2{
    width: 100%;
 }
  .slider .card .img img{
-   height: 100%;
    width: 100%;
-   object-fit: cover;
+   object-fit: contain;
+   max-height: 200px;
 }
  .slider .card .content{
    padding: 10px 20px;
