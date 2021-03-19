@@ -295,16 +295,16 @@ module.exports =  {
         .then(([products,brand,category])=>{
             console.log(products,brand,category)
             if(products!= null && products.length > 0){
-                res.render("resultado",{css: "/stylesheets/carrito.css", products})
+                res.render("resultado",{css: "/stylesheets/buscador.css", products})
             }
             else if (brand != null){
-                res.render("resultado",{css: "/stylesheets/carrito.css", brand})
+                res.render("resultado",{css: "/stylesheets/buscador.css", brand})
             }
             else if (category != null){
-                res.render("resultado",{css: "/stylesheets/carrito.css", category})
+                res.render("resultado",{css: "/stylesheets/buscador.css", category})
             }
             else if (category == null && brand == null && products[0]== null){
-                res.render("sinResultados",{css: "/stylesheets/carrito.css"})
+                res.render("sinResultados",{css: "/stylesheets/buscador.css"})
             }
             
         })
@@ -327,10 +327,10 @@ module.exports =  {
                 })
                 .then(products=>{
                     if(products != null && products.length > 0){
-                        res.render("resultado",{products, css: "/stylesheets/carrito.css"})
+                        res.render("resultado",{products, css: "/stylesheets/buscador.css"})
                   
                     }else{
-                        res.render("sinResultados",{css: "/stylesheets/carrito.css"})
+                        res.render("sinResultados",{css: "/stylesheets/buscador.css"})
                     }
                 })
                 .catch(error=>{
@@ -346,10 +346,10 @@ module.exports =  {
                 })
                 .then(products=>{
                     if(products != null && products.length > 0){
-                        res.render("resultado",{products, css: "/stylesheets/carrito.css"})
+                        res.render("resultado",{products, css: "/stylesheets/buscador.css"})
                   
                     }else{
-                        res.render("sinResultados",{css: "/stylesheets/carrito.css"})
+                        res.render("sinResultados",{css: "/stylesheets/buscador.css"})
                     }
                 })
                 .catch(error=>{
@@ -366,10 +366,10 @@ module.exports =  {
                 })
                 .then(products=>{
                     if(products != null && products.length > 0){
-                        res.render("resultado",{products, css: "/stylesheets/carrito.css"})
+                        res.render("resultado",{products, css: "/stylesheets/buscador.css"})
                   
                     }else{
-                        res.render("sinResultados",{css: "/stylesheets/carrito.css"})
+                        res.render("sinResultados",{css: "/stylesheets/buscador.css"})
                     }
                     console.log(typeof products + "    ESTOS ES EL CONSOLE LOGO A VER QUE DAAA AH RE")
                 })

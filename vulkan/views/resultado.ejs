@@ -23,8 +23,8 @@
 <% if ( typeof brand != "undefined" && typeof products != "null") { %>
     <% brand.marcas.forEach(element => { %>
         <div class="card contenedorboton mt-3 bg-success" >
-            <a href="/products/detail/<%= element.id %> "><img class="card-top img-thumbnail img-fluid" src="/images/<%=element.image  %> "  alt="..."></a>
-            <div class="card-body">
+            <a class="card-top img-thumbnail img-fluid" href="/products/detail/<%= element.id %> "><img class="card-top img-thumbnail img-fluid" src="/images/<%=element.image  %> "  alt="..."></a>
+            <div class="card-body mb-3">
               <h5 class="card-title"><%= element.name  %> </h5>
               <p class="card-text"> <%= element.price  %> </p>
              
