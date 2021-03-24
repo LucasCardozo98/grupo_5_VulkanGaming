@@ -20,7 +20,7 @@ module.exports = {
     },
     // RENDERIZA LA VISTA REGISTRO Y SU CSS
     showRegister: (req,res) => {
-        res.render('registrate', {css: '/stylesheets/register.css'})
+        res.render('register', {css: '/stylesheets/register.css'})
     },
     // GUARDA EL USUARIO
     guardarUsuario: (req,res) => {
@@ -41,7 +41,7 @@ module.exports = {
             })
         }
         else{
-            res.render('registrate', {css: '/stylesheets/register.css', errors: errors.errors })
+            res.render('register', {css: '/stylesheets/register.css', errors: errors.errors })
         }
         
         
