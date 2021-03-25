@@ -15,7 +15,10 @@ window.addEventListener('load', function(){
 	$PasswordRegisterErrors = qs('#PasswordRegisterErrors'),
 	$InputPasswordRegisterConfirm = qs('#InputPasswordRegisterConfirm'),
 	$PasswordRegisterConfirmErrors = qs('#PasswordRegisterConfirmErrors'),
-    $errores = {}
+    $errores = {},
+	$regExAlpha = /^[a-zA-Z]+$/i
+
+	$inputEmail.addEventListener('blur', function(){
 
 	switch (true) {
 		case !$inputEmail.value.trim():
@@ -27,5 +30,5 @@ window.addEventListener('load', function(){
 			break;
 	}
 })	
-
+})
 

@@ -9,7 +9,7 @@
                 <label for="InputEmailLogIn" class="form-label">Email</label>
                 <input type="email" class="form-control bg-x" name="email" placeholder="Ingresa tu email" id="email"
                   aria-describedby="emailHelp">
-                  
+                <span class="error" id="emailErrors"></span>  
               </div>
               <% if (typeof errores != 'undefined') { %>
                 <ul>
