@@ -1,9 +1,9 @@
 module.exports = {
   "development": {
-    "username": "vulkangaming",
-    "password": "Campora1",
+    "username": "root",
+    "password": null,
     "database": "vulkan",
-    "host": "db4free.net",
+    "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "test": {

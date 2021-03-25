@@ -34,9 +34,12 @@
     <button class="enviar-mensaje btn btn-dark flex-grow-1" type="submit"><i class="far fa-envelope"></i></button>
     </div>
 </form>
-<form  action="/users/delete/<%= user.id %>?_method=DELETE" method="POST">
-    <button class="btn btn-danger mt-4 mb-4 d-flex justify-content-around mr-0" type="submit">Eliminar cuenta</button>
+<form id="formulario"  action="/users/delete/<%= user.id %>?_method=DELETE" method="POST">
+    <button class="btn btn-danger mt-4 mb-4 d-flex justify-content-around mr-0" type="submit" onclick="eliminarUsuario(event,document.querySelector('#formulario'))">Eliminar cuenta</button>
     </form>
 </div>
 
 <%- include("partials/footer")  %> 
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<script src="/javascripts/alertaEliminarUsuario.js"></script>
+</body>
