@@ -1,61 +1,31 @@
-console.log('estoy vinculado');
-
-const form = document.getElementById('form');
-const email = document.getElementById('email');
-const password = document.getElementById('password');
-
-form.addEventListener('submit', ()=>{ 
-	form.preventedefault()
-	checkInputs();
-});
-
-	
-	
-
-
-function checkInputs() {
-
-	const emailValue = email.value.trim();
-	const passwordValue = password.value.trim();
-	const password2Value = password2.value.trim();
-	
-	/* if(usuarioValue === '') {
-		setErrorFor(usuario, 'Noi puede dejar el usuairo en blanco');
-	} else {
-		setSuccessFor(usuario);
-	} */
-	
-	if(emailValue === '') {
-		setErrorFor(email, 'No puede dejar el email en blanco');
-	} else if (!isEmail(emailValue)) {
-		setErrorFor(email, 'No ingreso un email válido');
-	} else {
-		setSuccessFor(email);
-	}
-	
-	if(passwordValue === '') {
-		setErrorFor(password, 'Password no debe ingresar en blanco.');
-	} else {
-		setSuccessFor(password);
-	}
-	
-	if(password2Value === '') {
-		setErrorFor(password2, 'Password2 no debe ngresar en blanco');
-	} else if(passwordValue !== password2Value) {
-		setErrorFor(password2, 'Passwords no coinciden');
-	} else{
-		setSuccessFor(password2);
-	}
+let qs = function(element){
+	return document.querySelector(element)
 }
+	
+window.addEventListener('load', function(){
+	console.log('Vinculado');
 
-function setErrorFor(input, message) {
-	const formControl = input.parentElement;
-	const small = formControl.querySelector('small');
-	formControl.className = 'form-control error';
-	small.innerText = message;
-}
+	let $inputEmail = qs('#email'),
+	$emailErrors = qs('#emailErrors'),
+	$inputPassword = qs('#password'),
+	$passwordErrors = qs('#passwordErrors'),
+	$inputEmailRegister = qs('#emailRegister'),
+	$EmailRegisterErrors = qs('#emailRegisterErrors'),
+	$inputPasswordRegister = qs('#InputPasswordRegister'),
+	$PasswordRegisterErrors = qs('#PasswordRegisterErrors'),
+	$InputPasswordRegisterConfirm = qs('#InputPasswordRegisterConfirm'),
+	$PasswordRegisterConfirmErrors = qs('#PasswordRegisterConfirmErrors'),
+    $errores = {}
 
-function setSuccessFor(input) {
-	const formControl = input.parentElement;
-	formControl.className = 'form-control success';
-}
+	switch (true) {
+		case !$inputEmail.value.trim():
+			$emailErrors.innerHTML = 'El campo email es obligatorio'
+			$inputEmail.classList.add('is-invalid')
+			break;
+			
+		default:
+			break;
+	}
+})	
+
+
