@@ -25,8 +25,8 @@
               <p class="card-text"> <%= element.price  %> </p>
               <a href="#" class="btn btn-primary w-100">Agregar al carrito</a>
               <div class="botones ">
-              <form action="/products/delete/<%= element.id %>?_method=delete" method="POST">
-              <button type="submit" class="btn btn-danger">Eliminar</button></form>
+              <form id="eliminar" action="/products/delete/<%= element.id %>?_method=delete" method="POST">
+              <button id="botonEliminar" type="submit" class="btn btn-danger" onclick="confirmar(event,document.querySelector('#eliminar'))">Eliminar</button></form>
               <button class="btn btn-primary" > <a class="text-white" href="/products/edit/<%= element.id %> ">Editar</a></button>
               </div>
             </div>
@@ -34,6 +34,6 @@
     <% }) %>
     </div>
 <%- include("partials/footer")%>
-  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <script src="/javascripts/alertas"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+  <script src="/javascripts/alertaEliminarProducto.js"></script>
 </body>
