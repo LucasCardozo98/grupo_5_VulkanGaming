@@ -5,6 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var methodOverride = require("method-override");
 var session = require('express-session');
+const cors = require("cors");
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -29,6 +30,15 @@ app.use(methodOverride("_method"));
 app.use(session({secret:'Vulkan'}));
 app.use(locals);
 app.use(cookieCheck);
+app.use(cors());
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin","*"); 
+  res.header('Access-Control-Allow-Credentials', false);
+  res.header('Access-Control-Allow-Headers', 'Authorization, X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Request-Method, Access-Control-Allow-Credentials');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
+  res.header('Allow', 'GET, POST, OPTIONS, PUT, DELETE');
+  next();
+});
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

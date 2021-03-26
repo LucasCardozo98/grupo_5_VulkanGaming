@@ -9,6 +9,7 @@ const loginCheck = require('../middlewares/logincheck');
 const adminCheck = require("../middlewares/adminCheck");
 //REQUIERE LA VALIDACION PARA LOS FORMULARIOS DE PRODUCTS
 const formProductsValidation = require("../middlewares/formsProductValidation");
+const apiController = require("../controllers/apiController");
 
 //recordar poner las rutas finales
 router.get('/',productsController.mostrar); 
@@ -20,11 +21,13 @@ router.post("/create",upload.any(),formProductsValidation,productsController.sto
 router.get("/edit/:id",adminCheck,productsController.showEdit);
 router.put("/edit/:id",upload.any(),formProductsValidation,productsController.edit);
 router.delete("/delete/:id",productsController.delete);
-router.get("/cart/:id",loginCheck,productsController.cart)
+router.get("/cart",productsController.cart)
 router.post("/cart/:idProduct/:idUser",productsController.crearCarrito);
 router.delete("/cart/delete/:idProduct/:idUser",productsController.eliminarProductoCarrito);
 router.get("/buscador",productsController.buscador);
 router.get("/filtrado",productsController.filtrado);
-router.post("/api/vl/mercadopago/:id",productsController.mercadoPago)
+router.post("/api/vl/mercadopago",productsController.mercadoPago);
+router.get("/api/productos",apiController.productos);
+router.get("/api/producto/:id",apiController.producto);
 
 module.exports = router;

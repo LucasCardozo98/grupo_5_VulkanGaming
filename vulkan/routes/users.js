@@ -12,6 +12,7 @@ const loginValidator = require('../middlewares/loginValidator');
 const loginCheck = require("../middlewares/logincheck");
 //  ADMIN CHECK CHEQUEA QUE ESTE LOGEADO UN ADMINISTRADOR PARA INGRESAR A LA RUTA
 const adminCheck = require("../middlewares/adminCheck");
+const apiController = require("../controllers/apiController");
 
 
 // DIRIGE A LAS DIFERENTES RUTAS 
@@ -28,5 +29,6 @@ router.delete("/delete/:id",loginCheck,usersController.eliminar);
 router.get("/profile/:id",loginCheck,usersController.showProfile);
 router.post("/crearMensaje/:id",usersController.crearMensaje);
 router.post("/admin/relacionMarcaCategoria",usersController.relacion);
+router.get("/api/usuarios",apiController.usuarios);
 
 module.exports = router;

@@ -1,26 +1,16 @@
 <%- include("partials/head")%>
   <%- include("partials/header")%>
-    <section>
-            <div>
-              <% user.carrito.forEach(element => { %>
-                <div class="card contenedorboton mt-3 bg-success">
-                  <img src="/images/<%= element.image  %> " class="card-top img-thumbnail img-fluid " alt="...">
-                  <div class="card-body mb-3">
-                    <h5 class="card-title"><%= element.name  %> </h5>
-                    <h4 class="mt-2">$<%= element.price  %></h4>
-                    <form action="/products/cart/delete/<%=element.id%>/<%=user.id%> ?_method=DELETE" method="POST">
-                      <button class="btn boton" type="submit"><i class="cruz far fa-times-circle"></i></button>
-                    </form>
-                   
-                  </div>
-                </div>
-              <% }) %>
-              <% if (user != undefined) { %>
-              </form>
-              <form action="/products/api/vl/mercadopago/<%=user.id%> " method="POST">
-                <button class="btn btn-primary mt-3 mb-5" type="submit"><i class="fas fa-hand-holding-usd"></i> Comprar</button>
-              </form>
-              <% } %> 
+  <section>
+    <ul id="carrito" class="container d-flex carrito">
+
+    </ul>
+    <div class="botones">
+    
+    <button id="comprar" class="btn" onclick="comprar('comprarTodo')"><i class="fas fa-cart-plus"></i>Comprar todo</button>
+    <button id="vaciar" class="btn" onclick="eliminar('eliminarTodo')">Vaciar carrito</button>
+    </div>
+  </section>
+            
             </div>
           <section class="sliderpc">
             <div>
@@ -82,4 +72,5 @@
       integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
       crossorigin="anonymous"></script>
     <%- include("partials/footer")%>
+    <script src="/javascripts/productosCarrito.js"></script>
   </body>

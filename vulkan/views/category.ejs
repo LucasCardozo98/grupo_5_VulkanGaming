@@ -7,16 +7,12 @@
     <div class="contenedora">
     <% products.forEach(element => { %>                      
           <div class=" tarjeta " >
-            <a href="/products/detail/<%= element.id %> "><img src="/images/<%=element.image  %> "  alt="..."></a>
+            <a href="/products/detail/<%=element.id%> "><img src="/images/<%=element.image%> "  alt="..."></a>
             <div class="card-body">
-              <h5 class="card-title"><%= element.brand  %> </h5>
-              <p class="card-text"> <%= element.price  %> </p>
-             
-              <% if (typeof user != "undefined") { %>
-                <form action="/products/cart/<%= element.id %>/<%= user.id %>" method="POST">
-                    <button class="btn btn-primary w-100" type="submit">agregar al carrito</button>
-                  </form>
-            <% } %> 
+              <h2 id="nombre" idProducto=<%=element.id%>><%=element.name%></h2>
+              <h5 class="card-title"><%=element.brand%></h5>
+              <p class="card-text"><%=element.price%></p>            
+              <button class="btn btn-primary w-100" type="submit" onclick="agregar()">agregar al carrito</button>
             </div>
           </div>
     <% }) %>
@@ -25,4 +21,6 @@
   
 </main>
 <%- include("partials/footer")%>
+<script src="/javascripts/carrito.js"></script>
+<script src="/javascripts/carritoDos.js"></script>
 </body>

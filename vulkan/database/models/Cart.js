@@ -16,6 +16,10 @@ module.exports = (sequelize,dataTypes)=>{
         idProduct: {
             type : dataTypes.INTEGER,
             allowNull: true
+        },
+        cantidad : {
+            type: dataTypes.INTEGER,
+            allowNull: false
         }
     }
 

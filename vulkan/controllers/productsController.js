@@ -83,7 +83,7 @@ module.exports =  {
                               
     },
     cart : (req,res) =>{  
-        const userId = req.params.id
+        /*const userId = req.params.id
         db.User.findByPk(userId,{
             include : [{association: "carrito"}]
         })
@@ -92,7 +92,8 @@ module.exports =  {
         })
         .catch(error=>{
             res.send(error);
-        })
+        })*/
+        res.render("carrito",{css: "/stylesheets/carrito.css"});
         
     },
     productDetail: (req,res)=>{
@@ -233,6 +234,7 @@ module.exports =  {
     crearCarrito: (req,res)=>{
         const idProduct = req.params.idProduct;
         const idUser = req.params.idUser;
+        
         db.Cart.create({
             idUser: +idUser,
             idProduct : +idProduct
@@ -379,7 +381,7 @@ module.exports =  {
         }
     },
     mercadoPago : (req,res)=>{
-        let id = req.params.id
+        /*let id = req.params.id
         let productos = []
         mercadopago.configure({
             access_token: 'TEST-4012676185241188-030723-fa1ad01a11e65236862b4f2e58e27d9f-146686887'
@@ -411,9 +413,27 @@ module.exports =  {
         })
         .catch(error=>{
             res.send(error + "2");
-        })
+        })*/
+        const productos = req.body;
+        console.log(productos)
+        mercadopago.configure({
+            access_token: 'TEST-4012676185241188-030723-fa1ad01a11e65236862b4f2e58e27d9f-146686887'
+        });
+        let preference = {
+            items : productos
+        }
+        mercadopago.preferences.create(preference)
+            .then((respuesta)=>{
+                console.log(respuesta);
+               res.json({
+                   data: respuesta.response.init_point});
+                
+            })
+            
+            .catch(error=>{
+                console.log(error +"  MERCADO PAGO");
+            })
         
-
         
     }
 }
