@@ -75,7 +75,8 @@
               <div class="mb-3">
                 <label for="InputPasswordRegister" class="form-label">Contraseña</label>
                 <input type="password" class="form-control bg-x" name="adress" placeholder="Ingresa tu contraseña"
-                  id="InputPasswordRegister">
+                  id="inputPasswordRegister">
+                  <span class="error" id="passwordRegisterErrors"></span>
                   <% if (typeof errors != 'undefined') { %>
                     <ul>
                    <% errors.forEach(element => { %>
@@ -87,7 +88,8 @@
                   <% } %>
                 <label for="InputPasswordRegisterConfirm" class="form-label mt-3">Confirmar contraseña</label>
                 <input type="password" class="form-control bg-x" name="adress2" placeholder="Confirma tu contraseña"
-                  id="InputPasswordRegisterConfirm">
+                  id="inputPasswordRegisterConfirm">
+                  <span class="error" id="passwordRegisterConfirmErrors"></span>
                   <% if (typeof errors != 'undefined') { %>
                     <ul>
                    <% errors.forEach(element => { %>
