@@ -16,19 +16,45 @@ window.addEventListener('load', function(){
 	$InputPasswordRegisterConfirm = qs('#InputPasswordRegisterConfirm'),
 	$PasswordRegisterConfirmErrors = qs('#PasswordRegisterConfirmErrors'),
     $errores = {},
-	$regExAlpha = /^[a-zA-Z]+$/i
+	regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/,
+    regExDNI = /^[0-9]{7,8}$/,
+    regExEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i,
+    regExPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,12}$/;
 
-	$inputEmail.addEventListener('blur', function(){
+	$inputEmail.addEventListener('blur', function() {
+        switch (true) {
+            case !$inputEmail.value.trim():
+                $emailErrors.innerHTML = 'El campo email es obligatorio';
+                $inputEmail.classList.add('is-invalid')
+                break;
+            case !regExEmail.test($inputEmail.value):
+                $emailErrors.innerHTML = 'Debe ingresar un email válido';
+                $inputEmail.classList.add('is-invalid')
+                break
+            default:
+                $inputEmail.classList.remove('is-invalid');
+                $inputEmail.classList.add('is-valid');
+                $emailErrors.innerHTML = ''
+                break;
+        }
+    })
 
-	switch (true) {
-		case !$inputEmail.value.trim():
-			$emailErrors.innerHTML = 'El campo email es obligatorio'
-			$inputEmail.classList.add('is-invalid')
-			break;
-			
-		default:
-			break;
-	}
-})	
+	$inputPassword.addEventListener('blur', function() {
+        switch (true) {
+            case !$inputPassword.value.trim():
+                $passwordErrors.innerHTML = 'El campo contraseña es obligatorio';
+                $inputPassword.classList.add('is-invalid')
+                break;
+            case !regExPass.test($inputPassword.value):
+                $passwordErrors.innerHTML = 'La contraseña debe tener: entre 6 o 12 caracteres, al menos una mayúscula, una minúscula y un número';
+                $inputPassword.classList.add('is-invalid')
+                break
+            default:
+                $inputPassword.classList.remove('is-invalid');
+                $inputPassword.classList.add('is-valid');
+                $passwordErrors.innerHTML = ''
+                break;
+        }
+    })
 })
 

@@ -23,7 +23,7 @@
               <div class="mb-3">
                 <label for="InputPasswordLogIn" class="form-label">Contraseña</label>
                 <input type="password" class="form-control bg-x mb-3" name="password" placeholder="Ingresa tu contraseña" id="password">
-                
+                <span class="error" id="passwordErrors"></span>
                 <% if (typeof errores != 'undefined') { %>
                   <ul>
                  <% errores.forEach(element => { %>
@@ -60,8 +60,8 @@
               <div id="emailHelp" class="form-text text-center mt-2">Registrarse</div>
               <div class="mb-3">
                 <label for="InputEmailRegister" class="form-label">Email</label>
-                <input type="email" class="form-control bg-x" name="email" placeholder="Ingresa tu email" id="emailRegister"
-                  >
+                <input type="email" class="form-control bg-x" name="email" placeholder="Ingresa tu email" id="emailRegister">
+                <span class="error" id="emailRegisterErrors"></span>
                   <% if (typeof errors != 'undefined') { %>
                     <ul>
                    <% errors.forEach(element => { %>
