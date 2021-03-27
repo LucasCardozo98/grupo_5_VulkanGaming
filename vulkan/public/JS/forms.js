@@ -10,14 +10,13 @@ window.addEventListener('load', function(){
 	$inputPassword = qs('#password'),
 	$passwordErrors = qs('#passwordErrors'),
 	$inputEmailRegister = qs('#emailRegister'),
-	$EmailRegisterErrors = qs('#emailRegisterErrors'),
-	$inputPasswordRegister = qs('#InputPasswordRegister'),
-	$PasswordRegisterErrors = qs('#PasswordRegisterErrors'),
-	$InputPasswordRegisterConfirm = qs('#InputPasswordRegisterConfirm'),
-	$PasswordRegisterConfirmErrors = qs('#PasswordRegisterConfirmErrors'),
+	$emailRegisterErrors = qs('#emailRegisterErrors'),
+	$inputPasswordRegister = qs('#inputPasswordRegister'),
+	$passwordRegisterErrors = qs('#passwordRegisterErrors'),
+	$inputPasswordRegisterConfirm = qs('#inputPasswordRegisterConfirm'),
+	$passwordRegisterConfirmErrors = qs('#passwordRegisterConfirmErrors'),
     $errores = {},
 	regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/,
-    regExDNI = /^[0-9]{7,8}$/,
     regExEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i,
     regExPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,12}$/;
 
@@ -53,6 +52,60 @@ window.addEventListener('load', function(){
                 $inputPassword.classList.remove('is-invalid');
                 $inputPassword.classList.add('is-valid');
                 $passwordErrors.innerHTML = ''
+                break;
+        }
+    })
+
+	$inputEmailRegister.addEventListener('blur', function() {
+        switch (true) {
+            case !$inputEmailRegister.value.trim():
+                $emailRegisterErrors.innerHTML = 'El campo email es obligatorio';
+                $inputEmailRegister.classList.add('is-invalid')
+                break;
+            case !regExEmail.test($inputEmailRegister.value):
+                $emailRegisterErrors.innerHTML = 'Debe ingresar un email válido';
+                $inputEmailRegister.classList.add('is-invalid')
+                break
+            default:
+                $inputEmailRegister.classList.remove('is-invalid');
+                $inputEmailRegister.classList.add('is-valid');
+                $emailRegisterErrors.innerHTML = ''
+                break;
+        }
+    })
+
+	$inputPasswordRegister.addEventListener('blur', function() {
+        switch (true) {
+            case !$inputPasswordRegister.value.trim():
+                $passwordRegisterErrors.innerHTML = 'El campo contraseña es obligatorio';
+                $inputPasswordRegister.classList.add('is-invalid')
+                break;
+            case !regExPass.test($inputPasswordRegister.value):
+                $passwordRegisterErrors.innerHTML = 'La contraseña debe tener: entre 6 o 12 caracteres, al menos una mayúscula, una minúscula y un número';
+                $inputPasswordRegister.classList.add('is-invalid')
+                break
+            default:
+                $inputPasswordRegister.classList.remove('is-invalid');
+                $inputPasswordRegister.classList.add('is-valid');
+                $passwordRegisterErrors.innerHTML = ''
+                break;
+        }
+    })
+
+	$inputPasswordRegisterConfirm.addEventListener('blur', function() {
+        switch (true) {
+            case !$inputPasswordRegisterConfirm.value.trim():
+                $passwordRegisterConfirmErrors.innerHTML = 'El campo contraseña es obligatorio';
+                $inputPasswordRegisterConfirm.classList.add('is-invalid')
+                break;
+            case $inputPasswordRegister.value != $inputPasswordRegisterConfirm.value :
+				$passwordRegisterConfirmErrors.innerHTML = 'Las contras no coinciden';
+				$inputPasswordRegisterConfirm.classList.add('is-invalid')
+                break;
+            default:
+                $inputPasswordRegisterConfirm.classList.remove('is-invalid');
+                $inputPasswordRegisterConfirm.classList.add('is-valid');
+                $passwordRegisterConfirmErrors.innerHTML = ''
                 break;
         }
     })

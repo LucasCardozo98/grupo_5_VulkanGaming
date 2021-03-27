@@ -1,4 +1,7 @@
 const notificacion = document.querySelector("#notificacion");
+var carro = getCarro()
+
+console.log(carro);
 
 function getCarro(){
     const carro = JSON.parse(localStorage.getItem("carrito"));
