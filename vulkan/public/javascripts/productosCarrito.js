@@ -1,7 +1,8 @@
 
 //localStorage.clear()
 const listaProductos = document.querySelector("#carrito");
-const oldHTML = listaProductos.innerHTML;
+oldHTML = `<li id="vacio">el carrito esta vacio <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Lime_checkbox-checked.svg/1024px-Lime_checkbox-checked.svg.png" alt=""></li>`
+listaProductos.innerHTML = oldHTML
 
 listaProductos.style.listStyle = "none"
 let carrito = JSON.parse(localStorage.getItem("carrito"));
@@ -31,8 +32,13 @@ fetch("http://localhost:3000/products/api/productos")
     let tarjetas = productos.map(element=>{
         return `<li id="id${element.id}"><div class="card"><div class="img"><img src="/images/${element.image}" alt=""></div><div class="content"><div class="title">${element.title}</div><div class="price">$${element.price}</div><div class="title">Unidades: ${element.quantity}</div><div class="btn"><button onClick="comprar(${element.id})" idProducto="${element.id}"><i class="fas fa-cart-plus"></i>Comprar</button><button onClick="eliminar(${element.id})">Eliminar</button></div></li>`
     })
-    listaProductos.innerHTML = " "
-    listaProductos.innerHTML = `${tarjetas}`
+    if(tarjetas.length > 0){
+        listaProductos.innerHTML = " "
+        listaProductos.innerHTML = `${tarjetas}`
+    }else{
+        listaProductos.innerHTML = oldHTML;
+    }
+   
 })
 .catch(error=>{
     console.log(error);
