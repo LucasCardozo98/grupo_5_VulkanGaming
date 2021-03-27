@@ -431,7 +431,7 @@ module.exports =  {
             })
             
             .catch(error=>{
-                console.log(error +"  MERCADO PAGO");
+                console.log(error +"MERCADO PAGO");
             })
         
         

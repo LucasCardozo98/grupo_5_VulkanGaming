@@ -37,7 +37,7 @@ function agregar(){
         localStorage.setItem("carrito",JSON.stringify(chango))
         }
     }
-    
+    imprimir()
     console.log(localStorage.getItem("carrito"))
 }
 

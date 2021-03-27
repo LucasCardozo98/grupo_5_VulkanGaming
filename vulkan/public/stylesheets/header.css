@@ -12,6 +12,23 @@
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 }
+.contenedorCarrito{
+    position: relative;
+}
+.notificacion{
+    width: 25px;
+    height: 25px;
+    background-color: #ff1414;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 20px;
+    position: absolute;
+    right: -5px;
+    top: -10px;
+}
 #check{
     display: none;
 }

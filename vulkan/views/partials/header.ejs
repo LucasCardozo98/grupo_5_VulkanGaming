@@ -41,11 +41,9 @@
        <% } %> 
       </div>
       <!--estas cosas aparecen en responsive-->
-      <div><% if (user != undefined) { %>
-        <a href="/products/cart"><i class="fas fa-shopping-cart"></i></a></div>
-      <% } else {%>
+      <div class="contenedorCarrito">
+        <div id="notificacion" class="notificacion bg-success"></div>
       <a href="/products/cart"><i class="fas fa-shopping-cart"></i></a></div>
-      <% } %> 
     </div>
 
     <div id="contenedor" class="buscador">
