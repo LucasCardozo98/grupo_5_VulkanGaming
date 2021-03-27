@@ -18,8 +18,9 @@ function contar(){
 }
 function imprimir(){
     let cantidad = contar()
+    const carro = getCarro()
    
-    if(cantidad == 0){
+    if(cantidad == 0 || carro == null){
         notificacion.style.display = "none"
     }
     else{
