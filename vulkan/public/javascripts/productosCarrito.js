@@ -1,7 +1,7 @@
 
 //localStorage.clear()
 const listaProductos = document.querySelector("#carrito");
-oldHTML = `<li id="vacio">el carrito esta vacio <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Lime_checkbox-checked.svg/1024px-Lime_checkbox-checked.svg.png" alt=""></li>`
+oldHTML = `<li id="vacio">El carrito esta vacío <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Lime_checkbox-checked.svg/1024px-Lime_checkbox-checked.svg.png" alt=""></li>`
 listaProductos.innerHTML = oldHTML
 
 listaProductos.style.listStyle = "none"
@@ -47,33 +47,7 @@ fetch("http://localhost:3000/products/api/productos")
 function comprar (id){
     if(id== "comprarTodo"){
         console.log(productos);
-        fetch("http://localhost:3000/products/api/vl/mercadopago",{
-            method: 'POST', // *GET, POST, PUT, DELETE, etc.
-            mode: 'same-origin', // no-cors, *cors, same-origin
-            cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-            credentials: 'omit', // include, *same-origin, omit
-            headers: {
-              'Content-Type': 'application/json'
-              // 'Content-Type': 'application/x-www-form-urlencoded',
-            },
-            redirect: 'follow', // manual, *follow, error
-            referrerPolicy: 'origin', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
-            body: JSON.stringify(productos) // body data type must match "Content-Type" header
-          })
-        .then(response=>{
-           console.log(response);
-           //window.location.replace(response.url);
-           return response.json()
-            
-        })     
-        .then(data=>{
-            console.log(data);
-            window.location.href = data.data;
-
-        })   
-        .catch(error=>{
-            console.log(error);
-        })
+        
     }
     else{
         console.log("comprar "+ id)
@@ -95,6 +69,7 @@ function eliminar (id){
             if(element.id == id){
                 if(element.quantity > 1){
                     element.quantity = element.quantity - 1
+            
                     
                 }
                 else if(element.quantity == 1){
@@ -111,6 +86,7 @@ function eliminar (id){
                 
                     if(element.quantity > 1){
                         element.quantity = element.quantity - 1
+                        element.price = element.unit_price * element.quantity 
                         
                     }
                     else if(element.quantity == 1){

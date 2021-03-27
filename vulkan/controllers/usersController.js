@@ -172,14 +172,35 @@ module.exports = {
     },
     eliminar : (req,res)=>{
         let id = req.params.id
-        db.User.destroy({
+        let carro = db.Cart.destroy({
+            where: {
+                idUser : id
+            }
+        })
+        
+        let mensajes = db.Message.destroy({
+            where: {
+                [db.Sequelize.Op.or]: [{idUserMessage: id},{idOtherUSer: id}]
+            }
+        })
+        
+        let usuario = db.User.destroy({
             where:{
                 id: id
             }
         })
-        .then(res.redirect("/users"))
+        Promise.all([carro,mensajes,usuario])
+        .then(([carro,mensajes,usuario])=>{
+            req.session.destroy()
+            if(req.cookie != undefined){
+                res.cookie("userVulkan"," ",{
+                    maxAge: -100
+                });
+            }
+            res.redirect("/")
+        })
         .catch(error=>{
-            res.send(error);
+            res.send(error + "1");
         })
     },
     showProfile: (req,res)=>{

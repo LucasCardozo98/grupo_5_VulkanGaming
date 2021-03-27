@@ -5,9 +5,24 @@
   position: relative; padding-left: 0;
 }
 .carrito{
-  margin-bottom: 100px;
+  margin-bottom: 10px;
   display: flex;
   flex-direction: column;
+  height: 100%;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+#vacio{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+#vacio img{
+  width: 250px;
+
 }
 .botones{
   width: 50%;

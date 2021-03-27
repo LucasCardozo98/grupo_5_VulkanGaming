@@ -17,11 +17,11 @@ function imprimir(){
     let cantidad = contar()
     const carro = getCarro()
    
-    if(cantidad == 0 || carro == null){
-        notificacion.style.display = "none"
+    if(cantidad == 0){
+        notificacion.innerHTML = " "
     }
     else{
-        notificacion.style.display = "flex"
+       
         notificacion.innerHTML = cantidad;
     }
 
