@@ -1,11 +1,84 @@
 const productoCategoria = document.querySelector("#nombre");
-
+//console.log(productoCategoria);
 productoCategoria.getAttribute("idProducto");
-let carrito = []
+let carritoAgregar = []
 //localStorage.clear()
 //localStorage.setItem("carrito",JSON.stringify(carrito));
 function agregar(){
-    let existe = false;
+    
+    fetch("http://localhost:3000/products/api/productos")
+    .then(response=>{
+    return response.json()
+    })
+    .then(data=>{
+            let producto = data.data.filter(element=>{
+                return element.id == productoCategoria.getAttribute("idProducto")
+            })
+            //console.log(producto);
+            let carrito = JSON.parse(localStorage.getItem("carrito"))
+           
+            if(carrito != null && carrito.length != 0){
+                //console.log("carrito.lhent es "+ carrito.length)
+                let productoCarrito = carrito.filter(element=>{
+                    return element.id == producto[0].id
+                })
+                //console.log(carrito.indexOf(productoCarrito[0]))
+            carrito.forEach(element=>{
+             
+                if(carrito.indexOf(productoCarrito[0])!= -1 && producto[0].id == element.id){
+                    element.quantity = element.quantity + 1
+                    element.price = element.unit_price * element.quantity
+                    localStorage.setItem("carrito",JSON.stringify(carrito));
+                    imprimir()
+                    //console.log(`estamos en el if porque ${element.id} == producto.id`);
+                }else if(carrito.indexOf(productoCarrito[0]) == -1){ 
+                    //console.log("entramos al else de agregar porque los id son diferentes");
+                    let cantidad = 1;
+                    let precio = producto[0].price * cantidad
+                    item = {
+                        id: producto[0].id,
+                        name: producto[0].name,
+                        unit_price : producto[0].price,
+                        quantity: cantidad,
+                        price : precio,
+                        description: producto[0].description,
+                        image: producto[0].image
+                    }
+                    carrito.push(item);
+                    localStorage.setItem("carrito",JSON.stringify(carrito))
+                    imprimir()
+
+                }
+            })
+            }else{
+                //console.log("carrito es null y hacemos esto");
+                
+                let carritoAgregar = []
+                let cantidad = 1;
+                let precio = producto[0].price * cantidad
+                //console.log(producto.price, producto)
+                    item = {
+                        id: producto[0].id,
+                        name: producto[0].name,
+                        unit_price : producto[0].price,
+                        quantity: cantidad,
+                        price : precio,
+                        description: producto[0].description,
+                        image: producto[0].image
+                    }
+                    //console.log(item);
+                    carritoAgregar.push(item);
+                localStorage.setItem("carrito",JSON.stringify(carritoAgregar));
+                imprimir()
+            }
+
+            
+    })
+    .catch(error=>{
+        console.log(error)
+    })
+
+    /*let existe = false;
     let chango = JSON.parse(localStorage.getItem("carrito"))
     let item = {
         id: productoCategoria.getAttribute("idProducto"),
@@ -38,7 +111,10 @@ function agregar(){
         }
     }
     imprimir()
-    console.log(localStorage.getItem("carrito"))
+    console.log(localStorage.getItem("carrito"))*/
+   
+    console.log(localStorage.getItem("carrito"));
+    console.log("fin de la funcion");
 }
 
 
