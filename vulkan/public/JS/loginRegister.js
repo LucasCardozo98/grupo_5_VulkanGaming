@@ -15,6 +15,8 @@ window.addEventListener('load', function(){
 	$passwordRegisterErrors = qs('#passwordRegisterErrors'),
 	$inputPasswordRegisterConfirm = qs('#inputPasswordRegisterConfirm'),
 	$passwordRegisterConfirmErrors = qs('#passwordRegisterConfirmErrors'),
+    $formlLogin = qs('#formLogin'),
+    $formRegister = qs('#formRegister'),
     $errores = {},
 	regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/,
     regExEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i,
@@ -107,6 +109,48 @@ window.addEventListener('load', function(){
                 $inputPasswordRegisterConfirm.classList.add('is-valid');
                 $passwordRegisterConfirmErrors.innerHTML = ''
                 break;
+        }
+    })
+
+    formLogin.addEventListener('submit',function(event){
+        let error = false;
+        event.preventDefault()
+        //console.log(form.elements)
+        let elementosForm = this.elements
+        console.log(foto);
+        for (let index = 0; index < elementosForm.length-2; index++) {
+            console.log(elementosForm[index].value, index);
+            if(elementosForm[index].value == ""){
+                elementosForm[index].classList.add('is-invalid');
+                submitErrors.innerHTML = "Los campos señalados son obligatorios";
+                error = true;
+            }
+        }
+
+        if(!error){
+            console.log('Todo bien');
+            formLogin.submit()
+        }
+    })
+
+    formRegister.addEventListener('submit',function(event){
+        let error = false;
+        event.preventDefault()
+        //console.log(form.elements)
+        let elementosForm = this.elements
+        console.log(foto);
+        for (let index = 0; index < elementosForm.length-2; index++) {
+            console.log(elementosForm[index].value, index);
+            if(elementosForm[index].value == ""){
+                elementosForm[index].classList.add('is-invalid');
+                submitErrors.innerHTML = "Los campos señalados son obligatorios";
+                error = true;
+            }
+        }
+
+        if(!error){
+            console.log('Todo bien');
+            formRegister.submit()
         }
     })
 })
