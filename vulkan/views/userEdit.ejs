@@ -9,37 +9,43 @@
           </div>
           <div class="position-relative" >
             <img class="img-fluid  d-grid gap-2 mx-auto mb-4" width="316px" src="/images/users/<%=user.avatar%>" alt="">
-            <button type="button"  class="editor btn btn-outline-dark position-absolute bottom-0 end-0" onclick="document.getElementById('formFileSm').click()"><i class="fas fa-edit"></i></button>
+            <button id="ver" type="button"  class="editor btn btn-outline-dark position-absolute bottom-0 end-0" ><i class="fas fa-edit" onclick="document.getElementById('formFileSm').click()"></i></button>
           </div>
-          <form  action="/users/edit/<%=user.id%>?_method=PUT" method="POST" enctype="multipart/form-data" id="formulario">
+          <form  action="/users/edit/<%=user.id%>?_method=PUT" method="POST" enctype="multipart/form-data" id="formularioUsuario">
             <div class="mb-3">
-              <input class="form-control form-control-m d-none" id="formFileSm" type="file" name="avatar">          
+              <input class="form-control form-control-m d-none" id="formFileSm" type="file" name="avatar">   
+              <span class="error" id="fotoErrors"></span>    
             </div>
             <div>
               <div class="mb-1 mt-1">
                 <label for="username" class="form-label"></label>
                 <input type="text" class="input form-control bg-x" placeholder="Username" id="username" name="username" value="<%= user.username %>"
                   aria-describedby="emailHelp">
+                  <span class="error" id="usernameErrors"></span>
               </div>
               <div class="mb-1 mt-1">
                 <label for="email" class="form-label"></label>
                 <input type="email" class="input form-control bg-x " disabled placeholder="Email" id="email" name="email" value="<%= user.email %>"
                   aria-describedby="emailHelp">
+                  <span class="error" id="emailErrors"></span>
               </div>
               <div class="mb-1 mt-1">
                 <label for="nombre" class="form-label"></label>
                 <input type="text" class="input form-control bg-x" placeholder="Nombre" id="nombre" name="first_name" value="<%= user.firstName %>"
                   aria-describedby="emailHelp">
+                  <span class="error" id="nombreErrors"></span>
               </div>
               <div class="mb-1 mt-1">
                 <label for="apellido" class="form-label"></label>
                 <input type="text" class="input form-control bg-x" placeholder="Apellido" id="apellido" name="last_name" value="<%= user.lastname %>"
                   aria-describedby="emailHelp">
+                  <span class="error" id="apellidoErrors"></span>
               </div>
               <div class="mb-1 mt-1">
                 <label for="direccion" class="form-label"></label>
                 <input type="text" class="input form-control bg-x" placeholder="Direccion" id="direccion"
                   name="address" value="<%= user.address %>" aria-describedby="emailHelp">
+                  <span class="error" id="direccionErrors"></span>
               </div>
               <!-- <div class="mb-1 mt-1">
                 <label for="codigo postal" class="form-label"></label>
@@ -51,6 +57,7 @@
                 <button type="submit" class="btn btn-primary" >Guardar</button>
               </div>
             </div>
+            <span id="submitErrors"></span>
           </form>
         </div>
       </div>
@@ -61,4 +68,6 @@
     <%- include("partials/footer")%>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="/javascripts/alertaEditarUsuario.js"></script>
+    <script src="/javascripts/datosUsuario.js"></script>
     </body>
+    
