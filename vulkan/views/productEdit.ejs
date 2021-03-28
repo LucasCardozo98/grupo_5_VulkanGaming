@@ -7,17 +7,19 @@
         <div class="titulo bg-success text-center mb-5">
           <h2 class="admin-title bg-dark">El admin piola</h2>
         </div>
-        <form action="/products/edit/<%=product.id%>?_method=PUT" method="POST" enctype="multipart/form-data" id="formulario">
+        <form action="/products/edit/<%=product.id%>?_method=PUT" method="POST" enctype="multipart/form-data" id="form">
           <img class="rounded mx-auto d-block "  src="/images/<%=product.image  %> " alt="">
           <div class="mb-3">
             <input class="form-control form-control-m"  id="formFileSm" type="file" name="image">
+            <span class="error" id="formFileErrors"></span>
           </div>
          <!----> 
           <div>
             <div class="mb-4 mt-4">
               <label for="exampleInputEmail1" class="form-label"></label>
-              <input type="text" class="input form-control bg-x" placeholder="Nombre" id="exampleInputEmail1"
-                aria-describedby="emailHelp" name="name" value="<%=product.name  %> ">
+              <input type="text" class="input form-control bg-x" placeholder="Nombre" id="inputName"
+                value="<%=product.name  %> ">
+                <span class="error" id="nameErrors"></span>
             </div>
             <% if (typeof errors != 'undefined') { %>
               <ul>
@@ -80,7 +82,8 @@
               <% } %>
             <div>
               <div class="form-floating mb-4">
-                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea" name="description" ><%= product.description%></textarea>
+                <textarea class="form-control" placeholder="Leave a comment here" id="description" name="description" ><%= product.description%></textarea>
+                <span class="error" id="descriptionErrors"></span>
                 <label class="text-muted">Descripcion</label>
               </div>
             </div>
@@ -95,6 +98,7 @@
     </div>
   </div>
 
+  <script src="/JS/productEdit.js"></script>
 <%- include("partials/footer")%>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <script src="/javascripts/alertaEditarProducto.js"></script>

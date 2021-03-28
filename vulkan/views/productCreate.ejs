@@ -7,17 +7,17 @@
         <div class="titulo bg-success text-center mb-5">
           <h2 class="admin-title bg-dark">El admin piola</h2>
         </div>
-        <form action="/products/create" method="POST" enctype="multipart/form-data">
+        <form action="/products/create" method="POST" enctype="multipart/form-data" id="form">
           
           <div class="mb-3">
             <input class="form-control form-control-m"  id="formFileSm" type="file" name="image">
+            <span class="error" id="formFileErrors"></span>
           </div>
-         <!----> 
           <div>
             <div class="mb-4 mt-4">
               <label for="exampleInputEmail1" class="form-label"></label>
-              <input type="text" class="input form-control bg-x" placeholder="Nombre" id="exampleInputEmail1"
-                aria-describedby="emailHelp" name="name">
+              <input type="text" class="input form-control bg-x" placeholder="Nombre" id="inputName" name="name">
+                <span class="error" id="nameErrors"></span>
             </div>
             <% if (typeof errors != 'undefined') { %>
               <ul>
@@ -94,8 +94,9 @@
             <% } %>
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label"></label>
-              <input type="number" class="input form-control bg-x" placeholder="Precio" id="exampleInputEmail1"
+              <input type="number" class="input form-control bg-x" placeholder="Precio" id="price"
                 aria-describedby="emailHelp" name="price">
+                <span class="error" id="priceErrors"></span>
             </div>
             <% if (typeof errors != 'undefined') { %>
               <ul>
@@ -108,7 +109,8 @@
             <% } %>
             <div>
               <div class="form-floating mb-4">
-                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea" name="description"></textarea>
+                <textarea class="form-control" placeholder="Leave a comment here" id="description" name="description"></textarea>
+                <span class="error" id="descriptionErrors"></span>
                 <label class="text-muted">Descripcion</label>
               </div>
               <% if (typeof errors != 'undefined') { %>
@@ -130,6 +132,6 @@
       </div>
     </div>
   </div>
-  
+  <script src="/JS/productCreate.js"></script>
   <%- include("partials/footer")%>
 </body>
