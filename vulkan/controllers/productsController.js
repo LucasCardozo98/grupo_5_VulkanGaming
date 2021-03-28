@@ -435,5 +435,8 @@ module.exports =  {
             })
         
         
+    },
+    pagar: (req,res)=>{
+        res.render("pagar",{css: "/stylesheets/pagar.css"});
     }
 }

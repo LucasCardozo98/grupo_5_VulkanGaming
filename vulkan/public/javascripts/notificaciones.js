@@ -11,9 +11,13 @@ function getCarro(){
 function contar(){
     const carro = getCarro()
     let cantidad = 0;
+    if(carro != null){
     carro.forEach(element => {
         cantidad = cantidad + element.quantity
-    });
+    });}
+    else{
+        cantidad = 0;
+    }
     return cantidad;
 }
 function imprimir(){

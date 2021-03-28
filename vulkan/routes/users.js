@@ -30,5 +30,6 @@ router.get("/profile/:id",loginCheck,usersController.showProfile);
 router.post("/crearMensaje/:id",usersController.crearMensaje);
 router.post("/admin/relacionMarcaCategoria",usersController.relacion);
 router.get("/api/usuarios",apiController.usuarios);
+router.post("/api/sesion",apiController.iniciarSesion);
 
 module.exports = router;

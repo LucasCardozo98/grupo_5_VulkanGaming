@@ -1,0 +1,35 @@
+<%- include("partials/head") %>
+<%- include("partials/header") %>
+<h1>Vas a comprar</h1>
+<ul id="carrito" class="container d-flex carrito">
+</ul>
+
+<h2>Inicia sesión y completa los datos de facturación</h2>
+<form action="" id="formulario">
+    <input type="email" name="email" placeholder="Email" id="email">
+    <input type="password" name="password" placeholder="Contraseña", id="password">
+    <label for="check">Recordarme</label>
+    <input type="check" id="chequeado">
+
+    
+<h2>Datos de facturacion</h2>
+
+    <label for="metodoDePago">Metodo de pago</label>
+    <select name="metodoDePago" id="metodoDePago">
+        <option value="1">Crédito</option>
+        <option value="2">Débito</option>
+    </select>
+    <label for="numeroTarjeta">Ingresa el numero de la tarjeta</label>
+    <input type="text" id="numeroTarjeta">
+    <label for="vencimineto">vencimineto</label>
+    <input type="text" id="vencimiento">
+    <label for="cvc">Ingrese el cvc</label>
+    <input type="text" name="cvc" id="cvc">
+    <button onclick="iniciarSesion(event,document.querySelector('#formulario'))">enviar</button>
+</form>
+<%- include("partials/footer") %>
+ 
+<script src="/javascripts/productosCarrito.js"></script> 
+<script src="/javascripts/notificaciones.js"></script>
+<script src="/javascripts/comprar.js"></script>
+</body>

@@ -24,7 +24,7 @@
             <button class="contenedor__lupaDesktop" type="submit"><i class="lupaDesktop fas fa-search"></i></button>
           </div>  
         </form>     
-        <% if ( user != undefined) { %>
+        <% if (typeof user != "undefined") { %>
           <form action="/users/closeSesion" method="POST">
             <input type="checkbox" name="check" id="check">
             <button  id="cierreSesiona" type="submit"><label class="text-white" for="check">Cerrar sesión</label></button>
@@ -70,7 +70,7 @@
         <li><a href="">Armá tu pc</a></li>
         <li><a href="">Encontrá tu equipo</a></li>
         <li><a href="">Soporte</a></li>
-          <% if (user != undefined) { %>
+          <% if (typeof user != "undefined") { %>
             <li class="ultimoLi">
            <a href="/users/profile/<%= user.id %>">Mi perfil</a>
           </li>
@@ -97,7 +97,7 @@
         <li><a href="">Armá tu pc</a></li>
         <li><a href="">Encontrá tu equipo</a></li>
         <li><a href="">Soporte</a></li>
-        <% if (user != undefined) { %>
+        <% if (typeof user != "undefined") { %>
           
         
           <li><a href="/users/profile/<%= user.id %>">Mi perfil</a></li>
