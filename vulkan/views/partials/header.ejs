@@ -80,7 +80,7 @@
           </form>
           </li>
           <% if (user.rol == "admin") { %>
-            <li><a href="/users/admin">Administrador</a></li>
+            <li><a href="/users/admin/<%=user.id%>">Administrador</a></li>
             <% } %>
           <% } else { %>
             <li class="ultimoLi">

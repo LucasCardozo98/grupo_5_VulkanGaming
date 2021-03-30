@@ -1,0 +1,61 @@
+html,body{
+    height: 100%;
+    place-items: center;
+    text-align: center;
+    background: #f2f2f2;
+ }
+  .slider{
+    
+    display: flex;
+    flex-wrap: wrap;
+ }
+  .slider .card{
+    
+    margin: 100px 40px;
+    background: #fff;
+ }
+  .slider .card .img,.card1{
+    height: 200px;
+    width: 100%;
+ }
+  .slider .card .img img{
+    width: 100%;
+    object-fit: contain;
+    max-height: 200px;
+ }
+  .slider .card .content{
+    padding: 10px 20px;
+ }
+  .card .content .title{
+    font-size: 15px;
+    font-weight: 600;
+ }
+  .card .content .price{
+    font-size: 20px;
+    font-weight: 600;
+    color: green;
+    line-height: 20px;
+ }
+   .card .content p{
+    text-align: justify;
+    margin: 10px 0;
+ }
+  .card .content .btn{
+    display: block;
+    text-align: left;
+    margin: 10px 0;
+ }
+  .card .content .btn button{
+    background: rgb(0, 84, 105);
+    color: #fff;
+    border: none;
+    outline: none;
+    font-size: 17px;
+    padding: 5px 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.2s;
+ }
+  .card .content .btn button:hover{
+    transform: scale(0.9);
+ }

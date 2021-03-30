@@ -6,7 +6,8 @@
    font-family: 'Poppins', sans-serif;
 }
  .baner img{
-  height: 380px;
+  height: 420px;
+  object-fit: cover;
 }
 h2{
   margin-top: 50px;

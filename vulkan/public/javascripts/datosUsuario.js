@@ -43,7 +43,11 @@ window.addEventListener("load",()=>{
             case !regExAlpha.test(nombre.value):
                 nombreErrors.innerHTML = 'Debes ingresar un nombre válido'
                 nombre.classList.add('is-invalid')  
-                break;    
+                break;
+            case nombre.value.length < 2:
+                nombreErrors.innerHTML = 'El nombre debe contener al menos 2 caracteres'
+                nombre.classList.add('is-invalid')  
+                break;         
             default:
                 nombre.classList.remove('is-invalid');
                 nombre.classList.add('is-valid');

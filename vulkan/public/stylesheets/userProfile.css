@@ -3,3 +3,11 @@
     height: 50%;
 }
 
+.fotoperfil{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgb(65, 138, 89);;
+}
+textarea { resize: none; }
