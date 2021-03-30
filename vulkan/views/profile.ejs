@@ -19,7 +19,11 @@
 <% if (mensajes != undefined && mensajes != null) { %>
     <ul style="list-style: none; padding-left: 0;">       
     <% mensajes.forEach(element => { %>
-             <li class="alert alert-success"><%= element.message  %>. <strong><%=element.mensajes.username%></strong> </li>
+
+             <li class="alert alert-success">
+                    <p class="usuario"><strong><%=element.mensajes.username%></strong></p>
+                    <p class="mensaje"><%= element.message  %></p>       
+             </li>
             <% }) %>
     </ul>
 <% } %>
