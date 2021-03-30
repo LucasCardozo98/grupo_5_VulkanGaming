@@ -1,4 +1,8 @@
-
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+   a {
+      color: #141619;
+      text-decoration: none;
+   }
    html,body{
      height: 100%;
      place-items: center;
@@ -12,7 +16,7 @@
   }
    .slider .card{
      
-     margin: 100px 40px;
+     margin: 50px 40px;
      background: #fff;
   }
    .slider .card .img,.card1{
@@ -20,16 +24,19 @@
      width: 100%;
   }
    .slider .card .img img{
-     width: 100%;
-     object-fit: contain;
+      margin: 1rem 0;
+     width: 80%;
+     object-fit: cover;
      max-height: 200px;
   }
    .slider .card .content{
      padding: 10px 20px;
   }
    .card .content .title{
+     font-family: 'Poppins';
      font-size: 15px;
      font-weight: 600;
+     margin-top: 1rem;
   }
    .card .content .price{
      font-size: 20px;
@@ -59,4 +66,9 @@
   }
    .card .content .btn button:hover{
      transform: scale(0.9);
+  }
+  @media(max-width: 1024px){
+   .slider .card{
+      margin: 50px 28px;
+   }
   }
