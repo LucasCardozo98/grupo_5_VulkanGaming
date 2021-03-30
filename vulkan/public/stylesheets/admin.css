@@ -12,7 +12,11 @@ p{
     margin-left: 10px;
 }
 
-li{
+p.mensaje{
+    margin-left: 20px;
+}
+
+ul li.alert{
     padding: 0 !important;
 }
 
