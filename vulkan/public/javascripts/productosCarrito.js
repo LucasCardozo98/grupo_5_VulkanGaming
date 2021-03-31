@@ -38,7 +38,7 @@ function escribir (id){
 }
 if(window.location.href == "http://localhost:3000/products/cart"){
     escribir("escribir")
-}else if(localStorage.getItem("idCompra")!= null){
+}else if(window.location.href == "http://localhost:3000/products/pagar"){
     escribir(localStorage.getItem("idCompra"));
 }else{
     listaProductos.innerHTML = congratulations;
@@ -46,22 +46,29 @@ if(window.location.href == "http://localhost:3000/products/cart"){
 
 
 function comprar (id){
+    const idUser = document.querySelector("#usuario");
+    if(idUser != null){
     if(id== "comprarTodo"){
        window.location.href= "http://localhost:3000/products/pagar";
        localStorage.setItem("idCompra","escribir");
+        console.log(localStorage.getItem("idCompra"));
         
-        
+       
     }
     else{
         localStorage.setItem("idCompra",JSON.stringify(id));
         window.location.href= "http://localhost:3000/products/pagar";    
+        console.log(localStorage.getItem("idCompra"))
             
-        /*let nuevoCarro = carrito.filter(element=>{
-            return element.id != id
-        })
-        localStorage.setItem("carrito",JSON.stringify(nuevoCarro));
-
-*/        
+    }
+    }
+    else{
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Debes estar logueado para comprar',
+            footer: '<a href="/users">Iniciar sesión</a>'
+          })
     }
 }
 

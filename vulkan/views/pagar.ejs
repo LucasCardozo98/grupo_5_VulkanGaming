@@ -29,6 +29,7 @@
     <select name="metodoDePago" id="metodoDePago">
         <option value="1">Crédito</option>
         <option value="2">Débito</option>
+        <option value="3">Efectivo</option>
     </select>
     <label for="numeroTarjeta">Ingresa el numero de la tarjeta</label>
     <input type="text" id="numeroTarjeta">
@@ -36,10 +37,10 @@
     <input type="text" id="vencimiento">
     <label for="cvc">Ingrese el cvc</label>
     <input type="text" name="cvc" id="cvc">
-    <button onclick="iniciarSesion(event,document.querySelector('#formulario'))">enviar</button>
+    <button onclick="postearCompra(event)">Enviar</button>
 </form>
 <%- include("partials/footer") %>
- 
+
 <script src="/javascripts/productosCarrito.js"></script> 
 <script src="/javascripts/notificaciones.js"></script>
 <script src="/javascripts/comprar.js"></script>

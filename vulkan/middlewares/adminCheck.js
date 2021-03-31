@@ -1,8 +1,8 @@
 module.exports = (req,res,next)=>{
     //REVISA LA SESION
-    if(req.session.user){
+    if(req.session.userVulkan){
         // REVISA QUE EL ROL DE LA SESION SEA ADMIN
-        if(req.session.user.rol == "admin"){
+        if(req.session.userVulkan.rol == "admin"){
             //SI ES ADMIN TE DEJA PASAR
             next()
         }

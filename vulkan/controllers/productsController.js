@@ -31,7 +31,7 @@ module.exports =  {
         res.render("category",{css:"/stylesheets/productsCategory.css",productsCategory, category});*/
     },
     storeProduct: (req,res)=>{
-        const {name,category,brand,price,description} = req.body
+        const {name,category,brand,price,stock,description} = req.body
         let errors = validationResult(req);
         let product;
         if(errors.isEmpty()){
@@ -42,7 +42,8 @@ module.exports =  {
                 idBrand : brand,
                 price : price,
                 description: description, 
-                image: req.files[0].filename              
+                image: req.files[0].filename,    
+                stock: stock          
             })
             .then(()=>{
                 res.redirect("/products/list");
@@ -56,7 +57,8 @@ module.exports =  {
                 idCategory : category,
                 idBrand : brand,
                 price : price,
-                description: description              
+                description: description,
+                stock: stock              
             })
             .then(()=>{
                 res.redirect("/products/list");

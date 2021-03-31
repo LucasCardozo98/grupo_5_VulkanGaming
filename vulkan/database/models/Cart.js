@@ -24,6 +24,10 @@ module.exports = (sequelize,dataTypes)=>{
         precio: {
             type: dataTypes.INTEGER,
             allowNull: false
+        },
+        idFormaDePago:{
+            type: dataTypes.INTEGER,
+            allowNull: false
         }
     }
 

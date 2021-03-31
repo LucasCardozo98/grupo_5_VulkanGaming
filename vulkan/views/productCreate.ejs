@@ -92,7 +92,7 @@
              <% }) %>
             </ul>
             <% } %>
-            <div class="mb-3">
+            <div class="mb-1">
               <label for="exampleInputEmail1" class="form-label"></label>
               <input type="number" class="input form-control bg-x" placeholder="Precio" id="price"
                 aria-describedby="emailHelp" name="price">
@@ -108,6 +108,24 @@
             </ul>
             <% } %>
             <div>
+
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label"></label>
+                <input type="number" class="input form-control bg-x" placeholder="Stock" id="stock"
+                  aria-describedby="emailHelp" name="stock">
+                  <span class="error" id="stockErrors"></span>
+              </div>
+              <% if (typeof errors != 'undefined') { %>
+                <ul>
+               <% errors.forEach(element => { %>
+                <% if (element.param == 'stock') { %>
+                  <li class="alert alert-warning" role="alert"><%=element.msg  %> </li>
+                <% } %>
+               <% }) %>
+              </ul>
+              <% } %>
+              <div>
+
               <div class="form-floating mb-4">
                 <textarea class="form-control" placeholder="Leave a comment here" id="description" name="description"></textarea>
                 <span class="error" id="descriptionErrors"></span>

@@ -109,7 +109,7 @@ module.exports = {
             })
             .then(user=>{
                 if(bcrypt.compareSync(password, user.password)){
-                    req.session.user = {
+                    req.session.userVulkan = {
                         id : user.id,
                         username : user.username,
                         email: user.email,

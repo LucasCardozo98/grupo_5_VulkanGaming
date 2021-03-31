@@ -31,6 +31,10 @@ module.exports = (sequelize,dataTypes)=>{
         image : {
             type : dataTypes.STRING(200),
             allowNull : true
+        },
+        stock: {
+            type: dataTypes.INTEGER,
+            allowNull: false
         }
     }
 
