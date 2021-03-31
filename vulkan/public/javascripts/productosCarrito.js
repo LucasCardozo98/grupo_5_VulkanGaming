@@ -4,7 +4,7 @@ const listaProductos = document.querySelector("#carrito");
 oldHTML = `<li id="vacio">El carrito esta vacío <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Lime_checkbox-checked.svg/1024px-Lime_checkbox-checked.svg.png" alt=""></li>`
 listaProductos.innerHTML = oldHTML
 const congratulations = `<li id="contratulations">Felicidades tu compra fue realizada con exito <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Lime_checkbox-checked.svg/1024px-Lime_checkbox-checked.svg.png" alt=""> </li>`
-
+const cantidad = document.querySelector("#cantidad")
 listaProductos.style.listStyle = "none"
 let carrito = JSON.parse(localStorage.getItem("carrito"));
 let productos = [];
@@ -12,7 +12,7 @@ let productos = [];
 function escribir (id){
     if(id == "escribir"){
     let tarjetas = carrito.map(element=>{
-        return `<li id="${element.id}"><div class="card"><div class="img"><img src="/images/${element.image}" alt=""></div><div class="content"><div class="title">${element.name}</div><div class="price">$${element.price}</div><div class="title">Unidades: ${element.quantity}</div><div class="btn"><button onClick="comprar(${element.id})" idProducto="${element.id}"><i class="fas fa-cart-plus"></i>Comprar</button><button onClick="eliminar(${element.id})">Eliminar</button></div></li>`
+        return `<li id="id${element.id}"><div class="card"><div class="img"><img src="/images/${element.image}" alt=""></div><div class="content"><div class="title">${element.name}</div><div class="price">$${element.price}</div><div class="title">Unidades: ${element.quantity}</div><div class="btn"><button onClick="comprar(${element.id})" idProducto="${element.id}"><i class="fas fa-cart-plus"></i>Comprar</button><button onClick="eliminar(${element.id})">Eliminar</button></div><button id="sumar" onclick="mailu(${element.id},1)">+</button><span id="cantidad"></span> <button id="restar" onclick="mailu(${element.id},0)">-</button></li>`
     })
     if(tarjetas.length > 0){
         listaProductos.innerHTML = " "
@@ -24,7 +24,7 @@ function escribir (id){
     let tarjetas = carrito.map(element=>{
         if(element.id == id){
             
-            return `<li id="${element.id}"><div class="card"><div class="img"><img src="/images/${element.image}" alt=""></div><div class="content"><div class="title">${element.name}</div><div class="price">$${element.price}</div><div class="title">Unidades: ${element.quantity}</div><div class="btn"><button onClick="comprar(${element.id})" idProducto="${element.id}"><i class="fas fa-cart-plus"></i>Comprar</button><button onClick="eliminar(${element.id})">Eliminar</button></div></li>`
+            return `<li id="${element.id}"><div class="card"><div class="img"><img src="/images/${element.image}" alt=""></div><div class="content"><div class="title">${element.name}</div><div class="price">$${element.price}</div><div class="title">Unidades: ${element.quantity}</div><div class="btn"><button onClick="comprar(${element.id})" idProducto="${element.id}"><i class="fas fa-cart-plus"></i>Comprar</button><button onClick="eliminar(${element.id})">Eliminar</button></div><button id="sumar" onclick="mailu(${element.id},1)">+</button> <span id="cantidad"></span> <button id="restar" onclick="mailu(${element.id},0)">-</button></li>`
 
         }
     })
@@ -54,7 +54,8 @@ function comprar (id){
     }
     else{
         localStorage.setItem("idCompra",JSON.stringify(id));
-        window.location.href= "http://localhost:3000/products/pagar";        
+        window.location.href= "http://localhost:3000/products/pagar";    
+            
         /*let nuevoCarro = carrito.filter(element=>{
             return element.id != id
         })
@@ -69,7 +70,8 @@ function eliminar (id){
         carrito = []
         localStorage.setItem("carrito",JSON.stringify(carrito));
         listaProductos.style.transition = "1s all"
-        listaProductos.innerHTML = oldHTML
+        //listaProductos.innerHTML = oldHTML
+        escribir("escribir");
         imprimir()
         
     }
@@ -79,6 +81,7 @@ function eliminar (id){
             if(element.id == id){
                 if(element.quantity > 1){
                     element.quantity = element.quantity - 1
+                    element.price = element.unit_price * element.quantity
             
                     
                 }
@@ -91,7 +94,7 @@ function eliminar (id){
         console.log(carrito)
         console.log("//esto es carrito")
         localStorage.setItem("carrito",JSON.stringify(carrito));
-        const filtrados = productos.forEach(element => {
+        /*const filtrados = productos.forEach(element => {
             if(element.id == id){
                 
                     if(element.quantity > 1){
@@ -104,7 +107,7 @@ function eliminar (id){
                     }
                 
             }
-        });      
+        });   */   
 
         if(window.location.href == "http://localhost:3000/products/cart"){
             escribir("escribir")
@@ -113,5 +116,31 @@ function eliminar (id){
         }
        
     }
+    imprimir()
+}
+function mailu(id,value){
+    let producto = carrito.find(element=>{
+        return element.id == id
+    })
+    carrito.forEach(element => {
+        if(element.id == id){
+            if(value == 1){
+                element.quantity += 1
+                element.price = element.unit_price * element.quantity
+                console.log(element.unit_price);
+            }
+            else{
+                if(element.quantity == 1){
+                    carrito.splice(carrito.indexOf(producto),1)
+                    
+                }else{
+                element.quantity -= 1
+                element.price = element.unit_price * element.quantity
+                }
+            }
+        }
+    });
+    localStorage.setItem("carrito",JSON.stringify(carrito));
+    escribir("escribir");
     imprimir()
 }

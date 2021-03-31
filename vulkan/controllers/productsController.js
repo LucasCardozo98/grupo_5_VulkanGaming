@@ -188,19 +188,22 @@ module.exports =  {
                 
             })
             .catch(error=>{
-                res.send(error);
+                res.send(error +2);
             })
         
     
         }
         else{
-            db.Product.findByPk(id)
-            .then(product=>{
-                res.render("productEdit",{css:'/stylesheets/admin.css', product, errors: errors.errors});
+            const product= db.Product.findByPk(id)
+            const categorias= db.Category.findAll()
+            const marcas= db.Brand.findAll()
+            Promise.all([product,categorias,marcas])
+            .then(([product,categorias,marcas])=>{
+                res.render("productEdit",{css:'/stylesheets/admin.css', product, categorias,marcas,errors: errors.errors});
                 next()
             })
             .catch(error=>{
-                res.send(error);
+                res.send(error + 1);
             })
         }
         

@@ -17,6 +17,8 @@ window.addEventListener('load', function(){
 	$passwordRegisterConfirmErrors = qs('#passwordRegisterConfirmErrors'),
     $formLogin = qs('#formLogin'),
     $formRegister = qs('#formRegister'),
+    $formLogin = qs("#formLogin"),
+    $formLoginErrors = qs("#formLoginErrors"),
     $errores = {},
     $existe = false,
 	regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/,
@@ -145,7 +147,7 @@ window.addEventListener('load', function(){
             console.log(elementosForm[index].value, index);
             if(elementosForm[index].value == ""){
                 elementosForm[index].classList.add('is-invalid');
-                submitErrors.innerHTML = "Los campos señalados son obligatorios";
+                $formLoginErrors.innerHTML = "Los campos señalados son obligatorios";
                 error = true;
             }
         }

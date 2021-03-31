@@ -5,12 +5,23 @@
 </ul>
 
 <h2>Inicia sesión y completa los datos de facturación</h2>
-<form action="" id="formulario">
-    <input type="email" name="email" placeholder="Email" id="email">
-    <input type="password" name="password" placeholder="Contraseña", id="password">
-    <label for="check">Recordarme</label>
-    <input type="check" id="chequeado">
+<form action="" id="formulario"> 
+    <% if (typeof user != "undefined") { %>
+     
+ 
+    <% if (typeof user != 'undefined') { %>
+        <i class="fas fa-user"><span class="session"></span></i>
+        <span class="user-options">
+            <a href="/users/account">Mis datos</a>
+            <a href="/users/logout">Cerrar sesión</a>
+        </span> 
+    <% } else { %>
+        <a href="/users/login"><i class="fas fa-user"></i> coso </a>
+    <% } %>
 
+    <% } else{%>
+        <h2>soy un alfajor</h2>
+        <% } %> 
     
 <h2>Datos de facturacion</h2>
 
