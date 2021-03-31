@@ -19,8 +19,9 @@
                 </div>
               </div>
         <% }) %>
-<% } %>
- 
+<% } else{ %>
+  <h2>sin stock</h2>
+<% } %> 
 <% if ( typeof brand != "undefined" && typeof products != "null") { %>
     <% brand.marcas.forEach(element => { %>
         <div class="card contenedorboton mt-3 bg-success" >

@@ -12,26 +12,26 @@ function agregar(){
     })
     .then(data=>{
             let producto = data.data.filter(element=>{
-                return element.id == productoCategoria.getAttribute("idProducto")
+                return element.id == productoCategoria.getAttribute("idProducto");
             })
             //console.log(producto);
             let carrito = JSON.parse(localStorage.getItem("carrito"))
            
             if(carrito != null && carrito.length != 0){
                 //console.log("carrito.lhent es "+ carrito.length)
-                let productoCarrito = carrito.filter(element=>{
-                    return element.id == producto[0].id
+                let productoCarrito = carrito.find(element=>{
+                    return element.id == productoCategoria.getAttribute("idProducto");
                 })
-                //console.log(carrito.indexOf(productoCarrito[0]))
-            carrito.forEach(element=>{
+                console.log(productoCarrito);
+            //carrito.forEach(element=>{
              
-                if(carrito.indexOf(productoCarrito[0])!= -1 && producto[0].id == element.id){
+                /*if(carrito.indexOf(productoCarrito)!= -1 && productoCategoria.getAttribute("idProducto") == element.id){
                     element.quantity = element.quantity + 1
                     element.price = element.unit_price * element.quantity
                     localStorage.setItem("carrito",JSON.stringify(carrito));
                     imprimir()
                     //console.log(`estamos en el if porque ${element.id} == producto.id`);
-                }else if(carrito.indexOf(productoCarrito[0]) == -1){ 
+                }else if(carrito.indexOf(productoCarrito) == -1){ 
                     //console.log("entramos al else de agregar porque los id son diferentes");
                     let cantidad = 1;
                     let precio = producto[0].price * cantidad
@@ -48,8 +48,34 @@ function agregar(){
                     localStorage.setItem("carrito",JSON.stringify(carrito))
                     imprimir()
 
+                }*/
+                if(carrito.indexOf(productoCarrito) == -1){ 
+                    //console.log("entramos al else de agregar porque los id son diferentes");
+                    let cantidad = 1;
+                    let precio = producto[0].price * cantidad
+                    item = {
+                        id: producto[0].id,
+                        name: producto[0].name,
+                        unit_price : producto[0].price,
+                        quantity: cantidad,
+                        price : precio,
+                        description: producto[0].description,
+                        image: producto[0].image
+                    }
+                    carrito.push(item);
+                    localStorage.setItem("carrito",JSON.stringify(carrito))
+                    imprimir()
+
+                }else{
+                    if(carrito.indexOf(productoCarrito)!= -1 && productoCategoria.getAttribute("idProducto") == productoCarrito.id){
+                        productoCarrito.quantity = productoCarrito.quantity + 1
+                        productoCarrito.price = productoCarrito.unit_price * productoCarrito.quantity
+                        localStorage.setItem("carrito",JSON.stringify(carrito));
+                        imprimir()
+                        //console.log(`estamos en el if porque ${element.id} == producto.id`);
+                    }
                 }
-            })
+             //})
             }else{
                 //console.log("carrito es null y hacemos esto");
                 
