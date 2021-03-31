@@ -4,7 +4,6 @@ const {validationResult} = require("express-validator");
 const db = require("../database/models");
 const Op = require("sequelize");
 const mercadopago = require("mercadopago");
-const { brotliDecompress } = require("zlib");
 module.exports =  {
     //aca empieza la muestra de productos de diferentes categorias
     mostrar: (req,res) =>{  
@@ -14,7 +13,7 @@ module.exports =  {
         const categoria = req.params.categoria;
        let products = db.Product.findAll({
             where: {
-                idCategory : categoria
+                [Sequelize.op.and]: [{idCategory: categoria},{visible: 1}]
             }
         })
         let category = db.Category.findByPk(categoria)

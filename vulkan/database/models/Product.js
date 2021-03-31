@@ -35,6 +35,10 @@ module.exports = (sequelize,dataTypes)=>{
         stock: {
             type: dataTypes.INTEGER,
             allowNull: false
+        },
+        visible: {
+            type: dataTypes.INTEGER(1),
+            allowNull: true
         }
     }
 
