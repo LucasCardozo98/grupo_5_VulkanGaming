@@ -6,6 +6,26 @@
     color: white;
 }
 
+p{
+    padding: 0;
+    margin: 0;
+    margin-left: 10px;
+}
+
+p.mensaje{
+    margin-left: 20px;
+}
+
+ul li.alert{
+    padding: 0 !important;
+}
+
+ul li .alert{
+    margin-right: 0;
+}
+
+textarea { resize: none; }
+
 .enviar-mensaje{
     width: 1% ;
     height: 50%;

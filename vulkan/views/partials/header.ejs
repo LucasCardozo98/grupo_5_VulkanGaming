@@ -68,7 +68,7 @@
     </div>
     <!--lista que funciona desplegable en mobile y tablet y figura normal en desktop-->
     <nav id="nav" class="lista">
-      <ul id="lista" class="navegacion bg-success">
+      <ul id="lista" class="navegacion bg-success mb-0">
         <li><a href="/products">Productos</a></li>
         <li><a href="">Armá tu pc</a></li>
         <li><a href="">Encontrá tu equipo</a></li>
@@ -83,9 +83,9 @@
           </form>
           </li>
           <% if (user.rol == "admin") { %>
-            <li><a href="/users/admin">Administrador</a></li>
-            <% } %> 
-          <% } else {%>
+            <li><a href="/users/admin/<%=user.id%>">Administrador</a></li>
+            <% } %>
+          <% } else { %>
             <li class="ultimoLi">
               <div class="sesionResponsive"><i class="fas fa-user"></i>
                 <a href="/users">Iniciar Sesión</a>

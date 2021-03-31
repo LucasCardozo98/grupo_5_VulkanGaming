@@ -3,3 +3,29 @@
     height: 50%;
 }
 
+p{
+    padding: 0;
+    margin: 0;
+    margin-left: 10px;
+}
+
+p.mensaje{
+    margin-left: 20px;
+}
+
+ul li.alert{
+    padding: 0 !important;
+}
+
+ul li .alert{
+    margin-right: 0;
+}
+
+.fotoperfil{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgb(65, 138, 89);;
+}
+textarea { resize: none; }

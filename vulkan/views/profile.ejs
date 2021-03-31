@@ -2,8 +2,8 @@
 <%- include("partials/header")  %> 
 
 <div class="container">
-<h2 class="mt-3 text-center">Bienvenido <%= user.firstName %></h1>
-<img class="img-fluid rounded mx-auto d-block mt-3" width="250px" src="/images/users/<%= user.avatar %>" alt="">
+<h2 class="mt-3 text-center">¡Hola <%= user.firstName %>!</h1>
+<img class="fotoperfil mx-auto d-block mt-3" src="/images/users/<%= user.avatar %>" alt="">
 <h2 class="text-center mt-3 mb-3">Tus compras</h2>
 <ul>
     <% user.carrito.forEach(element => { %>
@@ -17,16 +17,20 @@
   </form>
 </div>
 <% if (mensajes != undefined && mensajes != null) { %>
-    <ul>       
+    <ul style="list-style: none; padding-left: 0;">       
     <% mensajes.forEach(element => { %>
-             <li><%= element.message  %>. Del usuario: <%=element.mensajes.username%> </li>
+
+             <li class="alert alert-success">
+                    <p class="usuario"><strong><%=element.mensajes.username%></strong></p>
+                    <p class="mensaje"><%= element.message  %></p>       
+             </li>
             <% }) %>
     </ul>
 <% } %>
 <form action="/users/crearMensaje/<%= user.id %>/" method="POST">
     <textarea class="col-12" name="mensaje" id="" rows="10"></textarea>
     <div class="row justify-content-around d-flex">
-        <select class="usuarios form-select form-select-m mb-4 text-muted flex-grow-1 w-50" name="idOtherUser" id="">
+        <select class="usuarios form-select form-select-m mb-4 text-muted flex-grow-1 w-50" placeholder="Nombre" name="idOtherUser" id="">
             <% users.forEach(element=> { %>
             <option value="<%=element.id%>"><%=element.username%> </option>
             <% }) %>

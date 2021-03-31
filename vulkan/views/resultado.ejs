@@ -1,59 +1,65 @@
 <%- include("partials/head")%> 
 <%- include("partials/header")%> 
-<% if ( typeof products != "undefined" && typeof products != "null") { %>
-        <% products.forEach(element => { %>
-            <div class="card contenedorboton mt-3 bg-success" >
-                <a href="/products/detail/<%= element.id %> "><img class="card-top img-thumbnail img-fluid" src="/images/<%=element.image  %> "  alt="..."></a>
-                <div class="card-body">
-                  <h2 id="products" idProducto=<%=element.id%>><%= element.name%></h2>
-                  <h5 class="card-title"><%= element.name  %> </h5>
-                  <p class="card-text"> <%= element.price  %> </p>
-                  <p class="card-text"> <%= element.marcas.name  %> </p>
-                 
-                   
-           
-                
-                    <button class="btn btn-primary w-100" type="submit" onclick="agregar(document.querySelector('#products'))" >agregar al carrito</button>
-                  
-           
-                </div>
-              </div>
-        <% }) %>
-<% } else{ %>
-  <h2>sin stock</h2>
-<% } %> 
-<% if ( typeof brand != "undefined" && typeof products != "null") { %>
-    <% brand.marcas.forEach(element => { %>
-        <div class="card contenedorboton mt-3 bg-success" >
-            <a class="card-top img-thumbnail img-fluid" href="/products/detail/<%= element.id %> "><img class="card-top img-thumbnail img-fluid" src="/images/<%=element.image  %> "  alt="..."></a>
-            <div class="card-body mb-3">
-              <h2 id="marca" idProducto=<%=element.id%>><%= element.name%></h2>
-              <h5 class="card-title"><%= element.name%></h5>
-              <p class="card-text"> <%= element.price%></p>
-             
-           
-               
-                    <button class="btn btn-primary" type="submit" onclick="agregar(document.querySelector('#marca'))">agregar al carrito</button>
-                  
-            
-            </div>
-          </div>
-    <% }) %>
-<% } %>
 
-<% if ( typeof category != "undefined" && typeof products != "null") { %>
-    <% category.categorias.forEach(element => { %>
-        <div class=" tarjeta " >
-            <a href="/products/detail/<%= element.id %> "><img src="/images/<%=element.image  %> "  alt="..."></a>
-            <div class="card-body">
-              <h2 id="categoria" idProducto=<%=element.id%>><%= element.name%></h2>
-              <h5 class="card-title"><%= element.name  %> </h5>
-              <p class="card-text"> <%= element.price  %> </p>
-              <button class="btn btn-primary w-100" type="submit"onclick="agregar(document.querySelector('#categoria'))">agregar al carrito</button> 
-            </div>
-          </div>
-    <% }) %>
-<% } %>
+
+
+<div class="container">
+  <div class="row">
+    <div class="slider">
+    <div class="card col-3">
+      <div class="img">
+      <img src="/images/procesador3.jpg" alt="">
+      </div>
+      <div class="content">
+        <div class="title">Procesador</div>
+        <div class="price">$123</div>
+      <div class="btn">
+          <button><i class="fas fa-cart-plus"></i> Comprar</button>
+      </div>
+      </div>
+    </div>
+    <div class="card col-3">
+      <div class="img">
+      <img src="/images/procesador3.jpg" alt="">
+      </div>
+      <div class="content">
+        <div class="title">Procesador</div>
+        <div class="price">$123</div>
+      <div class="btn">
+          <button><i class="fas fa-cart-plus"></i> Comprar</button>
+      </div>
+      </div>
+    </div>
+    <div class="card col-3">
+      <div class="img">
+      <img src="/images/procesador3.jpg" alt="">
+      </div>
+      <div class="content">
+        <div class="title">Procesador</div>
+        <div class="price">$123</div>
+      <div class="btn">
+          <button><i class="fas fa-cart-plus"></i> Comprar</button>
+      </div>
+      </div>
+    </div>
+    <div class="card col-3">
+      <div class="img">
+      <img src="/images/procesador3.jpg" alt="">
+      </div>
+      <div class="content">
+        <div class="title">Procesador</div>
+        <div class="price">$123</div>
+      <div class="btn">
+          <button><i class="fas fa-cart-plus"></i> Comprar</button>
+      </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+
+
+
 <%- include("partials/footer")%> 
 <script src="/javascripts/carritoDos.js" ></script>
 

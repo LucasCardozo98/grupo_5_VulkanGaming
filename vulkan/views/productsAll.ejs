@@ -16,23 +16,81 @@
   <button class="btn btn-dark d-grid gap-2 col-2 mx-auto mt-5 mb-4" type="submit">Filtrar</button>
 </form>
 
-<div class="contenedora">
-    <% products.forEach(element => { %>                      
-          <div class=" tarjeta " >
-            <a href="/products/detail/<%= element.id %> "><img src="/images/<%=element.image  %> "  alt="..."></a>
-            <div class="card-body">
-              <h5 class="card-title"><%= element.brand  %> </h5>
-              <p class="card-text"> <%= element.price  %> </p>
-              <a href="#" class="btn btn-primary w-100">Agregar al carrito</a>
-              <div class="botones ">
-              <form id="eliminar" action="/products/delete/<%= element.id %>?_method=delete" method="POST">
-              <button id="botonEliminar" type="submit" class="btn btn-danger" onclick="confirmar(event,document.querySelector('#eliminar'))">Eliminar</button></form>
-              <button class="btn btn-primary" > <a class="text-white" href="/products/edit/<%= element.id %> ">Editar</a></button>
+
+<div class="container">
+  <div class="row">
+  <div class="slider owl-carousel">
+    <div class="card col-3">
+      <div class="img">
+      <img src="/images/procesador3.jpg" alt="">
+      </div>
+      <div class="content">
+        <div class="title">Procesador</div>
+        <div class="price">$123</div>
+      <div class="btn">
+          <button><i class="fas fa-cart-plus"></i> Comprar</button>
+      </div>
+      </div>
+    </div>
+      <div class="card col-3">
+        <div class="img">
+        <img src="/images/mother4.jpg" alt=""></div>
+          <div class="content">
+            <div class="title">Mother piola</div>
+            <div class="price">$2345</div>
+              <div class="btn">
+                <button><i class="fas fa-cart-plus"></i> Comprar</button>
               </div>
+          </div>
+        </div>
+        <div class="card col-3">
+          <div class="img">
+          <img src="/images/mother4.jpg" alt=""></div>
+            <div class="content">
+              <div class="title">Mother piola</div>
+              <div class="price">$2345</div>
+                <div class="btn">
+                  <button><i class="fas fa-cart-plus"></i> Comprar</button>
+                </div>
             </div>
           </div>
-    <% }) %>
+          <div class="card col-3">
+            <div class="img">
+            <img src="/images/mother4.jpg" alt=""></div>
+              <div class="content">
+                <div class="title">Mother piola</div>
+                <div class="price">$2345</div>
+                  <div class="btn">
+                    <button><i class="fas fa-cart-plus"></i> Comprar</button>
+                  </div>
+              </div>
+            </div>
+            <div class="card col-3">
+              <div class="img">
+              <img src="/images/mother4.jpg" alt=""></div>
+                <div class="content">
+                  <div class="title">Mother piola</div>
+                  <div class="price">$2345</div>
+                    <div class="btn">
+                      <button><i class="fas fa-cart-plus"></i> Comprar</button>
+                    </div>
+                </div>
+              </div>
+              <div class="card col-3">
+                <div class="img">
+                <img src="/images/mother4.jpg" alt=""></div>
+                  <div class="content">
+                    <div class="title">Mother piola</div>
+                    <div class="price">$2345</div>
+                      <div class="btn">
+                        <button><i class="fas fa-cart-plus"></i> Comprar</button>
+                      </div>
+                  </div>
+                </div>
+            </div>
+      </div>
     </div>
+
 <%- include("partials/footer")%>
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
   <script src="/javascripts/alertaEliminarProducto.js"></script>

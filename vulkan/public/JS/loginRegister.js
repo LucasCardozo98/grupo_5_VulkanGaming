@@ -15,13 +15,16 @@ window.addEventListener('load', function(){
 	$passwordRegisterErrors = qs('#passwordRegisterErrors'),
 	$inputPasswordRegisterConfirm = qs('#inputPasswordRegisterConfirm'),
 	$passwordRegisterConfirmErrors = qs('#passwordRegisterConfirmErrors'),
+    $formLogin = qs('#formLogin'),
     $formRegister = qs('#formRegister'),
     $formLogin = qs("#formLogin"),
     $formLoginErrors = qs("#formLoginErrors"),
     $errores = {},
+    $existe = false,
 	regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/,
     regExEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i,
     regExPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,12}$/;
+
 
 	$inputEmail.addEventListener('blur', function() {
         switch (true) {
@@ -59,7 +62,24 @@ window.addEventListener('load', function(){
         }
     })
 
+    
 	$inputEmailRegister.addEventListener('blur', function() {
+        fetch("http://localhost:3000/users/api/usuarios")
+    .then(response=>{
+    return response.json()
+    })
+    .then(data=>{
+       
+        data.data.forEach(element => {
+            if (element.email == $inputEmailRegister.value.trim()) {
+                $existe = true 
+                console.log($inputEmailRegister.value);
+            }
+        });
+    })
+    .catch(error=>{
+        console.log(error);
+    })
         switch (true) {
             case !$inputEmailRegister.value.trim():
                 $emailRegisterErrors.innerHTML = 'El campo email es obligatorio';
@@ -68,13 +88,18 @@ window.addEventListener('load', function(){
             case !regExEmail.test($inputEmailRegister.value):
                 $emailRegisterErrors.innerHTML = 'Debe ingresar un email válido';
                 $inputEmailRegister.classList.add('is-invalid')
-                break
+                break;
+            case $existe == true:
+                $emailRegisterErrors.innerHTML = 'El email ya esta registrado perro';
+                $inputEmailRegister.classList.add('is-invalid')
+                break;
             default:
                 $inputEmailRegister.classList.remove('is-invalid');
                 $inputEmailRegister.classList.add('is-valid');
                 $emailRegisterErrors.innerHTML = ''
                 break;
         }
+        
     })
 
 	$inputPasswordRegister.addEventListener('blur', function() {
@@ -118,7 +143,6 @@ window.addEventListener('load', function(){
         event.preventDefault()
         //console.log(form.elements)
         let elementosForm = this.elements
-        
         for (let index = 0; index < elementosForm.length-2; index++) {
             console.log(elementosForm[index].value, index);
             if(elementosForm[index].value == ""){
@@ -134,12 +158,11 @@ window.addEventListener('load', function(){
         }
     })
 
-    formRegister.addEventListener('submit',function(event){
+    $formRegister.addEventListener('submit',function(event){
         let error = false;
         event.preventDefault()
         //console.log(form.elements)
         let elementosForm = this.elements
-        console.log(foto);
         for (let index = 0; index < elementosForm.length-2; index++) {
             console.log(elementosForm[index].value, index);
             if(elementosForm[index].value == ""){

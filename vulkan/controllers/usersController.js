@@ -34,7 +34,7 @@ module.exports = {
                 rol : "admin"
             })
             .then(()=>{
-                res.redirect("/")
+                res.redirect("/users/login")
             })
             .catch(error=>{
                 res.send(error)
