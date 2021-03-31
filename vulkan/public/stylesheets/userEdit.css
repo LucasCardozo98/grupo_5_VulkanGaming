@@ -5,7 +5,14 @@
         padding-right: 20%;
         margin-top: 20px;
         
-    }                
+    }
+    .fotoperfil{
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid rgb(65, 138, 89);;
+    }         
 }
 @media (min-width: 700px){
     .editUser{

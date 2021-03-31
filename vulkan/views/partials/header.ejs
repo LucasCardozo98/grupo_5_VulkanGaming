@@ -32,6 +32,7 @@
        
          <% if (user != undefined && user.rol == "admin") { %>
                <a href="/users/admin/<%=user.id%> ">Administrador</a>
+               <span class="neon" id="neon"></span>
          <% } %>
           <% } else { %>                  
             <div class="contactoDesktop">
@@ -55,8 +56,10 @@
         </div>
       </form>
      
+      <% if (typeof user != "undefined") { %>
+        <span class="neon" id="neon"></span>
+      <% } %>
       
-       
       <!--este boton aparece solo en mobile y tablet-->
       <div onclick="cambiar()" id="boton" class="iconoBarras">
         <i class="fas fa-bars"></i>

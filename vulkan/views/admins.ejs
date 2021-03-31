@@ -1,26 +1,11 @@
 <%- include("partials/head")%>
 <%- include("partials/header")%>
-<div class="container">
+<div class="container pepeargento">
        
         <a href="/products/list" class="btn btn-dark d-grid gap-2 col-6 mx-auto mt-5 mb-4" >Listar Productos</a>
         <a href="/products/create" class="btn btn-dark d-grid gap-2 col-6 mx-auto mb-4" >Crear productos</a>
-        <div class="mx-auto d-grid gap-2">
-                <h2>Administrar marcas y categorias</h2>
-                <form action="/users/admin/relacionMarcaCategoria" method="POST">
-                        <select class="form-select mb-3" name="categoria" id=""><br>
-                                <%categorys.forEach(element => { %>
-                                        <option value="<%=element.id%>"><%=element.name%> </option>
-                                       <% }) %>
-                        </select>
-                        <select class="form-select w-100" name="marca" id=""><br>
-                                <%brands.forEach(element => { %>
-                                        <option value="<%=element.id%>"><%=element.name%> </option>
-                                       <% }) %>
-                        </select>
-                        <button class="btn btn-dark d-grid gap-2 col-12 mx-auto mt-3 mb-4" type="submit">Relacionar</button>
-                </form>
-        </div>
-           
+        
+                
         <% if (mensajes != undefined && mensajes != null) { %>
                 <ul style="list-style: none; padding-left: 0;">       
                 <% mensajes.forEach(element => { %>

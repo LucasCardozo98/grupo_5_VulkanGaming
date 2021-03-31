@@ -4,10 +4,12 @@ const formulario = document.querySelector("#formulario")
 
 
 function iniciarSesion(event,formulario){
+
     const email = document.querySelector("#email");
     const password = document.querySelector("#password");
     const check = document.querySelector("#chequeado");
     const data = {email: email.value, password: password.value}
+    console.log(data)
     event.preventDefault()
     console.log("iniciando sesion");
     fetch("http://localhost:3000/users/api/sesion",{
