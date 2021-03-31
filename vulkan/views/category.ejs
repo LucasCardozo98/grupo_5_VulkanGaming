@@ -1,26 +1,34 @@
 <%- include("partials/head")%>
-<%- include("partials/header")%>
+  <%- include("partials/header")%>
 
-<main class="container mt-2">
-  <section class="mt-2">
-    <h2 class="bg-success"> <%= category.name  %>  </h2>
-    <div class="contenedora">
-    <% products.forEach(element => { %>                      
-          <div class=" tarjeta " >
-            <a href="/products/detail/<%=element.id%> "><img src="/images/<%=element.image%> "  alt="..."></a>
-            <div class="card-body">
-              <h2 id="nombre" idProducto="<%=element.id%>"><%=element.name%></h2>
-              <h5 class="card-title"><%=element.brand%></h5>
-              <p class="card-text"><%=element.price%></p>            
-              <button class="btn btn-primary w-100" type="submit" onclick="agregar()">agregar al carrito 1</button>
-            </div>
-          </div>
-    <% }) %>
-    </div>
-  </section>
-  
-</main>
-<%- include("partials/footer")%>
-<script src="/javascripts/carrito.js"></script>
-<!--<script src="/javascripts/carritoDos.js"></script>-->
-</body>
+    <main class="container mt-2">
+      <section class="mt-2">
+        <h2 class="bg-success">
+          <%= category.name %>
+        </h2>
+        <div class="contenedora">
+          <% products.forEach(element => { %>
+              <div class="slider owl-carousel">
+                <div class="card">
+                  <div class="img">
+                    <img src="/images/<%= element.image %> " alt="">
+                  </div>
+                  <div class="content">
+                    <div class="title"><%= element.name %> </div>
+                    <div class="price"><%= element.price %> </div>
+                    <div class="btn">
+                      <button onclick="agregar()"><i class="fas fa-cart-plus"></i> Agregar al carrito</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          <% }) %>
+
+        </div>
+      </section>
+
+    </main>
+    <%- include("partials/footer")%>
+      <script src="/javascripts/carrito.js"></script>
+      <!--<script src="/javascripts/carritoDos.js"></script>-->
+      </body>
