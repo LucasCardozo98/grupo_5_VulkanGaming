@@ -1,7 +1,7 @@
 <%- include("partials/head")  %> 
 <%- include("partials/header")  %> 
 
-<div class="container">
+<div class="container pepeargento">
 <h2 class="mt-3 text-center">¡Hola <%= user.firstName %>!</h1>
 <img class="fotoperfil mx-auto d-block mt-3" src="/images/users/<%= user.avatar %>" alt="">
 <h2 class="text-center mt-3 mb-3">Tus compras</h2>
@@ -29,7 +29,7 @@
 <% } %>
 <form action="/users/crearMensaje/<%= user.id %>/" method="POST">
     <textarea class="col-12" name="mensaje" id="" rows="10"></textarea>
-    <div class="row justify-content-around d-flex">
+    <div class="col-12 justify-content-around d-flex">
         <select class="usuarios form-select form-select-m mb-4 text-muted flex-grow-1 w-50" placeholder="Nombre" name="idOtherUser" id="">
             <% users.forEach(element=> { %>
             <option value="<%=element.id%>"><%=element.username%> </option>
