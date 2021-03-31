@@ -31,9 +31,42 @@ textarea { resize: none; }
     height: 50%;
 }
 
+div .usuarios{
+    margin-left: 10px;
+    
+}
+div button.enviar-mensaje {
+    margin-right: 10px;
+}
+
 @media(min-width:426px){
     .admin{
         padding-left: 20%;
         padding-right: 20%;
     }                
 }
+
+@media(min-width: 1024px){
+    body{
+        background-color: rgb(238, 238, 238);
+    }
+    
+    div.pepeargento{
+        background-color: white;
+        -webkit-box-shadow: 3px 4px 23px 5px rgba(0,0,0,0.75);
+        -moz-box-shadow: 3px 4px 23px 5px rgba(0,0,0,0.75);
+        box-shadow: 3px 4px 23px 5px rgba(0,0,0,0.75);
+        padding: 10px;
+        height: 90%;
+        margin: 30px auto;
+        border-radius: 15px;
+    }
+    
+    div .usuarios{
+        margin-left: 10px;
+        
+    }
+    div button.enviar-mensaje {
+        margin-right: 10px;
+    }
+    }
