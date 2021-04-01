@@ -1,28 +1,40 @@
 <%- include("partials/head") %>
 <%- include("partials/header") %>
-<h1>Vas a comprar</h1>
-<ul id="carrito" class="container d-flex carrito">
+<ul id="carrito" class="container d-flex carrito mt-5">
 </ul>
 
-<h2>Inicia sesión y completa los datos de facturación</h2>
-<form action="" id="formulario"> 
-    <% if (typeof user != "undefined") { %>
-     
- 
-    <% if (typeof user != 'undefined') { %>
-        <i class="fas fa-user"><span class="session"></span></i>
-        <span class="user-options">
-            <a href="/users/account">Mis datos</a>
-            <a href="/users/logout">Cerrar sesión</a>
-        </span> 
-    <% } else { %>
-        <a href="/users/login"><i class="fas fa-user"></i> coso </a>
-    <% } %>
+<h2 class="text-center bg-success container">Completa los datos de facturación</h2>
+<form action="" id="formulario" class="container"> 
+<div class="row gx-0" >
+    <select class="form-select form-select-m mb-4 text-muted" aria-label=".form-select-sm example" name="category">
+        <option value="1">Crédito</option>
+        <option value="2">Débito</option>
+        <option value="3">Efectivo</option>
+    </select>
 
-    <% } else{%>
-        <h2>soy un alfajor</h2>
-        <% } %> 
+    <div class="mb-4 ">
+        <label for="exampleInputEmail1" class="form-label"></label>
+        <input type="text" class="input form-control bg-x" placeholder="Numero tarjeta" id="tarjeta" name="tarjeta">
+          <span class="error" id="nameErrors"></span>
+      </div>
+      <div class="mb-4 ">
+        <label for="exampleInputEmail1" class="form-label"></label>
+        <input type="text" class="input form-control bg-x" placeholder="Vencimiento" id="vencimiento" name="vencimiento">
+          <span class="error" id="nameErrors"></span>
+      </div>
+      <div class="mb-4 ">
+        <label for="exampleInputEmail1" class="form-label"></label>
+        <input type="text" class="input form-control bg-x" placeholder="CVC" id="cvc" name="cvc">
+          <span class="error" id="nameErrors"></span>
+      </div>
+      <div class="mb-5 d-flex justify-content-end">
+        <button type="submit" class="btn btn-primary" onclick="postearCompra(event)">Guardar</button>
+      </div>
+    </div>
+</div>
+</form>
     
+   <!-- 
 <h2>Datos de facturacion</h2>
 
     <label for="metodoDePago">Metodo de pago</label>
@@ -38,7 +50,7 @@
     <label for="cvc">Ingrese el cvc</label>
     <input type="text" name="cvc" id="cvc">
     <button onclick="postearCompra(event)">Enviar</button>
-</form>
+</form>-->
 <%- include("partials/footer") %>
 
 <script src="/javascripts/productosCarrito.js"></script> 

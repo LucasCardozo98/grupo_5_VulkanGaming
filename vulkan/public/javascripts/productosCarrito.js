@@ -18,17 +18,17 @@ function escribir (id){
             <img src="/images/${element.image}" alt="">
           </div>
           <div class="content">
-            <div class="title">${element.name}</div>
-            <div class="price">${element.price}</div>
-            <div class="price">${element.quantity}</div>
+            <div class="title text-center">${element.name}</div>
+            <div class="price text-center">Precio: ${element.price}</div>
+            <div class="price text-center">Unidades: ${element.quantity}</div>
             <div class="btn">
               <button onclick="comprar(${element.id})" idProducto="${element.id}" ><i class="fas fa-cart-plus"></i>Comprar</button>
-              </div>
-              <div class="btn">
+              
+              
               <button onClick="eliminar(${element.id})">Eliminar</button>
               </div>
-              <div class="btn">
-            <button id="sumar" onclick="mailu(${element.id},1)">+</button><span id="cantidad"></span> <button id="restar" onclick="mailu(${element.id},0)">-</button>
+              <div class="btn text-center">
+            <button id="sumar" onclick="mailu(${element.id},1)">+</button><span id="cantidad">${element.quantity}</span> <button id="restar" onclick="mailu(${element.id},0)">-</button>
 
             </div>
           </div>
@@ -50,16 +50,15 @@ function escribir (id){
                 <img src="/images/${element.image}" alt="">
               </div>
               <div class="content">
-                <div class="title">${element.name}</div>
-                <div class="price">${element.price}</div>
-                <div class="price">${element.quantity}</div>
+                <div class="title text-center">${element.name}</div>
+                <div class="price text-center">Precio: ${element.price}</div>
+                <div class="price-text-center">Unidades: ${element.quantity}</div>
                 <div class="btn">
                   <button onclick="comprar(${element.id})" idProducto="${element.id}" ><i class="fas fa-cart-plus"></i>Comprar</button>
-                  </div>
-                  <div class="btn">
+                 
                   <button onClick="eliminar(${element.id})">Eliminar</button>
                   </div>
-                  <div class="btn">
+                  <div class="btn text-center">
                 <button id="sumar" onclick="mailu(${element.id},1)">+</button><span id="cantidad"></span> <button id="restar" onclick="mailu(${element.id},0)">-</button>
 
                 </div>
