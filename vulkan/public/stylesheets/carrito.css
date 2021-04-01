@@ -131,7 +131,9 @@ html,body{
 .slider .card .content{
   padding: 10px 20px;
 }
-
+.card{
+  background-color: white;
+}
 .card .content .title{
   font-size: 15px;
   font-weight: 600;

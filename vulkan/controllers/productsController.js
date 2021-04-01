@@ -454,6 +454,6 @@ module.exports =  {
         
     },
     pagar: (req,res)=>{
-        res.render("pagar",{css: "/stylesheets/pagar.css"});
+        res.render("pagar",{css: "/stylesheets/carrito.css"});
     }
 }

@@ -19,7 +19,7 @@ function escribir (id){
           </div>
           <div class="content">
             <div class="title text-center">${element.name}</div>
-            <div class="price text-center">Precio: ${element.price}</div>
+            <div class="price text-center">Precio: $${element.price}</div>
             <div class="price text-center">Unidades: ${element.quantity}</div>
             <div class="btn">
               <button onclick="comprar(${element.id})" idProducto="${element.id}" ><i class="fas fa-cart-plus"></i>Comprar</button>
@@ -51,7 +51,7 @@ function escribir (id){
               </div>
               <div class="content">
                 <div class="title text-center">${element.name}</div>
-                <div class="price text-center">Precio: ${element.price}</div>
+                <div class="price text-center">Precio: $${element.price}</div>
                 <div class="price-text-center">Unidades: ${element.quantity}</div>
                 <div class="btn">
                   <button onclick="comprar(${element.id})" idProducto="${element.id}" ><i class="fas fa-cart-plus"></i>Comprar</button>
@@ -85,6 +85,7 @@ if(window.location.href == "http://localhost:3000/products/cart"){
 
 
 function comprar (id){
+   
     const idUser = document.querySelector("#usuario");
     if(idUser != null){
     if(id== "comprarTodo"){

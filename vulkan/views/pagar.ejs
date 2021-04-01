@@ -4,9 +4,9 @@
 </ul>
 
 <h2 class="text-center bg-success container">Completa los datos de facturación</h2>
-<form action="" id="formulario" class="container"> 
+<form action=""  id="formularioPago" class="container"> 
 <div class="row gx-0" >
-    <select class="form-select form-select-m mb-4 text-muted" aria-label=".form-select-sm example" name="category">
+    <select class="form-select form-select-m mb-4 text-muted" aria-label=".form-select-sm example" name="category" id="metodoDePago">
         <option value="1">Crédito</option>
         <option value="2">Débito</option>
         <option value="3">Efectivo</option>
@@ -52,7 +52,7 @@
     <button onclick="postearCompra(event)">Enviar</button>
 </form>-->
 <%- include("partials/footer") %>
-
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <script src="/javascripts/productosCarrito.js"></script> 
 <script src="/javascripts/notificaciones.js"></script>
 <script src="/javascripts/comprar.js"></script>

@@ -93,7 +93,8 @@ module.exports = {
 
             }else{
                 res.json({
-                    mensaje: "no hay stock del producto"
+                    mensaje: "no hay stock del producto",
+                    data: product
                 })
             }
         })
