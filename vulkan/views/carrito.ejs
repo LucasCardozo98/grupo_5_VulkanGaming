@@ -1,17 +1,37 @@
 <%- include("partials/head")%>
   <%- include("partials/header")%>
-  <section>
-    <ul id="carrito" class="container d-flex carrito">
-      </ul>
+
+  <main class="container mt-2">
+    <section class="mt-2">
       
-    <div class="botones">
+      <div class="contenedora">
+       
+            <div class="slider owl-carousel">
+              <ul id="carrito" class="container d-flex carrito">
+                <ul id="carrito" class="container d-flex carrito">
+              </ul>
+              <div class="botones">
     
-    <button id="comprar" class="btn" onclick="comprar('comprarTodo')"><i class="fas fa-cart-plus"></i>Comprar todo</button>
-    <button id="vaciar" class="btn" onclick="eliminar('eliminarTodo')">Vaciar carrito</button>
-    </div>
-  </section>
-          
+                <button id="comprar" class="btn" onclick="comprar('comprarTodo')"><i class="fas fa-cart-plus"></i>Comprar todo</button>
+                <button id="vaciar" class="btn" onclick="eliminar('eliminarTodo')">Vaciar carrito</button>
+                </div>
             </div>
+        
+
+      </div>
+    </section>
+
+  </main>
+
+
+  
+    
+      
+      
+    
+  
+          
+            
           <section class="sliderpc">
             <div>
               <div class="slider owl-carousel">
@@ -72,6 +92,7 @@
       integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
       crossorigin="anonymous"></script>
     <%- include("partials/footer")%>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="/javascripts/productosCarrito.js"></script>
    
   </body>

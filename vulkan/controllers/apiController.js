@@ -63,5 +63,46 @@ module.exports = {
             })
 
           
+    },
+    pagar: (req,res)=>{
+        const {idFormaDePago,idUser,idProduct,cantidad,precio} = req.body
+        db.Product.findByPk(idProduct)
+        .then(product=>{
+            if(product.stock >= cantidad){
+
+                db.Cart.create({
+                    idUser: +idUser,
+                    idProduct : idProduct,
+                    cantidad : cantidad,
+                    precio: +precio,
+                    idFormaDePago: +idFormaDePago
+                })
+                .then(dato =>{
+                    res.status(200).json({
+                    data: dato,
+                    mensaje: "exitoso"
+                    
+                })
+            })
+                .catch(error=>{
+                    res.json({
+                        mensaje: "error",
+                        data: error
+                    })
+                })
+
+            }else{
+                res.json({
+                    mensaje: "no hay stock del producto"
+                })
+            }
+        })
+        .catch(error=>{
+            console.log(error);
+        })
+       
+       
     }
+ 
 }
+    

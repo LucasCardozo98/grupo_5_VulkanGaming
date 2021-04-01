@@ -4,7 +4,6 @@ const {validationResult} = require("express-validator");
 const db = require("../database/models");
 const Op = require("sequelize");
 const mercadopago = require("mercadopago");
-const { brotliDecompress } = require("zlib");
 module.exports =  {
     //aca empieza la muestra de productos de diferentes categorias
     mostrar: (req,res) =>{  
@@ -14,7 +13,7 @@ module.exports =  {
         const categoria = req.params.categoria;
        let products = db.Product.findAll({
             where: {
-                idCategory : categoria
+                [db.Sequelize.Op.and]: [{idCategory: categoria},{visible: 1}]
             }
         })
         let category = db.Category.findByPk(categoria)
@@ -31,7 +30,7 @@ module.exports =  {
         res.render("category",{css:"/stylesheets/productsCategory.css",productsCategory, category});*/
     },
     storeProduct: (req,res)=>{
-        const {name,category,brand,price,description} = req.body
+        const {name,category,brand,price,stock,description} = req.body
         let errors = validationResult(req);
         let product;
         if(errors.isEmpty()){
@@ -42,7 +41,8 @@ module.exports =  {
                 idBrand : brand,
                 price : price,
                 description: description, 
-                image: req.files[0].filename              
+                image: req.files[0].filename,    
+                stock: stock          
             })
             .then(()=>{
                 res.redirect("/products/list");
@@ -56,7 +56,8 @@ module.exports =  {
                 idCategory : category,
                 idBrand : brand,
                 price : price,
-                description: description              
+                description: description,
+                stock: stock              
             })
             .then(()=>{
                 res.redirect("/products/list");
@@ -99,6 +100,7 @@ module.exports =  {
     productDetail: (req,res)=>{
         const id = req.params.id
         db.Product.findByPk(id,{
+            where: {visible: 1},
             include: [{association: "categorias"},{association: "marcas"}]
         })
         .then(product=>{
@@ -125,6 +127,7 @@ module.exports =  {
     showEdit: (req,res)=>{
         const id = req.params.id
         let product = db.Product.findByPk(id,{
+            where:{visible: 1},
             include: [{association: "categorias"},{association: "marcas"}]
         })
         let categorias = db.Category.findAll();
@@ -194,7 +197,9 @@ module.exports =  {
     
         }
         else{
-            const product= db.Product.findByPk(id)
+            const product= db.Product.findByPk(id,{
+                where: {visible: 1}
+            })
             const categorias= db.Category.findAll()
             const marcas= db.Brand.findAll()
             Promise.all([product,categorias,marcas])
@@ -210,19 +215,24 @@ module.exports =  {
     },
     delete: (req,res)=>{
         let id = req.params.id
-        db.Product.destroy({
-            where:{
-                id: id
-            }
+        db.Product.update({
+            visible: 2,
+            where: {id: id}
+        
+            
+            
         })
-        .then(res.redirect("/products/list"))
+        .then(resultado=>{
+            res.redirect("/products/list")})
         .catch(error=>{
             res.send(error);
         })
         
     },
     adminList: (req,res)=>{
-        let products = db.Product.findAll()
+        let products = db.Product.findAll({
+            where: {visible: 1}
+        })
         let categorys = db.Category.findAll()
         let brands = db.Brand.findAll()
         Promise.all([products,categorys,brands])
@@ -271,7 +281,8 @@ module.exports =  {
             
             
                 where : {
-                    name : {[db.Sequelize.Op.like]: `%${busqueda}%`}
+                    name : {[db.Sequelize.Op.like]: `%${busqueda}%`},
+                    visible: 1 //ver si funciona
                     
                 }
             }
@@ -327,7 +338,8 @@ module.exports =  {
                 db.Product.findAll({
                     include: [{association: "marcas"},{association: "categorias"}],
                     where: {
-                        idBrand: marca
+                        idBrand: marca,
+                        visible: 1
                     }
                 })
                 .then(products=>{
@@ -346,7 +358,8 @@ module.exports =  {
                 db.Product.findAll({
                     include: [{association: "marcas"},{association: "categorias"}],
                     where: {
-                        idCategory: categoria
+                        idCategory: categoria,
+                        visible: 1
                     }
                 })
                 .then(products=>{
@@ -366,7 +379,8 @@ module.exports =  {
                     include: [{association: "marcas"},{association: "categorias"}],
                     where: {
                         idBrand : marca,
-                        idCategory : categoria
+                        idCategory : categoria,
+                        visible: 1
                     }
                 })
                 .then(products=>{

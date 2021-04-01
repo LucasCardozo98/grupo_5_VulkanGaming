@@ -12,8 +12,28 @@ let productos = [];
 function escribir (id){
     if(id == "escribir"){
     let tarjetas = carrito.map(element=>{
-        return `<li id="id${element.id}"><div class="card"><div class="img"><img src="/images/${element.image}" alt=""></div><div class="content"><div class="title">${element.name}</div><div class="price">$${element.price}</div><div class="title">Unidades: ${element.quantity}</div><div class="btn"><button onClick="comprar(${element.id})" idProducto="${element.id}"><i class="fas fa-cart-plus"></i>Comprar</button><button onClick="eliminar(${element.id})">Eliminar</button></div><button id="sumar" onclick="mailu(${element.id},1)">+</button><span id="cantidad"></span> <button id="restar" onclick="mailu(${element.id},0)">-</button></li>`
-    })
+        return `<li id="id${element.id}">
+        <div class="card">
+          <div class="img">
+            <img src="/images/${element.image}" alt="">
+          </div>
+          <div class="content">
+            <div class="title">${element.name}</div>
+            <div class="price">${element.price}</div>
+            <div class="price">${element.quantity}</div>
+            <div class="btn">
+              <button onclick="comprar(${element.id})" idProducto="${element.id}" ><i class="fas fa-cart-plus"></i>Comprar</button>
+              </div>
+              <div class="btn">
+              <button onClick="eliminar(${element.id})">Eliminar</button>
+              </div>
+              <div class="btn">
+            <button id="sumar" onclick="mailu(${element.id},1)">+</button><span id="cantidad"></span> <button id="restar" onclick="mailu(${element.id},0)">-</button>
+
+            </div>
+          </div>
+        </div>
+        </li>`  })
     if(tarjetas.length > 0){
         listaProductos.innerHTML = " "
         listaProductos.innerHTML = `${tarjetas}`
@@ -24,8 +44,28 @@ function escribir (id){
     let tarjetas = carrito.map(element=>{
         if(element.id == id){
             
-            return `<li id="${element.id}"><div class="card"><div class="img"><img src="/images/${element.image}" alt=""></div><div class="content"><div class="title">${element.name}</div><div class="price">$${element.price}</div><div class="title">Unidades: ${element.quantity}</div><div class="btn"><button onClick="comprar(${element.id})" idProducto="${element.id}"><i class="fas fa-cart-plus"></i>Comprar</button><button onClick="eliminar(${element.id})">Eliminar</button></div><button id="sumar" onclick="mailu(${element.id},1)">+</button> <span id="cantidad"></span> <button id="restar" onclick="mailu(${element.id},0)">-</button></li>`
+            return `<li id="id${element.id}">
+            <div class="card">
+              <div class="img">
+                <img src="/images/${element.image}" alt="">
+              </div>
+              <div class="content">
+                <div class="title">${element.name}</div>
+                <div class="price">${element.price}</div>
+                <div class="price">${element.quantity}</div>
+                <div class="btn">
+                  <button onclick="comprar(${element.id})" idProducto="${element.id}" ><i class="fas fa-cart-plus"></i>Comprar</button>
+                  </div>
+                  <div class="btn">
+                  <button onClick="eliminar(${element.id})">Eliminar</button>
+                  </div>
+                  <div class="btn">
+                <button id="sumar" onclick="mailu(${element.id},1)">+</button><span id="cantidad"></span> <button id="restar" onclick="mailu(${element.id},0)">-</button>
 
+                </div>
+              </div>
+            </div>
+            </li>`
         }
     })
     if(tarjetas.length > 0){
@@ -38,7 +78,7 @@ function escribir (id){
 }
 if(window.location.href == "http://localhost:3000/products/cart"){
     escribir("escribir")
-}else if(localStorage.getItem("idCompra")!= null){
+}else if(window.location.href == "http://localhost:3000/products/pagar"){
     escribir(localStorage.getItem("idCompra"));
 }else{
     listaProductos.innerHTML = congratulations;
@@ -46,22 +86,29 @@ if(window.location.href == "http://localhost:3000/products/cart"){
 
 
 function comprar (id){
+    const idUser = document.querySelector("#usuario");
+    if(idUser != null){
     if(id== "comprarTodo"){
        window.location.href= "http://localhost:3000/products/pagar";
        localStorage.setItem("idCompra","escribir");
+        console.log(localStorage.getItem("idCompra"));
         
-        
+       
     }
     else{
         localStorage.setItem("idCompra",JSON.stringify(id));
         window.location.href= "http://localhost:3000/products/pagar";    
+        console.log(localStorage.getItem("idCompra"))
             
-        /*let nuevoCarro = carrito.filter(element=>{
-            return element.id != id
-        })
-        localStorage.setItem("carrito",JSON.stringify(nuevoCarro));
-
-*/        
+    }
+    }
+    else{
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Debes estar logueado para comprar',
+            footer: '<a href="/users">Iniciar sesión</a>'
+          })
     }
 }
 

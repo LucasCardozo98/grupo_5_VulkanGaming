@@ -13,11 +13,16 @@
     font-family: 'Roboto', sans-serif;
 }
 .neon{
-    background-color: #39FF14;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
+    display:  none;
 }
+.contenedorSesion{
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+}
+
 .contenedorCarrito{
     position: relative;
 }
@@ -365,8 +370,11 @@ div.footer{
     }
     .buscadorDesktop{
         display: flex;
-        width: 700px;
+        width: 900px;
         align-items: center;
+        justify-content: space-evenly;
+        padding: 0 10px;
+
         
     }
     .buscadorDesktop form .buscadorEnSerioDesktop input{

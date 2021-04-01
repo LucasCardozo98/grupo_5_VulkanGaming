@@ -8,6 +8,10 @@ window.addEventListener('load', function(){
 
     let $inputName = qs('#inputName'),
     $nameErrors = qs('#nameErrors'),
+    $stock = qs("#stock"),
+    $stockErrors= qs("#stockErrors"),
+    $price = qs("#price"),
+    $priceErrors = qs("#priceErrors"),
     $description = qs('#description'),
     $descriptionErrors = qs('#descriptionErrors'),
     $form = qs('#form'),
@@ -34,6 +38,36 @@ window.addEventListener('load', function(){
                 $inputName.classList.remove('is-invalid');
                 $inputName.classList.add('is-valid');
                 $nameErrors.innerHTML = ''
+                break;
+        }
+    })
+
+    $stock.addEventListener('blur', function(){
+
+        switch (true) {
+            case $stock.value < 0:
+                $stockErrors.innerHTML = 'El stock no puede ser menor a cero'
+                $stock.classList.add('is-invalid')
+                break;   
+            default:
+                $stock.classList.remove('is-invalid');
+                $stock.classList.add('is-valid');
+                $stockErrors.innerHTML = ''
+                break;
+        }
+    })
+
+    $price.addEventListener('blur', function(){
+
+        switch (true) {
+            case $price.value < 1:
+                $priceErrors.innerHTML = 'El precio no puede ser menor a cero'
+                $price.classList.add('is-invalid')
+                break;   
+            default:
+                $price.classList.remove('is-invalid');
+                $price.classList.add('is-valid');
+                $spriceErrors.innerHTML = ''
                 break;
         }
     })

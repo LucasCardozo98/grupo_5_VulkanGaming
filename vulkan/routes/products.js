@@ -30,5 +30,6 @@ router.post("/api/vl/mercadopago",productsController.mercadoPago);
 router.get("/api/productos",apiController.productos);
 router.get("/api/producto/:id",apiController.producto);
 router.get("/pagar",productsController.pagar);
+router.post("/pagar",apiController.pagar);
 
 module.exports = router;

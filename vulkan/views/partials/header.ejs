@@ -40,6 +40,13 @@
           <a href="/users">Iniciar Sesión</a>
         </div>
        <% } %> 
+       <% if (typeof user != "undefined") { %>
+        <div class="contenedorSesion">
+        <img src="/images/users/<%=user.avatar%>" alt="" id="usuario" idUser="<%=user.id%>">
+        
+        <span><%=user.username%></span>
+        </div>
+      <% } %>
       </div>
       <!--estas cosas aparecen en responsive-->
       <div class="contenedorCarrito">
@@ -56,9 +63,7 @@
         </div>
       </form>
      
-      <% if (typeof user != "undefined") { %>
-        <span class="neon" id="neon"></span>
-      <% } %>
+     
       
       <!--este boton aparece solo en mobile y tablet-->
       <div onclick="cambiar()" id="boton" class="iconoBarras">
