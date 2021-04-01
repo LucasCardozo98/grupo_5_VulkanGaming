@@ -15,7 +15,6 @@ window.addEventListener('load', function(){
 	$passwordRegisterErrors = qs('#passwordRegisterErrors'),
 	$inputPasswordRegisterConfirm = qs('#inputPasswordRegisterConfirm'),
 	$passwordRegisterConfirmErrors = qs('#passwordRegisterConfirmErrors'),
-    $formLogin = qs('#formLogin'),
     $formRegister = qs('#formRegister'),
     $formLogin = qs("#formLogin"),
     $formLoginErrors = qs("#formLoginErrors"),
