@@ -246,6 +246,9 @@ div figure img.detail{
 
 /*version tablet*/
 @media (min-width: 700px){
+div.footer{
+    text-align: start;
+}
     header{
         width: 100%;
     }

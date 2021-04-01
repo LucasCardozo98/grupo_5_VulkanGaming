@@ -1,97 +1,63 @@
 <%- include("partials/head")%>
-<%- include("partials/header")%>
-<form action="/products/filtrado" method="GET">
-  <select class="btn btn-dark d-grid gap-2 col-6 mx-auto mt-5 mb-4" name="categoria" id="">
-    <option selected value="no filtrar">No filtrar por categoria</option> 
-    <%categorys.forEach(element => { %>
-      <option value="<%=element.id%>"><%=element.name%> </option>
-     <% }) %>
-  </select><br>
-  <select class="btn btn-dark d-grid gap-2 col-6 mx-auto mt-5 mb-4" name="marca" id="">
-    <option selected value="no filtrar">No filtrar por marca</option> 
-    <%brands.forEach(element => { %>
-      <option value="<%=element.id%>"><%=element.name%> </option>
-     <% }) %>
-  </select><br>
-  <button class="btn btn-dark d-grid gap-2 col-2 mx-auto mt-5 mb-4" type="submit">Filtrar</button>
-</form>
+  <%- include("partials/header")%>
+    <form action="/products/filtrado" method="GET">
+      <select class="btn btn-dark d-grid gap-2 col-6 mx-auto mt-5 mb-4" name="categoria" id="">
+        <option selected value="no filtrar">No filtrar por categoria</option>
+        <%categorys.forEach(element=> { %>
+          <option value="<%=element.id%>">
+            <%=element.name%>
+          </option>
+          <% }) %>
+      </select><br>
+      <select class="btn btn-dark d-grid gap-2 col-6 mx-auto mt-5 mb-4" name="marca" id="">
+        <option selected value="no filtrar">No filtrar por marca</option>
+        <%brands.forEach(element=> { %>
+          <option value="<%=element.id%>">
+            <%=element.name%>
+          </option>
+          <% }) %>
+      </select><br>
+      <button class="btn btn-dark d-grid gap-2 col-2 mx-auto mt-5 mb-4" type="submit">Filtrar</button>
+    </form>
 
-
-<div class="container">
-  <div class="row">
-  <div class="slider owl-carousel">
-    <div class="card col-3">
-      <div class="img">
-      <img src="/images/procesador3.jpg" alt="">
-      </div>
-      <div class="content">
-        <div class="title">Procesador</div>
-        <div class="price">$123</div>
-      <div class="btn">
-          <button><i class="fas fa-cart-plus"></i> Comprar</button>
-      </div>
-      </div>
-    </div>
-      <div class="card col-3">
-        <div class="img">
-        <img src="/images/mother4.jpg" alt=""></div>
-          <div class="content">
-            <div class="title">Mother piola</div>
-            <div class="price">$2345</div>
-              <div class="btn">
-                <button><i class="fas fa-cart-plus"></i> Comprar</button>
-              </div>
-          </div>
-        </div>
-        <div class="card col-3">
-          <div class="img">
-          <img src="/images/mother4.jpg" alt=""></div>
-            <div class="content">
-              <div class="title">Mother piola</div>
-              <div class="price">$2345</div>
-                <div class="btn">
-                  <button><i class="fas fa-cart-plus"></i> Comprar</button>
-                </div>
-            </div>
-          </div>
-          <div class="card col-3">
-            <div class="img">
-            <img src="/images/mother4.jpg" alt=""></div>
-              <div class="content">
-                <div class="title">Mother piola</div>
-                <div class="price">$2345</div>
-                  <div class="btn">
-                    <button><i class="fas fa-cart-plus"></i> Comprar</button>
-                  </div>
-              </div>
-            </div>
+    <div class="container">
+      <div class="row">
+        <div class="slider owl-carousel">
+          <% products.forEach(element=> { %>
             <div class="card col-3">
               <div class="img">
-              <img src="/images/mother4.jpg" alt=""></div>
-                <div class="content">
-                  <div class="title">Mother piola</div>
-                  <div class="price">$2345</div>
-                    <div class="btn">
-                      <button><i class="fas fa-cart-plus"></i> Comprar</button>
-                    </div>
+                <img src="/images/<%= element.image %> " alt="">
+              </div>
+              <div class="content">
+                <div class="title" id="nombre" idProducto="<%= element.id %>">
+                  <%= element.name %>
+                </div>
+                <h5 class="title">
+                  <% brands.forEach(marca => { %>
+                    <% if (marca.id == element.idBrand) { %>
+                      <%=marca.name%>
+                      <% }%>
+                      <% }); %>
+                </h5>
+                <div class="price">
+                  <%= element.price %>
+                </div>
+                <div class="btn">
+                  <form id="eliminar" action="/products/delete/<%= element.id %>?_method=delete" method="POST">
+                    <button id="botonEliminar" type="submit" class="btn btn-danger"
+                      onclick="confirmar(event,document.querySelector('#eliminar'))">Eliminar</button>
+                  </form>
+                  <button class="btn btn-primary"> <a class="text-white"
+                      href="/products/edit/<%= element.id %> ">Editar</a></button>
                 </div>
               </div>
-              <div class="card col-3">
-                <div class="img">
-                <img src="/images/mother4.jpg" alt=""></div>
-                  <div class="content">
-                    <div class="title">Mother piola</div>
-                    <div class="price">$2345</div>
-                      <div class="btn">
-                        <button><i class="fas fa-cart-plus"></i> Comprar</button>
-                      </div>
-                  </div>
-                </div>
             </div>
+            <% }) %>
+        </div>
       </div>
     </div>
 
-<%- include("partials/footer")%>
-  <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-  <script src="/javascripts/alertaEliminarProducto.js"></script>
-</body>
+      <%- include("partials/footer")%>
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+        <script src="/javascripts/alertaEliminarProducto.js"></script>
+        </body>

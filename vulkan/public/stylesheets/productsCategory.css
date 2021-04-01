@@ -11,7 +11,7 @@ html,body{
  }
   .slider .card{
     
-    margin: 100px 40px;
+    margin: 100px 24px;
     background: #fff;
  }
   .slider .card .img,.card1{
@@ -19,6 +19,7 @@ html,body{
     width: 100%;
  }
   .slider .card .img img{
+     padding: 10px 0;
     width: 100%;
     object-fit: contain;
     max-height: 200px;
@@ -59,3 +60,15 @@ html,body{
   .card .content .btn button:hover{
     transform: scale(0.9);
  }
+ a{
+   text-decoration: none;
+   color:black;
+ }
+ @media(min-width: 1024px){
+   .slider .card .img{
+      height: 200px;
+   }
+   .slider .card{
+      margin: 50px 38px;
+   }
+  }

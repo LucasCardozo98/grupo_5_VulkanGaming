@@ -41,7 +41,7 @@
           <img src="/images/procesador3.jpg" alt="">
           </div>
           <div class="content">
-            <div class="title">Procesador</div>
+            <div class="title" id="nombre" idProducto="5" >Procesador</div>
             <div class="price">$123</div>
           <div class="btn">
               <button><i class="fas fa-cart-plus"></i> Comprar</button>
@@ -55,9 +55,10 @@
                 <div class="title">Mother piola</div>
                 <div class="price">$2345</div>
                   <div class="btn">
-                    <button><i class="fas fa-cart-plus"></i> Comprar</button>
+                    <button type="submit" onclick="agregar()" style="z-index: 200;"><i class="fas fa-cart-plus"></i> Agregar al carrito</button>
                   </div>
               </div>
+            
             </div>
           </div>
         </div>
@@ -90,4 +91,5 @@
     </div>
   </section>
 <%- include("partials/footer")%>
+<script src="/javascripts/carrito.js"></script>
 </body>
