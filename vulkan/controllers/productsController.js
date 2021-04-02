@@ -143,7 +143,7 @@ module.exports =  {
     },
     edit: (req,res, next)=>{
         let id = req.params.id
-        const {name,category,brand,price,description} = req.body
+        const {name,category,brand,price,description,stock} = req.body
         const errors = validationResult(req);
         let imagen;
         if(req.files[0]){
@@ -179,7 +179,8 @@ module.exports =  {
                 idBrand : brand,
                 price : price,
                 description: description,
-                image : imagen
+                image : imagen,
+                stock : stock
             },
             {
                 where: {
@@ -216,8 +217,8 @@ module.exports =  {
     delete: (req,res)=>{
         let id = req.params.id
         db.Product.update({
-            visible: 2,
-            where: {id: id}
+            visible: 2},
+            {where: {id: +id}
         
             
             
