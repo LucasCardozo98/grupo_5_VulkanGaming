@@ -122,7 +122,10 @@ module.exports = {
                             maxAge : 1000 * 60 * 60 * 24
                         })
                     }
-                    res.redirect(`/users/edit/${user.id}`)
+                    res.redirect(`/`)
+                }else{
+                    let errores = [{param: "password",msg:"Credenciales Invalidas"}]
+                    res.render("register",{css: '/stylesheets/register.css',errores})
                 }
             })
             .catch(error=>{

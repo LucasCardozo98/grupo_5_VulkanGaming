@@ -18,6 +18,6 @@ module.exports = [
         }else{
             return true
         }
-    }).withMessage("El stock debe ser mayor a cero"),
+    }).withMessage("El stock debe ser mayor o igual a cero"),
 
 ]
