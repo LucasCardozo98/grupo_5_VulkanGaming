@@ -85,9 +85,10 @@ if(window.location.href == "http://localhost:3000/products/cart"){
 
 
 function comprar (id){
-   
+    const carrito = JSON.parse(localStorage.getItem("carrito"))
     const idUser = document.querySelector("#usuario");
     if(idUser != null){
+        if(carrito.length > 0 && carrito != null){
     if(id== "comprarTodo"){
        window.location.href= "http://localhost:3000/products/pagar";
        localStorage.setItem("idCompra","escribir");
@@ -100,6 +101,13 @@ function comprar (id){
         window.location.href= "http://localhost:3000/products/pagar";    
         console.log(localStorage.getItem("idCompra"))
             
+    }
+    }else{
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: `No hay productos en el carrito`
+          })
     }
     }
     else{

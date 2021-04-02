@@ -24,6 +24,7 @@ function postearCompra (event){
     const form = document.querySelector("#formularioPago");
     event.preventDefault()
     let carrito = JSON.parse(localStorage.getItem("carrito"))
+    
         if(localStorage.getItem("idCompra") == "escribir"){
             
             const ids = carrito.map(element=>{
@@ -44,6 +45,7 @@ function postearCompra (event){
             preguntar(producto.id,producto.quantity,producto.price);
             
         }
+   
 }
 
 function preguntar(idProduct,cantidad,precio,array="a",index="a"){
