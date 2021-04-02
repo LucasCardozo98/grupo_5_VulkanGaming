@@ -67,7 +67,7 @@ window.addEventListener('load', function(){
             default:
                 $price.classList.remove('is-invalid');
                 $price.classList.add('is-valid');
-                $spriceErrors.innerHTML = ''
+                $priceErrors.innerHTML = ''
                 break;
         }
     })

@@ -13,7 +13,11 @@ window.addEventListener('load', function(){
     $form = qs('#form'),
     $file = qs('#formFileSm'),
     $fileErrors = qs('#formFileErrors'),
-    $imgPreview = qs('#img-preview')
+    $imgPreview = qs('#img-preview'),
+    $stock = qs("#stock"),
+    $stockErrors = qs("#stockErrors"),
+    $price = qs("#price"),
+    $priceErrors = qs("#priceErrors"),
     regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/,
     regExDNI = /^[0-9]{7,8}$/,
     regExEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i,
@@ -56,6 +60,37 @@ window.addEventListener('load', function(){
                 break;
         }
     })
+
+    $stock.addEventListener('blur', function(){
+
+        switch (true) {
+            case $stock.value < 0:
+                $stockErrors.innerHTML = 'El stock no puede ser menor a cero'
+                $stock.classList.add('is-invalid')
+                break;   
+            default:
+                $stock.classList.remove('is-invalid');
+                $stock.classList.add('is-valid');
+                $stockErrors.innerHTML = ''
+                break;
+        }
+    })
+
+    $price.addEventListener('blur', function(){
+
+        switch (true) {
+            case $price.value < 1:
+                $priceErrors.innerHTML = 'El precio no puede ser menor a cero'
+                $price.classList.add('is-invalid')
+                break;   
+            default:
+                $price.classList.remove('is-invalid');
+                $price.classList.add('is-valid');
+                $priceErrors.innerHTML = ''
+                break;
+        }
+    })
+
 
     $file.addEventListener('change', 
     function fileValidation(){
