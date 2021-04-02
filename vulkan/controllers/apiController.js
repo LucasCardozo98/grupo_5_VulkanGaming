@@ -70,20 +70,32 @@ module.exports = {
         .then(product=>{
             if(product.stock >= cantidad){
 
-                db.Cart.create({
+                let carrito = db.Cart.create({
                     idUser: +idUser,
                     idProduct : idProduct,
                     cantidad : cantidad,
                     precio: +precio,
                     idFormaDePago: +idFormaDePago
                 })
-                .then(dato =>{
+                
+                let stock  =  db.Product.update({
+                        stock : product.stock - cantidad
+                    },{
+                        where: {
+                            id: idProduct
+                        }
+                    })
+                   
+                Promise.all([carrito,stock])
+                .then(([carrito,stock])=>{
+                    dato = [carrito,stock]
                     res.status(200).json({
-                    data: dato,
-                    mensaje: "exitoso"
-                    
-                })
-            })
+                        data: dato,
+                        mensaje: "exitoso"
+                        
+                    })
+
+                })      
                 .catch(error=>{
                     res.json({
                         mensaje: "error",
