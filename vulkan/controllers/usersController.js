@@ -108,6 +108,7 @@ module.exports = {
                 }
             })
             .then(user=>{
+                if(user){
                 if(bcrypt.compareSync(password, user.password)){
                     req.session.userVulkan = {
                         id : user.id,
@@ -127,13 +128,18 @@ module.exports = {
                     let errores = [{param: "password",msg:"Credenciales Invalidas"}]
                     res.render("register",{css: '/stylesheets/register.css',errores})
                 }
+            }else{
+                let errores = [{param: "password",msg:"Credenciales Invalidas"}]
+                res.render("register",{css: '/stylesheets/register.css',errores})
+            }
             })
             .catch(error=>{
                 res.send(error +  "1")
             })
         }else{
             res.render("register",{errores : errores.errors,css: '/stylesheets/register.css'})
-        }    
+        }
+       
        
     },
     // ESTO RENDERIZA LA VISTA DE ADMIN

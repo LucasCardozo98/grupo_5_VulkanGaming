@@ -115,6 +115,40 @@ module.exports = {
         })
        
        
+    },
+    informacion : (req,res)=>{
+        let productos = db.Product.findAll({
+            where: {
+                visible: 1
+            },
+            include: [{association: "carrito"}]
+        })
+        let usuarios = db.User.findAll({
+            include: [{association: "carrito"}]
+        })
+        let carrito = db.Cart.findAll()
+        
+        let marcas = db.Brand.findAll({
+            include: [{association: "marcas"}]
+        })
+        let categorias = db.Category.findAll({
+            include: [{association: "categorias"}]
+        })
+        Promise.all([productos,usuarios,carrito,marcas,categorias])
+        .then(([productos,usuarios,carrito,marcas,categorias])=>{
+            const data = {
+                productos,
+                usuarios,
+                carrito,
+                marcas,
+                categorias
+            }
+            res.json(data);
+        })
+        .catch(error=>{
+            res.json(error)
+        })
+
     }
  
 }
