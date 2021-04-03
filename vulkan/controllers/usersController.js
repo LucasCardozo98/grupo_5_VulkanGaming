@@ -31,7 +31,8 @@ module.exports = {
             db.User.create({
                 email: email,
                 password : adressCrypt,
-                rol : "admin"
+                rol : "admin",
+                avatar: "avatar.jpeg"
             })
             .then(()=>{
                 res.redirect("/users/login")
