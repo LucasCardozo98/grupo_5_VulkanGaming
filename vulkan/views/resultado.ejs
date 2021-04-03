@@ -7,6 +7,7 @@
     <div class="container">
       <div class="row">
           <div class="slider owl-carousel">
+<% if (typeof products != "null" && typeof products != "undefined" ) { %>
         <% products.forEach(element=> { %>
             <div class="card col-sm-12 col-md-5 col-lg-3">
               <div class="img">
@@ -25,6 +26,50 @@
               </div>
             </div>
           <% }) %>
+          <% } %> 
+
+          <% if (typeof brands != "null" && typeof brands != "undefined" ) { %>
+            <% products.forEach(element=> { %>
+                <div class="card col-sm-12 col-md-5 col-lg-3">
+                  <div class="img">
+                    <img src="/images/<%= element.image %> " alt="">
+                  </div>
+                  <div class="content">
+                    <div class="title" id="nombre" idProducto="<%= element.id %>" >
+                      <%= element.name %>
+                    </div>
+                    <div class="price">
+                      <%= element.price %>
+                    </div>
+                    <div class="btn">
+                      <button type="submit" class="botones" idProducto="<%=element.id%>"><i class="fas fa-cart-plus"></i> Agregar al carrito</button>
+                    </div>
+                  </div>
+                </div>
+              <% }) %>
+              <% } %> 
+
+              <% if (typeof categorys != "null" && typeof categorys != "undefined" ) { %>
+                <% products.forEach(element=> { %>
+                    <div class="card col-sm-12 col-md-5 col-lg-3">
+                      <div class="img">
+                        <img src="/images/<%= element.image %> " alt="">
+                      </div>
+                      <div class="content">
+                        <div class="title" id="nombre" idProducto="<%= element.id %>" >
+                          <%= element.name %>
+                        </div>
+                        <div class="price">
+                          <%= element.price %>
+                        </div>
+                        <div class="btn">
+                          <button type="submit" class="botones" idProducto="<%=element.id%>"><i class="fas fa-cart-plus"></i> Agregar al carrito</button>
+                        </div>
+                      </div>
+                    </div>
+                  <% }) %>
+                  <% } %> 
+
           </div>
       </div>
     </div>
@@ -33,6 +78,6 @@
 
 <%- include("partials/footer")%> 
 <script src="/javascripts/carritoBotones.js"></script>
-<script src="/javascripts/carritoDos.js"></script>
+<script src="/javascripts/carrito.js"></script>
 
 </body>
