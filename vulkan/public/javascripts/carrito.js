@@ -1,18 +1,19 @@
-const productoCategoria = document.querySelector("#nombre");
+const productoCategoria = document.querySelector("strong");
 //console.log(productoCategoria);
-productoCategoria.getAttribute("idProducto");
+
 let carritoAgregar = []
 //localStorage.clear()
 //localStorage.setItem("carrito",JSON.stringify(carrito));
-function agregar(){
-    
+function agregar(id){
+    //console.log(productoCategoria.getAttribute("idProducto"));
     fetch("http://localhost:3000/products/api/productos")
     .then(response=>{
     return response.json()
     })
     .then(data=>{
             let producto = data.data.filter(element=>{
-                return element.id == productoCategoria.getAttribute("idProducto");
+                //return element.id == productoCategoria.getAttribute("idProducto");
+                return element.id == id
             })
             //console.log(producto);
             let carrito = JSON.parse(localStorage.getItem("carrito"))
@@ -20,7 +21,8 @@ function agregar(){
             if(carrito != null && carrito.length != 0){
                 //console.log("carrito.lhent es "+ carrito.length)
                 let productoCarrito = carrito.find(element=>{
-                    return element.id == productoCategoria.getAttribute("idProducto");
+                    //return element.id == productoCategoria.getAttribute("idProducto");
+                    return element.id == id
                 })
                 console.log(productoCarrito);
             //carrito.forEach(element=>{
@@ -67,7 +69,7 @@ function agregar(){
                     imprimir()
 
                 }else{
-                    if(carrito.indexOf(productoCarrito)!= -1 && productoCategoria.getAttribute("idProducto") == productoCarrito.id){
+                    if(carrito.indexOf(productoCarrito)!= -1 && id == productoCarrito.id /*productoCategoria.getAttribute("idProducto") == productoCarrito.id*/){
                         productoCarrito.quantity = productoCarrito.quantity + 1
                         productoCarrito.price = productoCarrito.unit_price * productoCarrito.quantity
                         localStorage.setItem("carrito",JSON.stringify(carrito));

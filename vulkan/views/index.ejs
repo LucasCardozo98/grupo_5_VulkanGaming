@@ -36,32 +36,31 @@
     <div>
       <h2 class="bg-success text-white">Productos Destacados</h2>
       <div class="slider owl-carousel">
-        <div class="card">
-          <div class="img">
-          <img src="/images/procesador3.jpg" alt="">
-          </div>
-          <div class="content">
-            <div class="title" id="nombre" idProducto="18">Procesador i7</div>
-            <div class="price">$1230</div>
-          <div class="btn">
-              <button type="submit" onclick="agregar()"  style="z-index: 200;"><i class="fas fa-cart-plus"></i>Agregar al carrito</button>
-          </div>
-          </div>
-        </div>
+        <% products.forEach(element => { %>
+         
           <div class="card">
             <div class="img">
-            <img src="/images/mother4.jpg" alt=""></div>
-              <div class="content">
-                <div class="title" id="nombre" idProducto="17">Mother piola</div>
-                <div class="price">$2345</div>
-                  <div class="btn">
-                    <button type="submit" onclick="agregar()" style="z-index: 200;"><i class="fas fa-cart-plus"></i> Agregar al carrito</button>
-                  </div>
-              </div>
-            
+            <img src="/images/<%=element.image%> " alt="">
+            </div>
+            <div class="content">
+              <div class="title" id="nombre" idProducto="<%=element.id%>"><%=element.name%></div>
+              <div class="price"><%=element.price%></div>
+              <div><%=element.id%> </div>
+              <strong idProducto="<%=element.id%>"></strong>
+            <div class="btn">
+                <button type="submit" idProducto="<%=element.id%>" style="z-index: 200;" id="boton-<%=element.id%>" class="botones"><i class="fas fa-cart-plus"></i>Agregar al carrito</button>
+            </div>
             </div>
           </div>
-        </div>
+
+        <% }) %>
+        
+
+          
+            <!--</div>
+        
+          </div>
+        </div>-->
       </div>
     </div>
   </section>
@@ -92,4 +91,5 @@
   </section>
 <%- include("partials/footer")%>
 <script src="/javascripts/carrito.js"></script>
+<script src="/javascripts/carritoBotones.js"></script>
 </body>

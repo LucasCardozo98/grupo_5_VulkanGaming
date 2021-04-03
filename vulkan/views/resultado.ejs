@@ -20,8 +20,7 @@
                   <%= element.price %>
                 </div>
                 <div class="btn">
-                  <button type="submit" onclick="agregar()"><i class="fas fa-cart-plus"></i> Agregar al
-                    carrito</button>
+                  <button type="submit" class="botones" idProducto="<%=element.id%>"><i class="fas fa-cart-plus"></i> Agregar al carrito</button>
                 </div>
               </div>
             </div>
@@ -33,6 +32,7 @@
 </main>
 
 <%- include("partials/footer")%> 
-<script src="/javascripts/carritoDos.js" ></script>
+<script src="/javascripts/carritoBotones.js"></script>
+<script src="/javascripts/carritoDos.js"></script>
 
 </body>
