@@ -119,10 +119,13 @@ module.exports = {
                         avatar : user.avatar,
                         rol: user.rol
                     }
+                
                     if(recordame){
-                        res.cookie('userVulkan',req.session.user,{
+                       
+                        res.cookie('userVulkan',req.session.userVulkan,{
                             maxAge : 1000 * 60 * 60 * 24
                         })
+                        //console.log(req.cookies.userVulkan);
                     }
                     res.redirect(`/`)
                 }else{
@@ -170,7 +173,7 @@ module.exports = {
     cerrarSesion: (req,res)=>{
         
            req.session.destroy()
-           if(req.cookie != undefined){
+           if(req.cookies != undefined){
                res.cookie("userVulkan"," ",{
                    maxAge: -100
                });

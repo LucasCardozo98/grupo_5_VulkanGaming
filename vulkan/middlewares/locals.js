@@ -1,5 +1,5 @@
 module.exports = (req,res,next) => {
-    if(typeof req.session.userVulkan != "undefined"){
+    if(req.session.userVulkan){
         res.locals.user = req.session.userVulkan;
     }
     /*else{

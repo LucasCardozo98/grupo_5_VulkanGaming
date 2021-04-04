@@ -28,8 +28,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride("_method"));
 app.use(session({secret:'Vulkan'}));
-app.use(locals);
 app.use(cookieCheck);
+app.use(locals);
 app.use(cors());
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin","*"); 
