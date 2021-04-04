@@ -71,4 +71,9 @@ html,body{
    .slider .card{
       margin: 50px 38px;
    }
+   .slider{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+   }
   }

@@ -42,9 +42,9 @@
        <% } %> 
        <% if (typeof user != "undefined") { %>
         <div class="contenedorSesion">
-        <img src="/images/users/<%=user.avatar%>" alt="" id="usuario" idUser="<%=user.id%>">
+       <a href="/users/profile/<%=user.id%>"> <img src="/images/users/<%=user.avatar%>" alt="" id="usuario" idUser="<%=user.id%>"></a>
         
-        <span><%=user.username%></span>
+        <a href="/users/profile/<%=user.id%>"><span>Mi perfil</span></a>
         </div>
       <% } %>
       </div>
@@ -74,10 +74,16 @@
     <!--lista que funciona desplegable en mobile y tablet y figura normal en desktop-->
     <nav id="nav" class="lista">
       <ul id="lista" class="navegacion bg-success mb-0">
-        <li><a href="/products">Productos</a></li>
-        <li><a href="">Armá tu pc</a></li>
-        <li><a href="">Encontrá tu equipo</a></li>
-        <li><a href="">Soporte</a></li>
+        <li><a href="/products/category/9">Encontrá tu equipo</a></li>
+        <li><a href="/products/category/1">Motherboards</a></li>
+        <li><a href="/products/category/2">Fuentes</a></li>
+        <li><a href="/products/category/3">Gabinetes</a></li>
+        <li><a href="/products/category/4">Perifericos</a></li>
+        <li><a href="/products/category/5">Procesadores</a></li>
+        <li><a href="/products/category/6">Memorias RAM</a></li>
+        <li><a href="/products/category/7">Disipadores</a></li>
+        <li><a href="/products/category/8">Placas de Video</a></li>
+        <li><a href="/products/category/10">Almacenamiento</a></li>
           <% if (typeof user != "undefined") { %>
             <li class="ultimoLi">
            <a href="/users/profile/<%= user.id %>">Mi perfil</a>
@@ -101,16 +107,17 @@
         <!-- <li onclick="aparecen()"id="cosa" class="cosas">cosas</li>-->
       </ul>
       <ul class="navegacionDesktop bg-success">
-        <li><a href="/products">Productos</a></li>
-        <li><a href="">Armá tu pc</a></li>
-        <li><a href="">Encontrá tu equipo</a></li>
-        <li><a href="">Soporte</a></li>
-        <% if (typeof user != "undefined") { %>
-          
+        <li><a href="/products/category/9">Equipos</a></li>
+        <li><a href="/products/category/1">Motherboards</a></li>
+        <li><a href="/products/category/2">Fuentes</a></li>
+        <li><a href="/products/category/3">Gabinetes</a></li>
+        <li><a href="/products/category/4">Perifericos</a></li>
+        <li><a href="/products/category/5">Procesadores</a></li>
+        <li><a href="/products/category/6">Memorias</a></li>
+        <li><a href="/products/category/7">Disipadores</a></li>
+        <li><a href="/products/category/8">Placas</a></li>
+        <li><a href="/products/category/10">Almacenamiento</a></li>
         
-          <li><a href="/users/profile/<%= user.id %>">Mi perfil</a></li>
-      
-        <% } %>
         <!-- <li onclick="aparecen()"id="cosa" class="cosas">cosas</li>-->
       </ul>
     </nav>
