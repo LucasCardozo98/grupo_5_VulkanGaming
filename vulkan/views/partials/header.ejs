@@ -27,26 +27,18 @@
         <% if (typeof user != "undefined") { %>
           <form action="/users/closeSesion" method="POST">
             <input type="checkbox" name="check" id="check">
-            <button  id="cierreSesiona" type="submit"><label class="text-white" for="check">Cerrar sesión</label></button>
+            <button  id="cierreSesion" type="submit"><label class="text-white" for="check">Cerrar sesión</label></button>
           </form>
-       
-         <% if (user != undefined && user.rol == "admin") { %>
-               <a href="/users/admin/<%=user.id%> ">Administrador</a>
-               <span class="neon" id="neon"></span>
-         <% } %>
+         
           <% } else { %>                  
             <div class="contactoDesktop">
           <i class="fas fa-user"></i>
           <a href="/users">Iniciar Sesión</a>
+
         </div>
+
        <% } %> 
-       <% if (typeof user != "undefined") { %>
-        <div class="contenedorSesion">
-       <a href="/users/profile/<%=user.id%>"> <img src="/images/users/<%=user.avatar%>" alt="" id="usuario" idUser="<%=user.id%>"></a>
-        
-        <a href="/users/profile/<%=user.id%>"><span>Mi perfil</span></a>
-        </div>
-      <% } %>
+       <div onclick="aparecen()"id="cosa" class="cosas text-white">Menú</div>
       </div>
       <!--estas cosas aparecen en responsive-->
       <div class="contenedorCarrito">
@@ -75,17 +67,9 @@
     <nav id="nav" class="lista">
       <ul id="lista" class="navegacion bg-success mb-0">
         <li><a href="/products/category/9">Encontrá tu equipo</a></li>
-        <li><a href="/products/category/1">Motherboards</a></li>
-        <li><a href="/products/category/2">Fuentes</a></li>
-        <li><a href="/products/category/3">Gabinetes</a></li>
-        <li><a href="/products/category/4">Perifericos</a></li>
-        <li><a href="/products/category/5">Procesadores</a></li>
-        <li><a href="/products/category/6">Memorias RAM</a></li>
-        <li><a href="/products/category/7">Disipadores</a></li>
-        <li><a href="/products/category/8">Placas de Video</a></li>
-        <li><a href="/products/category/10">Almacenamiento</a></li>
-          <% if (typeof user != "undefined") { %>
-            <li class="ultimoLi">
+        <li><a href="/products">Categorias</a></li>
+         <% if (typeof user != "undefined") { %>
+             <li class="ultimoLi">
            <a href="/users/profile/<%= user.id %>">Mi perfil</a>
           </li>
            <li>
@@ -104,7 +88,7 @@
             </li>
            <% } %>  
           
-        <!-- <li onclick="aparecen()"id="cosa" class="cosas">cosas</li>-->
+        <!-- <li onclick="aparecen()"id="cosa" class="cosas">cosas</li>
       </ul>
       <ul class="navegacionDesktop bg-success">
         <li><a href="/products/category/9">Equipos</a></li>
@@ -112,33 +96,69 @@
         <li><a href="/products/category/2">Fuentes</a></li>
         <li><a href="/products/category/3">Gabinetes</a></li>
         <li><a href="/products/category/4">Perifericos</a></li>
-        <li><a href="/products/category/5">Procesadores</a></li>
-        <li><a href="/products/category/6">Memorias</a></li>
-        <li><a href="/products/category/7">Disipadores</a></li>
-        <li><a href="/products/category/8">Placas</a></li>
-        <li><a href="/products/category/10">Almacenamiento</a></li>
         
-        <!-- <li onclick="aparecen()"id="cosa" class="cosas">cosas</li>-->
+        
       </ul>
     </nav>
-    <!--lista de cosas de prueba que estan pendientes de aprobar, recordar borrar si no se aprueban
-        <ul id="cosas" class="listaCosas">
-          <li>cosa1</li>
-          <li>cosa2</li>
-          <li>cosa3</li>
-        </ul>-->
+    lista de cosas de prueba que estan pendientes de aprobar, recordar borrar si no se aprueban-->
+  </nav>
+
+        <div id="cosas" class="listaCosas bg-dark">
+
+        <div class="categorias">
+
+        <h6 class="bg-success"><a href="/products">Categorias</a></h6>
+        
+        <ul id="categorias">
+          <li><a href="/products/category/9">Equipos</a></li>
+          <li><a href="/products/category/1">Motherboards</a></li>
+          <li><a href="/products/category/2">Fuentes</a></li>
+          <li><a href="/products/category/3">Gabinetes</a></li>
+          <li><a href="/products/category/4">Perifericos</a></li>
+          <li><a href="/products/category/5">Procesadores</a></li>
+          <li><a href="/products/category/6">Memorias</a></li>
+          <li><a href="/products/category/7">Disipadores</a></li>
+          <li><a href="/products/category/8">Placas</a></li>
+          <li><a href="/products/category/10">Almacenamiento</a></li>
+        </ul>
+        </div>
+
+        <% if (typeof user != "undefined") { %>
+          <div class="contenedorSesion">
+         <a href="/users/profile/<%=user.id%>"> <img src="/images/users/<%=user.avatar%>" alt="" id="usuario" idUser="<%=user.id%>"></a>
+          
+          
+        <% } %>
+        <ul>
+          
+            
+            <% if (typeof user != "undefined") { %>
+            <li>
+            <form action="/users/closeSesion" method="POST">            
+             <button id="cierreSesion" type="submit"><label class="text-white" for="check">Cerrar sesión</label></button>
+           </form>
+           </li>
+           <li>
+           <a href="/users/profile/<%=user.id%>"><span>Mi perfil</span></a>
+           </li>
+        
+          <% if (user.rol == "admin") { %>
+            <li><a href="/users/admin/<%=user.id%>">Administrador</a></li>
+            <% } %>
+           <% } %> 
+        </ul>
+      </div>
     <!--acá empiezan los scripts de los desplegables-->
-    <!--
-          ESTE SCRIPT ES UNA FUNCIONALIDAD PENDIENTE DE APROBACION
+    
+         
           <script>
           const espacio = document.getElementById("espacio")
           const listaCosas = document.getElementById("cosas");
           const cosa = document.getElementById("cosa");
           function aparecen(){
             listaCosas.classList.toggle("aparecenCosas");
-           // espacio.classList.toggle("dejarEspacio");
           }
-        </script>-->
+        </script>
     <script>
 
       const institucional = document.getElementById("institucional");

@@ -5,6 +5,61 @@
     --quaternary: #14ffec;
 }
 
+#categorias{
+    display: flex;
+    flex-wrap: wrap;
+    width: 450px;
+    border-right: 1px solid white;
+}
+.listaCosas{
+    list-style: none;
+    background-color: blue;
+    display: flex;
+    transition: 1s all;
+    align-items: center;
+    justify-content: center;
+    left: -10000px;
+    position: relative;
+    height: 0;
+    
+    
+}
+.listaCosas a{
+    text-decoration: none;
+    color: white;
+}
+.listaCosas li{
+    list-style: none;
+    width: 200px;
+    transition: 1s all;
+    padding: 5px;
+    border-radius: 2px;
+}
+.listaCosas li:hover{
+    background-color:rgba(68, 226, 68, 0.6)	 ;
+}
+.listaCosas li:hover~#cierreSesion{
+    background-color: blue;
+}
+.listaCosas img{
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    margin: 0;
+}
+.aparecenCosas{
+  display: flex;
+  margin-bottom: 0;
+  height: 100%;
+  visibility: visible;
+  width: 100%;
+  margin: 0;
+  padding: 10px; 
+  left: 0;
+  transition: 1s all;
+
+}
+
 /*configuraciones basicas mas la tipografia elegida*/
 *{
     margin: 0 auto;
@@ -43,13 +98,16 @@
 #check{
     display: none;
 }
-#cierreSesiona{
+#cierreSesion{
     border-style: none;
     outline: none;
     background-color:rgb(41, 43, 44)  ;
 
 }
-#cierreSecion:active{
+#cierreSesion:hover{
+    background-color:rgba(92, 184, 92,.2) ;
+}
+#cierreSesion:active{
     outline: none;
     border-style: none;
 }
@@ -370,7 +428,7 @@ div.footer{
     }
     .buscadorDesktop{
         display: flex;
-        width: 900px;
+        width: 700px;
         align-items: center;
         justify-content: space-evenly;
         padding: 0 10px;
