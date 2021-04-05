@@ -13,7 +13,6 @@
 }
 .listaCosas{
     list-style: none;
-    background-color: blue;
     display: flex;
     transition: 1s all;
     align-items: center;

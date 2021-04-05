@@ -129,10 +129,11 @@
           
           
         <% } %>
-        <ul>
+      
           
             
             <% if (typeof user != "undefined") { %>
+              <ul>
             <li>
             <form action="/users/closeSesion" method="POST">            
              <button id="cierreSesion" type="submit"><label class="text-white" for="check">Cerrar sesión</label></button>
@@ -145,8 +146,9 @@
           <% if (user.rol == "admin") { %>
             <li><a href="/users/admin/<%=user.id%>">Administrador</a></li>
             <% } %>
+          </ul>
            <% } %> 
-        </ul>
+        
       </div>
     <!--acá empiezan los scripts de los desplegables-->
     
