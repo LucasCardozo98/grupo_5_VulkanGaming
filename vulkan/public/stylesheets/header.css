@@ -73,8 +73,8 @@
     width: 200px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
     color: white;
+    justify-self: center;
 }
 
 .contenedorCarrito{

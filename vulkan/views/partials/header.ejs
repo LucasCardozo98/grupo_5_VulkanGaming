@@ -9,12 +9,15 @@
     <img src="https://www.fullh4rd.com.ar/img/nav_logitech.png" alt="">
     <img src="https://www.fullh4rd.com.ar/img/nav_seagate.svg" alt="">
     <!-- hacer mail y telefono funcional -->
-    <p><a href="tel:+5491164127009"><i class="telefonito fas fa-phone"></i> </i>1164127009</a> /<a href="mailto:vulkangaming@gmail.com"><i class="fas fa-envelope"></i> vulkangaming@gmail.com</a></p>
+    <p><a href="tel:+5491164127009"><i class="telefonito fas fa-phone"></i> </i>1164127009</a> /<a
+        href="mailto:vulkangaming@gmail.com"><i class="fas fa-envelope"></i> vulkangaming@gmail.com</a></p>
   </div>
   <div class="contenedor">
     <div id="institucional" class="institucional">
       <a href="/"><img class="imagen" src="/images/logo.png" alt=""></a>
-      <a href="/"><h1>Vulkan Gaming</h1></a>
+      <a href="/">
+        <h1>Vulkan Gaming</h1>
+      </a>
       <!--esto no aparece en el responsive, solo en desktop-->
       <div class="buscadorDesktop">
 
@@ -22,28 +25,29 @@
           <div class="buscadorEnSerioDesktop">
             <input type="text" name="busqueda">
             <button class="contenedor__lupaDesktop" type="submit"><i class="lupaDesktop fas fa-search"></i></button>
-          </div>  
-        </form>     
-        <% if (typeof user != "undefined") { %>
+          </div>
+        </form>
+        <% if (typeof user !="undefined" ) { %>
           <form action="/users/closeSesion" method="POST">
             <input type="checkbox" name="check" id="check">
-            <button  id="cierreSesion" type="submit"><label class="text-white" for="check">Cerrar sesión</label></button>
+            <button id="cierreSesion" type="submit"><label class="text-white" for="check">Cerrar sesión</label></button>
           </form>
-         
-          <% } else { %>                  
+
+          <% } else { %>
             <div class="contactoDesktop">
-          <i class="fas fa-user"></i>
-          <a href="/users">Iniciar Sesión</a>
+              <i class="fas fa-user"></i>
+              <a href="/users">Iniciar Sesión</a>
 
-        </div>
+            </div>
 
-       <% } %> 
-       <div onclick="aparecen()"id="cosa" class="cosas text-white">Menú</div>
+            <% } %>
+              <div onclick="aparecen()" id="cosa" class="cosas text-white">Menú</div>
       </div>
       <!--estas cosas aparecen en responsive-->
       <div class="contenedorCarrito">
         <div id="notificacion" class="notificacion bg-success"></div>
-      <a href="/products/cart"><i class="fas fa-shopping-cart"></i></a></div>
+        <a href="/products/cart"><i class="fas fa-shopping-cart"></i></a>
+      </div>
     </div>
 
     <div id="contenedor" class="buscador">
@@ -54,41 +58,42 @@
           <button class="contenedor_lupaMobile" type="submit"><i class="fas fa-search lupaMobile"></i></button>
         </div>
       </form>
-     
-     
-      
+
+
+
       <!--este boton aparece solo en mobile y tablet-->
       <div onclick="cambiar()" id="boton" class="iconoBarras">
         <i class="fas fa-bars"></i>
       </div>
-      
+
     </div>
     <!--lista que funciona desplegable en mobile y tablet y figura normal en desktop-->
     <nav id="nav" class="lista">
       <ul id="lista" class="navegacion bg-success mb-0">
         <li><a href="/products/category/9">Encontrá tu equipo</a></li>
         <li><a href="/products">Categorias</a></li>
-         <% if (typeof user != "undefined") { %>
-             <li class="ultimoLi">
-           <a href="/users/profile/<%= user.id %>">Mi perfil</a>
+        <% if (typeof user !="undefined" ) { %>
+          <li class="ultimoLi">
+            <a href="/users/profile/<%= user.id %>">Mi perfil</a>
           </li>
-           <li>
-           <form action="/users/closeSesion" method="POST">            
-            <button class="bg-success" id="cierreSesion" type="submit"><label class="text-white" for="check">Cerrar sesión</label></button>
-          </form>
+          <li>
+            <form action="/users/closeSesion" method="POST">
+              <button class="bg-success" id="cierreSesion" type="submit"><label class="text-white" for="check">Cerrar
+                  sesión</label></button>
+            </form>
           </li>
-          <% if (user.rol == "admin") { %>
+          <% if (user.rol=="admin" ) { %>
             <li><a href="/users/admin/<%=user.id%>">Administrador</a></li>
             <% } %>
-          <% } else { %>
-            <li class="ultimoLi">
-              <div class="sesionResponsive"><i class="fas fa-user"></i>
-                <a href="/users">Iniciar Sesión</a>
-              </div>
-            </li>
-           <% } %>  
-          
-        <!-- <li onclick="aparecen()"id="cosa" class="cosas">cosas</li>
+              <% } else { %>
+                <li class="ultimoLi">
+                  <div class="sesionResponsive"><i class="fas fa-user"></i>
+                    <a href="/users">Iniciar Sesión</a>
+                  </div>
+                </li>
+                <% } %>
+
+                  <!-- <li onclick="aparecen()"id="cosa" class="cosas">cosas</li>
       </ul>
       <ul class="navegacionDesktop bg-success">
         <li><a href="/products/category/9">Equipos</a></li>
@@ -101,14 +106,14 @@
       </ul>
     </nav>
     lista de cosas de prueba que estan pendientes de aprobar, recordar borrar si no se aprueban-->
-  </nav>
+    </nav>
 
-        <div id="cosas" class="listaCosas bg-dark">
+    <div id="cosas" class="listaCosas bg-dark">
 
-        <div class="categorias">
+      <div class="categorias">
 
         <h6 class="bg-success"><a href="/products">Categorias</a></h6>
-        
+
         <ul id="categorias">
           <li><a href="/products/category/9">Equipos</a></li>
           <li><a href="/products/category/1">Motherboards</a></li>
@@ -121,59 +126,61 @@
           <li><a href="/products/category/8">Placas</a></li>
           <li><a href="/products/category/10">Almacenamiento</a></li>
         </ul>
-        </div>
-
-        <% if (typeof user != "undefined") { %>
-          <div class="contenedorSesion">
-         <a href="/users/profile/<%=user.id%>"> <img src="/images/users/<%=user.avatar%>" alt="" id="usuario" idUser="<%=user.id%>"></a>
-          
-          
-        <% } %>
-      
-          
-            
-            <% if (typeof user != "undefined") { %>
-              <ul>
-            <li>
-            <form action="/users/closeSesion" method="POST">            
-             <button id="cierreSesion" type="submit"><label class="text-white" for="check">Cerrar sesión</label></button>
-           </form>
-           </li>
-           <li>
-           <a href="/users/profile/<%=user.id%>"><span>Mi perfil</span></a>
-           </li>
-        
-          <% if (user.rol == "admin") { %>
-            <li><a href="/users/admin/<%=user.id%>">Administrador</a></li>
-            <% } %>
-          </ul>
-           <% } %> 
-        
       </div>
-    <!--acá empiezan los scripts de los desplegables-->
-    
-         
-          <script>
+
+      <% if (typeof user !="undefined" ) { %>
+        <div class="contenedorSesion">
+          <a href="/users/profile/<%=user.id%>" > <img src="/images/users/<%=user.avatar%>" alt="" id="usuario"
+              idUser="<%=user.id%>"></a>
+
+
+          <% } %>
+
+
+
+            <% if (typeof user !="undefined" ) { %>
+              <ul>
+                <li>
+                  <form action="/users/closeSesion" method="POST">
+                    <button id="cierreSesion" type="submit"><label class="text-white" for="check">Cerrar
+                        sesión</label></button>
+                  </form>
+                </li>
+                <li>
+                  <a href="/users/profile/<%=user.id%>"><span>Mi perfil</span></a>
+                </li>
+
+                <% if (user.rol=="admin" ) { %>
+                  <li><a href="/users/admin/<%=user.id%>">Administrador</a></li>
+                  <% } %>
+              </ul>
+              <% } %>
+
+        </div>
+        <!--acá empiezan los scripts de los desplegables-->
+
+
+        <script>
           const espacio = document.getElementById("espacio")
           const listaCosas = document.getElementById("cosas");
           const cosa = document.getElementById("cosa");
-          function aparecen(){
+          function aparecen() {
             listaCosas.classList.toggle("aparecenCosas");
           }
         </script>
-    <script>
+        <script>
 
-      const institucional = document.getElementById("institucional");
-      const lista = document.getElementById("lista");
-      const nav = document.getElementById("nav");
-      function cambiar() {
+          const institucional = document.getElementById("institucional");
+          const lista = document.getElementById("lista");
+          const nav = document.getElementById("nav");
+          function cambiar() {
 
-        lista.classList.toggle("aparecer");
-        lista.style.transition = "1s all";
-        //nav.classList.add("muestra");
+            lista.classList.toggle("aparecer");
+            lista.style.transition = "1s all";
+            //nav.classList.add("muestra");
 
-      }
+          }
 
-    </script>
-  </div>
+        </script>
+    </div>
 </header>
