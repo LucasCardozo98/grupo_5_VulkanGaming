@@ -35,7 +35,7 @@
     border-radius: 2px;
 }
 .listaCosas li:hover{
-    background-color:rgba(68, 226, 68, 0.6)	 ;
+    background-color:#198754;
 }
 .listaCosas li:hover~#cierreSesion{
     background-color: blue;

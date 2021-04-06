@@ -31,11 +31,20 @@ module.exports = {
             db.User.create({
                 email: email,
                 password : adressCrypt,
-                rol : "admin",
+                rol : "user",
                 avatar: "avatar.jpeg"
             })
-            .then(()=>{
-                res.redirect("/users/login")
+            .then((user)=>{
+                req.session.userVulkan = {
+                    id : user.id,
+                    email: user.email,
+                    rol : user.rol,
+                    avatar: "avatar.jpeg",
+                    username: user.username,
+                    first_name: user.first_name
+
+                }
+                res.redirect("/")
             })
             .catch(error=>{
                 res.send(error)
