@@ -24,8 +24,10 @@
                     <p class="usuario"><strong><%=element.mensajes.username%></strong></p>
                     <p class="mensaje"><%= element.message  %></p> 
                     
-                    <button idMensaje="<%=element.id%>" type="submit" class="btn text-danger botonEliminar"><i class="fas fa-trash-alt"></i></button>
-                          
+                    <button idMensaje="<%=element.id%>" type="submit" class="btn text-danger botonEliminar">Eliminar para mí <i class="fas fa-trash-alt"></i></button>
+                    <form action="/users/eliminarMensajes/<%=element.id%>?_method=DELETE" method="POST">
+                        <button type="submit" class="btn text-dark">Eliminar para todos <i class="fas fa-trash-alt"></i></button>
+                    </form>      
              </li>
             <% }) %>
     </ul>
