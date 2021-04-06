@@ -162,7 +162,7 @@ module.exports = {
         let categorys = db.Category.findAll()
         let mensajes = db.Message.findAll({
             where: {                                
-                idOtherUSer : id
+               [db.Sequelize.Op.or]:[{idOtherUSer : id},{idUserMessage: id}]
             },
             include: [{association: "mensajes"}]
         })

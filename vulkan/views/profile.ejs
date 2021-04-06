@@ -20,12 +20,12 @@
     <ul style="list-style: none; padding-left: 0;">       
     <% mensajes.forEach(element => { %>
 
-             <li class="alert alert-success">
+             <li class="alert alert-success" id="mensaje-<%=element.id%>">
                     <p class="usuario"><strong><%=element.mensajes.username%></strong></p>
                     <p class="mensaje"><%= element.message  %></p> 
-                    <form action="/users/eliminarMensajes/<%=element.id%>?_method=DELETE" method="POST">
-                        <button type="submit" class="btn text-danger"><i class="fas fa-trash-alt"></i></button>
-                    </form>      
+                    
+                    <button idMensaje="<%=element.id%>" type="submit" class="btn text-danger botonEliminar"><i class="fas fa-trash-alt"></i></button>
+                          
              </li>
             <% }) %>
     </ul>
@@ -49,4 +49,5 @@
 <%- include("partials/footer")  %> 
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <script src="/javascripts/alertaEliminarUsuario.js"></script>
+<script src="/javascripts/eliminarMensajes.js"></script>
 </body>

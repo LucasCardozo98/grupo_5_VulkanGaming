@@ -10,9 +10,11 @@
                 <ul style="list-style: none; padding-left: 0;">       
                 <% mensajes.forEach(element => { %>
 
-                         <li class="alert alert-success">
+                         <li class="alert alert-success" id="mensaje-<%=element.id%>" >
                                 <p class="usuario"><strong><%=element.mensajes.username%></strong></p>
-                                <p class="mensaje"><%= element.message  %></p>        
+                                <p class="mensaje"><%= element.message  %></p>
+                                <button idMensaje="<%=element.id%>" type="submit" class="btn text-danger botonEliminar"><i class="fas fa-trash-alt"></i></button>
+                    
                          </li>
                         <% }) %>
                 </ul>
@@ -31,4 +33,5 @@
     
 </div>
 <%- include("partials/footer")%>
+<script src="/javascripts/eliminarMensajes.js"></script>
 </body>
