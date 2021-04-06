@@ -149,6 +149,21 @@ module.exports = {
             res.json(error)
         })
 
+    },
+    email : (req,res)=>{
+        let mails = []
+        db.User.findAll()
+        .then(users=>{
+            users.forEach(element => {
+                mails.push(element.email);
+            });
+            res.json({
+                mails
+            })
+        })
+        .catch(error=>{
+            console.log(error)
+        })
     }
  
 }
