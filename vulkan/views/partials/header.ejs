@@ -1,4 +1,4 @@
-<header>
+<header id="arriba">
   <!--esto de sponsors aparece solo en desktop-->
   <div class="sponsors">
 
@@ -129,7 +129,7 @@
       </div>
       </div>
       <% if (typeof user !="undefined" ) { %>
-        <div class="contenedorSesion d-flex justify-content-center">
+        <div class="contenedorSesion d-flex text-start justify-content-center">
           <a href="/users/profile/<%=user.id%>" > <img src="/images/users/<%=user.avatar%>" alt="" id="usuario"
               idUser="<%=user.id%>"></a>
 
