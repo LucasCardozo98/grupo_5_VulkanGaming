@@ -1,126 +1,142 @@
 <%- include("partials/head")%>
-<%- include("partials/header")%>
+  <%- include("partials/header")%>
 
-<div class="form container admin">
-    <div class="row gx-0">
-      <div>
-        <div class="titulo bg-success text-center mb-5">
-          <h2 class="admin-title bg-dark">El admin piola</h2>
-        </div>
-        <form action="/products/edit/<%=product.id%>?_method=PUT" method="POST" enctype="multipart/form-data" id="form">
-          <img class="rounded mx-auto d-block img-fluid mb-3"  src="/images/<%=product.image  %> " alt="">
-          <div class="mb-3">
-            <input class="form-control form-control-m"  id="formFileSm" type="file" name="image">
-            <span class="error" id="formFileErrors"></span>
+    <div class="form container admin">
+      <div class="row gx-0">
+        <div>
+          <div class="titulo bg-success text-center mb-5">
+            <h2 class="admin-title bg-dark">El admin piola</h2>
           </div>
-         <!----> 
-          <div>
-            <div class="mb-4 mt-4">
-              <label for="exampleInputEmail1" class="form-label"></label>
-              <input type="text" class="input form-control bg-x" placeholder="Nombre" id="inputName"
-                value="<%=product.name  %> " name="name">
-                <span class="error" id="nameErrors"></span>
+          <form action="/products/edit/<%=product.id%>?_method=PUT" method="POST" enctype="multipart/form-data"
+            id="form">
+            <img class="rounded mx-auto d-block img-fluid mb-3" src="/images/<%=product.image  %> " alt="">
+            <div class="mb-3">
+              <input class="form-control form-control-m" id="formFileSm" type="file" name="image">
+              <span class="error" id="formFileErrors"></span>
             </div>
-            <% if (typeof errors != 'undefined') { %>
-              <ul>
-             <% errors.forEach(element => { %>
-              <% if (element.param == 'name') { %>
-                <li class="alert alert-warning" role="alert"><%=element.msg  %> </li>
-              <% } %>
-             <% }) %>
-            </ul>
-            <% } %>
-            <select class="form-select form-select-m mb-4 text-muted" aria-label=".form-select-sm example" name="category">
-                <% categorias.forEach(element => { %>
-                 <option <% if (element.id == product.idCategory) { %>
-                  selected
-                 <% } %> value="<%=element.id%>"><%=element.name%> </option>
-
-                <% }) %>
-              
-            </select>
-            <% if (typeof errors != 'undefined') { %>
-                <ul>
-               <% errors.forEach(element => { %>
-                <% if (element.param == 'category') { %>
-                  <li class="alert alert-warning" role="alert"><%=element.msg  %> </li>
-                <% } %>
-               <% }) %>
-              </ul>
-              <% } %>
-            <select class="form-select form-select-m text-muted" aria-label=".form-select-sm example" name="brand"
-            aria-placeholder="Marca">
-                <% marcas.forEach(element => { %>
-                 <option <% if (element.id == product.idBrand ) { %>
-                  selected
-                 <% } %> value="<%= element.id %> "><%= element.name %></option>
-                <% }) %> 
-
-            </select>
-            <% if (typeof errors != 'undefined') { %>
-                <ul>
-               <% errors.forEach(element => { %>
-                <% if (element.param == 'brand') { %>
-                  <li class="alert alert-warning" role="alert"><%=element.msg  %> </li>
-                <% } %>
-               <% }) %>
-              </ul>
-              <% } %>
-            <div class="">
-              <label for="price" class="form-label"></label>
-              <input type="number" class="input form-control bg-x" placeholder="Precio" id="price"
-                aria-describedby="emailHelp" name="price" value="<%= product.price%>">
-                <span class="error" id="priceErrors"></span>
-            </div>
-            <% if (typeof errors != 'undefined') { %>
-                <ul>
-               <% errors.forEach(element => { %>
-                <% if (element.param == 'price') { %>
-                  <li class="alert alert-warning" role="alert"><%=element.msg  %> </li>
-                <% } %>
-               <% }) %>
-              </ul>
-              <% } %>
+            <!---->
             <div>
-
-            
-              <div class="mb-3">
-                <label for="stock" class="form-label"></label>
-                <input type="number" class="input form-control bg-x" placeholder="Stock" id="stock"
-                  aria-describedby="emailHelp" name="stock" value="<%= product.stock%>">
-                  <span class="error" id="stockErrors"></span>
+              <div class="mb-4 mt-4">
+                <label for="exampleInputEmail1" class="form-label"></label>
+                <input type="text" class="input form-control bg-x" placeholder="Nombre" id="inputName"
+                  value="<%=product.name  %> " name="name">
+                <span class="error" id="nameErrors"></span>
               </div>
-              <% if (typeof errors != 'undefined') { %>
-                  <ul>
-                 <% errors.forEach(element => { %>
-                  <% if (element.param == 'stock') { %>
-                    <li class="alert alert-warning" role="alert"><%=element.msg  %> </li>
-                  <% } %>
-                 <% }) %>
+              <% if (typeof errors !='undefined' ) { %>
+                <ul>
+                  <% errors.forEach(element=> { %>
+                    <% if (element.param=='name' ) { %>
+                      <li class="alert alert-warning" role="alert">
+                        <%=element.msg %>
+                      </li>
+                      <% } %>
+                        <% }) %>
                 </ul>
                 <% } %>
-              <div>
+                  <select class="form-select form-select-m mb-4 text-muted" aria-label=".form-select-sm example"
+                    name="category">
+                    <% categorias.forEach(element=> { %>
+                      <option <% if (element.id==product.idCategory) { %>
+                        selected
+                        <% } %> value="<%=element.id%>"><%=element.name%>
+                      </option>
+
+                      <% }) %>
+
+                  </select>
+                  <% if (typeof errors !='undefined' ) { %>
+                    <ul>
+                      <% errors.forEach(element=> { %>
+                        <% if (element.param=='category' ) { %>
+                          <li class="alert alert-warning" role="alert">
+                            <%=element.msg %>
+                          </li>
+                          <% } %>
+                            <% }) %>
+                    </ul>
+                    <% } %>
+                      <select class="form-select form-select-m text-muted" aria-label=".form-select-sm example"
+                        name="brand" aria-placeholder="Marca">
+                        <% marcas.forEach(element=> { %>
+                          <option <% if (element.id==product.idBrand ) { %>
+                            selected
+                            <% } %> value="<%= element.id %> "><%= element.name %>
+                          </option>
+                          <% }) %>
+
+                      </select>
+                      <% if (typeof errors !='undefined' ) { %>
+                        <ul>
+                          <% errors.forEach(element=> { %>
+                            <% if (element.param=='brand' ) { %>
+                              <li class="alert alert-warning" role="alert">
+                                <%=element.msg %>
+                              </li>
+                              <% } %>
+                                <% }) %>
+                        </ul>
+                        <% } %>
+                          <div class="">
+                            <label for="price" class="form-label"></label>
+                            <input type="number" class="input form-control bg-x" placeholder="Precio" id="price"
+                              aria-describedby="emailHelp" name="price" value="<%= product.price%>">
+                            <span class="error" id="priceErrors"></span>
+                          </div>
+                          <% if (typeof errors !='undefined' ) { %>
+                            <ul>
+                              <% errors.forEach(element=> { %>
+                                <% if (element.param=='price' ) { %>
+                                  <li class="alert alert-warning" role="alert">
+                                    <%=element.msg %>
+                                  </li>
+                                  <% } %>
+                                    <% }) %>
+                            </ul>
+                            <% } %>
+                              <div>
 
 
-              <div class="form-floating mb-4">
-                <textarea class="form-control" placeholder="Leave a comment here" id="description" name="description" ><%= product.description%></textarea>
-                <span class="error" id="descriptionErrors"></span>
-                <label class="text-muted">Descripcion</label>
-              </div>
-            </div>
-           
-            <div class="mb-5 d-flex justify-content-around ">
-              <button type="reset" class="btn btn-secondary">Cancelar</button>
-              <button type="submit" class="btn btn-primary" >Guardar</button>
-            </div>
-          </div>
-        </form>
+                                <div class="mb-3">
+                                  <label for="stock" class="form-label"></label>
+                                  <input type="number" class="input form-control bg-x" placeholder="Stock" id="stock"
+                                    aria-describedby="emailHelp" name="stock" value="<%= product.stock%>">
+                                  <span class="error" id="stockErrors"></span>
+                                </div>
+                                <% if (typeof errors !='undefined' ) { %>
+                                  <ul>
+                                    <% errors.forEach(element=> { %>
+                                      <% if (element.param=='stock' ) { %>
+                                        <li class="alert alert-warning" role="alert">
+                                          <%=element.msg %>
+                                        </li>
+                                        <% } %>
+                                          <% }) %>
+                                  </ul>
+                                  <% } %>
+                                    <div>
+
+
+                                      <div class="form-floating mb-4">
+                                        <textarea class="form-control" placeholder="Leave a comment here"
+                                          id="description" name="description"><%= product.description%></textarea>
+                                        <span class="error" id="descriptionErrors"></span>
+                                        <label class="text-muted">Descripcion</label>
+                                      </div>
+                                    </div>
+
+                                    <div class="mb-5 d-flex justify-content-around ">
+                                      <button type="reset" class="btn btn-secondary">Cancelar</button>
+                                      <button type="submit" class="btn btn-primary">Guardar</button>
+                                    </div>
+                              </div>
+          </form>
+        </div>
       </div>
     </div>
-  </div>
+    </div>
 
-  <script src="/JS/productEdit.js"></script>
-<%- include("partials/footer")%>
-<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-<script src="/javascripts/alertaEditarProducto.js"></script>
-</body>
+    <script src="/JS/productEdit.js"></script>
+    <%- include("partials/footer")%>
+      <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+      <script src="/javascripts/alertaEditarProducto.js"></script>
+      </body>

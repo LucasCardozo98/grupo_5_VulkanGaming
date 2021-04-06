@@ -67,6 +67,17 @@
    .card .content .btn button:hover{
      transform: scale(0.9);
   }
+   div.pepeargento{
+      background-color: white;
+      -webkit-box-shadow: 3px 4px 23px 5px rgba(0,0,0,0.75);
+      -moz-box-shadow: 3px 4px 23px 5px rgba(0,0,0,0.75);
+      box-shadow: 3px 4px 23px 5px rgba(0,0,0,0.75);
+      padding: 10px;
+      height: 90%;
+      margin: 50px auto;
+      border-radius: 15px;
+  }
+
   @media(max-width: 1024px){
    .slider .card{
       margin: 50px 28px;
