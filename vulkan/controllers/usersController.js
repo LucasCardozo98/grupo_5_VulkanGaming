@@ -227,10 +227,11 @@ module.exports = {
     },
     showProfile: (req,res)=>{
         let id = req.params.id
+        let products = db.Product.findAll()
         let users = db.User.findAll()
         let user = db.User.findByPk(id,
             {
-                include: [{association : "carrito"}]
+                include: [{association : "compras"},{association:"carrito"}]
             })
         let mensajes = db.Message.findAll({
             where: {                
@@ -238,10 +239,10 @@ module.exports = {
             },
             include: [{association: "mensajes"},{association: "mensajesRecibidos"}]
         })
-        Promise.all([users,user,mensajes])
-        .then(([users,user,mensajes])=>{
-            console.log(mensajes);
-            res.render("profile",{users,user,mensajes,css: "/stylesheets/userProfile.css"})
+        Promise.all([users,user,mensajes,products])
+        .then(([users,user,mensajes,products])=>{
+            console.log(user.compras);
+            res.render("profile",{users,user,mensajes,products,css: "/stylesheets/userProfile.css"})
         })
         .catch(error=>{
             res.send(error+"1")
