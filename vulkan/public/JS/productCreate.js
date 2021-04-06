@@ -100,7 +100,12 @@ window.addEventListener('load', function(){
             $file.value = '';
             $imgPreview.innerHTML = '';
             return false;
-        }else{
+        }
+        else if(filePath == " "){
+            $fileErrors.innerHTML = "Por favor carga una foto del producto"
+            
+        }
+        else{
             console.log($file.files);
             if($file.files && $file.files[0]){
                 let reader = new FileReader();
@@ -111,6 +116,26 @@ window.addEventListener('load', function(){
                 $fileErrors.innerHTML = '';
                 $file.classList.remove('is-invalid')
             }
+        }
+    })
+
+    $form.addEventListener('submit',function(event){
+        let error = false;
+        event.preventDefault()
+        //console.log(form.elements)
+        let elementosForm = this.elements
+        for (let index = 0; index < elementosForm.length-2; index++) {
+            console.log(elementosForm[index].value, index);
+            if(elementosForm[index].value == ""){
+                elementosForm[index].classList.add('is-invalid');
+                //$formLoginErrors.innerHTML = "Los campos señalados son obligatorios";
+                error = true;
+            }
+        }
+
+        if(!error){
+            console.log('Todo bien');
+            $form.submit()
         }
     })
 })
