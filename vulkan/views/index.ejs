@@ -72,25 +72,25 @@
           autoplayHoverPause: true,
         });
       </script>
+      <% products.forEach(element => { %>
+       
+     
       <div class="card-mobile mb-3" style="width: 100%;">
-        <img src="../images/ram3.jpg" class="card-img-top" alt="...">
+        <img src="/images/<%=element.image%>" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title">Nombre del producto</h5>
-          <a href="#" class="btn btn-primary"><i class="fas fa-cart-plus"></i> Comprar</a>
+          <h5 class="card-title"><%=element.name%> </h5>
+          <h4 class="card-content"><%=element.price%> </h4>
+          <button type="submit" idProducto="<%=element.id%>" style="z-index: 200;" id="boton-<%=element.id%>" class=" btn btn-primary botones"><i class="fas fa-cart-plus"></i>Agregar al carrito</button>
+          
+       
         </div>
       </div>
       
-      <div class="card-mobile mb-3" style="width: 75%;">
-        <img src="../images/procesador6.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <a href="#" class="btn btn-primary"><i class="fas fa-cart-plus"></i> Comprar</a>
-        </div>
-      </div>
-    </div>
+      <% }) %>
   </section>
   <a href="#arriba"><input type="button" class="up"></a>
 <%- include("partials/footer")%>
 <script src="/javascripts/carrito.js"></script>
 <script src="/javascripts/carritoBotones.js"></script>
+<script src="/javascripts/buscador.js"></script>
 </body>

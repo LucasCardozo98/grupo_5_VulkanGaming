@@ -218,7 +218,7 @@ module.exports =  {
         let id = req.params.id
         db.Product.update({
             visible: 2},
-            {where: {id: +id}
+            {where: {id: id}
         
             
             

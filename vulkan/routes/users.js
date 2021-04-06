@@ -29,7 +29,7 @@ router.delete("/delete/:id",loginCheck,usersController.eliminar);
 router.get("/profile/:id",loginCheck,usersController.showProfile);
 router.post("/crearMensaje/:id",usersController.crearMensaje);
 router.post("/admin/relacionMarcaCategoria",usersController.relacion);
-router.get("/api/usuarios",apiController.usuarios);
+router.get("/api/usuarios",apiController.email);
 router.post("/api/sesion",apiController.iniciarSesion);
 router.get("/api/informacion",apiController.informacion);
 router.delete("/eliminarMensajes/:id",usersController.eliminarMensaje);

@@ -72,8 +72,8 @@ window.addEventListener('load', function(){
     })
     .then(data=>{
        
-        data.data.forEach(element => {
-            if (element.email == $inputEmailRegister.value.trim()) {
+        data.mails.forEach(element => {
+            if (element == $inputEmailRegister.value.trim()) {
                 console.log("si son iguales")
                 existe = 1; 
                 console.log(existe + " etapa de cambio");
