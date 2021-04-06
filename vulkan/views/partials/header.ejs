@@ -21,10 +21,10 @@
       <!--esto no aparece en el responsive, solo en desktop-->
       <div class="buscadorDesktop">
 
-        <form action="/products/buscador" method="GET">
+        <form action="/products/buscador" method="GET" id="buscadorEscritorio">
           <div class="buscadorEnSerioDesktop">
-            <input type="text" name="busqueda">
-            <button class="contenedor__lupaDesktop" type="submit"><i class="lupaDesktop fas fa-search"></i></button>
+            <input type="text" name="busqueda" id="busquedaEscritorio">
+            <button class="contenedor__lupaDesktop" type="submit" onclick="evitar(event,document.querySelector('#buscadorEscritorio'),document.querySelector('#busquedaEscritorio'))" ><i class="lupaDesktop fas fa-search"></i></button>
           </div>
         </form>
         <% if (typeof user !="undefined" ) { %>
@@ -52,10 +52,10 @@
 
     <div id="contenedor" class="buscador">
 
-      <form action="" method="GET">
+      <form action="/products/buscador" method="GET" id="buscadorMobile">
         <div class="buscadorEnSerio">
-          <input type="text">
-          <button class="contenedor_lupaMobile" type="submit"><i class="fas fa-search lupaMobile"></i></button>
+          <input type="text" name="busqueda" id="busquedaMobile">
+          <button class="contenedor_lupaMobile" type="submit" onclick="evitar(event,document.querySelector('#buscadorMobile'),document.querySelector('#busquedaMobile'))"><i class="fas fa-search lupaMobile"></i></button>
         </div>
       </form>
 
