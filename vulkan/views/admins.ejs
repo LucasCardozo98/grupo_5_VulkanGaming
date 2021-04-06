@@ -11,12 +11,15 @@
                 <% mensajes.forEach(element => { %>
 
                          <li class="alert alert-success" id="mensaje-<%=element.id%>" >
+                               
                                 <p class="usuario"><strong><%=element.mensajes.username%></strong></p>
                                 <p class="mensaje"><%= element.message  %></p>
+                                <div class="d-flex">
                                 <button idMensaje="<%=element.id%>" type="submit" class="btn text-danger botonEliminar">Eliminar para mí <i class="fas fa-trash-alt"></i></button>
                                 <form action="/users/eliminarMensajes/<%=element.id%>?_method=DELETE" method="POST">
                                     <button type="submit" class="btn text-dark">Eliminar para todos <i class="fas fa-trash-alt"></i></button>
                                 </form>  
+                                </div>
                          </li>
                         <% }) %>
                 </ul>

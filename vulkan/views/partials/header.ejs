@@ -110,9 +110,9 @@
 
     <div id="cosas" class="listaCosas bg-dark">
 
-      <div class="categorias">
-
-        <h6 class="bg-success"><a href="/products">Categorias</a></h6>
+      <div class="categorias d-flex justify-content-center">
+        <div>
+        <h6 class="bg-success text-center"><a href="/products">Categorias</a></h6>
 
         <ul id="categorias">
           <li><a href="/products/category/9">Equipos</a></li>
@@ -127,9 +127,9 @@
           <li><a href="/products/category/10">Almacenamiento</a></li>
         </ul>
       </div>
-
+      </div>
       <% if (typeof user !="undefined" ) { %>
-        <div class="contenedorSesion">
+        <div class="contenedorSesion d-flex justify-content-center">
           <a href="/users/profile/<%=user.id%>" > <img src="/images/users/<%=user.avatar%>" alt="" id="usuario"
               idUser="<%=user.id%>"></a>
 
