@@ -234,16 +234,17 @@ module.exports = {
             })
         let mensajes = db.Message.findAll({
             where: {                
-                idOtherUSer : id
+            [db.Sequelize.Op.or]:[{idUserMessage: id},{idOtherUSer: id}]
             },
-            include: [{association: "mensajes"}]
+            include: [{association: "mensajes"},{association: "mensajesRecibidos"}]
         })
         Promise.all([users,user,mensajes])
         .then(([users,user,mensajes])=>{
+            console.log(mensajes);
             res.render("profile",{users,user,mensajes,css: "/stylesheets/userProfile.css"})
         })
         .catch(error=>{
-            res.send(error)
+            res.send(error+"1")
         })
     },
     crearMensaje: (req,res)=>{
@@ -273,6 +274,19 @@ module.exports = {
         })
         .catch(error=>{
             res.send(error);
+        })
+    },
+    eliminarMensaje: (req,res)=>{
+        const id = req.params.id
+        db.Message.destroy({
+            where: {id: id}
+        })
+        .then(()=>{
+            console.log("mensaje eliminado");
+            res.redirect("back");
+        })
+        .catch(error=>{
+            console.log(error);
         })
     }
 }

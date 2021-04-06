@@ -32,5 +32,6 @@ router.post("/admin/relacionMarcaCategoria",usersController.relacion);
 router.get("/api/usuarios",apiController.usuarios);
 router.post("/api/sesion",apiController.iniciarSesion);
 router.get("/api/informacion",apiController.informacion);
+router.delete("/eliminarMensajes/:id",usersController.eliminarMensaje);
 
 module.exports = router;

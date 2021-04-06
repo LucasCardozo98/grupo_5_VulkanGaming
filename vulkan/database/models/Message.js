@@ -38,6 +38,11 @@ module.exports = (sequelize,dataTypes)=>{
             foreignKey : "idUserMessage",           
             timestamps: false
         })
+        Message.belongsTo(models.User,{
+            as: "mensajesRecibidos",
+            foreignKey: "idOtherUser",
+            timestamps: false
+        })
     }
 
     return Message

@@ -22,7 +22,10 @@
 
              <li class="alert alert-success">
                     <p class="usuario"><strong><%=element.mensajes.username%></strong></p>
-                    <p class="mensaje"><%= element.message  %></p>       
+                    <p class="mensaje"><%= element.message  %></p> 
+                    <form action="/users/eliminarMensajes/<%=element.id%>?_method=DELETE" method="POST">
+                        <button type="submit" class="btn text-danger"><i class="fas fa-trash-alt"></i></button>
+                    </form>      
              </li>
             <% }) %>
     </ul>

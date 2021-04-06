@@ -68,6 +68,13 @@ module.exports = (sequelize, dataTypes)=>{
             foreignKey: "idUserMessage",
             timestamps: false
         })
+        User.hasMany(models.Message,{
+            as: "mensajesRecibidos",
+            foreignKey: "idOtherUSer",
+            timestamps: false
+        })
+        
+       
     }
 
     return User;
