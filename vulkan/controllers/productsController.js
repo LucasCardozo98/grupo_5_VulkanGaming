@@ -6,8 +6,16 @@ const Op = require("sequelize");
 const mercadopago = require("mercadopago");
 module.exports =  {
     //aca empieza la muestra de productos de diferentes categorias
-    mostrar: (req,res) =>{  
-        res.render("products",{css:'/stylesheets/products.css'});
+    mostrar: (req,res) =>{ 
+        db.Category.findAll({
+            include: [{association: "categorias"}]
+        }) 
+        .then(categorias=>{
+            res.render("products",{css:'/stylesheets/products.css',categorias});
+        })
+        .catch(error=>{
+            console.log(error)
+        })
     },
     showCategory: (req,res)=>{
         const categoria = req.params.categoria;

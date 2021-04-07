@@ -7,17 +7,17 @@ window.addEventListener("load",()=>{
     let apellidoErrors = document.querySelector("#apellidoErrors");
     let direccion = document.querySelector("#direccion");
     let direccionErrors = document.querySelector("#direccionErrors");
-    let foto = document.querySelector("#img-preview");
-    let fotoErrors = document.querySelector("#fotoErrors");
+    let file = document.querySelector("#formFileSm");
+    let imgPreview = document.querySelector("#img-previeww");
+    let fileErrors = document.querySelector("#fotoErrors");
+    let fotoPerfil = document.querySelector('#fotoPerfil');
     let form = document.querySelector("#formularioUsuario");
     let submitErrors = document.querySelector("#submitErrors");
-    let boton = document.querySelector("#ver");
     let regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/;
     let regExDNI = /^[0-9]{7,8}$/;
     let regExEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
     let regExPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,12}$/;
 
-    console.log(ver.value);
     username.addEventListener('blur', function(){
         console.log(username.value.trim())
         switch (true) {
@@ -111,26 +111,27 @@ window.addEventListener("load",()=>{
         }
     })
     
-    foto.addEventListener('change', 
+    file.addEventListener('change', 
     function fileValidation(){
-        let filePath = foto.value, //Capturo el valor del input
-            allowefExtensions = /(.jpg|.jpeg|.png|.gif|.web)$/i //Extensiones permitidas
-        if(!allowefExtensions.exec(filePath)){ //El método exec() ejecuta una busqueda sobre las coincidencias de una expresión regular en una cadena especifica. Devuelve el resultado como array, o null.
-            fotoErrors.innerHTML = 'Carga un archivo de imagen válido, con las extensiones (.jpg - .jpeg - .png - .gif)';
-            foto.value = '';
-            $imgPreview.innerHTML = '';
+        let filePath = file.value, 
+            allowefExtensions = /(.jpg|.jpeg|.png|.gif)$/i 
+        if(!allowefExtensions.exec(filePath)){
+            fileErrors.innerHTML = 'Carga un archivo de imagen válido, con las extensiones (.jpg - .jpeg - .png - .gif)';
+            file.value = '';
+            imgPreview.innerHTML = '';
             return false;
-        }else{
-            // Image preview
-            console.log(foto.files);
-            if(foto.files && $file.files[0]){
+        }
+        else{
+            console.log(file.files);
+            if(file.files && file.files[0]){
                 let reader = new FileReader();
                 reader.onload = function(e){
-                    $imgPreview.innerHTML = '<img src="' + e.target.result +'"/>';
+                    imgPreview.innerHTML += '<img src="' + e.target.result +'"/>';
+                    fotoPerfil.classList.add('d-none')
                 };
-                reader.readAsDataURL(foto.files[0]);
-                fotoErrors.innerHTML = '';
-                foto.classList.remove('is-invalid')
+                reader.readAsDataURL(file.files[0]);
+                fileErrors.innerHTML = '';
+                file.classList.remove('is-invalid')
             }
         }
     })
