@@ -7,92 +7,22 @@
         <div class="container">
           <div class="row">
             <div class="slider owl-carousel">
-
-              <div class="card  col-sm-12 col-md-3 col-lg-3"><a href="/products/category/1">
-                  <div class="img">
-                    <img src="/images/mother1.jpg" alt="">
+              <% categorias.forEach(element => { %>
+                
+                <div class="card col-12 bg-success" style="margin: 10px auto;">
+                  
+                  <div class="content" style="width: 100%;">
+                    <a href="/products/category/<%=element.id%>" style="text-decoration: none; display: flex; justify-content: space-between; width: 100%;" >
+                    <div class=" mr-5 text-white justify-self-start"><%=element.name%></div>
+                    <div class="muted text-white"> productos: <%=element.categorias.length%> </div>
+                  </a>
                   </div>
-                  <div class="content">
-                    <div class="title">MOTHERBOARDS</div>
-                  </div>
-                </a>
-              </div>
-
-              <div class="card  col-sm-12 col-md-3 col-lg-3">
-                <a href="/products/category/2">
-                  <div class="img">
-                    <img src="/images/fuente1.jpg" alt="Fuentes">
-                  </div>
-                  <div class="content">
-                    <div class="title">FUENTES</div>
-                  </div>
-                </a>
-              </div>
-
-              <div class="card  col-sm-12 col-md-3 col-lg-3">
-                <a href="/products/category/3">
-                  <div class="img">
-                    <img src="/images/gabinete1.jpg" alt="">
-                  </div>
-                  <div class="content">
-                    <div class="title">GABINETES</div>
-                  </div>
-                </a>
-              </div>
-
-              <div class="card  col-sm-12 col-md-3 col-lg-3">
-                <a href="/products/category/4">
-                  <div class="img">
-                    <img src="/images/teclado3.jpg" alt="">
-                  </div>
-                  <div class="content">
-                    <div class="title">PERIFERICOS</div>
-                  </div>
-                </a>
-              </div>
-
-              <div class="card  col-sm-12 col-md-3 col-lg-3">
-                <a href="/products/category/5">
-                  <div class="img">
-                    <img src="/images/procesador1.jpg" alt="">
-                  </div>
-                  <div class="content">
-                    <div class="title">PROCESADORES</div>
-                  </div>
-                </a>
-              </div>
-
-              <div class="card  col-sm-12 col-md-3 col-lg-3">
-                <a href="/products/category/6">
-                  <div class="img">
-                    <img src="/images/ram4.jpg" alt="">
-                  </div>
-                  <div class="content">
-                    <div class="title">MEMORIAS RAM</div>
-                  </div>
-                </a>
-              </div>
-
-              <div class="card  col-sm-12 col-md-3 col-lg-3">
-                <a href="/products/category/7">
-                  <div class="img">
-                    <img src="/images/cooler1.jpg" alt="">
-                  </div>
-                  <div class="content">
-                    <div class="title">DISIPADORES</div>
-                  </div>
-                </a>
-              </div>
-
-              <div class="card  col-sm-12 col-md-3 col-lg-3"><a href="/products/category/8">
-                  <div class="img">
-                    <img src="/images/placa1.jpg" alt="">
-                  </div>
-                  <div class="content">
-                    <div class="title">PLACAS DE VIDEO</div>
-                  </div>
-                </a>
-              </div>
+                
+                </div>
+              
+              <% }) %>
+          
+              
 
             </div>
           </div>
