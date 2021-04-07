@@ -10,6 +10,7 @@ window.addEventListener("load",()=>{
     let file = document.querySelector("#formFileSm");
     let imgPreview = document.querySelector("#img-previeww");
     let fileErrors = document.querySelector("#fotoErrors");
+    let fotoPerfil = document.querySelector('#fotoPerfil');
     let form = document.querySelector("#formularioUsuario");
     let submitErrors = document.querySelector("#submitErrors");
     let regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/;
@@ -126,6 +127,7 @@ window.addEventListener("load",()=>{
                 let reader = new FileReader();
                 reader.onload = function(e){
                     imgPreview.innerHTML += '<img src="' + e.target.result +'"/>';
+                    fotoPerfil.classList.add('d-none')
                 };
                 reader.readAsDataURL(file.files[0]);
                 fileErrors.innerHTML = '';
