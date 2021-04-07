@@ -92,27 +92,27 @@ module.exports =  {
                               
     },
     cart : (req,res) =>{  
-        /*const userId = req.params.id
-        db.User.findByPk(userId,{
-            include : [{association: "carrito"}]
-        })
-        .then(user=>{
-            res.render("carrito",{css:'/stylesheets/carrito.css',user});
+        db.Product.findAll()
+        
+        .then(products=>{
+            res.render("carrito",{css:'/stylesheets/carrito.css',products});
         })
         .catch(error=>{
             res.send(error);
-        })*/
-        res.render("carrito",{css: "/stylesheets/carrito.css"});
+        })
+        
         
     },
     productDetail: (req,res)=>{
         const id = req.params.id
-        db.Product.findByPk(id,{
+        const products = db.Product.findAll()
+         const product = db.Product.findByPk(id,{
             where: {visible: 1},
             include: [{association: "categorias"},{association: "marcas"}]
         })
-        .then(product=>{
-            res.render("detail",{css:'/stylesheets/index.css',product})
+        Promise.all([products,product])
+        .then(([products,product])=>{
+            res.render("detail",{css:'/stylesheets/index.css',product,products})
         })
         .catch(error=>{
             res.send(error);

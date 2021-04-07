@@ -20,58 +20,37 @@
 
     </section>
 
-  </main>
-
-
-  
-    
-      
-      
-    
-  
-          
-            
+  </main>    
           <section class="sliderpc">
             <div>
               <div class="slider owl-carousel">
-                <div class="card">
-                  <div class="img">
-                    <img src="/images/procesador1.jpg" alt="">
-                  </div>
-                  <div class="content">
-                    <div class="title">Procesador</div>
-                    <div class="price">$123</div>
-                    <div class="btn">
-                      <button><i class="fas fa-cart-plus"></i>Comprar</button>
+                <% products.forEach(element=> { %>
+
+                  <div class="card d-flex justify-content-center" style="padding-left: 0;">
+                    <a href="/products/detail/<%= element.id %>" style="text-decoration: none; padding-left: 0;">
+                      <div class="img">
+                        <img src="/images/<%=element.image%> " alt="">
+                      </div>
+                      <div class="content">
+                        <div class="title text-dark" id="nombre" idProducto="<%=element.id%>">
+                          <%=element.name%>
+                        </div>
+                        <div class="price">
+                          $<%=element.price%>
+                        </div>
+                    </a>
+                    
+                    
+                    <div class="btn text-center" style="width: 100%; padding-left: 0; margin: 0;">
+                      <button type="submit" idProducto="<%=element.id%>" style="z-index: 200; width: 100%; margin-right: 50px; padding-left: 0;" id="boton-<%=element.id%>"
+                        class="botones d-flex justify-content-center"><i class="fas fa-cart-plus"  style="margin: 4px 9px;"></i>Agregar al carrito</button>
                     </div>
                   </div>
-                </div>
-                <div class="card">
-                  <div class="img">
-                    <img src="/images/ram1.jpg" alt="">
-                  </div>
-                  <div class="content">
-                    <div class="title">Mother piola</div>
-                    <div class="price">$2345</div>
-                    <div class="btn">
-                      <button><i class="fas fa-cart-plus"></i>Comprar</button>
-                    </div>
-                  </div>
-                </div>
-                <div class="card">
-                  <div class="img">
-                    <img src="/images/ram1.jpg" alt="">
-                  </div>
-                  <div class="content">
-                    <div class="title">Mother piola</div>
-                    <div class="price">$2345</div>
-                    <div class="btn">
-                      <button><i class="fas fa-cart-plus"></i>Comprar</button>
-                    </div>
-                  </div>
-                </div>
               </div>
-            </div>
+      
+              <% }) %>
+      
+      
         </div>
       </div>
     </section>
@@ -94,5 +73,7 @@
     <%- include("partials/footer")%>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="/javascripts/productosCarrito.js"></script>
+    <script src="/javascripts/carrito.js"></script>
+          <script src="/javascripts/carritoBotones.js"></script>
    
   </body>

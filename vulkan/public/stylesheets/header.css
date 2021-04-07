@@ -1,3 +1,9 @@
+:root{
+    --primary: #212121;
+    --secondary: #323232;
+    --tertiary: #0d7377;
+    --quaternary: #14ffec;
+}
 
 .cierraSesionEscritorio{
     cursor: pointer;
@@ -292,7 +298,7 @@ boton*/
 .navegacion li{
     width: 100%;
     padding: 5px;
-    border-bottom: 1px solid  rgb(100,100,100);
+    border-bottom: 1px solid  rgb(255, 255, 255);
     
 }
 .navegacion li a{

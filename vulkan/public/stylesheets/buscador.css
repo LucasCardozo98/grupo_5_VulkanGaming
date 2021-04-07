@@ -4,8 +4,12 @@ html,body{
     text-align: center;
     background: #f2f2f2;
  }
+ a{
+   padding: 0;
+   margin: 0;
+ }
   .slider{
-    
+    justify-content: center;
     display: flex;
     flex-wrap: wrap;
  }
