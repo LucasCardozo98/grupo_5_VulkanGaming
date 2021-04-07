@@ -345,7 +345,9 @@ div figure img.detail{
       height: 55px;
       background-size: cover;
   }
-
+  ul.footer li a{
+      color: white;
+  }
 /*version tablet*/
 @media (min-width: 700px){
 div.footer{
