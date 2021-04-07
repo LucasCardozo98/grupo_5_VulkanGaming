@@ -306,7 +306,6 @@ boton*/
     text-decoration: none;
 }
 .sesionResponsive{
-    display: flex;
     align-items: center;
 }
 .sesionResponsive a{
@@ -352,7 +351,8 @@ div figure img.detail{
       height: 55px;
       background-size: cover;
   }
-  ul.footer li a{
+  ul.footer li a{ 
+      text-decoration: none;
       color: white;
   }
   ul.footer li:hover{
