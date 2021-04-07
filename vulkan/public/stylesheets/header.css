@@ -61,6 +61,7 @@
 
 }
 #cosa{
+    margin: 20px;
     cursor:pointer;
 }
 /*configuraciones basicas mas la tipografia elegida*/
@@ -481,7 +482,7 @@ div.footer{
     }
     .buscadorDesktop{
         display: flex;
-        width: 700px;
+        /*width: 700px;*/
         align-items: center;
         justify-content: space-evenly;
         padding: 0 10px;
