@@ -1,63 +1,72 @@
 <%- include("partials/head")%>
-<%- include("partials/header")%>
-  <section>
-    <div class="row gx-0">
-      <div class="baner w-100">
-        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-          <ol class="carousel-indicators">
-            <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></li>
-            <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></li>
-            <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></li>
-          </ol>
-          <div class="carousel-inner ">
-            <div class="carousel-item active">
-              <img src="/images/baner1.jpg" class="d-block w-100 " alt="...">
+  <%- include("partials/header")%>
+    <section>
+      <div class="row gx-0">
+        <div class="baner w-100">
+          <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <ol class="carousel-indicators">
+              <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></li>
+              <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></li>
+              <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner ">
+              <div class="carousel-item active">
+                <img src="/images/baner1.jpg" class="d-block w-100 " alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="/images/baner2.jpg" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="/images/baner4.jpg" class="d-block w-100" alt="...">
+              </div>
             </div>
-            <div class="carousel-item">
-              <img src="/images/baner2.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-              <img src="/images/baner4.jpg" class="d-block w-100" alt="...">
-            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </a>
           </div>
-          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </a>
         </div>
       </div>
-    </div>
-  </section>
-  <section>
-    <div>
-      <h2 class="bg-success text-white">Productos Destacados</h2>
-      <div class="slider owl-carousel">
-        <% products.forEach(element => { %>
-         
-          <div class="card">
-            <div class="img">
-            <img src="/images/<%=element.image%> " alt="">
-            </div>
-            <div class="content">
-              <div class="title" id="nombre" idProducto="<%=element.id%>"><%=element.name%></div>
-              <div class="price"><%=element.price%></div>
-              <div><%=element.id%> </div>
+    </section>
+    <section>
+      <div>
+        <h2 class="bg-success text-white">Productos Destacados</h2>
+        <div class="slider owl-carousel">
+          <% products.forEach(element=> { %>
+
+            <div class="card">
+              <a href="/products/detail/<%= element.id %>">
+                <div class="img">
+                  <img src="/images/<%=element.image%> " alt="">
+                </div>
+                <div class="content">
+                  <div class="title" id="nombre" idProducto="<%=element.id%>">
+                    <%=element.name%>
+                  </div>
+                  <div class="price">
+                    $<%=element.price%>
+                  </div>
+              </a>
+              <div>
+                <%=element.id%>
+              </div>
               <strong idProducto="<%=element.id%>"></strong>
-            <div class="btn">
-                <button type="submit" idProducto="<%=element.id%>" style="z-index: 200;" id="boton-<%=element.id%>" class="botones"><i class="fas fa-cart-plus"></i>Agregar al carrito</button>
+              <div class="btn">
+                <button type="submit" idProducto="<%=element.id%>" style="z-index: 200;" id="boton-<%=element.id%>"
+                  class="botones"><i class="fas fa-cart-plus"></i>Agregar al carrito</button>
+              </div>
             </div>
-            </div>
-          </div>
+        </div>
 
         <% }) %>
-        
 
-          
-            <!--</div>
+
+
+          <!--</div>
         
           </div>
         </div>-->
@@ -72,25 +81,31 @@
           autoplayHoverPause: true,
         });
       </script>
-      <% products.forEach(element => { %>
-       
+      <% products.forEach((element,index) => { %>
+       <% if (index < 5) { %>
+        
      
-      <div class="card-mobile mb-3" style="width: 100%;">
+           <div class="card-mobile mb-3" style="width: 100%;">
         <img src="/images/<%=element.image%>" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title"><%=element.name%> </h5>
-          <h4 class="card-content"><%=element.price%> </h4>
-          <button type="submit" idProducto="<%=element.id%>" style="z-index: 200;" id="boton-<%=element.id%>" class=" btn btn-primary botones"><i class="fas fa-cart-plus"></i>Agregar al carrito</button>
-          
-       
+          <h5 class="card-title">
+            <%=element.name%>
+          </h5>
+          <h4 class="card-content">
+            <%=element.price%>
+          </h4>
+          <button type="submit" idProducto="<%=element.id%>" style="z-index: 200;" id="boton-<%=element.id%>"
+            class=" btn btn-primary botones"><i class="fas fa-cart-plus"></i>Agregar al carrito</button>
+
+
         </div>
       </div>
-      
+      <% } %>
       <% }) %>
-  </section>
-  <a href="#arriba"><input type="button" class="up"></a>
-<%- include("partials/footer")%>
-<script src="/javascripts/carrito.js"></script>
-<script src="/javascripts/carritoBotones.js"></script>
-<script src="/javascripts/buscador.js"></script>
-</body>
+        </section>
+        <a href="#arriba"><input type="button" class="up"></a>
+        <%- include("partials/footer")%>
+          <script src="/javascripts/carrito.js"></script>
+          <script src="/javascripts/carritoBotones.js"></script>
+          <script src="/javascripts/buscador.js"></script>
+          </body>
