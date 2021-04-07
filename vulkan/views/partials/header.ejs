@@ -30,7 +30,7 @@
         <% if (typeof user !="undefined" ) { %>
           <form action="/users/closeSesion" method="POST">
             <input type="checkbox" name="check" id="check">
-            <button id="cierreSesion" type="submit"><label class="text-white" for="check">Cerrar sesión</label></button>
+            <button id="cierreSesion" type="submit"><label class="text-white cierraSesionEscritorio" for="check" >Cerrar sesión</label></button>
           </form>
 
           <% } else { %>
@@ -79,7 +79,7 @@
           <li>
             <form action="/users/closeSesion" method="POST">
               <button class="bg-success" id="cierreSesion" type="submit"><label class="text-white" for="check">Cerrar
-                  sesión</label></button>
+                  sesión</label></button> <!--responsive-->
             </form>
           </li>
           <% if (user.rol=="admin" ) { %>
@@ -142,7 +142,7 @@
               <ul>
                 <li>
                   <form action="/users/closeSesion" method="POST">
-                    <button id="cierreSesion" type="submit"><label class="text-white" for="check">Cerrar
+                    <button id="cierreSesion" type="submit"><label class="text-white cierraSesionEscritorio" for="check">Cerrar
                         sesión</label></button>
                   </form>
                 </li>

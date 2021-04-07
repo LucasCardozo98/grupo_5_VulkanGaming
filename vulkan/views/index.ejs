@@ -71,20 +71,21 @@
           </div>
         </div>-->
       </div>
-      </div>
-    </section>
-    <script>
-      $(".slider").owlCarousel({
-        loop: true,
-        autoplay: true,
-        autoplayTimeout: 2000, //2000ms = 2s;
-        autoplayHoverPause: true,
-      });
-    </script>
-    <% products.forEach(element=> { %>
-
-
-      <div class="card-mobile mb-3" style="width: 100%;">
+    </div>
+  </section>
+      <script>
+        $(".slider").owlCarousel({
+          loop: true,
+          autoplay: true,
+          autoplayTimeout: 2000, //2000ms = 2s;
+          autoplayHoverPause: true,
+        });
+      </script>
+      <% products.forEach((element,index) => { %>
+       <% if (index < 5) { %>
+        
+     
+           <div class="card-mobile mb-3" style="width: 100%;">
         <img src="/images/<%=element.image%>" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">
@@ -99,7 +100,7 @@
 
         </div>
       </div>
-
+      <% } %>
       <% }) %>
         </section>
         <a href="#arriba"><input type="button" class="up"></a>
