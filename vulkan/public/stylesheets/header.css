@@ -95,8 +95,7 @@ div.contenedorSesion img{
     display: flex;
     align-items: center;
     justify-content: center;
-    font-weight: bold;
-    font-size: 20px;
+    font-size: 18px;
     position: absolute;
     right: -5px;
     top: -10px;
@@ -495,12 +494,15 @@ div.footer{
     .institucional{
         background-color:	rgb(41, 43, 44) ;
     }
+    .buscadorEnSerioDesktop{
+        margin-right: 100px;
+    }
     .buscadorDesktop{
         display: flex;
         width: 700px;
         align-items: center;
         justify-content: space-evenly;
-        padding: 0 10px;
+        padding: 0 2px;
 
         
     }
