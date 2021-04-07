@@ -115,4 +115,24 @@ window.addEventListener('load', function(){
             }
         }
     })
+
+    $form.addEventListener('submit',function(event){
+        let error = false;
+        event.preventDefault()
+        //console.log(form.elements)
+        let elementosForm = this.elements
+        for (let index = 1; index < elementosForm.length-2; index++) {
+            console.log(elementosForm[index].value, index);
+            if(elementosForm[index].value == ""){
+                elementosForm[index].classList.add('is-invalid');
+                //$formLoginErrors.innerHTML = "Los campos señalados son obligatorios";
+                error = true;
+            }
+        }
+
+        if(!error){
+            console.log('Todo bien');
+            $form.submit()
+        }
+    })
 })

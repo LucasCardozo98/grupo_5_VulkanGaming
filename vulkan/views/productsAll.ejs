@@ -25,7 +25,7 @@
       <div class="row">
         <div class="slider owl-carousel">
           <% products.forEach(element=> { %>
-            <div class="card col-3">
+            <div class="card col-sm-12 col-md-5 col-lg-3 mb-1">
               <div class="img">
                 <img src="/images/<%= element.image %> " alt="">
               </div>
@@ -43,7 +43,7 @@
                 <div class="price">
                   <%= element.price %>
                 </div>
-                <div class="btn">
+                <div class="btn" style="display: flex; justify-content: center; gap: 15px;">
                   <form id="eliminar" action="/products/delete/<%=element.id%>?_method=delete" method="POST">
                     <button id="botonEliminar" type="submit" class="btn btn-danger"
                       onclick="confirmar(event,document.querySelector('#eliminar'))">Eliminar</button>

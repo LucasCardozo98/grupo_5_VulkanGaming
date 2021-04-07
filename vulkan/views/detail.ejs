@@ -8,9 +8,9 @@
               <h2>Detalle de producto </h2>
             </div>
             <div class="contenido">
-              <div class="contenido text-left">
+              <div class="contenido text-left ">
                 <div class="row p-0">
-                  <div class="col-12 col-lg-8">
+                  <div class="">
                     <figure class="text-center bg-white">
                       <img class="img-fluid" src="/images/<%=product.image  %> ">
                     </figure>
@@ -34,7 +34,7 @@
                     <p><i class="fas fa-credit-card mr-3 my-2"></i> Pagá en 12 cuotas sin interés</p>
                     <p><i class="fas fa-store mr-3 my-2"></i> Retiro gratis en locales del vendedor</p>
                     <div class="btn">
-                      <button type="submit" onclick="agregar()"><i class="fas fa-cart-plus"></i> Agregar al
+                      <button type="submit" class="botones btn btn-primary" idProducto="<%=product.id%>"><i class="fas fa-cart-plus"></i> Agregar al
                         carrito</button>
                   </div>
                 </div>
@@ -109,4 +109,6 @@
       </section>
       <a href="#arriba"><input type="button" class="up"></a>
 <%- include("partials/footer")%>
+<script src="/javascripts/carrito.js"></script>
+<script src="/javascripts/carritoBotones.js"></script>
 </body>
