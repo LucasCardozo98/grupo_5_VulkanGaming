@@ -110,17 +110,17 @@
 
       <div class="categorias d-flex justify-content-center">
         <div>
-        <h6 class="bg-success text-center"><a href="/products">Categorias</a></h6>
+          <h6 class="category bg-success text-center">Categorias</h6>
 
         <ul id="categorias">
-          <li><a href="/products/category/9">Equipos</a></li>
-          <li><a href="/products/category/1">Motherboards</a></li>
-          <li><a href="/products/category/2">Fuentes</a></li>
-          <li><a href="/products/category/3">Gabinetes</a></li>
-          <li><a href="/products/category/4">Perifericos</a></li>
-          <li><a href="/products/category/5">Procesadores</a></li>
-          <li><a href="/products/category/6">Memorias</a></li>
-          <li><a href="/products/category/7">Disipadores</a></li>
+          <li class="mb-1"><a href="/products/category/9">Equipos</a></li>
+          <li class="mb-1"><a href="/products/category/1">Motherboards</a></li>
+          <li class="mb-1"><a href="/products/category/2">Fuentes</a></li>
+          <li class="mb-1"><a href="/products/category/3">Gabinetes</a></li>
+          <li class="mb-1"><a href="/products/category/4">Perifericos</a></li>
+          <li class="mb-1"><a href="/products/category/5">Procesadores</a></li>
+          <li class="mb-1"><a href="/products/category/6">Memorias</a></li>
+          <li class="mb-1"><a href="/products/category/7">Disipadores</a></li>
           <li><a href="/products/category/8">Placas</a></li>
           <li><a href="/products/category/10">Almacenamiento</a></li>
         </ul>
@@ -135,14 +135,14 @@
                 <a href="/users/profile/<%=user.id%>"> <img src="/images/users/<%=user.avatar%>" alt="" id="usuario"
                     idUser="<%=user.id%>"></a>
 
-              <ul>
-                <li>
+              <ul class="class = text-center">
+                <li class="mb-1">
                   <form action="/users/closeSesion" method="POST">
                     <button class="hover" id="cierreSesion" type="submit"><label class="text-white cierraSesionEscritorio" for="check">Cerrar
                         sesión</label></button>
                   </form>
                 </li>
-                <li>
+                <li class="mb-1">
                   <a href="/users/profile/<%=user.id%>"><span>Mi perfil</span></a>
                 </li>
 
