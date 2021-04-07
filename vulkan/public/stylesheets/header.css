@@ -13,7 +13,6 @@
     flex-wrap: wrap;
     width: 450px;
 }
-
 .listaCosas{
     list-style: none;
     display: flex;
@@ -62,7 +61,6 @@
 
 }
 #cosa{
-    margin: 20px;
     cursor:pointer;
 }
 /*configuraciones basicas mas la tipografia elegida*/
@@ -97,11 +95,11 @@ div.contenedorSesion img{
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 16px;
+    font-weight: bold;
+    font-size: 20px;
     position: absolute;
     right: -5px;
     top: -10px;
-    padding: 12px;
 }
 #check{
     display: none;
@@ -223,17 +221,6 @@ hace bajar el menu desplegable*/
 div a.a{
     font-size: 16px;
 }
-#busquedaMobile{
-    border-radius: 150px 0px 0px 150px;
--moz-border-radius: 150px 0px 0px 150px;
--webkit-border-radius: 150px 0px 0px 150px;
-}
-#busquedaEscritorio{
-    border-radius: 150px 0px 0px 150px;
--moz-border-radius: 150px 0px 0px 150px;
--webkit-border-radius: 150px 0px 0px 150px;
-border: 0px solid #000000;
-}
 
 .buscador form .buscadorEnSerio input{
     outline: none;
@@ -274,9 +261,6 @@ button .hover{
     background-color: rgb(65, 138, 89);
     display: flex;
     align-items: center;
-    border-radius: 0px 150px 150px 10px;
-    -moz-border-radius: 0px 150px 150px 10px;
-    -webkit-border-radius: 0px 150px 150px 10px;
 }
 #boton{
     padding: 5px;
@@ -438,21 +422,35 @@ div.footer{
     }*/
 }
 /*version desktop*/
+/* .girar:hover{
+    position: absolute;
+    width: 15rem;
+    animation-name: girar;
+    animation-duration: 1s;
+    transition: 2s;
+    animation-timing-function: linear;
+}
+@keyframes girar{
+    0%{
+        transform: rotate(0deg);
+        left: 2.5rem;
+    }
+    50%{
+        transform: rotate(180deg);
+        left: 25rem;
+    }
+    100%{
+        transform: rotate(0deg);
+        left: 2.5rem;        
+    }
+} */
 @media (min-width:1024px){
     header{
         position: static;
         z-index: 100;
         top: 0;
     }
-    input#busquedaEscritorio{
-        height: 24px;
-    }
-    .contenedor-lupaDesktop{
-        border-radius: 0px 150px 150px 0px;
-    -moz-border-radius: 0px 150px 150px 0px;
-    -webkit-border-radius: 0px 150px 150px 0px;
-    border: 0px solid #000000;
-    }
+    
     nav{
         overflow: visible;
         position: static;
@@ -508,7 +506,7 @@ div.footer{
     }
     .buscadorDesktop{
         display: flex;
-        /*width: 700px;*/
+        width: 700px;
         align-items: center;
         justify-content: space-evenly;
         padding: 0 2px;
@@ -518,34 +516,27 @@ div.footer{
     .buscadorDesktop form .buscadorEnSerioDesktop input{
         outline: none;
         width: 20vw;
-        
     }
     .buscadorDesktop form .buscadorEnSerioDesktop{
-        display: flex; 
+        display: flex;
         align-items: center;
         justify-content: center;
-        
     }
     .buscadorDesktop form .buscadorEnSerioDesktop button{
         outline: none;
         color:white;
         background-color: rgb(65, 138, 89);
         width: 35px;
-        height: 24px;
+        height: 28px;
         padding: 3px;
         border-radius: 5px;
         border: none;
         display: flex;
         align-items: center;
-        border-radius: 0px 150px 150px 0px;
-        -moz-border-radius: 0px 150px 150px 0px;
-        -webkit-border-radius: 0px 150px 150px 0px;
-        border: 0px solid #000000;
-        
         
     }
     .buscadorDesktop form .buscadorEnSerioDesktop button i{
-        font-size: 19px;
+        font-size: 20px;
     }
     .contactoDesktop{
         width: 200px;
