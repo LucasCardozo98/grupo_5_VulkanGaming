@@ -5,18 +5,14 @@
       <div class="row gx-0">
         <div>
           <div class="titulo bg-success text-center mb-5">
-            <h2 class="admin-title bg-dark text-white">Tus datos</h2>
+            <h2 class="admin-title bg-success text-white">Tus datos</h2>
           </div>
-          
           <div class="position-relative" >
-            
             <img class="fotoperfil img-fluid  d-grid gap-2 mx-auto mb-4" width="316px" src="/images/users/<%=user.avatar%>" id="img-preview" alt="">
             <button id="ver" type="button"  class="editor btn btn-outline-dark position-absolute bottom-0 end-0" ><i class="fas fa-edit" onclick="document.getElementById('formFileSm').click()"></i></button>
           </div>
-        
-        
-          <form  action="/users/edit/<%=user.id%>?_method=PUT" method="POST" enctype="multipart/form-data" id="formularioUsuario">
-            
+          <div class="productIMG" id="img-preview"></div>
+          <form  action="/users/edit/<%=user.id%>?_method=PUT" method="POST" enctype="multipart/form-data" id="formularioUsuario">   
             <div class="mb-3">
               <input class="form-control form-control-m d-none" id="formFileSm" type="file" name="avatar">   
               <span class="error" id="fotoErrors"></span>    
