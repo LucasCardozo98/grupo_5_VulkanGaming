@@ -7,9 +7,11 @@
           <div class="titulo bg-success text-center mb-5">
             <h2 class="admin-title bg-success">Editar Producto</h2>
           </div>
+          <div class="previewIMG" id="img-preview">
           <form action="/products/edit/<%=product.id%>?_method=PUT" method="POST" enctype="multipart/form-data"
             id="form">
-            <img class="rounded mx-auto d-block img-fluid mb-3" src="/images/<%=product.image  %> " alt="">
+            <img class="rounded mx-auto d-block img-fluid mb-3"  src="/images/<%=product.image  %> " alt="">
+          </div>
             <div class="mb-3">
               <input class="form-control form-control-m" id="formFileSm" type="file" name="image">
               <span class="error" id="formFileErrors"></span>
@@ -134,9 +136,9 @@
     </div>
     </div>
 
-    <script src="/JS/productEdit.js"></script>
     <a href="#arriba"><input type="button" class="up"></a>
     <%- include("partials/footer")%>
+      <script src="/JS/productEdit.js"></script>
       <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
       <script src="/javascripts/alertaEditarProducto.js"></script>
       </body>
