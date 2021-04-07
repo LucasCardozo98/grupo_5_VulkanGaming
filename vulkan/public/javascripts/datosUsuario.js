@@ -122,11 +122,11 @@ window.addEventListener("load",()=>{
             return false;
         }
         else{
-            console.log(file.files);
+            
             if(file.files && file.files[0]){
                 let reader = new FileReader();
                 reader.onload = function(e){
-                    imgPreview.innerHTML += '<img src="' + e.target.result +'"/>';
+                    imgPreview.innerHTML = '<img src="' + e.target.result +'"/>';
                     fotoPerfil.classList.add('d-none')
                 };
                 reader.readAsDataURL(file.files[0]);

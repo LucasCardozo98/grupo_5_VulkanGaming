@@ -39,6 +39,13 @@ div button.enviar-mensaje {
     margin-right: 10px;
 }
 
+#img-preview img{
+    height: 350px;
+    width: 100%;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
+
 @media(min-width:426px){
     .admin{
         padding-left: 20%;

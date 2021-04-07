@@ -77,9 +77,7 @@
       margin: 50px auto;
       border-radius: 15px;
   }
-  img.previewIMG{
-     height: 200px;
-  }
+  
   @media(max-width: 1024px){
    .slider .card{
       margin: 50px 28px;
