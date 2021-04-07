@@ -444,6 +444,9 @@ div.footer{
         z-index: 100;
         top: 0;
     }
+    input#busquedaEscritorio{
+        height: 24px;
+    }
     .contenedor-lupaDesktop{
         border-radius: 0px 150px 150px 0px;
     -moz-border-radius: 0px 150px 150px 0px;
