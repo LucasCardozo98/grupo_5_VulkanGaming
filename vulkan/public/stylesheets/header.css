@@ -422,28 +422,22 @@ div.footer{
     }*/
 }
 /*version desktop*/
-/* .girar:hover{
-    position: absolute;
-    width: 15rem;
+.girar:hover{
     animation-name: girar;
-    animation-duration: 1s;
-    transition: 2s;
-    animation-timing-function: linear;
+    animation-duration: 0.5s;
+    transition: 0.5s;
 }
 @keyframes girar{
     0%{
         transform: rotate(0deg);
-        left: 2.5rem;
     }
     50%{
-        transform: rotate(180deg);
-        left: 25rem;
+        transform: rotate(-45deg);  
     }
     100%{
         transform: rotate(0deg);
-        left: 2.5rem;        
     }
-} */
+}
 @media (min-width:1024px){
     header{
         position: static;
