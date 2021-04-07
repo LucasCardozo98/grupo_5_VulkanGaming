@@ -5,11 +5,11 @@
     <div class="container">
       <div class="row py-4 d-flex">
         <div class="col-md-12 pe-4 text-center">
-          <a href="#"><i class="fab fa-facebook-f text-white mr-4 p-2"></i></a>
-          <a href="#"><i class="fab fa-twitter text-white mr-4 p-2"></i></a>
-          <a href="#"><i class="fab fa-google-plus-g text-white mr-4 p-2"></i></a>
-          <a href="#"><i class="fab fa-linkedin-in text-white mr-4 p-2"></i></a>
-          <a href="#"><i class="fab fa-instagram text-white mr-4 p-2"></i></a>
+          <a href="https://www.facebook.com/vulkan.gaming.96" target="_blank"><i class="fab fa-facebook-f text-white mr-4 p-2"></i></a>
+          <a href="https://www.twitter.com/vulkan_gaming" target="_blank"><i class="fab fa-twitter text-white mr-4 p-2"></i></a>
+          <a href="https://plus.google.com/vulkan_gaming" target="_blank"><i class="fab fa-google-plus-g text-white mr-4 p-2"></i></a>
+          <a href="https://ar.linkedin.com/" target="_blank"><i class="fab fa-linkedin-in text-white mr-4 p-2"></i></a>
+          <a href="https://www.instagram.com/vulkan_gaming/" target="_blank"><i class="fab fa-instagram text-white mr-4 p-2"></i></a>
         </div>
       </div>
     </div>
@@ -42,41 +42,43 @@
   <div class="container text-center mt-5">
     <div class="footer row">
       <div class="col-md-3 mx-auto mb-4">
-        <h6 class="text-uppercase font-weight-bold">The providers</h6>
+        <h6 class="text-uppercase font-weight-bold">Nosotros</h6>
         <hr class="bg-success mb-4 mt-0 d-inline-block mx-auto" style="width: 125px; height: 3px;">
-        <p class="mt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, natus.</p>
-      </div>
-
-      <div class="col-md-2 mx-auto mb-4">
-        <h6 class="text-uppercase font-weight-bold">Products</h6>
-        <hr class="bg-success mb-4 mt-0 d-inline-block mx-auto" style="width: 85px; height: 3px;">
         <ul class="list-unstyled">
-          <li class="my-2"><a href="#" class="text-decoration-none text-white">HTML</a></li>
-          <li class="my-2"><a href="#" class="text-decoration-none text-white">CSS 3</a></li>
-          <li class="my-2"><a href="#" class="text-decoration-none text-white">Bootstrap 4</a></li>
-          <li class="my-2"><a href="#" class="text-decoration-none text-white">JavaScript</a></li>
+          <li class="my-2"><a href="https://www.linkedin.com/in//"></a>Alan Poliszezuk</li>
+          <li class="my-2"><a href="https://www.linkedin.com/in//"></a>Leandro Ayala</li>
+          <li class="my-2"><a href="https://www.linkedin.com/in/lucascardozo98/"> Lucas Cardozo</li></a>
+          <li class="my-2"><a href="https://www.linkedin.com/in/PriscilaRodriguez9/"></a>Mailen Rodriguez</li>
         </ul>
       </div>
 
       <div class="col-md-2 mx-auto mb-4">
-        <h6 class="text-uppercase font-weight-bold">Usefull links</h6>
+        <h6 class="text-uppercase font-weight-bold">Productos</h6>
+        <hr class="bg-success mb-4 mt-0 d-inline-block mx-auto" style="width: 85px; height: 3px;">
+        <ul class="list-unstyled">
+          <li class="my-2"><a href="/products" class="text-decoration-none text-white">Categorias</a></li>
+          <li class="my-2"><a href="/products/category/9" class="text-decoration-none text-white">Equipos</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-2 mx-auto mb-4">
+        <h6 class="text-uppercase font-weight-bold">Links utiles</h6>
         <hr class="bg-success mb-4 mt-0 d-inline-block mx-auto" style="width: 110px; height: 3px;">
         <ul class="list-unstyled ">
-          <li class="my-2"><a href="#" class="text-decoration-none text-white">Home</a></li>
-          <li class="my-2"><a href="#" class="text-decoration-none text-white">About</a></li>
-          <li class="my-2"><a href="#" class="text-decoration-none text-white">Services</a></li>
-          <li class="my-2"><a href="#" class="text-decoration-none text-white">Contact</a></li>
+          <li class="my-2"><a href="/" class="text-decoration-none text-white">Home</a></li>
+          <% if (typeof user != 'undefined') { %>
+            <li class="my-2"><a href="/users/profile/<%= user.id %> " class="text-decoration-none text-white">Mi perfil</a></li>
+          <% } %>
         </ul>
       </div>
 
       <div class="col-md-3 mx-auto mb-4">
-        <h6 class="text-uppercase font-weight-bold">Products</h6>
+        <h6 class="text-uppercase font-weight-bold">Contacto</h6>
         <hr class="bg-success mb-4 mt-0 d-inline-block mx-auto" style="width: 75px; height: 3px;">
-        <ul class="list-unstyled">
-          <li class="my-2"><i class="fas fa-home"></i> Provincia, Ciudad, Calle altura</li>
-          <li class="my-2"><i class="far fa-envelope"></i> VulkanGaming@gmail.com</li>
-          <li class="my-2"><i class="fas fa-phone"></i> 0800-tormenta-de-facha</li>
-          <li class="my-2"><i class="fas fa-print"></i> Fax +0800-blabla</li>
+        <ul class="footer list-unstyled">
+          <li class="my-2"><a href="https://goo.gl/maps/gpo1vzy5USkUYu9D8" target="_blank"><i class="fas fa-home"></i> Buenos Aires, Palermo Hollywood</li></a>
+          <li class="my-2"><a href="mailto:vulkangaming@gmail.com"><i class="far fa-envelope"></i> VulkanGaming@gmail.com</li></a>
+          <li class="my-2"><a href="tel:+5491164127009"><i class="fas fa-phone"></i> 0800-tormenta-de-facha</li></a>
         </ul>
       </div>
     </div>

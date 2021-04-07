@@ -4,6 +4,10 @@ html,body{
     text-align: center;
     background: #f2f2f2;
  }
+ h2{
+    color: white;
+    border-radius: 5px;
+ }
   .slider{
     
     display: flex;
@@ -65,9 +69,10 @@ html,body{
    color:black;
  }
  div.pepeargento{
-    background-image: url(https://media.gettyimages.com/photos/singer-chayanne-presents-his-new-album-no-hay-imposible-at-the-de-picture-id100964350?s=612x612);
+    background-image: url(https://wallpaperaccess.com/full/1135887.jpg);
     background-size: cover;
-    background-position-y: 1200px;
+    width: 100%;
+    
     -webkit-box-shadow: 3px 4px 23px 5px rgba(0,0,0,0.75);
     -moz-box-shadow: 3px 4px 23px 5px rgba(0,0,0,0.75);
     box-shadow: 3px 4px 23px 5px rgba(0,0,0,0.75);
