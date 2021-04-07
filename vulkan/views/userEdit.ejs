@@ -7,50 +7,52 @@
           <div class="titulo bg-success text-center mb-5">
             <h2 class="admin-title bg-dark text-white">Tus datos</h2>
           </div>
-          
-          <div class="position-relative" >
-            
-            <img class="fotoperfil img-fluid  d-grid gap-2 mx-auto mb-4" width="316px" src="/images/users/<%=user.avatar%>" id="img-preview" alt="">
-            <button id="ver" type="button"  class="editor btn btn-outline-dark position-absolute bottom-0 end-0" ><i class="fas fa-edit" onclick="document.getElementById('formFileSm').click()"></i></button>
+
+          <div class="productIMG" id="img-previeww">
+            <div class="position-relative">
+
+              <img class="fotoperfil img-fluid  d-grid gap-2 mx-auto mb-4" width="316px"
+                src="/images/users/<%=user.avatar%>" alt="">
+              <button id="formularioUsuario" type="button" class="editor btn btn-outline-dark position-absolute bottom-0 end-0"><i class="fas fa-edit" onclick="document.getElementById('formFileSm').click()"></i></button>
+            </div>
           </div>
-        
-        
-          <form  action="/users/edit/<%=user.id%>?_method=PUT" method="POST" enctype="multipart/form-data" id="formularioUsuario">
-            
+
+          <form action="/users/edit/<%=user.id%>?_method=PUT" method="POST" enctype="multipart/form-data" id="">
+
             <div class="mb-3">
-              <input class="form-control form-control-m d-none" id="formFileSm" type="file" name="avatar">   
-              <span class="error" id="fotoErrors"></span>    
+              <input class="form-control form-control-m d-none" id="formFileSm" type="file" name="avatar">
+              <span class="error" id="fotoErrors"></span>
             </div>
             <div>
               <div class="mb-1 mt-1">
                 <label for="username" class="form-label"></label>
-                <input type="text" class="input form-control bg-x" placeholder="Username" id="username" name="username" value="<%= user.username %>"
-                  aria-describedby="emailHelp">
-                  <span class="error" id="usernameErrors"></span>
+                <input type="text" class="input form-control bg-x" placeholder="Username" id="username" name="username"
+                  value="<%= user.username %>" aria-describedby="emailHelp">
+                <span class="error" id="usernameErrors"></span>
               </div>
               <div class="mb-1 mt-1">
                 <label for="email" class="form-label"></label>
-                <input type="email" class="input form-control bg-x " disabled placeholder="Email" id="email" name="email" value="<%= user.email %>"
-                  aria-describedby="emailHelp">
-                  <span class="error" id="emailErrors"></span>
+                <input type="email" class="input form-control bg-x " disabled placeholder="Email" id="email"
+                  name="email" value="<%= user.email %>" aria-describedby="emailHelp">
+                <span class="error" id="emailErrors"></span>
               </div>
               <div class="mb-1 mt-1">
                 <label for="nombre" class="form-label"></label>
-                <input type="text" class="input form-control bg-x" placeholder="Nombre" id="nombre" name="first_name" value="<%= user.firstName %>"
-                  aria-describedby="emailHelp">
-                  <span class="error" id="nombreErrors"></span>
+                <input type="text" class="input form-control bg-x" placeholder="Nombre" id="nombre" name="first_name"
+                  value="<%= user.firstName %>" aria-describedby="emailHelp">
+                <span class="error" id="nombreErrors"></span>
               </div>
               <div class="mb-1 mt-1">
                 <label for="apellido" class="form-label"></label>
-                <input type="text" class="input form-control bg-x" placeholder="Apellido" id="apellido" name="last_name" value="<%= user.lastname %>"
-                  aria-describedby="emailHelp">
-                  <span class="error" id="apellidoErrors"></span>
+                <input type="text" class="input form-control bg-x" placeholder="Apellido" id="apellido" name="last_name"
+                  value="<%= user.lastname %>" aria-describedby="emailHelp">
+                <span class="error" id="apellidoErrors"></span>
               </div>
               <div class="mb-1 mt-1">
                 <label for="direccion" class="form-label"></label>
-                <input type="text" class="input form-control bg-x" placeholder="Direccion" id="direccion"
-                  name="address" value="<%= user.address %>" aria-describedby="emailHelp">
-                  <span class="error" id="direccionErrors"></span>
+                <input type="text" class="input form-control bg-x" placeholder="Direccion" id="direccion" name="address"
+                  value="<%= user.address %>" aria-describedby="emailHelp">
+                <span class="error" id="direccionErrors"></span>
               </div>
               <!-- <div class="mb-1 mt-1">
                 <label for="codigo postal" class="form-label"></label>
@@ -59,7 +61,7 @@
               </div> -->
               <div class="mb-5 mt-5 d-flex justify-content-around ">
                 <button type="reset" class="btn btn-secondary">Cancelar</button>
-                <button type="submit" class="btn btn-primary" >Guardar</button>
+                <button type="submit" class="btn btn-primary">Guardar</button>
               </div>
             </div>
             <span id="submitErrors"></span>
@@ -67,12 +69,10 @@
         </div>
       </div>
     </div>
-    
+
 
     <a href="#arriba"><input type="button" class="up"></a>
     <%- include("partials/footer")%>
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-    <script src="/javascripts/alertaEditarUsuario.js"></script>
-    <script src="/javascripts/datosUsuario.js"></script>
-    </body>
-    
+      <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+      <script src="/javascripts/datosUsuario.js"></script>
+      </body>
