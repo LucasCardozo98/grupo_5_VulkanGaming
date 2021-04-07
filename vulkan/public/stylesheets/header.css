@@ -80,6 +80,9 @@
     color: white;
     justify-self: center;
 }
+div.contenedorSesion img{
+    object-fit: cover;
+}
 
 .contenedorCarrito{
     position: relative;

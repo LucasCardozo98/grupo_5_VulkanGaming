@@ -128,17 +128,15 @@
         </ul>
       </div>
       </div>
-      <% if (typeof user !="undefined" ) { %>
-        <div class="contenedorSesion d-flex text-start justify-content-center">
-          <a href="/users/profile/<%=user.id%>" > <img src="/images/users/<%=user.avatar%>" alt="" id="usuario"
-              idUser="<%=user.id%>"></a>
+     
 
-
-          <% } %>
-
-
+          
 
             <% if (typeof user !="undefined" ) { %>
+              <div class="contenedorSesion d-flex text-start justify-content-center">
+                <a href="/users/profile/<%=user.id%>"> <img src="/images/users/<%=user.avatar%>" alt="" id="usuario"
+                    idUser="<%=user.id%>"></a>
+
               <ul>
                 <li>
                   <form action="/users/closeSesion" method="POST">
