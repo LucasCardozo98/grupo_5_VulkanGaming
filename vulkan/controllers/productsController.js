@@ -283,7 +283,7 @@ module.exports =  {
         })
     },
     buscador: (req,res)=>{
-        let busqueda = req.query.busqueda
+        let busqueda = req.query.busqueda.trim()
         let products=  db.Product.findAll(
             {
                 include: [{association: "marcas"},{association: "categorias"}],
