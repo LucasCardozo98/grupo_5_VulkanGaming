@@ -32,14 +32,14 @@ module.exports = {
                 email: email,
                 password : adressCrypt,
                 rol : "user",
-                avatar: "avatar.jpeg"
+                avatar: "avatar.png"
             })
             .then((user)=>{
                 req.session.userVulkan = {
                     id : user.id,
                     email: user.email,
                     rol : user.rol,
-                    avatar: "avatar.jpeg",
+                    avatar: "avatar.png",
                     username: user.username,
                     first_name: user.first_name
 
@@ -65,7 +65,7 @@ module.exports = {
             
             db.User.findByPk(id)
             .then(element=>{
-                if(fs.existsSync(path.join('public','images','users',element.avatar))){
+                if(fs.existsSync(path.join('public','images','users',element.avatar)) && element.avatar != "avatar.png"){
                     fs.unlinkSync(path.join('public','images','users',element.avatar))
                     imagen = req.files[0].filename
             }
@@ -80,7 +80,7 @@ module.exports = {
                 if(user.avatar != null){
                     imagen = user.avatar
                 }else{
-                    imagen = "avatar.png"
+                    imagen = "avatar.webp"
                 }
             })
         }
