@@ -24,7 +24,7 @@
         <form action="/products/buscador" method="GET" id="buscadorEscritorio">
           <div class="buscadorEnSerioDesktop">
             <input type="text" name="busqueda" id="busquedaEscritorio">
-            <button class="contenedor__lupaDesktop" type="submit" onclick="evitar(event,document.querySelector('#buscadorEscritorio'),document.querySelector('#busquedaEscritorio'))" ><i class="lupaDesktop fas fa-search"></i></button>
+            <button class="contenedor-lupaDesktop" type="submit" onclick="evitar(event,document.querySelector('#buscadorEscritorio'),document.querySelector('#busquedaEscritorio'))" ><i class="lupaDesktop fas fa-search"></i></button>
           </div>
         </form>
         <% if (typeof user !="undefined" ) { %>
@@ -43,8 +43,8 @@
       </div>
       <!--estas cosas aparecen en responsive-->
       <div class="contenedorCarrito">
-        <div id="notificacion" class="notificacion bg-success"></div>
-        <a href="/products/cart"><i class="girar fas fa-shopping-cart text-white"></i></a>
+        <div id="notificacion" class="notificacion bg-success text-white"></div>
+        <a href="/products/cart"><i class="fas fa-shopping-cart"></i></a>
       </div>
     </div>
 
@@ -85,7 +85,11 @@
             <% } %>
               <% } else { %>
                 <li class="ultimoLi">
+<<<<<<< HEAD
                   <div class="sesionResponsive"><i class="fas fa-user text-white"></i>
+=======
+                  <div class="sesionResponsive">
+>>>>>>> 4edf762372c3001077e9419dfb660656515389da
                     <a href="/users">Iniciar Sesión</a>
                   </div>
                 </li>
