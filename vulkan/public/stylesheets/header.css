@@ -494,7 +494,7 @@ div.footer{
         width: 20vw;
     }
     .buscadorDesktop form .buscadorEnSerioDesktop{
-        display: flex;
+        display: flex; 
         align-items: center;
         justify-content: center;
     }
