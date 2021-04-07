@@ -9,7 +9,7 @@ html,body{
     border-radius: 5px;
  }
   .slider{
-    
+   justify-content: center;
     display: flex;
     flex-wrap: wrap;
  }
