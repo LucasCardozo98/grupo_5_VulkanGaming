@@ -3,6 +3,7 @@
     --secondary: #323232;
     --tertiary: #0d7377;
     --quaternary: #14ffec;
+    --success: #198754;
 }
  
 #busquedaMobile{
@@ -19,6 +20,10 @@ border: 0px solid #000000;
 
 .cierraSesionEscritorio{
     cursor: pointer;
+}
+li form:hover label{
+    background-color: var(--success);
+    transition: 1s;
 }
 #categorias{
     display: flex;
@@ -49,7 +54,7 @@ border: 0px solid #000000;
     border-radius: 20px;
 }
 .listaCosas li:hover{
-    background-color:#198754;
+    background-color:var(--success);
 }
 .listaCosas li:hover~#cierreSesion{
     background-color: blue;
@@ -118,8 +123,7 @@ div.contenedorSesion img{
 #cierreSesion{
     border-style: none;
     outline: none;
-    background-color:rgb(41, 43, 44)  ;
-
+    background-color:rgb(41, 43, 44);
 }
 
 #cierreSesion:active{
