@@ -62,6 +62,7 @@
 
 }
 #cosa{
+    margin: 20px;
     cursor:pointer;
 }
 /*configuraciones basicas mas la tipografia elegida*/
@@ -370,6 +371,11 @@ div figure img.detail{
   ul.footer li a{
       color: white;
   }
+  ul.footer li:hover{
+    font-size: 17px;
+  }ul.footer li a:hover{
+    font-size: 17px;
+  }
 /*version tablet*/
 @media (min-width: 700px){
 div.footer{
@@ -496,7 +502,7 @@ div.footer{
     }
     .buscadorDesktop{
         display: flex;
-        width: 700px;
+        /*width: 700px;*/
         align-items: center;
         justify-content: space-evenly;
         padding: 0 10px;
@@ -509,7 +515,7 @@ div.footer{
         
     }
     .buscadorDesktop form .buscadorEnSerioDesktop{
-        display: flex;
+        display: flex; 
         align-items: center;
         justify-content: center;
         

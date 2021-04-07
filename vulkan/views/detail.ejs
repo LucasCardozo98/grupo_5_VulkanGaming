@@ -4,12 +4,10 @@
     <div class="container text-start form">
         <section class="principal">
           <div class="row detalle">
-            <div class="col-12 titulo">
-              <h2>Detalle de producto </h2>
-            </div>
+            
             <div class="contenido">
               <div class="contenido text-left ">
-                <div class="row p-0">
+                <div class="row pepeargento p-0">
                   <div class="col-12 col-lg-8">
                     <figure class="text-center bg-white">
                       <img class="img-fluid" src="/images/<%=product.image  %> ">
@@ -19,63 +17,54 @@
                     <h3 class="my-4">
                       <%= product.name  %> 
                     </h3>
-                    <p>
+                    <p class="">
                       <%= product.description  %> 
                     </p>
-                    <h2 style="color: rgb(146, 211, 35);">
+                    <h2 class="bg-light"  style="color: rgb(146, 211, 35); border: 1px solid rgb(224, 221, 221);">
                       $ <%= product.price  %> 
                     </h2>
-                    <h2>
+                    <h2 class="bg-success text-white">
                       <%= product.categorias.name  %> 
                     </h2>
-                    <h2>
+                    <h2 class="bg-success text-white">
                       <%= product.marcas.name %> 
                     </h2>
                     <p><i class="fas fa-credit-card mr-3 my-2"></i> Pagá en 12 cuotas sin interés</p>
                     <p><i class="fas fa-store mr-3 my-2"></i> Retiro gratis en locales del vendedor</p>
-                    <div class="btn">
+                    <div class="btn text-center d-flex justify-content-center mb-3">
                       <button type="submit" class="botones btn btn-primary" idProducto="<%=product.id%>"><i class="fas fa-cart-plus"></i> Agregar al
                         carrito</button>
                   </div>
                 </div>
               </div>
             </div>
-    
+            </div>
           </div>
         </section>
       </div>
       <section>
-        <div>
-          <h2 class="bg-success text-white">Productos Relacionados</h2>
-          <div class="slider owl-carousel">
-            <div class="card">
-              <div class="img">
-              <img src="/images/procesador3.jpg" alt="">
-              </div>
-              <div class="content">
-                <div class="title">Procesador</div>
-                <div class="price">$123</div>
-              <div class="btn">
-                  <button><i class="fas fa-cart-plus"></i>Comprar</button>
-              </div>
-              </div>
-            </div>
-              <div class="card">
-                <div class="img">
-                <img src="/images/mother4.jpg" alt=""></div>
-                  <div class="content">
-                    <div class="title">Mother piola</div>
-                    <div class="price">$2345</div>
-                      <div class="btn">
-                        <button><i class="fas fa-cart-plus"></i>Comprar</button>
-                      </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+        <% products.forEach((element,index) => { %>
+          <% if (index < 5) { %>
+           
+        
+              <div class="card-mobile mb-3" style="width: 70%;">
+           <img src="/images/<%=element.image%>" class="card-img-top" alt="...">
+           <div class="card-body">
+             <h5 class="card-title">
+               <%=element.name%>
+             </h5>
+             <h4 style="color: rgb(146, 211, 35);">
+               <%=element.price%>
+             </h4>
+             <button type="submit" idProducto="<%=element.id%>" style="z-index: 200;" id="boton-<%=element.id%>"
+               class=" btn btn-primary botones"><i class="fas fa-cart-plus"></i>Agregar al carrito</button>
+   
+   
+           </div>
+         </div>
+         <% } %>
+         <% }) %>
+      
           <script>
             $(".slider").owlCarousel({
               loop: true,
@@ -84,28 +73,7 @@
               autoplayHoverPause: true,
             });
           </script>
-          <div class="card-mobile mb-3" style="width: 75%;">
-            <img src="../images/ram3.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Nombre del producto</h5>
-              <a href="#" class="btn btn-primary"><i class="fas fa-cart-plus"></i> Comprar</a>
-            </div>
-          </div>
-          <div class="card-mobile mb-3" style="width: 75%;">
-            <img src="../images/procesador3.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <a href="#" class="btn btn-primary"><i class="fas fa-cart-plus"></i> Comprar</a>
-            </div>
-          </div>
-          <div class="card-mobile mb-3" style="width: 75%;">
-            <img src="../images/procesador6.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <a href="#" class="btn btn-primary"><i class="fas fa-cart-plus"></i> Comprar</a>
-            </div>
-          </div>
-        </div>
+        
       </section>
       <a href="#arriba"><input type="button" class="up"></a>
 <%- include("partials/footer")%>
