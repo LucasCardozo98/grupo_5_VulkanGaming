@@ -1,7 +1,11 @@
 module.exports = {
   "development": {
     "username": "root",
+
     "password": "root",
+
+    "password": null,
+
     "database": "vulkan",
     "host": "127.0.0.1",
     "dialect": "mysql"
