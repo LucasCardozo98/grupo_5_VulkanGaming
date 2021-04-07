@@ -10,7 +10,7 @@
                 <div class="row pepeargento p-0">
                   <div class="col-12 col-lg-8">
                     <figure class="text-center bg-white">
-                      <img class="img-fluid" src="/images/<%=product.image  %> ">
+                      <img class="img-fluid mt-4" src="/images/<%=product.image  %> ">
                     </figure>
                   </div>
                   <div class="col-12 col-lg-4 datos">
@@ -48,6 +48,7 @@
            
         
               <div class="card-mobile mb-3" style="width: 70%;">
+                <a href="/products/detail/<%=element.id%>">
            <img src="/images/<%=element.image%>" class="card-img-top" alt="...">
            <div class="card-body">
              <h5 class="card-title">
@@ -56,6 +57,7 @@
              <h4 style="color: rgb(146, 211, 35);">
                <%=element.price%>
              </h4>
+             </a>
              <button type="submit" idProducto="<%=element.id%>" style="z-index: 200;" id="boton-<%=element.id%>"
                class=" btn btn-primary botones"><i class="fas fa-cart-plus"></i>Agregar al carrito</button>
    
