@@ -215,6 +215,10 @@ hace bajar el menu desplegable*/
     
 }
 
+div a.a{
+    font-size: 16px;
+}
+
 .buscador form .buscadorEnSerio input{
     outline: none;
     width: 60vw;
