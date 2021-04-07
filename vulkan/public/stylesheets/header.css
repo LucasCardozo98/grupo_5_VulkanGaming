@@ -1,9 +1,4 @@
-:root{
-    --primary: #212121;
-    --secondary: #323232;
-    --tertiary: #0d7377;
-    --quaternary: #14ffec;
-}
+
 .cierraSesionEscritorio{
     cursor: pointer;
 }
@@ -11,7 +6,6 @@
     display: flex;
     flex-wrap: wrap;
     width: 450px;
-    border-right: 1px solid white;
 }
 .listaCosas{
     list-style: none;
@@ -34,7 +28,7 @@
     width: 200px;
     transition: 1s all;
     padding: 5px;
-    border-radius: 2px;
+    border-radius: 20px;
 }
 .listaCosas li:hover{
     background-color:#198754;
@@ -110,9 +104,7 @@ div.contenedorSesion img{
     background-color:rgb(41, 43, 44)  ;
 
 }
-#cierreSesion:hover{
-    background-color:rgba(92, 184, 92,.2) ;
-}
+
 #cierreSesion:active{
     outline: none;
     border-style: none;
@@ -186,6 +178,11 @@ div .buscador{
     width: 75px;
     height: 75px;
     border-radius: 50%;
+}
+.category{
+    padding: 6px;
+    color: white;
+    border-radius: 50px;
 }
 .institucional a{
     text-decoration: none;
