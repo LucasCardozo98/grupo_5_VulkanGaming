@@ -349,6 +349,11 @@ div figure img.detail{
   ul.footer li a{
       color: white;
   }
+  ul.footer li:hover{
+    font-size: 17px;
+  }ul.footer li a:hover{
+    font-size: 17px;
+  }
 /*version tablet*/
 @media (min-width: 700px){
 div.footer{
