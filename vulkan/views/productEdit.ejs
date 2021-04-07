@@ -2,10 +2,10 @@
   <%- include("partials/header")%>
 
     <div class="form container admin">
-      <div class="row gx-0">
+      <div class="row gx-0 pepeargento">
         <div>
           <div class="titulo bg-success text-center mb-5">
-            <h2 class="admin-title bg-dark">El admin piola</h2>
+            <h2 class="admin-title bg-success">Editar Producto</h2>
           </div>
           <form action="/products/edit/<%=product.id%>?_method=PUT" method="POST" enctype="multipart/form-data"
             id="form">
@@ -15,8 +15,7 @@
               <span class="error" id="formFileErrors"></span>
             </div>
             <!---->
-            <div>
-              <div class="mb-4 mt-4">
+              <div class="mb-4 mt-4 ">
                 <label for="exampleInputEmail1" class="form-label"></label>
                 <input type="text" class="input form-control bg-x" placeholder="Nombre" id="inputName"
                   value="<%=product.name  %> " name="name">

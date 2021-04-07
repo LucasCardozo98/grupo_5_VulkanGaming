@@ -32,7 +32,7 @@ module.exports = {
                 email: email,
                 password : adressCrypt,
                 rol : "user",
-                avatar: "avatar.jpeg"
+                avatar: "avatar.png"
             })
             .then((user)=>{
                 req.session.userVulkan = {

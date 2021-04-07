@@ -217,6 +217,20 @@ hace bajar el menu desplegable*/
     width: 60vw;
 }
 
+div.pepeargento{
+    background-color: white;
+    -webkit-box-shadow: 3px 4px 23px 5px rgba(0,0,0,0.75);
+    -moz-box-shadow: 3px 4px 23px 5px rgba(0,0,0,0.75);
+    box-shadow: 3px 4px 23px 5px rgba(0,0,0,0.75);
+    padding: 10px;
+    height: 90%;
+    margin: 50px auto;
+    border-radius: 15px;
+}
+
+button .hover{
+    background-color: chartreuse;
+}
 
 .buscador form .buscadorEnSerio button{
     outline: none;
