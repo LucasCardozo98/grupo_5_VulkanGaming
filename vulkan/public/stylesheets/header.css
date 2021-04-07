@@ -13,6 +13,7 @@
     flex-wrap: wrap;
     width: 450px;
 }
+
 .listaCosas{
     list-style: none;
     display: flex;
@@ -96,11 +97,11 @@ div.contenedorSesion img{
     display: flex;
     align-items: center;
     justify-content: center;
-    font-weight: bold;
-    font-size: 20px;
+    font-size: 16px;
     position: absolute;
     right: -5px;
     top: -10px;
+    padding: 12px;
 }
 #check{
     display: none;
@@ -222,6 +223,17 @@ hace bajar el menu desplegable*/
 div a.a{
     font-size: 16px;
 }
+#busquedaMobile{
+    border-radius: 150px 0px 0px 150px;
+-moz-border-radius: 150px 0px 0px 150px;
+-webkit-border-radius: 150px 0px 0px 150px;
+}
+#busquedaEscritorio{
+    border-radius: 150px 0px 0px 150px;
+-moz-border-radius: 150px 0px 0px 150px;
+-webkit-border-radius: 150px 0px 0px 150px;
+border: 0px solid #000000;
+}
 
 .buscador form .buscadorEnSerio input{
     outline: none;
@@ -262,6 +274,9 @@ button .hover{
     background-color: rgb(65, 138, 89);
     display: flex;
     align-items: center;
+    border-radius: 0px 150px 150px 10px;
+    -moz-border-radius: 0px 150px 150px 10px;
+    -webkit-border-radius: 0px 150px 150px 10px;
 }
 #boton{
     padding: 5px;
@@ -429,7 +444,15 @@ div.footer{
         z-index: 100;
         top: 0;
     }
-    
+    input#busquedaEscritorio{
+        height: 24px;
+    }
+    .contenedor-lupaDesktop{
+        border-radius: 0px 150px 150px 0px;
+    -moz-border-radius: 0px 150px 150px 0px;
+    -webkit-border-radius: 0px 150px 150px 0px;
+    border: 0px solid #000000;
+    }
     nav{
         overflow: visible;
         position: static;
@@ -492,27 +515,34 @@ div.footer{
     .buscadorDesktop form .buscadorEnSerioDesktop input{
         outline: none;
         width: 20vw;
+        
     }
     .buscadorDesktop form .buscadorEnSerioDesktop{
         display: flex; 
         align-items: center;
         justify-content: center;
+        
     }
     .buscadorDesktop form .buscadorEnSerioDesktop button{
         outline: none;
         color:white;
         background-color: rgb(65, 138, 89);
         width: 35px;
-        height: 28px;
+        height: 24px;
         padding: 3px;
         border-radius: 5px;
         border: none;
         display: flex;
         align-items: center;
+        border-radius: 0px 150px 150px 0px;
+        -moz-border-radius: 0px 150px 150px 0px;
+        -webkit-border-radius: 0px 150px 150px 0px;
+        border: 0px solid #000000;
+        
         
     }
     .buscadorDesktop form .buscadorEnSerioDesktop button i{
-        font-size: 20px;
+        font-size: 19px;
     }
     .contactoDesktop{
         width: 200px;
