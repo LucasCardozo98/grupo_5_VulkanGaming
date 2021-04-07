@@ -309,6 +309,25 @@ div img.seagate{
 div figure img.detail{
     width: 600px;
 }
+/* Estilo de boton UP */
+.up{
+    position: fixed;
+    bottom: 15px;
+    right:  15px;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    background-image: url("/images/uparrow.png");
+    background-size: cover;
+    background-color: transparent;
+  }
+  .up:hover{
+      background-color: black;
+      width: 55px;
+      height: 55px;
+      background-size: cover;
+  }
 
 /*version tablet*/
 @media (min-width: 700px){
