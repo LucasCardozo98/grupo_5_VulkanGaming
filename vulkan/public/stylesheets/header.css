@@ -501,12 +501,15 @@ div.footer{
     .institucional{
         background-color:	rgb(41, 43, 44) ;
     }
+    .buscadorEnSerioDesktop{
+        margin-right: 100px;
+    }
     .buscadorDesktop{
         display: flex;
         width: 700px;
         align-items: center;
         justify-content: space-evenly;
-        padding: 0 10px;
+        padding: 0 2px;
 
         
     }
