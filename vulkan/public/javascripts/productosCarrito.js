@@ -29,7 +29,7 @@ function escribir (id){
               <button onClick="eliminar(${element.id})">Eliminar</button>
               </div>
               <div class="btn text-center">
-            <button id="sumar" onclick="mailu(${element.id},1)">+</button><span id="cantidad">${element.quantity}</span> <button id="restar" onclick="mailu(${element.id},0)">-</button>
+              <button id="restar" onclick="mailu(${element.id},0)">-</button> <span id="cantidad">${element.quantity}</span> <button id="sumar" onclick="mailu(${element.id},1)">+</button>
 
             </div>
           </div>
@@ -60,7 +60,7 @@ function escribir (id){
                   <button onClick="eliminar(${element.id})">Eliminar</button>
                   </div>
                   <div class="btn text-center">
-                <button id="sumar" onclick="mailu(${element.id},1)">+</button><span id="cantidad"></span> <button id="restar" onclick="mailu(${element.id},0)">-</button>
+                  <button id="restar" onclick="mailu(${element.id},0)">-</button> <span id="cantidad"></span> <button id="sumar" onclick="mailu(${element.id},1)">+</button>
 
                 </div>
               </div>
