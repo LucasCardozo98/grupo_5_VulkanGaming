@@ -3,10 +3,27 @@
     --secondary: #323232;
     --tertiary: #0d7377;
     --quaternary: #14ffec;
+    --success: #198754;
+}
+ 
+#busquedaMobile{
+    border-radius: 150px 0px 0px 150px;
+-moz-border-radius: 150px 0px 0px 150px;
+-webkit-border-radius: 150px 0px 0px 150px;
+}
+#busquedaEscritorio{
+    border-radius: 150px 0px 0px 150px;
+-moz-border-radius: 150px 0px 0px 150px;
+-webkit-border-radius: 150px 0px 0px 150px;
+border: 0px solid #000000;
 }
 
 .cierraSesionEscritorio{
     cursor: pointer;
+}
+li form:hover label{
+    background-color: var(--success);
+    transition: 1s;
 }
 #categorias{
     display: flex;
@@ -37,7 +54,7 @@
     border-radius: 20px;
 }
 .listaCosas li:hover{
-    background-color:#198754;
+    background-color:var(--success);
 }
 .listaCosas li:hover~#cierreSesion{
     background-color: blue;
@@ -106,8 +123,7 @@ div.contenedorSesion img{
 #cierreSesion{
     border-style: none;
     outline: none;
-    background-color:rgb(41, 43, 44)  ;
-
+    background-color:rgb(41, 43, 44);
 }
 
 #cierreSesion:active{
@@ -224,6 +240,13 @@ div a.a{
 .buscador form .buscadorEnSerio input{
     outline: none;
     width: 60vw;
+    
+}
+.buscador form .buscadorEnSerio .contenedor_lupaMobile{
+    border-radius: 0px 150px 150px 10px;
+    -moz-border-radius: 0px 150px 150px 10px;
+    -webkit-border-radius: 0px 150px 150px 10px;
+    height: 27px;
 }
 
 div.pepeargento{
@@ -421,35 +444,45 @@ div.footer{
     }*/
 }
 /*version desktop*/
-/* .girar:hover{
-    position: absolute;
-    width: 15rem;
+.girar:hover{
     animation-name: girar;
-    animation-duration: 1s;
-    transition: 2s;
-    animation-timing-function: linear;
+    animation-duration: 0.5s;
+    transition: 0.5s;
 }
 @keyframes girar{
     0%{
         transform: rotate(0deg);
-        left: 2.5rem;
     }
     50%{
-        transform: rotate(180deg);
-        left: 25rem;
+        transform: rotate(-45deg);  
     }
     100%{
         transform: rotate(0deg);
-        left: 2.5rem;        
     }
-} */
+}
 @media (min-width:1024px){
     header{
         position: static;
         z-index: 100;
         top: 0;
     }
-    
+    input#busquedaEscritorio{
+        height: 24px;
+    }
+    .contenedor-lupaDesktop{
+        border-radius: 0px 150px 150px 0px;
+    -moz-border-radius: 0px 150px 150px 0px;
+    -webkit-border-radius: 0px 150px 150px 0px;
+    border: 0px solid #000000;
+    }
+    form#buscadorEscritorio{
+        
+            border-radius: 0px 150px 150px 0px;
+        -moz-border-radius: 0px 150px 150px 0px;
+        -webkit-border-radius: 0px 150px 150px 0px;
+        border: 0px solid #000000;
+        
+    }
     nav{
         overflow: visible;
         position: static;
@@ -526,13 +559,18 @@ div.footer{
         color:white;
         background-color: rgb(65, 138, 89);
         width: 35px;
-        height: 28px;
+        height: 24px;
         padding: 3px;
         border-radius: 5px;
         border: none;
         display: flex;
         align-items: center;
         
+        border-radius: 0px 150px 150px 0px;
+    -moz-border-radius: 0px 150px 150px 0px;
+    -webkit-border-radius: 0px 150px 150px 0px;
+    border: 0px solid #000000;
+    }
     }
     .buscadorDesktop form .buscadorEnSerioDesktop button i{
         font-size: 20px;
@@ -650,4 +688,3 @@ div.footer{
     #perfil{
         font-size: 1.5em;
     }
-}
