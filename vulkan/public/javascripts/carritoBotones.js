@@ -9,6 +9,8 @@ botones.forEach(element => {
     agregar(this.getAttribute("idProducto"));
 }*/
 function capturar(event){
-    console.log()
+    
     agregar(event.srcElement.attributes.idProducto.value)
+    escribir("escribir");
+    return true;
 }

@@ -67,6 +67,7 @@ function agregar(id){
                     carrito.push(item);
                     localStorage.setItem("carrito",JSON.stringify(carrito))
                     imprimir()
+                    escribir("escribir");
 
                 }else{
                     if(carrito.indexOf(productoCarrito)!= -1 && id == productoCarrito.id /*productoCategoria.getAttribute("idProducto") == productoCarrito.id*/){
@@ -74,6 +75,7 @@ function agregar(id){
                         productoCarrito.price = productoCarrito.unit_price * productoCarrito.quantity
                         localStorage.setItem("carrito",JSON.stringify(carrito));
                         imprimir()
+                        escribir("escribir");
                         //console.log(`estamos en el if porque ${element.id} == producto.id`);
                     }
                 }
@@ -98,6 +100,7 @@ function agregar(id){
                     carritoAgregar.push(item);
                 localStorage.setItem("carrito",JSON.stringify(carritoAgregar));
                 imprimir()
+                escribir("escribir");
             }
 
             
@@ -143,6 +146,14 @@ function agregar(id){
    
     console.log(localStorage.getItem("carrito"));
     console.log("fin de la funcion");
+    if(window.location.href == "http://localhost:3000/products/cart"){
+        console.log("entra al if que necesito pero no escribe");
+
+        escribir("escribir")
+    }
+    else{
+        escribir(localStorage.getItem("idCompra"));
+    }
 }
 
 

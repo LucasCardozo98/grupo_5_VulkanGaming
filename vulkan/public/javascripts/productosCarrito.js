@@ -6,10 +6,11 @@ listaProductos.innerHTML = oldHTML
 const congratulations = `<li id="contratulations">Felicidades tu compra fue realizada con exito <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Lime_checkbox-checked.svg/1024px-Lime_checkbox-checked.svg.png" alt=""> </li>`
 const cantidad = document.querySelector("#cantidad")
 listaProductos.style.listStyle = "none"
-let carrito = JSON.parse(localStorage.getItem("carrito"));
+//let carrito = JSON.parse(localStorage.getItem("carrito"));
 let productos = [];
 
 function escribir (id){
+    let carrito = JSON.parse(localStorage.getItem("carrito"));
     if(id == "escribir"){
     let tarjetas = carrito.map(element=>{
         return `<li id="id${element.id}">
@@ -77,7 +78,8 @@ function escribir (id){
 }
 if(window.location.href == "http://localhost:3000/products/cart"){
     escribir("escribir")
-}else if(window.location.href == "http://localhost:3000/products/pagar"){
+}
+else if(window.location.href == "http://localhost:3000/products/pagar"){
     escribir(localStorage.getItem("idCompra"));
 }else{
     listaProductos.innerHTML = congratulations;
@@ -85,7 +87,7 @@ if(window.location.href == "http://localhost:3000/products/cart"){
 
 
 function comprar (id){
-    const carrito = JSON.parse(localStorage.getItem("carrito"))
+    let carrito = JSON.parse(localStorage.getItem("carrito"))
     const idUser = document.querySelector("#usuario");
     if(idUser != null){
         if(carrito.length > 0 && carrito != null){
@@ -121,6 +123,7 @@ function comprar (id){
 }
 
 function eliminar (id){
+    let carrito = JSON.parse(localStorage.getItem("carrito"));
     if(id== "eliminarTodo"){
         carrito = []
         localStorage.setItem("carrito",JSON.stringify(carrito));
@@ -163,17 +166,20 @@ function eliminar (id){
                 
             }
         });   */   
-
-        if(window.location.href == "http://localhost:3000/products/cart"){
-            escribir("escribir")
-        }else{
-            escribir(localStorage.getItem("idCompra"));
-        }
+       
+        
        
     }
+    if(window.location.href == "http://localhost:3000/products/cart"){
+            escribir("escribir")
+        }
+        else{
+            escribir(localStorage.getItem("idCompra"));
+        }
     imprimir()
 }
 function mailu(id,value){
+    let carrito = JSON.parse(localStorage.getItem("carrito"));
     let producto = carrito.find(element=>{
         return element.id == id
     })
