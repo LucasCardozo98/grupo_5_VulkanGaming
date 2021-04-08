@@ -173,7 +173,9 @@ html,body{
 .card .content .btn button:hover{
   transform: scale(0.9);
 }
-
+.carritoVacio{
+  font-size: x-large;
+}
 @media(max-width: 427px){
     .sliderpc{display: none;} 
 }

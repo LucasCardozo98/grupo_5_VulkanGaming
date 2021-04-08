@@ -91,7 +91,7 @@ window.addEventListener('load', function(){
                 $inputEmailRegister.classList.add('is-invalid');
                 break;
             case existe == 1:
-                $emailRegisterErrors.innerHTML = 'El email ya esta registrado perro';
+                $emailRegisterErrors.innerHTML = 'El email ya esta registrado';
                 $inputEmailRegister.classList.add('is-invalid');
                 break;
             default:
@@ -134,7 +134,7 @@ window.addEventListener('load', function(){
                 $inputPasswordRegisterConfirm.classList.add('is-invalid')
                 break;
             case $inputPasswordRegister.value != $inputPasswordRegisterConfirm.value :
-				$passwordRegisterConfirmErrors.innerHTML = 'Las contras no coinciden';
+				$passwordRegisterConfirmErrors.innerHTML = 'Las contraseñas no coinciden';
 				$inputPasswordRegisterConfirm.classList.add('is-invalid')
                 break;
             default:
