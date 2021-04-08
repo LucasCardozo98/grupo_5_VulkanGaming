@@ -48,7 +48,7 @@
     </ul>
 <% } %>
 <form action="/users/crearMensaje/<%= user.id %>/" method="POST">
-    <textarea class="col-12" name="mensaje" id="" rows="10"></textarea>
+    <textarea class="col-12" name="mensaje" id="" rows="10" style="padding: 5px;"></textarea>
     <div class="col-12 justify-content-around d-flex">
         <select class="usuarios form-select form-select-m mb-4 text-muted flex-grow-1 w-50" placeholder="Nombre" name="idOtherUser" id="">
             <% users.forEach(element=> { %>

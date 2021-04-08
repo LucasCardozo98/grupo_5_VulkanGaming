@@ -94,5 +94,5 @@ h2{
   .card-mobile{display: none;}
 }
 @media(min-width:1024px){
-  .baner{margin-top: 0px;}
+  .baner{margin-top: 0px;background-color: #212121;}
 }
