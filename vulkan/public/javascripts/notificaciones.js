@@ -1,7 +1,6 @@
-const notificacion = document.querySelector("#notificacion");
+const noti = document.querySelector("#notificacion");
 var carro = getCarro()
 
-console.log(carro);
 
 function getCarro(){
     const carro = JSON.parse(localStorage.getItem("carrito"));
@@ -25,11 +24,11 @@ function imprimir(){
     const carro = getCarro()
    
     if(cantidad == 0){
-        notificacion.innerHTML = " "
+        noti.innerHTML = " "
     }
     else{
        
-        notificacion.innerHTML = cantidad;
+        noti.innerHTML = cantidad;
     }
 
 }

@@ -9,23 +9,22 @@
     <select class="form-select form-select-m mb-4 text-muted" aria-label=".form-select-sm example" name="category" id="metodoDePago">
         <option value="1">Crédito</option>
         <option value="2">Débito</option>
-        <option value="3">Efectivo</option>
     </select>
 
     <div class="mb-4 ">
         <label for="exampleInputEmail1" class="form-label"></label>
         <input type="text" class="input form-control bg-x" placeholder="Numero tarjeta" id="tarjeta" name="tarjeta">
-          <span class="error" id="nameErrors"></span>
+          <span class="error" id="tarjetaErrors"></span>
       </div>
       <div class="mb-4 ">
         <label for="exampleInputEmail1" class="form-label"></label>
-        <input type="text" class="input form-control bg-x" placeholder="Vencimiento" id="vencimiento" name="vencimiento">
-          <span class="error" id="nameErrors"></span>
+        <input type="month" class="input form-control bg-x" placeholder="Vencimiento" id="vencimiento" name="vencimiento">
+          <span class="error" id="vencimientoErrors"></span>
       </div>
       <div class="mb-4 ">
         <label for="exampleInputEmail1" class="form-label"></label>
         <input type="text" class="input form-control bg-x" placeholder="CVC" id="cvc" name="cvc">
-          <span class="error" id="nameErrors"></span>
+          <span class="error" id="cvcErrors"></span>
       </div>
       <div class="mb-5 d-flex justify-content-end">
         <button type="submit" class="btn btn-primary" onclick="postearCompra(event)">Guardar</button>
@@ -55,6 +54,7 @@
 <%- include("partials/footer") %>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <script src="/javascripts/productosCarrito.js"></script> 
+<script src="/JS/buy.js"></script>
 <script src="/javascripts/notificaciones.js"></script>
 <script src="/javascripts/comprar.js"></script>
 </body>
