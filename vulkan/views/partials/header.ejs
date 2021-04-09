@@ -67,7 +67,7 @@
     </div>
     <!--lista que funciona desplegable en mobile y tablet y figura normal en desktop-->
     <nav id="nav" class="lista">
-      <ul id="lista" class="navegacion bg-success mb-0">
+      <ul id="lista" class="navegacion bg-success">
         <li><a href="/products/category/9">Encontrá tu equipo</a></li>
         <li><a href="/products">Categorias</a></li>
         <% if (typeof user !="undefined" ) { %>
@@ -76,7 +76,7 @@
           </li>
           <li class="ultimoLi">
             <form action="/users/closeSesion" method="POST">
-              <button id="cierreSesion" type="submit"><label for="check">Cerrar
+              <button id="cierreSesion" type="submit"><label for="check" style="color: white; cursor: pointer;">Cerrar
                   sesión</label></button> <!--responsive-->
             </form>
           </li>
@@ -90,7 +90,7 @@
                   </div>
                 </li>
                 <% } %>
-
+                </ul>
                   <!-- <li onclick="aparecen()"id="cosa" class="cosas">cosas</li>
       </ul>
       <ul class="navegacionDesktop bg-success">
@@ -172,8 +172,12 @@
           const lista = document.getElementById("lista");
           const nav = document.getElementById("nav");
           function cambiar() {
-            lista.classList.toggle("aparecer");
+            console.log(lista)
+            console.log("hola soy un boton apretado");
+            lista.classList.toggle("aparecera");
             lista.style.transition = "1s all";
+            
+
           }
         </script>
     </div>

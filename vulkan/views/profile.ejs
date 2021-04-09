@@ -1,23 +1,29 @@
 <%- include("partials/head") %>
     <%- include("partials/header") %>
 
-        <div class="container pepeargento">
-            <h2 class="mt-3 text-center">¡ Hola <%= user.firstName%>!</h1>
-                    <img class="fotoperfil mx-auto d-block mt-3" src="/images/users/<%= user.avatar %>" alt="">
-                    <h2 class="mt-3 mb-3 text-center">Tus compras</h2>
-                    <% if (user.compras.length <=0) { %>
-                        <h3 class="text-center">Todavia no tienes compras realizadas</h3>
-                        <% } %>
-                            <% if ( user.compras.length> 0) { %>
-                                <ul style="list-style: none; padding: 10px;" class="alert alert-success">
-                                    <% user.compras.forEach(element=> { %>
-                                        <li class="mb-2">
-                                            <%= element.cantidad %> unidades del producto
-                                                <% products.forEach(product=> { %>
-                                                    <% if (product.id==element.idProduct) { %>
-                                                        <%=product.name%>
-                                                            <% } %>
-                                                                <% }) %>
+<div class="container pepeargento">
+<h2 class="mt-3 text-center">¡ Hola <%= user.firstName%>!</h1>
+<img class="fotoperfil mx-auto d-block mt-3" src="/images/users/<%= user.avatar %>" alt="">
+<h2 class="mt-3 mb-3 text-center ">Tus compras:</h2>
+<% if (user.compras.length <= 0) { %>
+ <h3 class="text-center">Todavia no tienes compras realizadas</h3>
+<% } %>
+<% if ( user.compras.length > 0) { %>
+    <ul style="list-style: none; padding: 10px;" class="alert alert-success" >
+        <% user.compras.forEach(element => { %>
+                    <li class="mb-2" >
+                        <%= element.cantidad  %> 
+                        <% products.forEach(product => { %>
+                         <% if (product.id == element.idProduct) { %>
+                          <%=product.name%>
+                         <% } %>
+                        <% }) %> 
+                            
+                            a $<%=element.precio%> 
+                    </li>
+                    <% }) %>
+    </ul>
+<% } %>
 
                                                                     a un precio de <%=element.precio%>
                                         </li>
@@ -25,67 +31,38 @@
                                 </ul>
                                 <% } %>
 
-                                    <div class="d-flex justify-content-around mt-4 mb-4">
-                                        <a class="btn btn-primary" href="/users/edit/<%=user.id %>">Editar perfil</a>
-                                        <form action="/users/closeSesion" method="POST">
-                                            <button class="btn btn-primary bg-danger" id="cierreSesion" type="submit"><label
-                                                    class="text-white" for="check">Cerrar sesión</label></button>
-                                        </form>
-                                    </div>
-                                    <% if (mensajes !=undefined && mensajes !=null) { %>
-                                        <ul style="list-style: none; padding-left: 0;">
-                                            <% mensajes.forEach(element=> { %>
-
-                                                <li class="alert alert-success" id="mensaje-<%=element.id%>">
-                                                    <p class="usuario"><strong>
-                                                            <%=element.mensajes.username%>
-                                                        </strong></p>
-                                                    <p class="mensaje">
-                                                        <%= element.message %>
-                                                    </p>
-                                                    <div class="d-flex">
-                                                        <button idMensaje="<%=element.id%>" type="submit"
-                                                            class="btn text-danger botonEliminar">Eliminar para mí <i
-                                                                class="fas fa-trash-alt"></i></button>
-                                                        <form
-                                                            action="/users/eliminarMensajes/<%=element.id%>?_method=DELETE"
-                                                            method="POST">
-                                                            <button type="submit" class="btn text-dark">Eliminar para
-                                                                todos <i class="fas fa-trash-alt"></i></button>
-                                                        </form>
-                                                    </div>
-                                                </li>
-                                                <% }) %>
-                                        </ul>
-                                        <% } %>
-                                            <form action="/users/crearMensaje/<%= user.id %>/" method="POST">
-                                                <textarea class="col-12" name="mensaje" id="" rows="10"
-                                                    style="padding: 5px;"></textarea>
-                                                <div class="col-12 justify-content-around d-flex">
-                                                    <select
-                                                        class="usuarios form-select form-select-m mb-4 text-muted flex-grow-1 w-50"
-                                                        placeholder="Nombre" name="idOtherUser" id="">
-                                                        <% users.forEach(element=> { %>
-                                                            <option value="<%=element.id%>">
-                                                                <%=element.username%>
-                                                            </option>
-                                                            <% }) %>
-                                                    </select>
-                                                    <button class="enviar-mensaje btn btn-dark flex-grow-1"
-                                                        type="submit"><i class="far fa-envelope"></i></button>
-                                                </div>
-                                            </form>
-                                            <form id="formulario" action="/users/delete/<%=user.id%>?_method=DELETE"
-                                                method="POST">
-                                                <button
-                                                    class="btn btn-danger mt-4 mb-4 d-flex justify-content-around mr-0"
-                                                    type="submit"
-                                                    onclick="eliminarUsuario(event,document.querySelector('#formulario'))">Eliminar
-                                                    cuenta</button>
-        </div>
-        <a href="#arriba"><input type="button" class="up"></a>
-        <%- include("partials/footer") %>
-            <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-            <script src="/javascripts/alertaEliminarUsuario.js"></script>
-            <script src="/javascripts/eliminarMensajes.js"></script>
-            </body>
+             <li class="alert alert-success" id="mensaje-<%=element.id%>">
+                    <p class="usuario"><strong><%=element.mensajes.username%></strong></p>
+                    <p class="mensaje"><%= element.message  %></p> 
+                    <div class="d-flex">
+                    <button idMensaje="<%=element.id%>" type="submit" class="btn text-danger botonEliminar">Eliminar para mí <i class="fas fa-trash-alt"></i></button>
+                    <form action="/users/eliminarMensajes/<%=element.id%>?_method=DELETE" method="POST">
+                        <button type="submit" class="btn text-dark">Eliminar para todos <i class="fas fa-trash-alt"></i></button>
+                    </form>    
+                    </div>  
+             </li>
+            <% }) %>
+    </ul>
+<% } %>
+<h2 class="text-center mb-2">¿Tuviste algún inconveniente o tenes alguna duda? !Envianos un mensaje!</h2>
+<form action="/users/crearMensaje/<%= user.id %>/" method="POST">
+    <textarea class="col-12" name="mensaje" id="" rows="10" style="padding: 5px;"></textarea>
+    <div class="col-12 justify-content-around d-flex">
+        <select class="usuarios form-select form-select-m mb-4 text-muted flex-grow-1 w-50" placeholder="Nombre" name="idOtherUser" id="">
+            <% users.forEach(element=> { %>
+            <option value="<%=element.id%>"><%=element.username%> </option>
+            <% }) %>
+        </select>
+    <button class="enviar-mensaje btn btn-dark flex-grow-1" type="submit"><i class="far fa-envelope"></i></button>
+    </div>
+</form>
+<form id="formulario"  action="/users/delete/<%=user.id%>?_method=DELETE" method="POST">
+    <button class="btn btn-danger mt-4 mb-4 d-flex justify-content-around mr-0" type="submit" onclick="eliminarUsuario(event,document.querySelector('#formulario'))">Eliminar cuenta</button>
+    </form>
+</div>
+<a href="#arriba"><input type="button" class="up"></a>
+<%- include("partials/footer")  %> 
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<script src="/javascripts/alertaEliminarUsuario.js"></script>
+<script src="/javascripts/eliminarMensajes.js"></script>
+</body>
