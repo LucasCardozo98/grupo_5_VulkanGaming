@@ -1,9 +1,9 @@
 
 //localStorage.clear()
 const listaProductos = document.querySelector("#carrito");
-oldHTML = `<li id="vacio">El carrito esta vacío <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Lime_checkbox-checked.svg/1024px-Lime_checkbox-checked.svg.png" alt=""></li>`
+oldHTML = `<li id="vacio" class="carritoVacio mb-5 mt-5">El carrito esta vacío <i class="far fa-check-circle"></i></li>`
 listaProductos.innerHTML = oldHTML
-const congratulations = `<li id="contratulations">Felicidades tu compra fue realizada con exito <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Lime_checkbox-checked.svg/1024px-Lime_checkbox-checked.svg.png" alt=""> </li>`
+const congratulations = `<li id="contratulations" class="carritoVacio mb-5 mt-5">Felicidades tu compra fue realizada con exito <i class="far fa-check-circle"></i></li>`
 const cantidad = document.querySelector("#cantidad")
 listaProductos.style.listStyle = "none"
 //let carrito = JSON.parse(localStorage.getItem("carrito"));
@@ -29,7 +29,7 @@ function escribir (id){
               <button onClick="eliminar(${element.id})">Eliminar</button>
               </div>
               <div class="btn text-center">
-            <button id="sumar" onclick="mailu(${element.id},1)">+</button><span id="cantidad">${element.quantity}</span> <button id="restar" onclick="mailu(${element.id},0)">-</button>
+              <button id="restar" onclick="mailu(${element.id},0)">-</button> <span id="cantidad">${element.quantity}</span> <button id="sumar" onclick="mailu(${element.id},1)">+</button>
 
             </div>
           </div>
@@ -60,7 +60,7 @@ function escribir (id){
                   <button onClick="eliminar(${element.id})">Eliminar</button>
                   </div>
                   <div class="btn text-center">
-                <button id="sumar" onclick="mailu(${element.id},1)">+</button><span id="cantidad"></span> <button id="restar" onclick="mailu(${element.id},0)">-</button>
+                  <button id="restar" onclick="mailu(${element.id},0)">-</button> <span id="cantidad"></span> <button id="sumar" onclick="mailu(${element.id},1)">+</button>
 
                 </div>
               </div>
