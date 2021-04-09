@@ -467,6 +467,7 @@ div.footer{
     }
 }
 @media (min-width:1024px){
+    
     header{
         position: static;
         z-index: 100;
