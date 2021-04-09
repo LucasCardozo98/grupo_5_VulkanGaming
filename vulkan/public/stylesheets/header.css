@@ -304,6 +304,9 @@ button .hover{
 }
 /*navegacion es el menu desplegable que baja al apretar el 
 boton*/
+#nav{
+    display: block;
+}
 .navegacion{
     width: 100%;
     /*position: absolute;*/
@@ -337,8 +340,8 @@ boton*/
 }
 /*la clase aparecer se aplica con js sobre el menu desplegable 
 logrando que aparezca*/
-.aparecer{
-    top: 0px;
+.aparecera{
+    top: 0;
     transition: 2s all;
     z-index: 2;
     height: 100%;
@@ -571,7 +574,7 @@ div.footer{
     -webkit-border-radius: 0px 150px 150px 0px;
     border: 0px solid #000000;
     }
-    }
+    
     .buscadorDesktop form .buscadorEnSerioDesktop button i{
         font-size: 20px;
     }
@@ -688,3 +691,4 @@ div.footer{
     #perfil{
         font-size: 1.5em;
     }
+}
