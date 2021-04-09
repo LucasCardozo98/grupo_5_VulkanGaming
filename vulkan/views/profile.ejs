@@ -28,7 +28,7 @@
 <div class="d-flex justify-content-around mt-4 mb-4">
 <a class="btn btn-primary" href="/users/edit/<%=user.id %>">Editar perfil</a>
 <form action="/users/closeSesion" method="POST">            
-    <button class="btn btn-primary" id="cierreSesion" type="submit"><label class="text-white" for="check">Cerrar sesión</label></button>
+    <button class="btn btn-primary bg-danger" id="cierreSesion" type="submit"><label class="text-white" for="check">Cerrar sesión</label></button>
   </form>
 </div>
 <% if (mensajes != undefined && mensajes != null) { %>

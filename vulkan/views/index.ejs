@@ -81,8 +81,9 @@
       <div class="container">
       <% products.forEach((element,index) => { %>
        <% if (index < 5) { %>
-
+        
       <div class="card-mobile mb-3" style="width: 80%;">
+        <a href="/products/detail/<%= element.id %>">
         <img src="/images/<%=element.image%>" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">
@@ -94,7 +95,9 @@
           <button type="submit" idProducto="<%=element.id%>" style="z-index: 200;" id="boton-<%=element.id%>"
             class=" btn btn-primary botones"><i class="fas fa-cart-plus"></i>Agregar al carrito</button>
         </div>
+      </a>
       </div>
+      
       <% } %>
       <% }) %>
     </div>

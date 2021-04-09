@@ -47,7 +47,7 @@
                   <%= element.price %>
                 </div>
                 <div class="btn" style="display: flex; justify-content: center; gap: 15px;">
-                  <form id="eliminar" action="/products/delete/<%=element.id%>?_method=delete" method="POST">
+                  <form id="eliminar" action="/products/delete/<%= element.id %> ?_method=delete" method="POST">
                     <button id="botonEliminar" type="submit" class="btn btn-danger"
                       onclick="confirmar(event,document.querySelector('#eliminar'))">Eliminar</button>
                   </form>
