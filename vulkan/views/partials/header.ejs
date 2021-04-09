@@ -1,4 +1,4 @@
-<header id="arriba">
+<header id="arriba" style="transition-delay: 1s;">
   <!--esto de sponsors aparece solo en desktop-->
   <div class="sponsors">
 
@@ -23,7 +23,7 @@
 
         <form action="/products/buscador" method="GET" id="buscadorEscritorio">
           <div class="buscadorEnSerioDesktop">
-            <input type="text" name="busqueda" style="text-indent: 8px;" id="busquedaEscritorio">
+            <input type="text" name="busqueda" placeholder="Buscar..." style="text-indent: 8px;" id="busquedaEscritorio">
             <button class="contenedor-lupaDesktop" type="submit" onclick="evitar(event,document.querySelector('#buscadorEscritorio'),document.querySelector('#busquedaEscritorio'))" ><i class="lupaDesktop fas fa-search"></i></button>
           </div>
         </form>
@@ -52,7 +52,7 @@
 
       <form action="/products/buscador" method="GET" id="buscadorMobile">
         <div class="buscadorEnSerio">
-          <input type="text" name="busqueda" id="busquedaMobile">
+          <input type="text" name="busqueda" placeholder="Buscar..."  id="busquedaMobile">
           <button class="contenedor_lupaMobile" type="submit" onclick="evitar(event,document.querySelector('#buscadorMobile'),document.querySelector('#busquedaMobile'))"><i class="fas fa-search lupaMobile"></i></button>
         </div>
       </form>
@@ -160,7 +160,9 @@
           const espacio = document.getElementById("espacio")
           const listaCosas = document.getElementById("cosas");
           const cosa = document.getElementById("cosa");
+          const header = document.getElementById("arriba");
           function aparecen() {
+            header.classList.toggle("crecer");
             listaCosas.classList.toggle("aparecenCosas");
           }
         </script>
@@ -177,7 +179,6 @@
             
 
           }
-
         </script>
     </div>
 </header>

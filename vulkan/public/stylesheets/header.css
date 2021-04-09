@@ -17,7 +17,10 @@
 -webkit-border-radius: 150px 0px 0px 150px;
 border: 0px solid #000000;
 }
-
+.crecer{
+    margin-bottom: 300px;
+    transition: 1s all;
+}
 .cierraSesionEscritorio{
     cursor: pointer;
 }
@@ -240,7 +243,7 @@ div a.a{
 .buscador form .buscadorEnSerio input{
     outline: none;
     width: 60vw;
-    
+    padding-left: 10px;
 }
 .buscador form .buscadorEnSerio .contenedor_lupaMobile{
     border-radius: 0px 150px 150px 10px;
