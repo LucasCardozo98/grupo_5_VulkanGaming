@@ -1,4 +1,4 @@
-<header id="arriba">
+<header id="arriba" style="transition-delay: 1s;">
   <!--esto de sponsors aparece solo en desktop-->
   <div class="sponsors">
 
@@ -160,7 +160,9 @@
           const espacio = document.getElementById("espacio")
           const listaCosas = document.getElementById("cosas");
           const cosa = document.getElementById("cosa");
+          const header = document.getElementById("arriba");
           function aparecen() {
+            header.classList.toggle("crecer");
             listaCosas.classList.toggle("aparecenCosas");
           }
         </script>
@@ -170,13 +172,9 @@
           const lista = document.getElementById("lista");
           const nav = document.getElementById("nav");
           function cambiar() {
-
             lista.classList.toggle("aparecer");
             lista.style.transition = "1s all";
-            //nav.classList.add("muestra");
-
           }
-
         </script>
     </div>
 </header>
