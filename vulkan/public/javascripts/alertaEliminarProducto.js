@@ -1,6 +1,18 @@
-function confirmar (evento, formulario){
-    evento.preventDefault()
+let botonesEliminar = document.querySelectorAll(".eliminar");
 
+botonesEliminar.forEach(element=>{
+  element.addEventListener("click",confirmar);
+
+})
+
+function agarrar(event){
+  console.log(event.target.attributes.id.value)
+  event.preventDefault()
+}
+function confirmar (evento){
+    evento.preventDefault()
+    const formulario = document.querySelector(`#eliminar${event.target.attributes.id.value}`)
+    console.log(formulario.getAttribute("action"));
     Swal.fire({
         title: 'Vas a borrar un producto',
         text: "No podes revertir esta acción",

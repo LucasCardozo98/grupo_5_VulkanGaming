@@ -47,9 +47,8 @@
                   <%= element.price %>
                 </div>
                 <div class="btn" style="display: flex; justify-content: center; gap: 15px;">
-                  <form id="eliminar" action="/products/delete/<%= element.id %> ?_method=delete" method="POST">
-                    <button id="botonEliminar" type="submit" class="btn btn-danger"
-                      onclick="confirmar(event,document.querySelector('#eliminar'))">Eliminar</button>
+                  <form  action="/products/delete/<%=element.id%>?_method=PUT" method="POST" id="eliminar<%=element.id%>">
+                    <button type="submit" class="btn btn-danger eliminar" id=<%=element.id%> >Eliminar</button>
                   </form>
                   <button class="btn btn-primary"> <a class="text-white"
                       href="/products/edit/<%= element.id %> ">Editar</a></button>
