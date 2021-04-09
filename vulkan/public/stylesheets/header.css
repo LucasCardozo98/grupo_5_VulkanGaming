@@ -39,8 +39,6 @@ li form:hover label{
     left: -10000px;
     position: relative;
     height: 0;
-    
-    
 }
 .listaCosas a{
     text-decoration: none;
@@ -240,7 +238,7 @@ div a.a{
 .buscador form .buscadorEnSerio input{
     outline: none;
     width: 60vw;
-    
+    padding-left: 10px;
 }
 .buscador form .buscadorEnSerio .contenedor_lupaMobile{
     border-radius: 0px 150px 150px 10px;
