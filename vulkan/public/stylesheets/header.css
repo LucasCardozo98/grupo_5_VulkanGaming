@@ -213,6 +213,7 @@ div .buscador{
     color: rgba(255, 255, 255, .5);
 }
 .institucional h1{
+    margin-left: 30px;
     color: white;
 }
 .institucional i{
@@ -265,6 +266,10 @@ div.pepeargento{
 
 button .hover{
     background-color: chartreuse;
+}
+
+ul {
+    margin-bottom: 0;
 }
 
 .buscador form .buscadorEnSerio button{
@@ -327,7 +332,6 @@ boton*/
     width: 100%;
     padding: 5px;
     border-bottom: 1px solid  rgb(255, 255, 255);
-    
 }
 .navegacion li a{
     color: white;
@@ -482,7 +486,7 @@ div.footer{
     border: 0px solid #000000;
     }
     form#buscadorEscritorio{
-        
+        margin-right: -94px;
             border-radius: 0px 150px 150px 0px;
         -moz-border-radius: 0px 150px 150px 0px;
         -webkit-border-radius: 0px 150px 150px 0px;
