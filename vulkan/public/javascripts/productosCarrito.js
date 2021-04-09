@@ -1,7 +1,7 @@
 
 //localStorage.clear()
 const listaProductos = document.querySelector("#carrito");
-oldHTML = `<li id="vacio" class="carritoVacio mb-5 mt-5">El carrito esta vacío <i class="far fa-check-circle"></i></li>`
+oldHTML = `<li id="vacio" class="carritoVacio mb-5 mt-5">El carrito está vacío <i class="far fa-check-circle"></i></li>`
 listaProductos.innerHTML = oldHTML
 const congratulations = `<li id="contratulations" class="carritoVacio mb-5 mt-5">Felicidades tu compra fue realizada con exito <i class="far fa-check-circle"></i></li>`
 const cantidad = document.querySelector("#cantidad")
@@ -16,7 +16,7 @@ function escribir (id){
         return `<li id="id${element.id}">
         <div class="card">
           <div class="img">
-            <img src="/images/${element.image}" alt="">
+            <img src="/images/${element.image}" style="object-fit : contain;" alt="">
           </div>
           <div class="content">
             <div class="title text-center">${element.name}</div>
@@ -48,7 +48,7 @@ function escribir (id){
             return `<li id="id${element.id}">
             <div class="card">
               <div class="img">
-                <img src="/images/${element.image}" alt="">
+                <img src="/images/${element.image}" style="object-fit : contain;" alt="">
               </div>
               <div class="content">
                 <div class="title text-center">${element.name}</div>
@@ -117,7 +117,7 @@ function comprar (id){
             icon: 'error',
             title: 'Oops...',
             text: 'Debes estar logueado para comprar',
-            footer: '<a href="/users">Iniciar sesión</a>'
+            footer: '<a href="/users" style= "text-decoration: none; color: black;">Iniciar sesión</a>'
           })
     }
 }
