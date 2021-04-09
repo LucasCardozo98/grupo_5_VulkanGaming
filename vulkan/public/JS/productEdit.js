@@ -11,6 +11,7 @@ window.addEventListener('load', function(){
     $description = qs('#description'),
     $descriptionErrors = qs('#descriptionErrors'),
     $form = qs('#form'),
+    $formErrors = qs("#formErrors");
     $file = qs('#formFileSm'),
     $fileErrors = qs('#formFileErrors'),
     $imgPreview = qs('#img-preview'),
@@ -92,6 +93,30 @@ window.addEventListener('load', function(){
     })
 
 
+   
+
+    $form.addEventListener('submit',function(event){
+        let error = false;
+        event.preventDefault()
+        //console.log(form.elements)
+        let elementosForm = this.elements
+        for (let index = 1; index < elementosForm.length-2; index++) {
+            console.log(elementosForm[index].value, index);
+            if(elementosForm[index].value == ""){
+                elementosForm[index].classList.add('is-invalid');
+                $formErrors.innerHTML = "Los campos señalados son obligatorios";
+                error = true;
+            }
+        }
+
+        if(!error){
+            console.log('Todo bien');
+            $form.submit()
+        }else{
+            console.log("no pasa nada")
+        }
+    })
+
     $file.addEventListener('change', 
     function fileValidation(){
         let filePath = $file.value, 
@@ -107,32 +132,13 @@ window.addEventListener('load', function(){
             if($file.files && $file.files[0]){
                 let reader = new FileReader();
                 reader.onload = function(e){
-                    $imgPreview.innerHTML = '<img src="' + e.target.result +'"/>';
+                    $imgPreview.src = e.target.result //'<img src="' + e.target.result +'"/>';
                 };
                 reader.readAsDataURL($file.files[0]);
                 $fileErrors.innerHTML = '';
                 $file.classList.remove('is-invalid')
+                
             }
-        }
-    })
-
-    $form.addEventListener('submit',function(event){
-        let error = false;
-        event.preventDefault()
-        //console.log(form.elements)
-        let elementosForm = this.elements
-        for (let index = 1; index < elementosForm.length-2; index++) {
-            console.log(elementosForm[index].value, index);
-            if(elementosForm[index].value == ""){
-                elementosForm[index].classList.add('is-invalid');
-                //$formLoginErrors.innerHTML = "Los campos señalados son obligatorios";
-                error = true;
-            }
-        }
-
-        if(!error){
-            console.log('Todo bien');
-            $form.submit()
         }
     })
 })
