@@ -1,10 +1,10 @@
 <%- include("partials/head")%>
 <%- include("partials/header")%>
 <div class="container pepeargento">
-       
-        <a href="/products/list" class="btn btn-dark d-grid gap-2 col-6 mx-auto mt-5 mb-4" >Listar Productos</a>
-        <a href="/products/create" class="btn btn-dark d-grid gap-2 col-6 mx-auto mb-4" >Crear productos</a>
-        
+       <h2 class="text-center mt-3">Panel de control</h2>
+        <a href="/products/list" class="btn btn-success d-grid gap-2 col-6 mx-auto mt-5 mb-4" >Listar Productos</a>
+        <a href="/products/create" class="btn btn-success d-grid gap-2 col-6 mx-auto mb-4" >Crear productos</a>
+        <h2 class="text-center mt-5 mb-5">Mensajes directos</h2>
                 
         <% if (mensajes != undefined && mensajes != null) { %>
                 <ul style="list-style: none; padding-left: 0;">       
@@ -25,15 +25,18 @@
                 </ul>
             <% } %>
     <form action="/users/crearMensaje/<%= user.id %>/" method="POST">
-        <textarea class="col-12" name="mensaje" id="" rows="10" style="padding: 5px;"></textarea>
-        <div class="row justify-content-around d-flex">
-            <select class="usuarios form-select form-select-m mb-4 text-muted flex-grow-1 w-50" name="idOtherUser" id="">
-                <% users.forEach(element=> { %>
-                <option value="<%=element.id%>"><%=element.username%> </option>
-                <% }) %>
-            </select>
-        <button class="enviar-mensaje btn btn-dark flex-grow-1" type="submit"><i class="far fa-envelope"></i></button>
         
+        
+        <div class="row d-flex">
+            <textarea class="textarea col-8" name="mensaje" id="" rows="10" style="padding: 5px; height: 38px;" placeholder="Escribe un mensaje aqui" ></textarea>
+        <button class="enviar-mensaje btn btn-dark col-1" type="submit"><i class="far fa-envelope"></i></button>
+        <div class="col-3">
+        <select class="usuarios form-select form-select-m mb-4 text-muted" name="idOtherUser" id="">
+            <% users.forEach(element=> { %>
+            <option value="<%=element.id%>"><%=element.username%> </option>
+            <% }) %>
+        </select>
+        </div>
     </div>
     </form>
     

@@ -522,7 +522,8 @@ div.footer{
         margin: 0;
     }
     div.sponsors i.telefonito{
-        transform:rotate(90deg)
+        transform:rotate(90deg);
+        
     }
     div.sponsors p{
         margin: 0 18px;

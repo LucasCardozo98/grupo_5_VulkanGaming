@@ -5,7 +5,9 @@
     justify-content: center;
     color: white;
 }
-
+.btn{
+    border-radius: 20px
+}
 p{
     padding: 0;
     margin: 0;
@@ -57,6 +59,12 @@ div button.enviar-mensaje {
     body{
         background-color: rgb(238, 238, 238);
     }
+    textarea.textarea{
+        
+        margin-left: 41px;
+        
+        border-radius: 41px;
+    }
     
     div.pepeargento{
         background-color: white;
@@ -70,10 +78,13 @@ div button.enviar-mensaje {
     }
     
     div .usuarios{
-        margin-left: 10px;
         
+        
+    width: 150px
     }
     div button.enviar-mensaje {
-        margin-right: 10px;
+        
+        margin-left: -3%;
+        width: 77px;
     }
     }
