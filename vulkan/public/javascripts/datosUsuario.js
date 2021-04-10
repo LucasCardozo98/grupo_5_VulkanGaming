@@ -95,7 +95,6 @@ window.addEventListener("load",()=>{
         event.preventDefault()
         //console.log(form.elements)
         let elementosForm = this.elements
-        console.log(foto);
         for (let index = 1; index < elementosForm.length-2; index++) {
             console.log(elementosForm[index].value, index);
             if(elementosForm[index].value == ""){

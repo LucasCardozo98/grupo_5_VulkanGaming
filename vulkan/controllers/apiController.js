@@ -151,7 +151,9 @@ module.exports = {
 
     },
     email : (req,res)=>{
+        let contraseña = req.body
         let mails = []
+        if(contraseña == 1234){
         db.User.findAll()
         .then(users=>{
             users.forEach(element => {
@@ -164,6 +166,8 @@ module.exports = {
         .catch(error=>{
             console.log(error)
         })
+
+        }
     }
  
 }

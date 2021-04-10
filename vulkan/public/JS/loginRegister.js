@@ -63,14 +63,21 @@ window.addEventListener('load', function(){
 
     
 	$inputEmailRegister.addEventListener('blur', function() {
+        const contraseña = [1234] 
         let existe = 0;
         console.log(existe + "  etapa de generacion");
         //console.log($inputEmailRegister.value)
-        fetch("http://localhost:3000/users/api/usuarios")
-    .then(response=>{
-    return response.json()
-    })
-    .then(data=>{
+        fetch("http://localhost:3000/users/api/usuarios",{
+            method: "POST",
+            body: JSON.stringify(contraseña),
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+        .then(response=>{
+        return response.json()
+        })
+        .then(data=>{
        
         data.mails.forEach(element => {
             if (element == $inputEmailRegister.value.trim()) {

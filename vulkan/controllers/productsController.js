@@ -224,9 +224,11 @@ module.exports =  {
     },
     delete: (req,res)=>{
         let id = req.params.id
+        console.log(`ESTO ES ID ${req.params.id}`)
         db.Product.update({
             visible: 2},
-            {where: {id: id}
+            {
+            where: {id : req.params.id}
         
             
             

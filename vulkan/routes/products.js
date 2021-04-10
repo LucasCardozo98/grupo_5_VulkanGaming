@@ -20,7 +20,7 @@ router.get("/create",adminCheck,productsController.crearProducto);
 router.post("/create",upload.any(),formProductsValidation,productsController.storeProduct);
 router.get("/edit/:id",adminCheck,productsController.showEdit);
 router.put("/edit/:id",upload.any(),formProductsValidation,productsController.edit);
-router.delete("/delete/:id",productsController.delete);
+router.put("/delete/:id",productsController.delete);
 router.get("/cart",productsController.cart)
 router.post("/cart/:idProduct/:idUser",productsController.crearCarrito);
 router.delete("/cart/delete/:idProduct/:idUser",productsController.eliminarProductoCarrito);
