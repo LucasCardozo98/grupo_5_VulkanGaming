@@ -82,7 +82,7 @@ h2{
  .card .content .btn button:hover{
    transform: scale(0.9);
 }
- .card-mobile{background-color: #fff;border-radius: 5%;}
+ .card-mobile{background-color: #fff;border-radius: 10px;}
 
 
 @media(max-width:426px){

@@ -1,7 +1,7 @@
 
 //localStorage.clear()
 const listaProductos = document.querySelector("#carrito");
-oldHTML = `<li id="vacio" class="carritoVacio mb-5 mt-5">El carrito está vacío <i class="far fa-check-circle"></i></li>`
+oldHTML = `<li id="vacio" class="carritoVacio mb-5 mt-5">El carrito está vacío <i class="far fa-check-circle" style="color:green;"></i></li>`
 listaProductos.innerHTML = oldHTML
 const congratulations = `<li id="contratulations" class="carritoVacio mb-5 mt-5">Felicidades tu compra fue realizada con exito <i class="far fa-check-circle"></i></li>`
 const cantidad = document.querySelector("#cantidad")

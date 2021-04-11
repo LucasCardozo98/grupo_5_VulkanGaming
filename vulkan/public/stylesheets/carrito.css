@@ -62,10 +62,10 @@
   transform: scale(0.9);
 }
 .card{
-  width: 300px;
+  width: 240px;
   height: 100%;
   background-color: rgb(206, 201, 201);
-  border-radius: 5px;
+  border-radius: 10px;
   padding: 5px;
   transition: .5s all;
   display: flex;
