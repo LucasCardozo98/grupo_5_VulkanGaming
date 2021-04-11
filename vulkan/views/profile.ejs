@@ -56,7 +56,10 @@
     <div class="col-2">
     <select class="usuarios form-select form-select-m mb-4 text-muted" name="idOtherUser" id="">
         <% users.forEach(element=> { %>
-        <option value="<%=element.id%>"><%=element.username%> </option>
+            <% if (element.rol == "admin") { %>
+                <option value="<%=element.id%>"><%=element.username%> </option>
+            <% } %>
+        
         <% }) %>
     </select>
     </div>
