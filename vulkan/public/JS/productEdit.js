@@ -120,9 +120,9 @@ window.addEventListener('load', function(){
     $file.addEventListener('change', 
     function fileValidation(){
         let filePath = $file.value, 
-            allowefExtensions = /(.jpg|.jpeg|.png|.gif)$/i 
+            allowefExtensions = /(.jpg|.jpeg|.png|.gif|.jfif)$/i 
         if(!allowefExtensions.exec(filePath)){
-            $fileErrors.innerHTML = 'Carga un archivo de imagen válido, con las extensiones (.jpg - .jpeg - .png - .gif)';
+            $fileErrors.innerHTML = 'Carga un archivo de imagen válido, con las extensiones (.jpg - .jpeg - .png - .gif - .jfif)';
             $file.value = '';
             $imgPreview.innerHTML = '';
             return false;
