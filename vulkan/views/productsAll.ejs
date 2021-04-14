@@ -35,7 +35,7 @@
                 <div class="title" id="nombre" idProducto="<%= element.id %>">
                   <%= element.name %>
                 </div>
-                <h5 class="title">
+                <h5 class="title text-muted">
                   <% brands.forEach(marca => { %>
                     <% if (marca.id == element.idBrand) { %>
                       <%=marca.name%>
@@ -44,7 +44,7 @@
                 </h5>
               </a>
                 <div class="price">
-                  <%= element.price %>
+                  <h5>$<%= element.price %></h5>
                 </div>
                 <div class="btn" style="display: flex; justify-content: center; gap: 15px;">
                   <form  action="/products/delete/<%=element.id%>?_method=PUT" method="POST" id="eliminar<%=element.id%>">
