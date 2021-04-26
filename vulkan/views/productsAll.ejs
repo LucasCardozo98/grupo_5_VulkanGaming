@@ -3,7 +3,7 @@
   <div class="container"><div class="row"><div class="pepeargento">
     <form action="/products/filtrado" method="GET">
       <select class="btn btn-light d-grid gap-2 col-6 mx-auto mt-2 mb-4" name="categoria" id="">
-        <option selected value="no filtrar">No filtrar por categoria</option>
+        <option selected value="no filtrar">Categorias</option>
         <%categorys.forEach(element=> { %>
           <option value="<%=element.id%>">
             <%=element.name%>
@@ -11,7 +11,7 @@
           <% }) %>
       </select><br>
       <select class="btn btn-light d-grid gap-2 col-6 mx-auto mb-4" name="marca" id="">
-        <option selected value="no filtrar">No filtrar por marca</option>
+        <option selected value="no filtrar">Marcas</option>
         <%brands.forEach(element=> { %>
           <option value="<%=element.id%>">
             <%=element.name%>
